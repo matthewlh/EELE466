@@ -1,15 +1,13 @@
 ----------------------------------------------------------------------------------
 --
 -- Author:           Dr. Ross Snider
---           	     	Electrical and Computer Engineering Department
---           	     	Montana State University
+--           	     Electrical and Computer Engineering Department
+--           	     Montana State University
 --                   Bozeman, MT  59717
---
 -- Modified by:      David Keltgen
--- 					 	Matthew Handley
+-- 					 Matthew Handley
 --
 -- Create Date:      09/10/2010
--- Modified Date:		01/20/2015
 -- Design Name:      DE2_Board
 -- Module Name:      DE2_Board 
 -- Target Board:     Altera DE2 Evaluation Board
@@ -240,34 +238,23 @@ architecture behavioral of DE2_Board_top_level is
    -- change end entity to end component
    ---------------------------------------------------------------
 	
-	Component clk_div IS
-		PORT
-		(
-			clock_50Mhz				: IN	STD_LOGIC;
-			clock_1MHz				: OUT	STD_LOGIC;
-			clock_100KHz			: OUT	STD_LOGIC;
-			clock_10KHz				: OUT	STD_LOGIC;
-			clock_1KHz				: OUT	STD_LOGIC;
-			clock_100Hz				: OUT	STD_LOGIC;
-			clock_10Hz				: OUT	STD_LOGIC;
-			clock_1Hz				: OUT	STD_LOGIC
-		);		
-	END component;
-	
-	Component debounce IS
-		PORT(	
-			pb							: IN	STD_LOGIC;
-			clock_100Hz 			: IN	STD_LOGIC;
-			pb_debounced			: OUT	STD_LOGIC
-		);
-	END component;
-	
-	component DE2_HEX_DECODER is 
-		port(
-			INPUT_CODE		: in  STD_LOGIC_VECTOR(3 downto 0);
-		OUTPUT_DISPLAY		: out STD_LOGIC_VECTOR(6 downto 0)
-		);		  
-	end component;
+	component Nios_Qsys is
+        port (
+            clk_clk                             : in    std_logic                     := 'X';             -- clk
+            switches_external_connection_export : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
+            leds_external_connection_export     : out   std_logic_vector(17 downto 0);                    -- export
+            reset_reset_n                       : in    std_logic                     := 'X';             -- reset_n
+            sdram_addr                          : out   std_logic_vector(11 downto 0);                    -- addr
+            sdram_ba                            : out   std_logic_vector(1 downto 0);                     -- ba
+            sdram_cas_n                         : out   std_logic;                                        -- cas_n
+            sdram_cke                           : out   std_logic;                                        -- cke
+            sdram_cs_n                          : out   std_logic;                                        -- cs_n
+            sdram_dq                            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+            sdram_dqm                           : out   std_logic_vector(1 downto 0);                     -- dqm
+            sdram_ras_n                         : out   std_logic;                                        -- ras_n
+            sdram_we_n                          : out   std_logic                                         -- we_n
+        );
+    end component Nios_Qsys;
 	
 	--Copyright (C) 1991-2013 Altera Corporation
 	--Your use of Altera Corporation's design tools, logic functions 
@@ -282,54 +269,54 @@ architecture behavioral of DE2_Board_top_level is
 	--programming logic devices manufactured by Altera and sold by 
 	--Altera or its authorized distributors.  Please refer to the 
 	--applicable agreement for further details.
-	component lcd_sram
+	component clockPLL
 		PORT
 		(
-			data			: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			inclock		: IN STD_LOGIC  := '1';
-			outclock		: IN STD_LOGIC ;
-			rdaddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wraddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wren			: IN STD_LOGIC  := '0';
-			q				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			inclk0		: IN STD_LOGIC  := '0';
+			c0				: OUT STD_LOGIC ;
+			c1				: OUT STD_LOGIC 
 		);
 	end component;
 
-	
-	signal dram_ba 	: std_logic_vector(1 downto 0); 
-	signal dram_dqm 	: std_logic_vector(1 downto 0); 
-	
-	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
-	signal pb_debounced		: STD_LOGIC;
+	signal dram_ba : std_logic_vector(1 downto 0); 
+	signal dram_dqm : std_logic_vector(1 downto 0); 
+	signal clk_nios : std_logic;
 
 begin
 
-	-- instantiation 
-	clk_div_1 : component clk_div
+   ---------------------------------------------------------------
+   -- Instantiate the NIOS component below this comment block
+   -- This can be done using Edit->Insert Template
+   -- Expand Megafunctions
+   -- Expand Instances
+   -- click on nios_system_inst.vhd and click insert 
+   -- (it will insert where the cursor is located)
+   -- Add the appropriate signal names to the signal connections
+   ---------------------------------------------------------------
+
+    u0 : component Nios_Qsys
         port map (
-            clock_50Mhz		=> CLOCK_50,
-				clock_1MHz		=> clock_1MHz,
-				clock_100KHz	=> clock_100KHz,
-				clock_10KHz		=> clock_10KHz,
-				clock_1KHz		=> clock_1KHz, 
-				clock_100Hz		=> clock_100Hz,
-				clock_10Hz		=> clock_10Hz,
-				clock_1Hz		=> clock_1Hz
+            clk_clk                             => clk_nios,                           --                          clk.clk
+            switches_external_connection_export => SW, 											-- switches_external_connection.export
+            leds_external_connection_export     => LEDR,     									--     leds_external_connection.export
+            reset_reset_n                       => KEY(0),                       		--                        reset.reset_n
+            sdram_addr                          => DRAM_ADDR,                          --                        sdram.addr
+            sdram_ba                            => dram_ba,                            --                             .ba
+            sdram_cas_n                         => DRAM_CAS_N,                         --                             .cas_n
+            sdram_cke                           => DRAM_CKE,                           --                             .cke
+            sdram_cs_n                          => DRAM_CS_N,                          --                             .cs_n
+            sdram_dq                            => DRAM_DQ,                            --                             .dq
+            sdram_dqm                           => dram_dqm,                           --                             .dqm
+            sdram_ras_n                         => DRAM_RAS_N,                         --                             .ras_n
+            sdram_we_n                          => DRAM_WE_N                           --                             .we_n
         );
-		  
-	debounce_1 : component debounce
-		port map (
-			pb						=> KEY(3),
-			clock_100Hz			=> clock_100Hz,
-			pb_debounced		=> pb_debounced
-		);
-		  
---	hex0_decoder : component DE2_HEX_DECODER
---		port map (
---			INPUT_CODE		=> SW(17 downto 14),
---			OUTPUT_DISPLAY	=> HEX0
---		);
-	
+	  
+  clockPLL_inst : clockPLL PORT MAP (
+		inclk0	=> CLOCK_50,
+		c0	 		=> clk_nios,
+		c1	 		=> DRAM_CLK
+	);
+
 
 
    -----------------------------------------
@@ -341,11 +328,10 @@ begin
    -----------------------------------------
 	-- LEDs
 	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
-	--LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
+	LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
-	HEX0 <= SW(6 downto 0);
-	--HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX3 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
