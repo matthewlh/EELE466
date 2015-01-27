@@ -5,10 +5,6 @@ USE  IEEE.STD_LOGIC_UNSIGNED.all;
 -- SW8 (GLOBAL RESET) resets LCD
 
 ENTITY LCD_Display IS
-
--- Enter number of live Hex hardware data values to display
--- (do not count ASCII character constants)
-	GENERIC(Num_Hex_Digits: Integer:= 2); 
 	
 -----------------------------------------------------------------------
 -- LCD Displays 16 Characters on 2 lines
@@ -43,11 +39,14 @@ ENTITY LCD_Display IS
 -- *see LCD Controller's Datasheet for other graphics characters available
 --
 
-	PORT(reset, clk_48Mhz		: IN		STD_LOGIC;
-		 Hex_Display_Data			: IN    	STD_LOGIC_VECTOR((Num_Hex_Digits*4)-1 DOWNTO 0);
-		 LCD_RS, LCD_E				: OUT		STD_LOGIC;
-		 LCD_RW						: OUT   	STD_LOGIC;
-		 DATA_BUS					: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0));
+	PORT(	reset, clk_48Mhz		: IN		STD_LOGIC;
+			sram_q					: IN 		STD_LOGIC_VECTOR (7 DOWNTO 0);
+			sram_outclock			: OUT		STD_LOGIC;
+			sram_rdaddress			: OUT 	STD_LOGIC_VECTOR (4 DOWNTO 0);
+			LCD_RS, LCD_E			: OUT		STD_LOGIC;
+			LCD_RW					: OUT   	STD_LOGIC;
+			DATA_BUS					: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
 		
 END ENTITY LCD_Display;
 
@@ -80,7 +79,7 @@ ARCHITECTURE a OF LCD_Display IS
 	------------------------------
 	-- Line 1
 	X"43",X"6F",X"75",X"6E",X"74",X"3D",
-	X"0" & Hex_Display_Data(7 DOWNTO 4),X"0" & Hex_Display_Data(3 DOWNTO 0),
+	X"0" & X"0",X"0" & X"0",
 	X"20",X"20",X"20",X"20",X"20",X"20",X"20",X"20",
 	-- Line 2
 	X"55",X"50",X"33",X"20",X"20",X"20",X"20",X"20",

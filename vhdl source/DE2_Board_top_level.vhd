@@ -70,6 +70,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DE2_Board_top_level is
+
 	port
 	(		
 		-- Clocks
@@ -230,15 +231,9 @@ end DE2_Board_top_level;
 
 architecture behavioral of DE2_Board_top_level is
 
-    ---------------------------------------------------------------
-   -- ADD NIOS component below this comment block
-   -- This can done as follows (assumming nios_system is the SOPC name)
-   -- Open the file: nios_system.vhd
-   -- Search for the following string "entity nios_system is"
-   -- Cut and paste the entity below
-   -- change the word entity to to the word component, delete the word "is"
-   -- change end entity to end component
-   ---------------------------------------------------------------
+	-------------------------------
+	---- Component Declaration ----
+	-------------------------------
 	
 	Component clk_div IS
 		PORT
@@ -269,6 +264,16 @@ architecture behavioral of DE2_Board_top_level is
 		);		  
 	end component;
 	
+	component bit8_to_3xBCD 
+		PORT
+		(
+			INPUT_CODE		: in  STD_LOGIC_VECTOR(7 downto 0);
+			OUTPUT0			: out STD_LOGIC_VECTOR(3 downto 0);
+			OUTPUT1			: out STD_LOGIC_VECTOR(3 downto 0);
+			OUTPUT2			: out STD_LOGIC_VECTOR(3 downto 0)
+		);
+	end component;	
+	
 	--Copyright (C) 1991-2013 Altera Corporation
 	--Your use of Altera Corporation's design tools, logic functions 
 	--and other software and tools, and its AMPP partner logic 
@@ -282,44 +287,72 @@ architecture behavioral of DE2_Board_top_level is
 	--programming logic devices manufactured by Altera and sold by 
 	--Altera or its authorized distributors.  Please refer to the 
 	--applicable agreement for further details.
+
 	component lcd_sram
 		PORT
 		(
-			data			: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			inclock		: IN STD_LOGIC  := '1';
-			outclock		: IN STD_LOGIC ;
-			rdaddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wraddress	: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wren			: IN STD_LOGIC  := '0';
-			q				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			data				: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+			inclock			: IN STD_LOGIC;
+			outclock			: IN STD_LOGIC;
+			rdaddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+			wraddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
+			wren				: IN STD_LOGIC;
+			q					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 		);
 	end component;
 	
-	component bit8_to_3xBCD 
-		PORT
-		(
-			INPUT_CODE		: in  STD_LOGIC_VECTOR(7 downto 0);
-			OUTPUT0			: out STD_LOGIC_VECTOR(3 downto 0);
-			OUTPUT1			: out STD_LOGIC_VECTOR(3 downto 0);
-			OUTPUT2			: out STD_LOGIC_VECTOR(3 downto 0)
-		);
+	component LCD_DISPLAY
+		PORT(	
+			reset, clk_48Mhz		: IN		STD_LOGIC;
+			sram_q					: IN 		STD_LOGIC_VECTOR (7 DOWNTO 0);
+			sram_outclock			: OUT		STD_LOGIC;
+			sram_rdaddress			: OUT 	STD_LOGIC_VECTOR (4 DOWNTO 0);
+			LCD_RS, LCD_E			: OUT		STD_LOGIC;
+			LCD_RW					: OUT   	STD_LOGIC;
+			DATA_BUS					: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
 	end component;
 
+	----------------------------
+	---- Signal Declaration ----
+	----------------------------
 	
 	signal dram_ba 	: std_logic_vector(1 downto 0); 
 	signal dram_dqm 	: std_logic_vector(1 downto 0); 
 	
+	-- clock --
 	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
 	signal pb_debounced		: STD_LOGIC;
 	
 	
+	-- data --
+	signal data_8bit	: std_logic_vector(7 downto 0); 	
+	
 	signal hex0_4bit 	: std_logic_vector(3 downto 0); 
 	signal hex1_4bit 	: std_logic_vector(3 downto 0); 
 	signal hex2_4bit	: std_logic_vector(3 downto 0); 
-
+	
+	-- address --
+	signal addr_8bit 	: std_logic_vector(7 downto 0); 
+	
+	signal hex4_4bit 	: std_logic_vector(3 downto 0); 
+	signal hex5_4bit	: std_logic_vector(3 downto 0); 
+	
+	-- lcd --
+	signal lcd_sram_data			: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	signal lcd_sram_inclock		: STD_LOGIC;
+	signal lcd_sram_outclock	: STD_LOGIC;
+	signal lcd_sram_rdaddress	: STD_LOGIC_VECTOR (4 DOWNTO 0);
+	signal lcd_sram_wraddress	: STD_LOGIC_VECTOR (4 DOWNTO 0);
+	signal lcd_sram_wren			: STD_LOGIC;
+	signal lcd_sram_q				: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	
+	
 begin
-
-	-- instantiation 
+	
+	----------------------
+	---- Clock intput ----
+	----------------------
 	clk_div_1 : component clk_div
         port map (
             clock_50Mhz		=> CLOCK_50,
@@ -330,7 +363,7 @@ begin
 				clock_100Hz		=> clock_100Hz,
 				clock_10Hz		=> clock_10Hz,
 				clock_1Hz		=> clock_1Hz
-        );
+        );		  
 		  
 	debounce_1 : component debounce
 		port map (
@@ -340,11 +373,17 @@ begin
 		);
 		
 		
+		
+	---------------------------------
+	---- Data intput and Display ----
+	---------------------------------
 	
-	bit8_to_3xBCD_0 : component bit8_to_3xBCD 
+	data_8bit <= SW(17 downto 10);
+	
+	bit8_to_3xBCD_data : component bit8_to_3xBCD 
 		port map
 		(
-			INPUT_CODE		=> SW(17 downto 10),
+			INPUT_CODE		=> data_8bit,
 			OUTPUT0			=> hex0_4bit,
 			OUTPUT1			=> hex1_4bit,
 			OUTPUT2			=> hex2_4bit
@@ -367,12 +406,86 @@ begin
 			INPUT_CODE		=> hex2_4bit,
 			OUTPUT_DISPLAY	=> HEX2
 		);
+		
+		
+		
+	------------------------------------
+	---- Address intput and Display ----
+	------------------------------------
 	
+	addr_8bit(7 downto 5) <= (others => '0');
+	addr_8bit(4 downto 0) <= SW(4 downto 0); 
+	
+	bit8_to_3xBCD_addr : component bit8_to_3xBCD 
+		port map
+		(
+			INPUT_CODE		=> addr_8bit,
+			OUTPUT0			=> hex4_4bit,
+			OUTPUT1			=> hex5_4bit,
+			OUTPUT2			=> open
+		);
+		  
+	hex4_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> hex4_4bit,
+			OUTPUT_DISPLAY	=> HEX4
+		);
+		  
+	hex5_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> hex5_4bit,
+			OUTPUT_DISPLAY	=> HEX5
+		);
+		  
+	hex6_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> addr_8bit(3 downto 0),
+			OUTPUT_DISPLAY	=> HEX6
+		);
+		  
+	hex7_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> addr_8bit(7 downto 4),
+			OUTPUT_DISPLAY	=> HEX7
+		);
+		
+		
+		
+	-----------------------
+	---- LCD Interface ----
+	-----------------------
+	
+	lcd_sram_0 : component lcd_sram
+		port map 
+		(
+			data				=> lcd_sram_data,
+			inclock			=> lcd_sram_inclock,
+			outclock			=> lcd_sram_outclock,
+			rdaddress		=> lcd_sram_rdaddress,
+			wraddress		=> lcd_sram_wraddress,
+			wren				=> lcd_sram_wren,
+			q					=> lcd_sram_q
+		);
+	
+	lcd_display_0 : component LCD_DISPLAY
+		PORT MAP
+		(	
+			reset 				=> '1',
+			clk_48Mhz			=> clock_50,
+			sram_q				=> lcd_sram_q,
+			sram_outclock		=> lcd_sram_outclock,
+			sram_rdaddress		=> lcd_sram_rdaddress,
+			LCD_RS				=> LCD_RS,
+			LCD_E					=> LCD_EN,
+			LCD_RW				=> LCD_RW,
+			DATA_BUS				=> LCD_DATA
+	);
+
 
 
    -----------------------------------------
    -- Delete the signals below that you will
-   -- be connecting to your NIOS components
+   -- be connecting to other components
    -- Note: in    signals are ignored
    --       out   signals are set to '0'
    --       inout signals are set to 'Z'
@@ -382,21 +495,20 @@ begin
 	--LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
-	--HEX0 <= SW(6 downto 0);
---	--HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
 --	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 --	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX3 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX4 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX5 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX6 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX7 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX4 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX5 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX6 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX7 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	
 	-- LCD Module
-	LCD_DATA <= (others => 'Z');
-	LCD_RW   <= '1';  -- '0' = Write, '1' = Read
-	LCD_EN   <= '0';  -- Enable
-	LCD_RS   <= '1';  -- Command/Data Select '0' = Command, '1' = Data
+--	LCD_DATA <= (others => 'Z');
+--	LCD_RW   <= '1';  -- '0' = Write, '1' = Read
+--	LCD_EN   <= '0';  -- Enable
+--	LCD_RS   <= '1';  -- Command/Data Select '0' = Command, '1' = Data
 	LCD_ON   <= '1';  -- LCD Power ON/OFF
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 

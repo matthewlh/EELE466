@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
--- DATE "01/27/2015 12:43:51"
+-- DATE "01/27/2015 14:02:14"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672
@@ -296,7 +296,6 @@ END DE2_Board_top_level;
 -- FL_DQ[7]	=>  Location: PIN_AE21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- SD_DAT	=>  Location: PIN_AD24,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- CLOCK_27	=>  Location: PIN_D13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- CLOCK_50	=>  Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- EXT_CLOCK	=>  Location: PIN_P26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- KEY[0]	=>  Location: PIN_G26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- KEY[1]	=>  Location: PIN_N23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
@@ -430,7 +429,7 @@ END DE2_Board_top_level;
 -- AUD_DACDAT	=>  Location: PIN_A4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- AUD_DACLRCK	=>  Location: PIN_C6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- AUD_ADCDAT	=>  Location: PIN_B5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- AUD_ADCLRCL	=>  Location: PIN_G14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- AUD_ADCLRCL	=>  Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- UART_RXD	=>  Location: PIN_C25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- UART_TXD	=>  Location: PIN_B25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- PS2_CLK	=>  Location: PIN_D26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -452,7 +451,7 @@ END DE2_Board_top_level;
 -- TD_DATA[7]	=>  Location: PIN_C7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- TD_HS	=>  Location: PIN_D5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- TD_VS	=>  Location: PIN_K9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- TD_CLK27	=>  Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- TD_CLK27	=>  Location: PIN_E23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- TD_RESET	=>  Location: PIN_C4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- OTG_ADDR[0]	=>  Location: PIN_K7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 -- OTG_ADDR[1]	=>  Location: PIN_F2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -560,6 +559,7 @@ END DE2_Board_top_level;
 -- SW[15]	=>  Location: PIN_U4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- SW[16]	=>  Location: PIN_V1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- SW[17]	=>  Location: PIN_V2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- CLOCK_50	=>  Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF DE2_Board_top_level IS
@@ -660,139 +660,294 @@ SIGNAL ww_FL_WE_N : std_logic;
 SIGNAL ww_SD_DAT3 : std_logic;
 SIGNAL ww_SD_CMD : std_logic;
 SIGNAL ww_SD_CLK : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ : std_logic;
+SIGNAL \CLOCK_50~clkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[0]~20_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[2]~24_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[4]~28_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[6]~32_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[13]~46_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[16]~52_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector15~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector8~5_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.RESET3~regout\ : std_logic;
+SIGNAL \lcd_display_0|state.RESET2~regout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.RESET3~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~34_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.RESET2~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~37_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector17~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector19~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector18~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector7~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector5~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector9~3_combout\ : std_logic;
+SIGNAL \CLOCK_50~combout\ : std_logic;
+SIGNAL \CLOCK_50~clkctrl_outclk\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[0]~5_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.RESET1~feeder_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[0]~21\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[1]~22_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[1]~23\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[2]~25\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[3]~26_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[3]~27\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[4]~29\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[5]~30_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[5]~31\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[6]~33\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[7]~34_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[7]~35\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[8]~36_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[8]~37\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[9]~38_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[9]~39\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[10]~40_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[10]~feeder_combout\ : std_logic;
+SIGNAL \lcd_display_0|LessThan0~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|LessThan0~3_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[10]~41\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[11]~42_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[11]~feeder_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[11]~43\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[12]~44_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[12]~45\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[13]~47\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[14]~48_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[14]~49\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[15]~50_combout\ : std_logic;
+SIGNAL \lcd_display_0|LessThan0~1_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[15]~51\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[16]~53\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[17]~54_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[17]~55\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[18]~56_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[18]~57\ : std_logic;
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ[19]~58_combout\ : std_logic;
+SIGNAL \lcd_display_0|LessThan0~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|LessThan0~4_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_400HZ_Enable~feeder_combout\ : std_logic;
+SIGNAL \lcd_display_0|CLK_400HZ_Enable~regout\ : std_logic;
+SIGNAL \lcd_display_0|state.RESET1~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector26~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|LCD_RS~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.DROP_LCD_E~regout\ : std_logic;
+SIGNAL \lcd_display_0|state.HOLD~regout\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[1]~8\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[2]~9_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector24~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[2]~10\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[3]~11_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector23~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Equal2~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[3]~12\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[4]~13_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector22~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector17~1_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.RETURN_HOME~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~29_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.RETURN_HOME~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector15~1_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.Print_String~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~28_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.Print_String~regout\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[0]~6\ : std_logic;
+SIGNAL \lcd_display_0|CHAR_COUNT[1]~7_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector25~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector9~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector9~4_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector8~7_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector8~6_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector21~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.DISPLAY_CLEAR~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~32_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.DISPLAY_CLEAR~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector13~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.DISPLAY_ON~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~33_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.DISPLAY_ON~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector14~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.MODE_SET~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~30_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.MODE_SET~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector7~4_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector7~5_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector6~12_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector12~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.FUNC_SET~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~36_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.FUNC_SET~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector20~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.DISPLAY_OFF~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~35_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.DISPLAY_OFF~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector6~13_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector6~3_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector6~15_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector6~14_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector16~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector16~1_combout\ : std_logic;
+SIGNAL \lcd_display_0|next_command.LINE2~regout\ : std_logic;
+SIGNAL \lcd_display_0|state~31_combout\ : std_logic;
+SIGNAL \lcd_display_0|state.LINE2~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector5~3_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector5~4_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector5~5_combout\ : std_logic;
+SIGNAL \lcd_display_0|DATA_BUS_VALUE[5]~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector4~3_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector4~10_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector4~9_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector3~3_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector3~2_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector3~4_combout\ : std_logic;
+SIGNAL \lcd_display_0|Selector2~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux6~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux5~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux4~0_combout\ : std_logic;
@@ -800,87 +955,81 @@ SIGNAL \hex0_decoder|Mux3~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux2~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux1~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|Mux0~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux6~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux5~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux4~0_combout\ : std_logic;
@@ -888,33 +1037,111 @@ SIGNAL \hex1_decoder|Mux3~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux2~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux1~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|Mux0~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\ : std_logic;
 SIGNAL \hex2_decoder|Mux6~0_combout\ : std_logic;
 SIGNAL \hex2_decoder|Mux4~0_combout\ : std_logic;
 SIGNAL \hex2_decoder|Mux1~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux6~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux5~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux4~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux3~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux2~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux1~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|Mux0~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ : std_logic;
+SIGNAL \hex5_decoder|Mux6~0_combout\ : std_logic;
+SIGNAL \hex5_decoder|Mux4~0_combout\ : std_logic;
+SIGNAL \hex5_decoder|Mux1~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux6~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux5~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux4~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux3~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux2~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux1~0_combout\ : std_logic;
+SIGNAL \hex6_decoder|Mux0~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|LCD_E~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|LCD_E~regout\ : std_logic;
+SIGNAL \lcd_display_0|Selector1~0_combout\ : std_logic;
+SIGNAL \lcd_display_0|LCD_RS~regout\ : std_logic;
+SIGNAL \lcd_display_0|DATA_BUS_VALUE\ : std_logic_vector(7 DOWNTO 0);
+SIGNAL \lcd_display_0|CLK_COUNT_400HZ\ : std_logic_vector(19 DOWNTO 0);
+SIGNAL \lcd_display_0|CHAR_COUNT\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \SW~combout\ : std_logic_vector(17 DOWNTO 0);
+SIGNAL \lcd_display_0|ALT_INV_state.Print_String~regout\ : std_logic;
+SIGNAL \hex6_decoder|ALT_INV_Mux0~0_combout\ : std_logic;
+SIGNAL \hex4_decoder|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \hex1_decoder|ALT_INV_Mux0~0_combout\ : std_logic;
 SIGNAL \hex0_decoder|ALT_INV_Mux0~0_combout\ : std_logic;
-SIGNAL \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[5]~8_combout\ : std_logic;
+SIGNAL \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\ : std_logic;
 
 BEGIN
 
@@ -1009,54 +1236,69 @@ SD_CLK <= ww_SD_CLK;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
+
+\CLOCK_50~clkctrl_INCLK_bus\ <= (gnd & gnd & gnd & \CLOCK_50~combout\);
+\lcd_display_0|ALT_INV_state.Print_String~regout\ <= NOT \lcd_display_0|state.Print_String~regout\;
+\hex6_decoder|ALT_INV_Mux0~0_combout\ <= NOT \hex6_decoder|Mux0~0_combout\;
+\hex4_decoder|ALT_INV_Mux0~0_combout\ <= NOT \hex4_decoder|Mux0~0_combout\;
 \hex1_decoder|ALT_INV_Mux0~0_combout\ <= NOT \hex1_decoder|Mux0~0_combout\;
 \hex0_decoder|ALT_INV_Mux0~0_combout\ <= NOT \hex0_decoder|Mux0~0_combout\;
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\ <= NOT \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\;
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[5]~8_combout\ <= NOT \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\;
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\ <= NOT \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\;
 
--- Location: LCCOMB_X27_Y3_N12
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N14
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ = \SW~combout\(15) $ (VCC)
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ = CARRY(\SW~combout\(15))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010110101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(15),
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\);
-
--- Location: LCCOMB_X27_Y3_N6
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\)))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
+	lut_mask => "1110000100000001",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\);
 
--- Location: LCCOMB_X29_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N10
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\);
+
+-- Location: LCCOMB_X30_Y6_N2
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1064,253 +1306,42 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\,
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
 
--- Location: LCCOMB_X29_Y3_N12
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N10
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ & 
+-- ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\))))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # (GND))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110000100000001",
+	lut_mask => "0001111011101111",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\);
 
--- Location: LCCOMB_X29_Y3_N16
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\);
-
--- Location: LCCOMB_X29_Y3_N20
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\);
-
--- Location: LCCOMB_X30_Y3_N8
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\);
-
--- Location: LCCOMB_X30_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\)))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\);
-
--- Location: LCCOMB_X34_Y3_N24
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ & 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\);
-
--- Location: LCCOMB_X34_Y3_N26
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\)))))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\);
-
--- Location: LCCOMB_X32_Y3_N2
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ & 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
-
--- Location: LCCOMB_X32_Y3_N4
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\)))))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
-
--- Location: LCCOMB_X33_Y5_N16
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ $ (GND)
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY(!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110000110011",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
-
--- Location: LCCOMB_X33_Y5_N18
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & VCC))
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101000001010",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
-
--- Location: LCCOMB_X34_Y5_N10
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\) # (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\)))
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\) # (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1318,75 +1349,41 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\,
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\);
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\);
 
--- Location: LCCOMB_X33_Y4_N22
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ = (\SW~combout\(14) & (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ & VCC)) # (!\SW~combout\(14) & 
--- (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\))
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ = CARRY((!\SW~combout\(14) & !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\)))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001100000011",
+	lut_mask => "1110000100001110",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	datab => \SW~combout\(14),
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\);
 
--- Location: LCCOMB_X33_Y4_N24
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N4
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ = (\SW~combout\(15) & ((GND) # (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\))) # (!\SW~combout\(15) & 
--- (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ $ (GND)))
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\ = CARRY((\SW~combout\(15)) # (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101101010101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(15),
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\);
-
--- Location: LCCOMB_X33_Y4_N26
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\ = (\SW~combout\(16) & (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\)) # (!\SW~combout\(16) & 
--- ((\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\) # (GND)))
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ = CARRY((!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\) # (!\SW~combout\(16)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011110000111111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(16),
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\);
-
--- Location: LCCOMB_X33_Y4_N28
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ $ (GND))) # (!\SW~combout\(17) & 
--- (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ & VCC))
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ $ (GND))) # (!\SW~combout\(17) & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ & VCC))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1396,14 +1393,488 @@ GENERIC MAP (
 PORT MAP (
 	datab => \SW~combout\(17),
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\);
 
--- Location: LCCOMB_X25_Y3_N16
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y5_N18
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ = (\SW~combout\(17) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\);
+
+-- Location: LCCOMB_X30_Y5_N22
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\)))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\);
+
+-- Location: LCCOMB_X31_Y5_N14
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\);
+
+-- Location: LCCOMB_X31_Y5_N16
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\);
+
+-- Location: LCCOMB_X31_Y5_N18
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\)))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\);
+
+-- Location: LCCOMB_X32_Y5_N22
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+
+-- Location: LCCOMB_X34_Y5_N22
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ = !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ = CARRY(!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\);
+
+-- Location: LCCOMB_X34_Y5_N26
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ = !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ = CARRY(!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\);
+
+-- Location: LCCOMB_X36_Y7_N20
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ = \SW~combout\(13) $ (VCC)
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ = CARRY(\SW~combout\(13))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(13),
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\);
+
+-- Location: LCCOMB_X36_Y7_N24
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ = (\SW~combout\(15) & ((GND) # (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\))) # (!\SW~combout\(15) & 
+-- (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ $ (GND)))
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\ = CARRY((\SW~combout\(15)) # (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(15),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\);
+
+-- Location: LCCOMB_X1_Y16_N10
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\SW~combout\(4) & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ $ (GND))) # (!\SW~combout\(4) & 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & VCC))
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((\SW~combout\(4) & !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(4),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+
+-- Location: LCCOMB_X1_Y16_N12
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ = !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ = CARRY(!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\);
+
+-- Location: LCCOMB_X2_Y16_N6
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\) # (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\)))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\ & 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\)))
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\ & 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\ & !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\);
+
+-- Location: LCCOMB_X2_Y17_N20
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\SW~combout\(3) & (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & VCC)) # (!\SW~combout\(3) & 
+-- (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\SW~combout\(3) & !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(3),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
+
+-- Location: LCFF_X1_Y26_N13
+\lcd_display_0|CLK_COUNT_400HZ[16]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[16]~52_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(16));
+
+-- Location: LCFF_X1_Y26_N7
+\lcd_display_0|CLK_COUNT_400HZ[13]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[13]~46_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(13));
+
+-- Location: LCFF_X1_Y27_N25
+\lcd_display_0|CLK_COUNT_400HZ[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[6]~32_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(6));
+
+-- Location: LCFF_X1_Y27_N21
+\lcd_display_0|CLK_COUNT_400HZ[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[4]~28_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(4));
+
+-- Location: LCFF_X1_Y27_N17
+\lcd_display_0|CLK_COUNT_400HZ[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[2]~24_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(2));
+
+-- Location: LCFF_X1_Y27_N13
+\lcd_display_0|CLK_COUNT_400HZ[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[0]~20_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(0));
+
+-- Location: LCCOMB_X1_Y27_N12
+\lcd_display_0|CLK_COUNT_400HZ[0]~20\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[0]~20_combout\ = \lcd_display_0|CLK_COUNT_400HZ\(0) $ (VCC)
+-- \lcd_display_0|CLK_COUNT_400HZ[0]~21\ = CARRY(\lcd_display_0|CLK_COUNT_400HZ\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(0),
+	datad => VCC,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[0]~20_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[0]~21\);
+
+-- Location: LCCOMB_X1_Y27_N16
+\lcd_display_0|CLK_COUNT_400HZ[2]~24\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[2]~24_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(2) & (\lcd_display_0|CLK_COUNT_400HZ[1]~23\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(2) & (!\lcd_display_0|CLK_COUNT_400HZ[1]~23\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[2]~25\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(2) & !\lcd_display_0|CLK_COUNT_400HZ[1]~23\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(2),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[1]~23\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[2]~24_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[2]~25\);
+
+-- Location: LCCOMB_X1_Y27_N20
+\lcd_display_0|CLK_COUNT_400HZ[4]~28\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[4]~28_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(4) & (\lcd_display_0|CLK_COUNT_400HZ[3]~27\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(4) & (!\lcd_display_0|CLK_COUNT_400HZ[3]~27\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[4]~29\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(4) & !\lcd_display_0|CLK_COUNT_400HZ[3]~27\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(4),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[3]~27\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[4]~28_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[4]~29\);
+
+-- Location: LCCOMB_X1_Y27_N24
+\lcd_display_0|CLK_COUNT_400HZ[6]~32\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[6]~32_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(6) & (\lcd_display_0|CLK_COUNT_400HZ[5]~31\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(6) & (!\lcd_display_0|CLK_COUNT_400HZ[5]~31\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[6]~33\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(6) & !\lcd_display_0|CLK_COUNT_400HZ[5]~31\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(6),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[5]~31\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[6]~32_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[6]~33\);
+
+-- Location: LCCOMB_X1_Y26_N6
+\lcd_display_0|CLK_COUNT_400HZ[13]~46\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[13]~46_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(13) & (!\lcd_display_0|CLK_COUNT_400HZ[12]~45\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(13) & ((\lcd_display_0|CLK_COUNT_400HZ[12]~45\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[13]~47\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[12]~45\) # (!\lcd_display_0|CLK_COUNT_400HZ\(13)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(13),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[12]~45\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[13]~46_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[13]~47\);
+
+-- Location: LCCOMB_X1_Y26_N12
+\lcd_display_0|CLK_COUNT_400HZ[16]~52\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[16]~52_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(16) & (\lcd_display_0|CLK_COUNT_400HZ[15]~51\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(16) & (!\lcd_display_0|CLK_COUNT_400HZ[15]~51\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[16]~53\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(16) & !\lcd_display_0|CLK_COUNT_400HZ[15]~51\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(16),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[15]~51\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[16]~52_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[16]~53\);
+
+-- Location: LCCOMB_X32_Y6_N0
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ = (\SW~combout\(17) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(17),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\);
+
+-- Location: LCCOMB_X32_Y6_N30
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(16),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\);
+
+-- Location: LCCOMB_X32_Y6_N8
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ = (\SW~combout\(15) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1411,31 +1882,30 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SW~combout\(17),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\);
+	datac => \SW~combout\(15),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\);
 
--- Location: LCCOMB_X27_Y3_N20
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N14
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\);
+	dataa => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\);
 
--- Location: LCCOMB_X27_Y3_N24
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N20
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1443,14 +1913,45 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\);
 
--- Location: LCCOMB_X25_Y3_N22
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N6
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\ = (\SW~combout\(14) & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\);
+
+-- Location: LCCOMB_X28_Y6_N18
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\ = (\SW~combout\(13) & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\);
+
+-- Location: LCCOMB_X31_Y6_N4
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1458,30 +1959,29 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\);
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\);
 
--- Location: LCCOMB_X28_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X28_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011110000",
+	lut_mask => "1100110000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\);
+	datab => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\);
 
--- Location: LCCOMB_X25_Y3_N0
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N20
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1489,14 +1989,171 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\);
+	datac => \SW~combout\(12),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\);
 
--- Location: LCCOMB_X25_Y3_N20
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N8
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\ = (\SW~combout\(13) & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(11))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \SW~combout\(11),
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\);
+
+-- Location: LCCOMB_X29_Y6_N10
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\);
+
+-- Location: LCCOMB_X29_Y6_N2
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\);
+
+-- Location: LCCOMB_X29_Y5_N14
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\);
+
+-- Location: LCCOMB_X29_Y5_N30
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\);
+
+-- Location: LCCOMB_X29_Y5_N12
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ = (\SW~combout\(15) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(15),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\);
+
+-- Location: LCCOMB_X31_Y5_N2
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\ = (\SW~combout\(14) & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\);
+
+-- Location: LCCOMB_X31_Y5_N12
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\);
+
+-- Location: LCCOMB_X31_Y5_N10
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\);
+
+-- Location: LCCOMB_X31_Y5_N6
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\);
+
+-- Location: LCCOMB_X31_Y5_N24
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\ = (\SW~combout\(13) & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1505,29 +2162,61 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datac => \SW~combout\(13),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\);
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\);
 
--- Location: LCCOMB_X29_Y3_N4
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y5_N12
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011001100000000",
+	lut_mask => "0000000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\);
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\);
 
--- Location: LCCOMB_X31_Y3_N28
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y5_N10
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & \SW~combout\(12))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\);
+
+-- Location: LCCOMB_X32_Y5_N6
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\);
+
+-- Location: LCCOMB_X33_Y5_N26
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & \SW~combout\(12))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1535,92 +2224,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
 	datac => \SW~combout\(12),
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\);
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\);
 
--- Location: LCCOMB_X30_Y3_N24
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N20
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(11))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	datac => \SW~combout\(11),
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\);
-
--- Location: LCCOMB_X29_Y3_N30
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\);
-
--- Location: LCCOMB_X29_Y3_N0
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\);
-
--- Location: LCCOMB_X33_Y4_N8
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & \SW~combout\(17))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \SW~combout\(17),
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\);
-
--- Location: LCCOMB_X34_Y3_N10
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(16),
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\);
-
--- Location: LCCOMB_X34_Y3_N16
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1628,93 +2240,14 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\);
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\);
 
--- Location: LCCOMB_X33_Y4_N18
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N24
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(14),
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\);
-
--- Location: LCCOMB_X33_Y3_N16
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\);
-
--- Location: LCCOMB_X33_Y3_N10
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\);
-
--- Location: LCCOMB_X33_Y3_N14
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\);
-
--- Location: LCCOMB_X33_Y3_N8
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010101000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(13),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\);
-
--- Location: LCCOMB_X32_Y3_N22
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(11))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1722,92 +2255,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\);
-
--- Location: LCCOMB_X31_Y3_N18
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\ = (\SW~combout\(12) & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \SW~combout\(12),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\);
-
--- Location: LCCOMB_X32_Y3_N24
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\);
-
--- Location: LCCOMB_X32_Y3_N10
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\);
-
--- Location: LCCOMB_X31_Y3_N12
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(12),
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\);
-
--- Location: LCCOMB_X31_Y3_N14
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(11))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
 	datad => \SW~combout\(11),
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\);
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\);
 
--- Location: LCCOMB_X33_Y5_N30
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X35_Y5_N20
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1815,15 +2271,31 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\);
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\);
 
--- Location: LCCOMB_X33_Y5_N2
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X35_Y5_N24
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\ = (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\);
+
+-- Location: LCCOMB_X34_Y5_N10
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1831,15 +2303,93 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\);
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\);
 
--- Location: LCCOMB_X33_Y5_N12
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X34_Y5_N12
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\);
+
+-- Location: LCCOMB_X34_Y5_N8
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\);
+
+-- Location: LCCOMB_X34_Y5_N14
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\);
+
+-- Location: LCCOMB_X36_Y7_N8
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ = (\SW~combout\(17) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(17),
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\);
+
+-- Location: LCCOMB_X36_Y7_N2
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(16),
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\);
+
+-- Location: LCCOMB_X36_Y7_N14
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ = (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1847,47 +2397,30 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\);
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\);
 
--- Location: LCCOMB_X33_Y4_N6
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X36_Y7_N12
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "1111000000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\);
+	datac => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\);
 
--- Location: LCCOMB_X33_Y4_N0
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X36_Y7_N10
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\);
-
--- Location: LCCOMB_X33_Y4_N10
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ = (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1895,30 +2428,75 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\);
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\);
 
--- Location: LCCOMB_X33_Y4_N14
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X37_Y7_N24
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011001100",
+	lut_mask => "1010000010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\);
+	dataa => \SW~combout\(12),
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\);
 
--- Location: LCCOMB_X34_Y4_N20
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X2_Y16_N20
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \SW~combout\(1),
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\);
+
+-- Location: LCCOMB_X1_Y16_N30
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6_combout\);
+
+-- Location: LCCOMB_X1_Y16_N0
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\ = (\SW~combout\(3) & \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(3),
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\);
+
+-- Location: LCCOMB_X2_Y17_N0
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(4))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1926,48 +2504,216 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \SW~combout\(13),
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\);
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datac => \SW~combout\(4),
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0_combout\);
 
--- Location: LCCOMB_X34_Y4_N24
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X2_Y17_N16
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\ = (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & \SW~combout\(12))
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100000000",
+	lut_mask => "0000000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	datad => \SW~combout\(12),
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\);
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3_combout\);
 
--- Location: LCCOMB_X28_Y3_N12
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X2_Y17_N28
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\) # 
--- ((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\))))
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(2))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1101110000000000",
+	lut_mask => "1100000011000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\);
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datac => \SW~combout\(2),
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4_combout\);
 
--- Location: LCCOMB_X28_Y3_N30
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X1_Y17_N14
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \SW~combout\(1),
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6_combout\);
+
+-- Location: LCCOMB_X5_Y27_N6
+\lcd_display_0|Selector15~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector15~0_combout\ = (\lcd_display_0|state.LINE2~regout\) # ((\lcd_display_0|state.MODE_SET~regout\) # ((\lcd_display_0|next_command.Print_String~regout\ & !\lcd_display_0|LCD_RS~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111110010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|next_command.Print_String~regout\,
+	datab => \lcd_display_0|LCD_RS~0_combout\,
+	datac => \lcd_display_0|state.LINE2~regout\,
+	datad => \lcd_display_0|state.MODE_SET~regout\,
+	combout => \lcd_display_0|Selector15~0_combout\);
+
+-- Location: LCCOMB_X4_Y27_N24
+\lcd_display_0|Selector8~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector8~5_combout\ = (\lcd_display_0|state.MODE_SET~regout\) # ((\lcd_display_0|DATA_BUS_VALUE\(1) & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|DATA_BUS_VALUE\(1),
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|state.HOLD~regout\,
+	datad => \lcd_display_0|state.MODE_SET~regout\,
+	combout => \lcd_display_0|Selector8~5_combout\);
+
+-- Location: LCFF_X3_Y27_N7
+\lcd_display_0|state.RESET3\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~34_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.RESET3~regout\);
+
+-- Location: LCFF_X3_Y27_N17
+\lcd_display_0|state.RESET2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~37_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.RESET2~regout\);
+
+-- Location: LCFF_X3_Y27_N9
+\lcd_display_0|next_command.RESET3\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector19~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.RESET3~regout\);
+
+-- Location: LCCOMB_X3_Y27_N6
+\lcd_display_0|state~34\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~34_combout\ = (\lcd_display_0|next_command.RESET3~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|next_command.RESET3~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~34_combout\);
+
+-- Location: LCFF_X3_Y27_N31
+\lcd_display_0|next_command.RESET2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector18~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.RESET2~regout\);
+
+-- Location: LCCOMB_X3_Y27_N16
+\lcd_display_0|state~37\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~37_combout\ = (!\lcd_display_0|next_command.RESET2~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.RESET2~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~37_combout\);
+
+-- Location: LCCOMB_X5_Y27_N8
+\lcd_display_0|Selector17~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector17~0_combout\ = (\lcd_display_0|next_command.RETURN_HOME~regout\ & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.RETURN_HOME~regout\,
+	datac => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|Selector17~0_combout\);
+
+-- Location: LCCOMB_X3_Y27_N8
+\lcd_display_0|Selector19~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector19~0_combout\ = (\lcd_display_0|state.RESET2~regout\) # ((\lcd_display_0|next_command.RESET3~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RESET2~regout\,
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datac => \lcd_display_0|next_command.RESET3~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|Selector19~0_combout\);
+
+-- Location: LCCOMB_X3_Y27_N30
+\lcd_display_0|Selector18~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector18~0_combout\ = (\lcd_display_0|state.RESET1~regout\ & ((\lcd_display_0|next_command.RESET2~regout\) # ((!\lcd_display_0|state.HOLD~regout\ & !\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RESET1~regout\,
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datac => \lcd_display_0|next_command.RESET2~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|Selector18~0_combout\);
+
+-- Location: LCCOMB_X31_Y6_N26
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1975,103 +2721,1978 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\);
 
--- Location: LCCOMB_X29_Y3_N26
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N6
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # 
--- ((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011000010100000",
+	lut_mask => "1100000011001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\);
 
--- Location: LCCOMB_X29_Y3_N28
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N28
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # 
--- ((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011101000000000",
+	lut_mask => "1000100011001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\);
 
--- Location: LCCOMB_X33_Y3_N0
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\) # 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010000010101000",
+	lut_mask => "1000100011001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\);
 
--- Location: LCCOMB_X27_Y3_N22
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N26
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & ((\SW~combout\(15)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110000000100000",
+	lut_mask => "1000100011001000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datad => \SW~combout\(15),
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\);
 
--- Location: LCCOMB_X29_Y3_N6
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y5_N0
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & ((\SW~combout\(14)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\) # ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1110010000000000",
+	lut_mask => "1010111000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\);
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\);
+
+-- Location: LCCOMB_X32_Y6_N2
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(17))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(17),
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\);
+
+-- Location: LCCOMB_X32_Y6_N4
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(16))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101100000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datab => \SW~combout\(16),
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\);
+
+-- Location: LCCOMB_X32_Y6_N20
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & (\SW~combout\(14))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(14),
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\);
+
+-- Location: LCCOMB_X32_Y5_N2
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & ((\SW~combout\(13)))) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datac => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\);
+
+-- Location: LCCOMB_X3_Y27_N12
+\lcd_display_0|Selector7~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector7~2_combout\ = (\lcd_display_0|CHAR_COUNT\(1) & (!\lcd_display_0|CHAR_COUNT\(4) & ((!\lcd_display_0|CHAR_COUNT\(2))))) # (!\lcd_display_0|CHAR_COUNT\(1) & (\lcd_display_0|CHAR_COUNT\(4) $ (((\lcd_display_0|CHAR_COUNT\(0)) # 
+-- (\lcd_display_0|CHAR_COUNT\(2))))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000101010110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datab => \lcd_display_0|CHAR_COUNT\(1),
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector7~2_combout\);
+
+-- Location: LCCOMB_X3_Y27_N14
+\lcd_display_0|Selector5~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector5~2_combout\ = (\lcd_display_0|CHAR_COUNT\(2) & (!\lcd_display_0|CHAR_COUNT\(4))) # (!\lcd_display_0|CHAR_COUNT\(2) & ((\lcd_display_0|CHAR_COUNT\(1) & ((!\lcd_display_0|CHAR_COUNT\(0)))) # (!\lcd_display_0|CHAR_COUNT\(1) & 
+-- (\lcd_display_0|CHAR_COUNT\(4)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010100101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datab => \lcd_display_0|CHAR_COUNT\(1),
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector5~2_combout\);
+
+-- Location: LCCOMB_X4_Y27_N6
+\lcd_display_0|Selector9~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector9~3_combout\ = (\lcd_display_0|state.DISPLAY_CLEAR~regout\) # ((\lcd_display_0|DATA_BUS_VALUE\(0) & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111011101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|DATA_BUS_VALUE\(0),
+	datab => \lcd_display_0|state.DISPLAY_CLEAR~regout\,
+	datac => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|Selector9~3_combout\);
+
+-- Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\CLOCK_50~I\ : cycloneii_io
+-- pragma translate_off
+GENERIC MAP (
+	input_async_reset => "none",
+	input_power_up => "low",
+	input_register_mode => "none",
+	input_sync_reset => "none",
+	oe_async_reset => "none",
+	oe_power_up => "low",
+	oe_register_mode => "none",
+	oe_sync_reset => "none",
+	operation_mode => "input",
+	output_async_reset => "none",
+	output_power_up => "low",
+	output_register_mode => "none",
+	output_sync_reset => "none")
+-- pragma translate_on
+PORT MAP (
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	devoe => ww_devoe,
+	oe => GND,
+	padio => ww_CLOCK_50,
+	combout => \CLOCK_50~combout\);
+
+-- Location: CLKCTRL_G2
+\CLOCK_50~clkctrl\ : cycloneii_clkctrl
+-- pragma translate_off
+GENERIC MAP (
+	clock_type => "global clock",
+	ena_register_mode => "none")
+-- pragma translate_on
+PORT MAP (
+	inclk => \CLOCK_50~clkctrl_INCLK_bus\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	outclk => \CLOCK_50~clkctrl_outclk\);
+
+-- Location: LCCOMB_X2_Y27_N4
+\lcd_display_0|CHAR_COUNT[0]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CHAR_COUNT[0]~5_combout\ = \lcd_display_0|CHAR_COUNT\(0) $ (VCC)
+-- \lcd_display_0|CHAR_COUNT[0]~6\ = CARRY(\lcd_display_0|CHAR_COUNT\(0))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CHAR_COUNT\(0),
+	datad => VCC,
+	combout => \lcd_display_0|CHAR_COUNT[0]~5_combout\,
+	cout => \lcd_display_0|CHAR_COUNT[0]~6\);
+
+-- Location: LCCOMB_X3_Y27_N24
+\lcd_display_0|state.RESET1~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state.RESET1~feeder_combout\ = VCC
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	combout => \lcd_display_0|state.RESET1~feeder_combout\);
+
+-- Location: LCCOMB_X1_Y27_N14
+\lcd_display_0|CLK_COUNT_400HZ[1]~22\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[1]~22_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(1) & (!\lcd_display_0|CLK_COUNT_400HZ[0]~21\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(1) & ((\lcd_display_0|CLK_COUNT_400HZ[0]~21\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[1]~23\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[0]~21\) # (!\lcd_display_0|CLK_COUNT_400HZ\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(1),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[0]~21\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[1]~22_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[1]~23\);
+
+-- Location: LCFF_X1_Y27_N15
+\lcd_display_0|CLK_COUNT_400HZ[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[1]~22_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(1));
+
+-- Location: LCCOMB_X1_Y27_N18
+\lcd_display_0|CLK_COUNT_400HZ[3]~26\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[3]~26_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(3) & (!\lcd_display_0|CLK_COUNT_400HZ[2]~25\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(3) & ((\lcd_display_0|CLK_COUNT_400HZ[2]~25\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[3]~27\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[2]~25\) # (!\lcd_display_0|CLK_COUNT_400HZ\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(3),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[2]~25\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[3]~26_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[3]~27\);
+
+-- Location: LCFF_X1_Y27_N19
+\lcd_display_0|CLK_COUNT_400HZ[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[3]~26_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(3));
+
+-- Location: LCCOMB_X1_Y27_N22
+\lcd_display_0|CLK_COUNT_400HZ[5]~30\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[5]~30_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(5) & (!\lcd_display_0|CLK_COUNT_400HZ[4]~29\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(5) & ((\lcd_display_0|CLK_COUNT_400HZ[4]~29\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[5]~31\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[4]~29\) # (!\lcd_display_0|CLK_COUNT_400HZ\(5)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(5),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[4]~29\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[5]~30_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[5]~31\);
+
+-- Location: LCFF_X1_Y27_N23
+\lcd_display_0|CLK_COUNT_400HZ[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[5]~30_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(5));
+
+-- Location: LCCOMB_X1_Y27_N26
+\lcd_display_0|CLK_COUNT_400HZ[7]~34\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[7]~34_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(7) & (!\lcd_display_0|CLK_COUNT_400HZ[6]~33\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(7) & ((\lcd_display_0|CLK_COUNT_400HZ[6]~33\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[7]~35\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[6]~33\) # (!\lcd_display_0|CLK_COUNT_400HZ\(7)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(7),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[6]~33\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[7]~34_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[7]~35\);
+
+-- Location: LCFF_X1_Y27_N27
+\lcd_display_0|CLK_COUNT_400HZ[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[7]~34_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(7));
+
+-- Location: LCCOMB_X1_Y27_N28
+\lcd_display_0|CLK_COUNT_400HZ[8]~36\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[8]~36_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(8) & (\lcd_display_0|CLK_COUNT_400HZ[7]~35\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(8) & (!\lcd_display_0|CLK_COUNT_400HZ[7]~35\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[8]~37\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(8) & !\lcd_display_0|CLK_COUNT_400HZ[7]~35\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(8),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[7]~35\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[8]~36_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[8]~37\);
+
+-- Location: LCFF_X1_Y27_N29
+\lcd_display_0|CLK_COUNT_400HZ[8]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[8]~36_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(8));
+
+-- Location: LCCOMB_X1_Y27_N30
+\lcd_display_0|CLK_COUNT_400HZ[9]~38\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[9]~38_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(9) & (!\lcd_display_0|CLK_COUNT_400HZ[8]~37\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(9) & ((\lcd_display_0|CLK_COUNT_400HZ[8]~37\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[9]~39\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[8]~37\) # (!\lcd_display_0|CLK_COUNT_400HZ\(9)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(9),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[8]~37\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[9]~38_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[9]~39\);
+
+-- Location: LCFF_X1_Y27_N31
+\lcd_display_0|CLK_COUNT_400HZ[9]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[9]~38_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(9));
+
+-- Location: LCCOMB_X1_Y26_N0
+\lcd_display_0|CLK_COUNT_400HZ[10]~40\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[10]~40_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(10) & (\lcd_display_0|CLK_COUNT_400HZ[9]~39\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(10) & (!\lcd_display_0|CLK_COUNT_400HZ[9]~39\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[10]~41\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(10) & !\lcd_display_0|CLK_COUNT_400HZ[9]~39\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(10),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[9]~39\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[10]~40_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[10]~41\);
+
+-- Location: LCCOMB_X1_Y27_N8
+\lcd_display_0|CLK_COUNT_400HZ[10]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[10]~feeder_combout\ = \lcd_display_0|CLK_COUNT_400HZ[10]~40_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \lcd_display_0|CLK_COUNT_400HZ[10]~40_combout\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[10]~feeder_combout\);
+
+-- Location: LCFF_X1_Y27_N9
+\lcd_display_0|CLK_COUNT_400HZ[10]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[10]~feeder_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(10));
+
+-- Location: LCCOMB_X1_Y27_N2
+\lcd_display_0|LessThan0~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LessThan0~2_combout\ = (!\lcd_display_0|CLK_COUNT_400HZ\(7) & (!\lcd_display_0|CLK_COUNT_400HZ\(8) & ((!\lcd_display_0|CLK_COUNT_400HZ\(5)) # (!\lcd_display_0|CLK_COUNT_400HZ\(6)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000010011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(6),
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(7),
+	datac => \lcd_display_0|CLK_COUNT_400HZ\(5),
+	datad => \lcd_display_0|CLK_COUNT_400HZ\(8),
+	combout => \lcd_display_0|LessThan0~2_combout\);
+
+-- Location: LCCOMB_X1_Y27_N4
+\lcd_display_0|LessThan0~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LessThan0~3_combout\ = ((!\lcd_display_0|CLK_COUNT_400HZ\(10) & ((\lcd_display_0|LessThan0~2_combout\) # (!\lcd_display_0|CLK_COUNT_400HZ\(9))))) # (!\lcd_display_0|CLK_COUNT_400HZ\(11))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101111101010111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(11),
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(9),
+	datac => \lcd_display_0|CLK_COUNT_400HZ\(10),
+	datad => \lcd_display_0|LessThan0~2_combout\,
+	combout => \lcd_display_0|LessThan0~3_combout\);
+
+-- Location: LCCOMB_X1_Y26_N2
+\lcd_display_0|CLK_COUNT_400HZ[11]~42\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[11]~42_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(11) & (!\lcd_display_0|CLK_COUNT_400HZ[10]~41\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(11) & ((\lcd_display_0|CLK_COUNT_400HZ[10]~41\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[11]~43\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[10]~41\) # (!\lcd_display_0|CLK_COUNT_400HZ\(11)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(11),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[10]~41\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[11]~42_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[11]~43\);
+
+-- Location: LCCOMB_X1_Y27_N6
+\lcd_display_0|CLK_COUNT_400HZ[11]~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[11]~feeder_combout\ = \lcd_display_0|CLK_COUNT_400HZ[11]~42_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \lcd_display_0|CLK_COUNT_400HZ[11]~42_combout\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[11]~feeder_combout\);
+
+-- Location: LCFF_X1_Y27_N7
+\lcd_display_0|CLK_COUNT_400HZ[11]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[11]~feeder_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(11));
+
+-- Location: LCCOMB_X1_Y26_N4
+\lcd_display_0|CLK_COUNT_400HZ[12]~44\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[12]~44_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(12) & (\lcd_display_0|CLK_COUNT_400HZ[11]~43\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(12) & (!\lcd_display_0|CLK_COUNT_400HZ[11]~43\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[12]~45\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(12) & !\lcd_display_0|CLK_COUNT_400HZ[11]~43\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(12),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[11]~43\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[12]~44_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[12]~45\);
+
+-- Location: LCFF_X1_Y26_N5
+\lcd_display_0|CLK_COUNT_400HZ[12]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[12]~44_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(12));
+
+-- Location: LCCOMB_X1_Y26_N8
+\lcd_display_0|CLK_COUNT_400HZ[14]~48\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[14]~48_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(14) & (\lcd_display_0|CLK_COUNT_400HZ[13]~47\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(14) & (!\lcd_display_0|CLK_COUNT_400HZ[13]~47\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[14]~49\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(14) & !\lcd_display_0|CLK_COUNT_400HZ[13]~47\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(14),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[13]~47\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[14]~48_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[14]~49\);
+
+-- Location: LCFF_X1_Y26_N9
+\lcd_display_0|CLK_COUNT_400HZ[14]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[14]~48_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(14));
+
+-- Location: LCCOMB_X1_Y26_N10
+\lcd_display_0|CLK_COUNT_400HZ[15]~50\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[15]~50_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(15) & (!\lcd_display_0|CLK_COUNT_400HZ[14]~49\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(15) & ((\lcd_display_0|CLK_COUNT_400HZ[14]~49\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[15]~51\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[14]~49\) # (!\lcd_display_0|CLK_COUNT_400HZ\(15)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(15),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[14]~49\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[15]~50_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[15]~51\);
+
+-- Location: LCFF_X1_Y26_N11
+\lcd_display_0|CLK_COUNT_400HZ[15]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[15]~50_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(15));
+
+-- Location: LCCOMB_X1_Y26_N26
+\lcd_display_0|LessThan0~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LessThan0~1_combout\ = ((!\lcd_display_0|CLK_COUNT_400HZ\(15)) # (!\lcd_display_0|CLK_COUNT_400HZ\(14))) # (!\lcd_display_0|CLK_COUNT_400HZ\(13))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101111111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(13),
+	datac => \lcd_display_0|CLK_COUNT_400HZ\(14),
+	datad => \lcd_display_0|CLK_COUNT_400HZ\(15),
+	combout => \lcd_display_0|LessThan0~1_combout\);
+
+-- Location: LCCOMB_X1_Y26_N14
+\lcd_display_0|CLK_COUNT_400HZ[17]~54\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[17]~54_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(17) & (!\lcd_display_0|CLK_COUNT_400HZ[16]~53\)) # (!\lcd_display_0|CLK_COUNT_400HZ\(17) & ((\lcd_display_0|CLK_COUNT_400HZ[16]~53\) # (GND)))
+-- \lcd_display_0|CLK_COUNT_400HZ[17]~55\ = CARRY((!\lcd_display_0|CLK_COUNT_400HZ[16]~53\) # (!\lcd_display_0|CLK_COUNT_400HZ\(17)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011110000111111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(17),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[16]~53\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[17]~54_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[17]~55\);
+
+-- Location: LCFF_X1_Y26_N15
+\lcd_display_0|CLK_COUNT_400HZ[17]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[17]~54_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(17));
+
+-- Location: LCCOMB_X1_Y26_N16
+\lcd_display_0|CLK_COUNT_400HZ[18]~56\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[18]~56_combout\ = (\lcd_display_0|CLK_COUNT_400HZ\(18) & (\lcd_display_0|CLK_COUNT_400HZ[17]~55\ $ (GND))) # (!\lcd_display_0|CLK_COUNT_400HZ\(18) & (!\lcd_display_0|CLK_COUNT_400HZ[17]~55\ & VCC))
+-- \lcd_display_0|CLK_COUNT_400HZ[18]~57\ = CARRY((\lcd_display_0|CLK_COUNT_400HZ\(18) & !\lcd_display_0|CLK_COUNT_400HZ[17]~55\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(18),
+	datad => VCC,
+	cin => \lcd_display_0|CLK_COUNT_400HZ[17]~55\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[18]~56_combout\,
+	cout => \lcd_display_0|CLK_COUNT_400HZ[18]~57\);
+
+-- Location: LCFF_X1_Y26_N17
+\lcd_display_0|CLK_COUNT_400HZ[18]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[18]~56_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(18));
+
+-- Location: LCCOMB_X1_Y26_N18
+\lcd_display_0|CLK_COUNT_400HZ[19]~58\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_COUNT_400HZ[19]~58_combout\ = \lcd_display_0|CLK_COUNT_400HZ[18]~57\ $ (\lcd_display_0|CLK_COUNT_400HZ\(19))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111111110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \lcd_display_0|CLK_COUNT_400HZ\(19),
+	cin => \lcd_display_0|CLK_COUNT_400HZ[18]~57\,
+	combout => \lcd_display_0|CLK_COUNT_400HZ[19]~58_combout\);
+
+-- Location: LCFF_X1_Y26_N19
+\lcd_display_0|CLK_COUNT_400HZ[19]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_COUNT_400HZ[19]~58_combout\,
+	sclr => \lcd_display_0|LessThan0~4_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_COUNT_400HZ\(19));
+
+-- Location: LCCOMB_X1_Y26_N28
+\lcd_display_0|LessThan0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LessThan0~0_combout\ = (!\lcd_display_0|CLK_COUNT_400HZ\(16) & (!\lcd_display_0|CLK_COUNT_400HZ\(17) & (!\lcd_display_0|CLK_COUNT_400HZ\(18) & !\lcd_display_0|CLK_COUNT_400HZ\(19))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(16),
+	datab => \lcd_display_0|CLK_COUNT_400HZ\(17),
+	datac => \lcd_display_0|CLK_COUNT_400HZ\(18),
+	datad => \lcd_display_0|CLK_COUNT_400HZ\(19),
+	combout => \lcd_display_0|LessThan0~0_combout\);
+
+-- Location: LCCOMB_X1_Y27_N10
+\lcd_display_0|LessThan0~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LessThan0~4_combout\ = ((!\lcd_display_0|LessThan0~1_combout\ & ((\lcd_display_0|CLK_COUNT_400HZ\(12)) # (!\lcd_display_0|LessThan0~3_combout\)))) # (!\lcd_display_0|LessThan0~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000101111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CLK_COUNT_400HZ\(12),
+	datab => \lcd_display_0|LessThan0~3_combout\,
+	datac => \lcd_display_0|LessThan0~1_combout\,
+	datad => \lcd_display_0|LessThan0~0_combout\,
+	combout => \lcd_display_0|LessThan0~4_combout\);
+
+-- Location: LCCOMB_X1_Y27_N0
+\lcd_display_0|CLK_400HZ_Enable~feeder\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CLK_400HZ_Enable~feeder_combout\ = \lcd_display_0|LessThan0~4_combout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datad => \lcd_display_0|LessThan0~4_combout\,
+	combout => \lcd_display_0|CLK_400HZ_Enable~feeder_combout\);
+
+-- Location: LCFF_X1_Y27_N1
+\lcd_display_0|CLK_400HZ_Enable\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CLK_400HZ_Enable~feeder_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CLK_400HZ_Enable~regout\);
+
+-- Location: LCFF_X3_Y27_N25
+\lcd_display_0|state.RESET1\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state.RESET1~feeder_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.RESET1~regout\);
+
+-- Location: LCCOMB_X2_Y27_N14
+\lcd_display_0|Selector26~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector26~0_combout\ = (\lcd_display_0|CHAR_COUNT\(0) & \lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|state.RESET1~regout\,
+	combout => \lcd_display_0|Selector26~0_combout\);
+
+-- Location: LCCOMB_X5_Y27_N28
+\lcd_display_0|LCD_RS~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LCD_RS~0_combout\ = (!\lcd_display_0|state.DROP_LCD_E~regout\ & !\lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|LCD_RS~0_combout\);
+
+-- Location: LCFF_X5_Y27_N9
+\lcd_display_0|state.DROP_LCD_E\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	sdata => \lcd_display_0|LCD_RS~0_combout\,
+	sload => VCC,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.DROP_LCD_E~regout\);
+
+-- Location: LCFF_X4_Y27_N25
+\lcd_display_0|state.HOLD\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	sdata => \lcd_display_0|state.DROP_LCD_E~regout\,
+	sload => VCC,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.HOLD~regout\);
+
+-- Location: LCCOMB_X2_Y27_N6
+\lcd_display_0|CHAR_COUNT[1]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CHAR_COUNT[1]~7_combout\ = (\lcd_display_0|CHAR_COUNT\(1) & (!\lcd_display_0|CHAR_COUNT[0]~6\)) # (!\lcd_display_0|CHAR_COUNT\(1) & ((\lcd_display_0|CHAR_COUNT[0]~6\) # (GND)))
+-- \lcd_display_0|CHAR_COUNT[1]~8\ = CARRY((!\lcd_display_0|CHAR_COUNT[0]~6\) # (!\lcd_display_0|CHAR_COUNT\(1)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(1),
+	datad => VCC,
+	cin => \lcd_display_0|CHAR_COUNT[0]~6\,
+	combout => \lcd_display_0|CHAR_COUNT[1]~7_combout\,
+	cout => \lcd_display_0|CHAR_COUNT[1]~8\);
+
+-- Location: LCCOMB_X2_Y27_N8
+\lcd_display_0|CHAR_COUNT[2]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CHAR_COUNT[2]~9_combout\ = (\lcd_display_0|CHAR_COUNT\(2) & (\lcd_display_0|CHAR_COUNT[1]~8\ $ (GND))) # (!\lcd_display_0|CHAR_COUNT\(2) & (!\lcd_display_0|CHAR_COUNT[1]~8\ & VCC))
+-- \lcd_display_0|CHAR_COUNT[2]~10\ = CARRY((\lcd_display_0|CHAR_COUNT\(2) & !\lcd_display_0|CHAR_COUNT[1]~8\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|CHAR_COUNT\(2),
+	datad => VCC,
+	cin => \lcd_display_0|CHAR_COUNT[1]~8\,
+	combout => \lcd_display_0|CHAR_COUNT[2]~9_combout\,
+	cout => \lcd_display_0|CHAR_COUNT[2]~10\);
+
+-- Location: LCCOMB_X2_Y27_N30
+\lcd_display_0|Selector24~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector24~0_combout\ = (\lcd_display_0|CHAR_COUNT\(2) & \lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|CHAR_COUNT\(2),
+	datad => \lcd_display_0|state.RESET1~regout\,
+	combout => \lcd_display_0|Selector24~0_combout\);
+
+-- Location: LCFF_X2_Y27_N9
+\lcd_display_0|CHAR_COUNT[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CHAR_COUNT[2]~9_combout\,
+	sdata => \lcd_display_0|Selector24~0_combout\,
+	sload => \lcd_display_0|ALT_INV_state.Print_String~regout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CHAR_COUNT\(2));
+
+-- Location: LCCOMB_X2_Y27_N10
+\lcd_display_0|CHAR_COUNT[3]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CHAR_COUNT[3]~11_combout\ = (\lcd_display_0|CHAR_COUNT\(3) & (!\lcd_display_0|CHAR_COUNT[2]~10\)) # (!\lcd_display_0|CHAR_COUNT\(3) & ((\lcd_display_0|CHAR_COUNT[2]~10\) # (GND)))
+-- \lcd_display_0|CHAR_COUNT[3]~12\ = CARRY((!\lcd_display_0|CHAR_COUNT[2]~10\) # (!\lcd_display_0|CHAR_COUNT\(3)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(3),
+	datad => VCC,
+	cin => \lcd_display_0|CHAR_COUNT[2]~10\,
+	combout => \lcd_display_0|CHAR_COUNT[3]~11_combout\,
+	cout => \lcd_display_0|CHAR_COUNT[3]~12\);
+
+-- Location: LCCOMB_X2_Y27_N20
+\lcd_display_0|Selector23~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector23~0_combout\ = (\lcd_display_0|CHAR_COUNT\(3) & \lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(3),
+	datad => \lcd_display_0|state.RESET1~regout\,
+	combout => \lcd_display_0|Selector23~0_combout\);
+
+-- Location: LCFF_X2_Y27_N11
+\lcd_display_0|CHAR_COUNT[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CHAR_COUNT[3]~11_combout\,
+	sdata => \lcd_display_0|Selector23~0_combout\,
+	sload => \lcd_display_0|ALT_INV_state.Print_String~regout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CHAR_COUNT\(3));
+
+-- Location: LCCOMB_X5_Y27_N22
+\lcd_display_0|Equal2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Equal2~0_combout\ = (\lcd_display_0|CHAR_COUNT\(1) & (\lcd_display_0|CHAR_COUNT\(0) & (\lcd_display_0|CHAR_COUNT\(3) & \lcd_display_0|CHAR_COUNT\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(1),
+	datab => \lcd_display_0|CHAR_COUNT\(0),
+	datac => \lcd_display_0|CHAR_COUNT\(3),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Equal2~0_combout\);
+
+-- Location: LCCOMB_X2_Y27_N12
+\lcd_display_0|CHAR_COUNT[4]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|CHAR_COUNT[4]~13_combout\ = \lcd_display_0|CHAR_COUNT[3]~12\ $ (!\lcd_display_0|CHAR_COUNT\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => \lcd_display_0|CHAR_COUNT\(4),
+	cin => \lcd_display_0|CHAR_COUNT[3]~12\,
+	combout => \lcd_display_0|CHAR_COUNT[4]~13_combout\);
+
+-- Location: LCCOMB_X2_Y27_N26
+\lcd_display_0|Selector22~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector22~0_combout\ = (\lcd_display_0|CHAR_COUNT\(4) & \lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datad => \lcd_display_0|state.RESET1~regout\,
+	combout => \lcd_display_0|Selector22~0_combout\);
+
+-- Location: LCFF_X2_Y27_N13
+\lcd_display_0|CHAR_COUNT[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CHAR_COUNT[4]~13_combout\,
+	sdata => \lcd_display_0|Selector22~0_combout\,
+	sload => \lcd_display_0|ALT_INV_state.Print_String~regout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CHAR_COUNT\(4));
+
+-- Location: LCCOMB_X5_Y27_N2
+\lcd_display_0|Selector17~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector17~1_combout\ = (\lcd_display_0|Selector17~0_combout\) # ((\lcd_display_0|Equal2~0_combout\ & (\lcd_display_0|CHAR_COUNT\(4) & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110101010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector17~0_combout\,
+	datab => \lcd_display_0|Equal2~0_combout\,
+	datac => \lcd_display_0|CHAR_COUNT\(4),
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector17~1_combout\);
+
+-- Location: LCFF_X5_Y27_N3
+\lcd_display_0|next_command.RETURN_HOME\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector17~1_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.RETURN_HOME~regout\);
+
+-- Location: LCCOMB_X5_Y27_N24
+\lcd_display_0|state~29\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~29_combout\ = (\lcd_display_0|state.HOLD~regout\ & \lcd_display_0|next_command.RETURN_HOME~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datad => \lcd_display_0|next_command.RETURN_HOME~regout\,
+	combout => \lcd_display_0|state~29_combout\);
+
+-- Location: LCFF_X5_Y27_N25
+\lcd_display_0|state.RETURN_HOME\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~29_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.RETURN_HOME~regout\);
+
+-- Location: LCCOMB_X5_Y27_N10
+\lcd_display_0|Selector15~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector15~1_combout\ = (\lcd_display_0|Selector15~0_combout\) # ((\lcd_display_0|state.RETURN_HOME~regout\) # ((!\lcd_display_0|Equal2~0_combout\ & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101111111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector15~0_combout\,
+	datab => \lcd_display_0|Equal2~0_combout\,
+	datac => \lcd_display_0|state.RETURN_HOME~regout\,
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector15~1_combout\);
+
+-- Location: LCFF_X5_Y27_N11
+\lcd_display_0|next_command.Print_String\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector15~1_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.Print_String~regout\);
+
+-- Location: LCCOMB_X5_Y27_N18
+\lcd_display_0|state~28\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~28_combout\ = (\lcd_display_0|state.HOLD~regout\ & \lcd_display_0|next_command.Print_String~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datad => \lcd_display_0|next_command.Print_String~regout\,
+	combout => \lcd_display_0|state~28_combout\);
+
+-- Location: LCFF_X5_Y27_N19
+\lcd_display_0|state.Print_String\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~28_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.Print_String~regout\);
+
+-- Location: LCFF_X2_Y27_N5
+\lcd_display_0|CHAR_COUNT[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CHAR_COUNT[0]~5_combout\,
+	sdata => \lcd_display_0|Selector26~0_combout\,
+	sload => \lcd_display_0|ALT_INV_state.Print_String~regout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CHAR_COUNT\(0));
+
+-- Location: LCCOMB_X2_Y27_N24
+\lcd_display_0|Selector25~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector25~0_combout\ = (\lcd_display_0|CHAR_COUNT\(1) & \lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(1),
+	datad => \lcd_display_0|state.RESET1~regout\,
+	combout => \lcd_display_0|Selector25~0_combout\);
+
+-- Location: LCFF_X2_Y27_N7
+\lcd_display_0|CHAR_COUNT[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|CHAR_COUNT[1]~7_combout\,
+	sdata => \lcd_display_0|Selector25~0_combout\,
+	sload => \lcd_display_0|ALT_INV_state.Print_String~regout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|CHAR_COUNT\(1));
+
+-- Location: LCCOMB_X3_Y27_N28
+\lcd_display_0|Selector9~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector9~2_combout\ = (\lcd_display_0|CHAR_COUNT\(0) & (!\lcd_display_0|CHAR_COUNT\(4) & (!\lcd_display_0|CHAR_COUNT\(1)))) # (!\lcd_display_0|CHAR_COUNT\(0) & (((!\lcd_display_0|CHAR_COUNT\(2)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000000011111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datab => \lcd_display_0|CHAR_COUNT\(1),
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector9~2_combout\);
+
+-- Location: LCCOMB_X4_Y27_N10
+\lcd_display_0|Selector9~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector9~4_combout\ = (\lcd_display_0|Selector9~3_combout\) # ((\lcd_display_0|Selector9~2_combout\ & (!\lcd_display_0|CHAR_COUNT\(3) & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010111010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector9~3_combout\,
+	datab => \lcd_display_0|Selector9~2_combout\,
+	datac => \lcd_display_0|CHAR_COUNT\(3),
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector9~4_combout\);
+
+-- Location: LCFF_X4_Y27_N11
+\lcd_display_0|DATA_BUS_VALUE[0]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector9~4_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(0));
+
+-- Location: LCCOMB_X3_Y27_N10
+\lcd_display_0|Selector8~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector8~7_combout\ = (\lcd_display_0|CHAR_COUNT\(2)) # (\lcd_display_0|CHAR_COUNT\(4) $ (((\lcd_display_0|CHAR_COUNT\(1) & !\lcd_display_0|CHAR_COUNT\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111110100110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datab => \lcd_display_0|CHAR_COUNT\(1),
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector8~7_combout\);
+
+-- Location: LCCOMB_X4_Y27_N16
+\lcd_display_0|Selector8~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector8~6_combout\ = (\lcd_display_0|Selector8~5_combout\) # ((\lcd_display_0|state.Print_String~regout\ & (!\lcd_display_0|CHAR_COUNT\(3) & !\lcd_display_0|Selector8~7_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010101010101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector8~5_combout\,
+	datab => \lcd_display_0|state.Print_String~regout\,
+	datac => \lcd_display_0|CHAR_COUNT\(3),
+	datad => \lcd_display_0|Selector8~7_combout\,
+	combout => \lcd_display_0|Selector8~6_combout\);
+
+-- Location: LCFF_X4_Y27_N17
+\lcd_display_0|DATA_BUS_VALUE[1]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector8~6_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(1));
+
+-- Location: LCCOMB_X4_Y27_N2
+\lcd_display_0|Selector21~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector21~0_combout\ = (\lcd_display_0|state.DISPLAY_OFF~regout\) # ((\lcd_display_0|next_command.DISPLAY_CLEAR~regout\ & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.DISPLAY_OFF~regout\,
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|next_command.DISPLAY_CLEAR~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|Selector21~0_combout\);
+
+-- Location: LCFF_X4_Y27_N3
+\lcd_display_0|next_command.DISPLAY_CLEAR\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector21~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.DISPLAY_CLEAR~regout\);
+
+-- Location: LCCOMB_X4_Y27_N26
+\lcd_display_0|state~32\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~32_combout\ = (\lcd_display_0|next_command.DISPLAY_CLEAR~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.DISPLAY_CLEAR~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~32_combout\);
+
+-- Location: LCFF_X4_Y27_N27
+\lcd_display_0|state.DISPLAY_CLEAR\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~32_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.DISPLAY_CLEAR~regout\);
+
+-- Location: LCCOMB_X4_Y27_N12
+\lcd_display_0|Selector13~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector13~0_combout\ = (\lcd_display_0|state.DISPLAY_CLEAR~regout\) # ((\lcd_display_0|next_command.DISPLAY_ON~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.HOLD~regout\,
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|next_command.DISPLAY_ON~regout\,
+	datad => \lcd_display_0|state.DISPLAY_CLEAR~regout\,
+	combout => \lcd_display_0|Selector13~0_combout\);
+
+-- Location: LCFF_X4_Y27_N13
+\lcd_display_0|next_command.DISPLAY_ON\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector13~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.DISPLAY_ON~regout\);
+
+-- Location: LCCOMB_X4_Y27_N8
+\lcd_display_0|state~33\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~33_combout\ = (\lcd_display_0|state.HOLD~regout\ & \lcd_display_0|next_command.DISPLAY_ON~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datad => \lcd_display_0|next_command.DISPLAY_ON~regout\,
+	combout => \lcd_display_0|state~33_combout\);
+
+-- Location: LCFF_X4_Y27_N9
+\lcd_display_0|state.DISPLAY_ON\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~33_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.DISPLAY_ON~regout\);
+
+-- Location: LCCOMB_X4_Y27_N0
+\lcd_display_0|Selector14~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector14~0_combout\ = (\lcd_display_0|state.DISPLAY_ON~regout\) # ((\lcd_display_0|next_command.MODE_SET~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.HOLD~regout\,
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|next_command.MODE_SET~regout\,
+	datad => \lcd_display_0|state.DISPLAY_ON~regout\,
+	combout => \lcd_display_0|Selector14~0_combout\);
+
+-- Location: LCFF_X4_Y27_N1
+\lcd_display_0|next_command.MODE_SET\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector14~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.MODE_SET~regout\);
+
+-- Location: LCCOMB_X5_Y27_N30
+\lcd_display_0|state~30\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~30_combout\ = (\lcd_display_0|next_command.MODE_SET~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|next_command.MODE_SET~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~30_combout\);
+
+-- Location: LCFF_X5_Y27_N31
+\lcd_display_0|state.MODE_SET\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~30_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.MODE_SET~regout\);
+
+-- Location: LCCOMB_X4_Y27_N30
+\lcd_display_0|Selector7~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector7~4_combout\ = (\lcd_display_0|state.DISPLAY_ON~regout\) # ((\lcd_display_0|state.MODE_SET~regout\) # ((\lcd_display_0|DATA_BUS_VALUE\(2) & !\lcd_display_0|LCD_RS~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111011111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.DISPLAY_ON~regout\,
+	datab => \lcd_display_0|state.MODE_SET~regout\,
+	datac => \lcd_display_0|DATA_BUS_VALUE\(2),
+	datad => \lcd_display_0|LCD_RS~0_combout\,
+	combout => \lcd_display_0|Selector7~4_combout\);
+
+-- Location: LCCOMB_X4_Y27_N18
+\lcd_display_0|Selector7~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector7~5_combout\ = (\lcd_display_0|Selector7~4_combout\) # ((\lcd_display_0|Selector7~2_combout\ & (\lcd_display_0|state.Print_String~regout\ & !\lcd_display_0|CHAR_COUNT\(3))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111100001000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector7~2_combout\,
+	datab => \lcd_display_0|state.Print_String~regout\,
+	datac => \lcd_display_0|CHAR_COUNT\(3),
+	datad => \lcd_display_0|Selector7~4_combout\,
+	combout => \lcd_display_0|Selector7~5_combout\);
+
+-- Location: LCFF_X4_Y27_N19
+\lcd_display_0|DATA_BUS_VALUE[2]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector7~5_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(2));
+
+-- Location: LCCOMB_X2_Y27_N28
+\lcd_display_0|Selector6~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector6~12_combout\ = ((\lcd_display_0|DATA_BUS_VALUE\(3) & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\)))) # (!\lcd_display_0|state.RESET1~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101110110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|DATA_BUS_VALUE\(3),
+	datab => \lcd_display_0|state.RESET1~regout\,
+	datac => \lcd_display_0|state.HOLD~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|Selector6~12_combout\);
+
+-- Location: LCCOMB_X3_Y27_N4
+\lcd_display_0|Selector12~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector12~0_combout\ = (\lcd_display_0|state.RESET3~regout\) # ((\lcd_display_0|next_command.FUNC_SET~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RESET3~regout\,
+	datab => \lcd_display_0|state.HOLD~regout\,
+	datac => \lcd_display_0|next_command.FUNC_SET~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|Selector12~0_combout\);
+
+-- Location: LCFF_X3_Y27_N5
+\lcd_display_0|next_command.FUNC_SET\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector12~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.FUNC_SET~regout\);
+
+-- Location: LCCOMB_X3_Y27_N22
+\lcd_display_0|state~36\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~36_combout\ = (\lcd_display_0|next_command.FUNC_SET~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|next_command.FUNC_SET~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~36_combout\);
+
+-- Location: LCFF_X3_Y27_N23
+\lcd_display_0|state.FUNC_SET\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~36_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.FUNC_SET~regout\);
+
+-- Location: LCCOMB_X3_Y27_N2
+\lcd_display_0|Selector20~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector20~0_combout\ = (\lcd_display_0|state.FUNC_SET~regout\) # ((\lcd_display_0|next_command.DISPLAY_OFF~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110011101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.HOLD~regout\,
+	datab => \lcd_display_0|state.FUNC_SET~regout\,
+	datac => \lcd_display_0|next_command.DISPLAY_OFF~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|Selector20~0_combout\);
+
+-- Location: LCFF_X3_Y27_N3
+\lcd_display_0|next_command.DISPLAY_OFF\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector20~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.DISPLAY_OFF~regout\);
+
+-- Location: LCCOMB_X3_Y27_N0
+\lcd_display_0|state~35\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~35_combout\ = (\lcd_display_0|next_command.DISPLAY_OFF~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.DISPLAY_OFF~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~35_combout\);
+
+-- Location: LCFF_X3_Y27_N1
+\lcd_display_0|state.DISPLAY_OFF\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~35_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.DISPLAY_OFF~regout\);
+
+-- Location: LCCOMB_X3_Y27_N26
+\lcd_display_0|Selector6~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector6~13_combout\ = (\lcd_display_0|state.RESET2~regout\) # ((\lcd_display_0|state.FUNC_SET~regout\) # ((\lcd_display_0|state.DISPLAY_ON~regout\) # (\lcd_display_0|state.DISPLAY_OFF~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RESET2~regout\,
+	datab => \lcd_display_0|state.FUNC_SET~regout\,
+	datac => \lcd_display_0|state.DISPLAY_ON~regout\,
+	datad => \lcd_display_0|state.DISPLAY_OFF~regout\,
+	combout => \lcd_display_0|Selector6~13_combout\);
+
+-- Location: LCCOMB_X2_Y27_N22
+\lcd_display_0|Selector6~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector6~3_combout\ = (!\lcd_display_0|CHAR_COUNT\(4) & ((!\lcd_display_0|CHAR_COUNT\(1)) # (!\lcd_display_0|CHAR_COUNT\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010101010101",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datac => \lcd_display_0|CHAR_COUNT\(2),
+	datad => \lcd_display_0|CHAR_COUNT\(1),
+	combout => \lcd_display_0|Selector6~3_combout\);
+
+-- Location: LCCOMB_X2_Y27_N0
+\lcd_display_0|Selector6~15\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector6~15_combout\ = (!\lcd_display_0|CHAR_COUNT\(3) & (\lcd_display_0|Selector6~3_combout\ & (\lcd_display_0|CHAR_COUNT\(0) & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(3),
+	datab => \lcd_display_0|Selector6~3_combout\,
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector6~15_combout\);
+
+-- Location: LCCOMB_X2_Y27_N18
+\lcd_display_0|Selector6~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector6~14_combout\ = (\lcd_display_0|state.RESET3~regout\) # ((\lcd_display_0|Selector6~12_combout\) # ((\lcd_display_0|Selector6~13_combout\) # (\lcd_display_0|Selector6~15_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RESET3~regout\,
+	datab => \lcd_display_0|Selector6~12_combout\,
+	datac => \lcd_display_0|Selector6~13_combout\,
+	datad => \lcd_display_0|Selector6~15_combout\,
+	combout => \lcd_display_0|Selector6~14_combout\);
+
+-- Location: LCFF_X2_Y27_N19
+\lcd_display_0|DATA_BUS_VALUE[3]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector6~14_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(3));
+
+-- Location: LCCOMB_X5_Y27_N14
+\lcd_display_0|Selector16~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector16~0_combout\ = (\lcd_display_0|next_command.LINE2~regout\ & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.LINE2~regout\,
+	datac => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|Selector16~0_combout\);
+
+-- Location: LCCOMB_X5_Y27_N0
+\lcd_display_0|Selector16~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector16~1_combout\ = (\lcd_display_0|Selector16~0_combout\) # ((!\lcd_display_0|CHAR_COUNT\(4) & (\lcd_display_0|state.Print_String~regout\ & \lcd_display_0|Equal2~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111010011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(4),
+	datab => \lcd_display_0|state.Print_String~regout\,
+	datac => \lcd_display_0|Selector16~0_combout\,
+	datad => \lcd_display_0|Equal2~0_combout\,
+	combout => \lcd_display_0|Selector16~1_combout\);
+
+-- Location: LCFF_X5_Y27_N1
+\lcd_display_0|next_command.LINE2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector16~1_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|next_command.LINE2~regout\);
+
+-- Location: LCCOMB_X5_Y27_N4
+\lcd_display_0|state~31\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|state~31_combout\ = (\lcd_display_0|next_command.LINE2~regout\ & \lcd_display_0|state.HOLD~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|next_command.LINE2~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|state~31_combout\);
+
+-- Location: LCFF_X5_Y27_N5
+\lcd_display_0|state.LINE2\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|state~31_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|state.LINE2~regout\);
+
+-- Location: LCCOMB_X5_Y27_N20
+\lcd_display_0|Selector5~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector5~3_combout\ = (!\lcd_display_0|state.RETURN_HOME~regout\ & (!\lcd_display_0|state.MODE_SET~regout\ & (!\lcd_display_0|state.LINE2~regout\ & !\lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.RETURN_HOME~regout\,
+	datab => \lcd_display_0|state.MODE_SET~regout\,
+	datac => \lcd_display_0|state.LINE2~regout\,
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector5~3_combout\);
+
+-- Location: LCCOMB_X4_Y27_N4
+\lcd_display_0|Selector5~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector5~4_combout\ = (!\lcd_display_0|state.DISPLAY_ON~regout\ & (!\lcd_display_0|state.DISPLAY_CLEAR~regout\ & (!\lcd_display_0|state.DISPLAY_OFF~regout\ & \lcd_display_0|Selector5~3_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.DISPLAY_ON~regout\,
+	datab => \lcd_display_0|state.DISPLAY_CLEAR~regout\,
+	datac => \lcd_display_0|state.DISPLAY_OFF~regout\,
+	datad => \lcd_display_0|Selector5~3_combout\,
+	combout => \lcd_display_0|Selector5~4_combout\);
+
+-- Location: LCCOMB_X4_Y27_N20
+\lcd_display_0|Selector5~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector5~5_combout\ = (\lcd_display_0|Selector5~4_combout\) # ((\lcd_display_0|Selector5~2_combout\ & (!\lcd_display_0|CHAR_COUNT\(3) & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111001011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|Selector5~2_combout\,
+	datab => \lcd_display_0|CHAR_COUNT\(3),
+	datac => \lcd_display_0|Selector5~4_combout\,
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector5~5_combout\);
+
+-- Location: LCCOMB_X4_Y27_N14
+\lcd_display_0|DATA_BUS_VALUE[5]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|DATA_BUS_VALUE[5]~0_combout\ = (!\lcd_display_0|state.DROP_LCD_E~regout\ & (\lcd_display_0|CLK_400HZ_Enable~regout\ & !\lcd_display_0|state.HOLD~regout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|DATA_BUS_VALUE[5]~0_combout\);
+
+-- Location: LCFF_X4_Y27_N21
+\lcd_display_0|DATA_BUS_VALUE[4]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector5~5_combout\,
+	ena => \lcd_display_0|DATA_BUS_VALUE[5]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(4));
+
+-- Location: LCCOMB_X3_Y27_N20
+\lcd_display_0|Selector4~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector4~3_combout\ = (\lcd_display_0|CHAR_COUNT\(0) & !\lcd_display_0|CHAR_COUNT\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \lcd_display_0|CHAR_COUNT\(0),
+	datad => \lcd_display_0|CHAR_COUNT\(4),
+	combout => \lcd_display_0|Selector4~3_combout\);
+
+-- Location: LCCOMB_X3_Y27_N18
+\lcd_display_0|Selector4~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector4~10_combout\ = (\lcd_display_0|CHAR_COUNT\(3)) # ((\lcd_display_0|CHAR_COUNT\(1)) # ((\lcd_display_0|Selector4~3_combout\) # (\lcd_display_0|CHAR_COUNT\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(3),
+	datab => \lcd_display_0|CHAR_COUNT\(1),
+	datac => \lcd_display_0|Selector4~3_combout\,
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector4~10_combout\);
+
+-- Location: LCCOMB_X4_Y27_N22
+\lcd_display_0|Selector4~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector4~9_combout\ = (\lcd_display_0|Selector5~4_combout\) # ((\lcd_display_0|state.Print_String~regout\ & \lcd_display_0|Selector4~10_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \lcd_display_0|state.Print_String~regout\,
+	datac => \lcd_display_0|Selector5~4_combout\,
+	datad => \lcd_display_0|Selector4~10_combout\,
+	combout => \lcd_display_0|Selector4~9_combout\);
+
+-- Location: LCFF_X4_Y27_N23
+\lcd_display_0|DATA_BUS_VALUE[5]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector4~9_combout\,
+	ena => \lcd_display_0|DATA_BUS_VALUE[5]~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(5));
+
+-- Location: LCCOMB_X5_Y27_N26
+\lcd_display_0|Selector3~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector3~3_combout\ = (\lcd_display_0|state.LINE2~regout\) # ((\lcd_display_0|DATA_BUS_VALUE\(6) & ((\lcd_display_0|state.DROP_LCD_E~regout\) # (\lcd_display_0|state.HOLD~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|DATA_BUS_VALUE\(6),
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|state.LINE2~regout\,
+	datad => \lcd_display_0|state.HOLD~regout\,
+	combout => \lcd_display_0|Selector3~3_combout\);
+
+-- Location: LCCOMB_X5_Y27_N16
+\lcd_display_0|Selector3~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector3~2_combout\ = (\lcd_display_0|CHAR_COUNT\(1) & (((!\lcd_display_0|CHAR_COUNT\(4) & !\lcd_display_0|CHAR_COUNT\(2))))) # (!\lcd_display_0|CHAR_COUNT\(1) & (((!\lcd_display_0|CHAR_COUNT\(0) & !\lcd_display_0|CHAR_COUNT\(4))) # 
+-- (!\lcd_display_0|CHAR_COUNT\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000101011111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(1),
+	datab => \lcd_display_0|CHAR_COUNT\(0),
+	datac => \lcd_display_0|CHAR_COUNT\(4),
+	datad => \lcd_display_0|CHAR_COUNT\(2),
+	combout => \lcd_display_0|Selector3~2_combout\);
+
+-- Location: LCCOMB_X5_Y27_N12
+\lcd_display_0|Selector3~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector3~4_combout\ = (\lcd_display_0|Selector3~3_combout\) # ((!\lcd_display_0|CHAR_COUNT\(3) & (\lcd_display_0|Selector3~2_combout\ & \lcd_display_0|state.Print_String~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1101110011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|CHAR_COUNT\(3),
+	datab => \lcd_display_0|Selector3~3_combout\,
+	datac => \lcd_display_0|Selector3~2_combout\,
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector3~4_combout\);
+
+-- Location: LCFF_X5_Y27_N13
+\lcd_display_0|DATA_BUS_VALUE[6]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector3~4_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(6));
+
+-- Location: LCCOMB_X4_Y27_N28
+\lcd_display_0|Selector2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector2~0_combout\ = (\lcd_display_0|state.LINE2~regout\) # ((\lcd_display_0|state.RETURN_HOME~regout\) # ((\lcd_display_0|DATA_BUS_VALUE\(7) & !\lcd_display_0|LCD_RS~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111011111110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.LINE2~regout\,
+	datab => \lcd_display_0|state.RETURN_HOME~regout\,
+	datac => \lcd_display_0|DATA_BUS_VALUE\(7),
+	datad => \lcd_display_0|LCD_RS~0_combout\,
+	combout => \lcd_display_0|Selector2~0_combout\);
+
+-- Location: LCFF_X4_Y27_N29
+\lcd_display_0|DATA_BUS_VALUE[7]\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector2~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|DATA_BUS_VALUE\(7));
 
 -- Location: PIN_N25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \SW[0]~I\ : cycloneii_io
@@ -2541,31 +5162,48 @@ PORT MAP (
 	padio => ww_SW(17),
 	combout => \SW~combout\(17));
 
--- Location: LCCOMB_X27_Y3_N14
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N22
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ = (\SW~combout\(16) & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ & VCC)) # (!\SW~combout\(16) & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ = CARRY((!\SW~combout\(16) & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ = \SW~combout\(15) $ (VCC)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ = CARRY(\SW~combout\(15))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010010100000101",
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(15),
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\);
+
+-- Location: LCCOMB_X32_Y6_N24
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ = (\SW~combout\(16) & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ & VCC)) # (!\SW~combout\(16) & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ = CARRY((!\SW~combout\(16) & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(16),
+	datab => \SW~combout\(16),
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\);
 
--- Location: LCCOMB_X27_Y3_N16
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N26
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ $ (GND))) # (!\SW~combout\(17) & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ & VCC))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ $ (GND))) # (!\SW~combout\(17) & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ & VCC))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2575,14 +5213,14 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \SW~combout\(17),
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\);
 
--- Location: LCCOMB_X27_Y3_N18
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N28
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ = !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ = !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2590,14 +5228,14 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\);
 
--- Location: LCCOMB_X25_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N0
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2605,60 +5243,64 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\);
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\);
 
--- Location: LCCOMB_X27_Y3_N0
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N2
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "0011001100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(16),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\);
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\);
 
--- Location: LCCOMB_X27_Y3_N30
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N4
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ = (\SW~combout\(15) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010101000000000",
+	lut_mask => "0011001100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(15),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\);
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\);
 
--- Location: LCCOMB_X25_Y3_N4
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X32_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\ = (\SW~combout\(14) & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "0000000010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\);
+	dataa => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\);
 
--- Location: LCCOMB_X27_Y3_N2
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2666,200 +5308,21 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~60_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[24]~61_combout\,
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\);
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\);
 
--- Location: LCCOMB_X27_Y3_N4
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~59_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[25]~58_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\);
-
--- Location: LCCOMB_X27_Y3_N8
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\);
-
--- Location: LCCOMB_X28_Y3_N8
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\);
-
--- Location: LCCOMB_X27_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
-
--- Location: LCCOMB_X27_Y3_N28
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(16))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000100011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(16),
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\);
-
--- Location: LCCOMB_X28_Y3_N4
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\);
-
--- Location: LCCOMB_X27_Y3_N26
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\);
-
--- Location: LCCOMB_X25_Y3_N26
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \SW~combout\(13),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\);
-
--- Location: LCCOMB_X28_Y3_N18
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000111101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\,
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\);
-
--- Location: LCCOMB_X28_Y3_N20
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~65_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\);
-
--- Location: LCCOMB_X28_Y3_N22
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\)))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\)))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2867,21 +5330,22 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~56_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[26]~57_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\);
 
--- Location: LCCOMB_X28_Y3_N24
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N18
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2889,21 +5353,184 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~54_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[27]~55_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\);
 
--- Location: LCCOMB_X28_Y3_N26
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y6_N20
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\))))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\) # (GND))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X31_Y6_N0
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\);
+
+-- Location: LCCOMB_X31_Y6_N2
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\);
+
+-- Location: LCCOMB_X32_Y6_N10
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & ((\SW~combout\(15)))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110010000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	datac => \SW~combout\(15),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\);
+
+-- Location: LCCOMB_X32_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[33]~66_combout\);
+
+-- Location: LCCOMB_X28_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\);
+
+-- Location: LCCOMB_X31_Y6_N8
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~68_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[32]~67_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\);
+
+-- Location: LCCOMB_X31_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\)))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~64_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[34]~98_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\);
+
+-- Location: LCCOMB_X31_Y6_N14
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~63_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\);
+
+-- Location: LCCOMB_X31_Y6_N16
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ & 
+-- ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\))))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\) # (GND))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2911,17 +5538,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[36]~62_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\);
 
--- Location: LCCOMB_X28_Y3_N28
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N18
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ = !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ = !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2929,62 +5556,14 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~9\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\);
 
--- Location: LCCOMB_X28_Y3_N14
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N22
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\);
-
--- Location: LCCOMB_X29_Y3_N8
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\);
-
--- Location: LCCOMB_X28_Y3_N16
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\);
-
--- Location: LCCOMB_X29_Y3_N2
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2992,190 +5571,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\);
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\);
 
--- Location: LCCOMB_X31_Y3_N8
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N28
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(13),
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\);
-
--- Location: LCCOMB_X31_Y3_N10
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & \SW~combout\(12))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datac => \SW~combout\(12),
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[40]~75_combout\);
-
--- Location: LCCOMB_X29_Y3_N14
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\)))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
-
--- Location: LCCOMB_X29_Y3_N18
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ & ((((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) 
--- # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\))))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\) # (GND))))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001111011101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[44]~70_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\);
-
--- Location: LCCOMB_X29_Y3_N22
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ = \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\);
-
--- Location: LCCOMB_X30_Y3_N30
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101000001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\);
-
--- Location: LCCOMB_X25_Y3_N14
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(17))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010001010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datac => \SW~combout\(17),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\);
-
--- Location: LCCOMB_X28_Y3_N2
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\) # 
--- ((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100110001000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_4_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[36]~96_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\);
-
--- Location: LCCOMB_X28_Y3_N0
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\) # 
--- ((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1101110000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\);
-
--- Location: LCCOMB_X30_Y3_N4
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101000001010000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\);
-
--- Location: LCCOMB_X28_Y3_N6
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3183,17 +5588,17 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[35]~97_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[3]~4_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\);
 
--- Location: LCCOMB_X29_Y3_N24
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N0
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3201,63 +5606,304 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\);
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\);
 
--- Location: LCCOMB_X31_Y3_N30
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y6_N30
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111000000000000",
+	lut_mask => "0000000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\);
+
+-- Location: LCCOMB_X31_Y6_N24
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\);
+
+-- Location: LCCOMB_X30_Y6_N18
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\ = (\SW~combout\(12) & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	datac => \SW~combout\(12),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\);
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[40]~76_combout\);
 
--- Location: LCCOMB_X30_Y3_N2
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N4
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\ = (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(11))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000001010000",
-	sum_lutc_input => "datac")
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	datac => \SW~combout\(11),
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\);
-
--- Location: LCCOMB_X30_Y3_N6
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\)))
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000111101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~77_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~73_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[41]~74_combout\,
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
 
--- Location: LCCOMB_X30_Y3_N12
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y6_N6
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ 
--- & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\)))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~99_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[42]~72_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+
+-- Location: LCCOMB_X30_Y6_N8
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~91_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[43]~71_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\);
+
+-- Location: LCCOMB_X30_Y6_N12
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~89_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[45]~69_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\);
+
+-- Location: LCCOMB_X30_Y6_N14
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ = \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\);
+
+-- Location: LCCOMB_X29_Y6_N0
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\);
+
+-- Location: LCCOMB_X30_Y6_N22
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000100010101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[44]~90_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\);
+
+-- Location: LCCOMB_X30_Y6_N24
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000110000001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\);
+
+-- Location: LCCOMB_X29_Y6_N4
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\);
+
+-- Location: LCCOMB_X28_Y6_N6
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\);
+
+-- Location: LCCOMB_X30_Y6_N30
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(12),
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\);
+
+-- Location: LCCOMB_X29_Y6_N30
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\ = (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(11))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \SW~combout\(11),
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[48]~78_combout\);
+
+-- Location: LCCOMB_X29_Y6_N14
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\);
+
+-- Location: LCCOMB_X29_Y6_N18
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3265,17 +5911,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~95_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[51]~82_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
 
--- Location: LCCOMB_X30_Y3_N14
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N20
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\) # ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\) 
--- # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3283,17 +5929,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~94_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[52]~81_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\);
 
--- Location: LCCOMB_X30_Y3_N16
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N22
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ = CARRY((!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ 
--- & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ = CARRY((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3301,17 +5947,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~80_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[53]~93_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\);
 
--- Location: LCCOMB_X30_Y3_N18
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N24
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ = CARRY((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ = CARRY((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\) # 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3319,16 +5965,16 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~92_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[54]~79_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\,
-	cout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\,
+	cout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\);
 
--- Location: LCCOMB_X30_Y3_N20
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N26
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ = !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ = !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3336,69 +5982,53 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\);
+	cin => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\);
 
--- Location: LCCOMB_X31_Y3_N2
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N6
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & (\SW~combout\(13))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\)))))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\) # ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010110000000000",
+	lut_mask => "1111110010111000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(13),
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\);
 
--- Location: LCCOMB_X30_Y3_N22
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X28_Y6_N30
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & (\SW~combout\(13))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1111101011001010",
+	lut_mask => "1000100010100000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datab => \SW~combout\(13),
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_5_result_int[6]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\);
 
--- Location: LCCOMB_X30_Y3_N0
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X28_Y6_N8
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000101000001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\);
-
--- Location: LCCOMB_X30_Y3_N28
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- (((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3406,73 +6036,73 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~85_combout\,
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[49]~84_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~100_combout\,
+	datac => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[50]~83_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\);
 
--- Location: LCCOMB_X30_Y3_N26
-\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y6_N28
+\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (\SW~combout\(11))) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\)))
+-- \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & ((\SW~combout\(11)))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010111110100000",
+	lut_mask => "1100110010101010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(11),
-	datac => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\);
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	datab => \SW~combout\(11),
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	combout => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\);
 
--- Location: LCCOMB_X27_Y1_N8
+-- Location: LCCOMB_X28_Y2_N0
 \hex0_decoder|Mux6~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (\SW~combout\(10) & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ (\SW~combout\(10)))))
+-- \hex0_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ $ (!\SW~combout\(10))))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (\SW~combout\(10) & 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ $ (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0010000010010100",
+	lut_mask => "0100000010010010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux6~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N18
+-- Location: LCCOMB_X28_Y2_N6
 \hex0_decoder|Mux5~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux5~0_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & ((\SW~combout\(10) & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))) # (!\SW~combout\(10) & 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & 
--- (\SW~combout\(10) $ (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
+-- \hex0_decoder|Mux5~0_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & ((\SW~combout\(10) & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))) # (!\SW~combout\(10) & 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\)))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ 
+-- & (\SW~combout\(10) $ (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010110001001000",
+	lut_mask => "1100101000101000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux5~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N20
+-- Location: LCCOMB_X28_Y2_N20
 \hex0_decoder|Mux4~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\) # (!\SW~combout\(10))))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\SW~combout\(10) & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))
+-- \hex0_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\) # (!\SW~combout\(10))))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (!\SW~combout\(10) & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3480,93 +6110,93 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux4~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N22
+-- Location: LCCOMB_X28_Y2_N22
 \hex0_decoder|Mux3~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux3~0_combout\ = (\SW~combout\(10) & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\SW~combout\(10) & 
--- ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & !\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
+-- \hex0_decoder|Mux3~0_combout\ = (\SW~combout\(10) & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ (((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))) # (!\SW~combout\(10) & 
+-- ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & !\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1100001000110100",
+	lut_mask => "1010010001010010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux3~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N16
+-- Location: LCCOMB_X28_Y2_N12
 \hex0_decoder|Mux2~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux2~0_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & ((\SW~combout\(10))))) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\)) # 
--- (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & ((\SW~combout\(10))))))
+-- \hex0_decoder|Mux2~0_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & (((!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & \SW~combout\(10))))) # 
+-- (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\ & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\)) 
+-- # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & ((\SW~combout\(10))))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000001110100",
+	lut_mask => "0011000001110010",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux2~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N2
+-- Location: LCCOMB_X28_Y2_N18
 \hex0_decoder|Mux1~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux1~0_combout\ = (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (\SW~combout\(10) & (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ $ 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ & 
--- ((\SW~combout\(10)) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
+-- \hex0_decoder|Mux1~0_combout\ = (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (\SW~combout\(10) & (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ $ 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ & (!\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ 
+-- & ((\SW~combout\(10)) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000110010000",
+	lut_mask => "0011000110010000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux1~0_combout\);
 
--- Location: LCCOMB_X27_Y1_N12
+-- Location: LCCOMB_X28_Y2_N16
 \hex0_decoder|Mux0~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex0_decoder|Mux0~0_combout\ = (\SW~combout\(10) & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\) # (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\SW~combout\(10) & ((\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\) # 
--- (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\ $ (\bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\))))
+-- \hex0_decoder|Mux0~0_combout\ = (\SW~combout\(10) & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\) # (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\)))) # (!\SW~combout\(10) & ((\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\ $ (\bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1011111111100110",
+	lut_mask => "1101111111100110",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
-	datab => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[58]~87_combout\,
+	datab => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[59]~88_combout\,
 	datac => \SW~combout\(10),
-	datad => \bit8_to_3xBCD_0|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
+	datad => \bit8_to_3xBCD_data|Mod0|auto_generated|divider|divider|StageOut[57]~86_combout\,
 	combout => \hex0_decoder|Mux0~0_combout\);
 
--- Location: LCCOMB_X34_Y3_N2
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N0
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ = \SW~combout\(15) $ (VCC)
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ = CARRY(\SW~combout\(15))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ = \SW~combout\(15) $ (VCC)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ = CARRY(\SW~combout\(15))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3576,15 +6206,15 @@ GENERIC MAP (
 PORT MAP (
 	datab => \SW~combout\(15),
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\);
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\);
 
--- Location: LCCOMB_X34_Y3_N4
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N2
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ = (\SW~combout\(16) & (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ & VCC)) # (!\SW~combout\(16) & 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ = CARRY((!\SW~combout\(16) & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ = (\SW~combout\(16) & (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\ & VCC)) # (!\SW~combout\(16) & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ = CARRY((!\SW~combout\(16) & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3594,33 +6224,14 @@ GENERIC MAP (
 PORT MAP (
 	dataa => \SW~combout\(16),
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\);
 
--- Location: LCCOMB_X34_Y3_N6
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N6
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ $ (GND))) # (!\SW~combout\(17) & 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\ & VCC))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100001100001100",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(17),
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\);
-
--- Location: LCCOMB_X34_Y3_N8
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ = !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ = !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3628,45 +6239,13 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~5\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\);
 
--- Location: LCCOMB_X34_Y3_N0
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N16
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[3]~4_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\);
-
--- Location: LCCOMB_X34_Y3_N20
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[17]~39_combout\);
-
--- Location: LCCOMB_X34_Y3_N14
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & \SW~combout\(15))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ = (\SW~combout\(17) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3674,117 +6253,45 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \SW~combout\(15),
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\);
+	datac => \SW~combout\(17),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\);
 
--- Location: LCCOMB_X33_Y4_N12
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N28
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\ = (\SW~combout\(14) & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000110000001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(14),
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\);
-
--- Location: LCCOMB_X34_Y3_N22
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000111101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[15]~43_combout\,
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\);
-
--- Location: LCCOMB_X34_Y3_N28
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ 
--- & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\);
-
--- Location: LCCOMB_X34_Y3_N30
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
-
--- Location: LCCOMB_X34_Y3_N18
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(16))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010110000000000",
+	lut_mask => "1010101000000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
 	dataa => \SW~combout\(16),
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\);
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[17]~38_combout\);
 
--- Location: LCCOMB_X34_Y3_N12
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N26
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(15))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\)))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "1010110000000000",
+	lut_mask => "0000000011001100",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \SW~combout\(15),
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\);
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\);
 
--- Location: LCCOMB_X33_Y3_N4
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y5_N0
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3793,50 +6300,18 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\);
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[15]~42_combout\);
 
--- Location: LCCOMB_X33_Y3_N2
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y5_N20
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\ = (\SW~combout\(13) & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000010101010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(13),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\);
-
--- Location: LCCOMB_X33_Y3_N18
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000111101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[20]~49_combout\,
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\);
-
--- Location: LCCOMB_X33_Y3_N20
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ & 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3844,40 +6319,18 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~47_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~40_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[16]~41_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~3\);
 
--- Location: LCCOMB_X33_Y3_N22
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y5_N24
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) 
--- # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\)))))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\) # 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~45_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\);
-
--- Location: LCCOMB_X33_Y3_N24
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ 
--- & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3885,16 +6338,16 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~37_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[18]~36_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\);
 
--- Location: LCCOMB_X33_Y3_N26
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X30_Y5_N26
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3902,52 +6355,319 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\);
 
--- Location: LCCOMB_X33_Y5_N20
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N20
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & VCC)) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ $ (GND)))
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(16))) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0011110000000011",
-	sum_lutc_input => "cin")
+	lut_mask => "1010000011000000",
+	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+	dataa => \SW~combout\(16),
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[2]~2_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\);
 
--- Location: LCCOMB_X33_Y5_N22
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X29_Y5_N22
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ = !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ = CARRY(!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & (\SW~combout\(15))) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000111100001111",
+	lut_mask => "1101000010000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datab => \SW~combout\(15),
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[1]~0_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\);
+
+-- Location: LCCOMB_X31_Y5_N4
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[21]~46_combout\);
+
+-- Location: LCCOMB_X31_Y5_N8
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[20]~48_combout\);
+
+-- Location: LCCOMB_X31_Y5_N20
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~44_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[23]~64_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\);
 
--- Location: LCCOMB_X33_Y5_N24
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X31_Y5_N22
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ $ (GND)
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ = CARRY(!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\)
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X31_Y5_N26
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\) # ((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011101000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[22]~65_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[2]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\);
+
+-- Location: LCCOMB_X31_Y5_N28
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & ((\SW~combout\(14)))) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110001000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datac => \SW~combout\(14),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\);
+
+-- Location: LCCOMB_X32_Y5_N4
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\);
+
+-- Location: LCCOMB_X33_Y5_N0
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & \SW~combout\(12))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datac => \SW~combout\(12),
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\);
+
+-- Location: LCCOMB_X32_Y5_N24
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~53_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
+
+-- Location: LCCOMB_X32_Y5_N26
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\)))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+
+-- Location: LCCOMB_X32_Y5_N28
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X32_Y5_N30
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X34_Y5_N16
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ $ (GND)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY(!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000110011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+
+-- Location: LCCOMB_X34_Y5_N18
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\)) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & VCC))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101000001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
+
+-- Location: LCCOMB_X34_Y5_N20
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & VCC)) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ $ (GND)))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101000000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_3_result_int[4]~6_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+
+-- Location: LCCOMB_X34_Y5_N24
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ $ (GND)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ = CARRY(!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3956,31 +6676,14 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\);
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~7\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\);
 
--- Location: LCCOMB_X33_Y5_N26
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X34_Y5_N28
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ = !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ = CARRY(!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~9\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\);
-
--- Location: LCCOMB_X33_Y5_N28
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ = \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ = \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3988,425 +6691,32 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\);
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~11\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\);
 
--- Location: LCCOMB_X34_Y5_N30
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X35_Y5_N18
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101010100000000",
+	lut_mask => "0000000000001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\);
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\);
 
--- Location: LCCOMB_X33_Y5_N0
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X35_Y5_N0
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\);
-
--- Location: LCCOMB_X33_Y5_N10
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\);
-
--- Location: LCCOMB_X33_Y5_N4
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\);
-
--- Location: LCCOMB_X33_Y5_N8
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\);
-
--- Location: LCCOMB_X34_Y5_N28
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\);
-
--- Location: LCCOMB_X34_Y5_N2
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000001010101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\);
-
--- Location: LCCOMB_X34_Y5_N12
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\) 
--- # (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\)))
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\);
-
--- Location: LCCOMB_X34_Y5_N14
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\) # 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\) # 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\)))))
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\) # 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110000100001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\);
-
--- Location: LCCOMB_X34_Y5_N16
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
-
--- Location: LCCOMB_X34_Y5_N18
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ = CARRY((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\) # 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\);
-
--- Location: LCCOMB_X34_Y5_N20
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ = CARRY((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ & 
--- !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000011",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\);
-
--- Location: LCCOMB_X34_Y5_N22
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ = CARRY((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\) # 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\,
-	cout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\);
-
--- Location: LCCOMB_X34_Y5_N24
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ = !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\);
-
--- Location: LCCOMB_X34_Y5_N26
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
--- (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1110111111100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\);
-
--- Location: LCCOMB_X34_Y5_N4
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\) # 
--- ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
--- (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111110010101100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\);
-
--- Location: LCCOMB_X34_Y5_N8
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0101010100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\);
-
--- Location: LCCOMB_X34_Y5_N0
-\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\) # 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111101011001010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
-	datad => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\);
-
--- Location: LCCOMB_X33_Y3_N6
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & ((\SW~combout\(14)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\ & 
--- (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010001000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[1]~0_combout\,
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_4_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\);
-
--- Location: LCCOMB_X33_Y3_N28
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\) # 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1000100010101000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~66_combout\,
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\);
-
--- Location: LCCOMB_X33_Y3_N12
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[3]~4_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\);
-
--- Location: LCCOMB_X33_Y3_N30
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011110000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[2]~2_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[27]~51_combout\);
-
--- Location: LCCOMB_X32_Y3_N26
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100000011000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(13),
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[26]~52_combout\);
-
--- Location: LCCOMB_X31_Y3_N16
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \SW~combout\(12),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\);
-
--- Location: LCCOMB_X32_Y3_N0
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\)))
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\)))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4414,413 +6724,17 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~55_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[25]~54_combout\,
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\,
 	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\);
 
--- Location: LCCOMB_X32_Y3_N6
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X34_Y5_N4
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\ 
--- & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~62_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[28]~50_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\);
-
--- Location: LCCOMB_X32_Y3_N8
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\);
-
--- Location: LCCOMB_X32_Y3_N30
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & (\SW~combout\(13))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1100010010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[5]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datac => \SW~combout\(13),
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_5_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\);
-
--- Location: LCCOMB_X32_Y3_N28
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\);
-
--- Location: LCCOMB_X31_Y3_N24
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\ = (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(11))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
-	datad => \SW~combout\(11),
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\);
-
--- Location: LCCOMB_X32_Y3_N12
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ = CARRY((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011101110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\,
-	datad => VCC,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\);
-
--- Location: LCCOMB_X32_Y3_N14
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ 
--- & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\);
-
--- Location: LCCOMB_X32_Y3_N16
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ & 
--- ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000001110",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\);
-
--- Location: LCCOMB_X32_Y3_N18
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ 
--- & !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000000001",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\,
-	datab => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\,
-	cout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
-
--- Location: LCCOMB_X32_Y3_N20
-\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ = \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000011110000",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
-	combout => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\);
-
--- Location: LCCOMB_X64_Y5_N16
-\hex1_decoder|Mux6~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ $ (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ 
--- & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ $ 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001001001001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux6~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N18
-\hex1_decoder|Mux5~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux5~0_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & ((\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\)) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\))))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ $ (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010100011000010",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux5~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N12
-\hex1_decoder|Mux4~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\) # (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))) # 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
--- \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1001100010000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux4~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N22
-\hex1_decoder|Mux3~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux3~0_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & !\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\)) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ 
--- & (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0100001010100101",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux3~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N24
-\hex1_decoder|Mux2~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux2~0_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & (((!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & 
--- !\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
--- ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
--- ((!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000001000110111",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux2~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N10
-\hex1_decoder|Mux1~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux1~0_combout\ = (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ $ (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\)))) # (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
--- (!\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\) # 
--- (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001000000111001",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux1~0_combout\);
-
--- Location: LCCOMB_X64_Y5_N20
-\hex1_decoder|Mux0~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \hex1_decoder|Mux0~0_combout\ = (\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\) # 
--- (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # (!\bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ 
--- & ((\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\) # (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (\bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111011011011110",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
-	datab => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
-	datac => \bit8_to_3xBCD_0|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
-	datad => \bit8_to_3xBCD_0|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
-	combout => \hex1_decoder|Mux0~0_combout\);
-
--- Location: LCCOMB_X33_Y4_N20
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ = \SW~combout\(13) $ (VCC)
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ = CARRY(\SW~combout\(13))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0011001111001100",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datab => \SW~combout\(13),
-	datad => VCC,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\);
-
--- Location: LCCOMB_X33_Y4_N30
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ = !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000111100001111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\);
-
--- Location: LCCOMB_X34_Y4_N0
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ = (\SW~combout\(17) & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(17),
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\);
-
--- Location: LCCOMB_X34_Y4_N2
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\ = (\SW~combout\(16) & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(16),
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\);
-
--- Location: LCCOMB_X34_Y4_N26
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\ = (\SW~combout\(15) & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1010000010100000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	dataa => \SW~combout\(15),
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\);
-
--- Location: LCCOMB_X33_Y4_N4
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\ = (\SW~combout\(14) & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111000000000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datac => \SW~combout\(14),
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\);
-
--- Location: LCCOMB_X33_Y4_N16
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4828,14 +6742,276 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~0_combout\,
-	datad => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\);
+	datac => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\);
 
--- Location: LCCOMB_X34_Y4_N30
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X34_Y5_N6
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & \SW~combout\(12))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\);
+
+-- Location: LCCOMB_X35_Y5_N22
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\ = (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\);
+
+-- Location: LCCOMB_X35_Y5_N28
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ = (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\);
+
+-- Location: LCCOMB_X35_Y5_N2
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & 
+-- (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\) # (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ & (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\)))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ = CARRY((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\ & !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\);
+
+-- Location: LCCOMB_X35_Y5_N4
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\) # (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\)))))
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\) # (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\);
+
+-- Location: LCCOMB_X35_Y5_N6
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\ & !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~5_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[51]~6_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X35_Y5_N8
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ = CARRY((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[52]~4_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\);
+
+-- Location: LCCOMB_X35_Y5_N10
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ = CARRY((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[53]~3_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\);
+
+-- Location: LCCOMB_X35_Y5_N12
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ = CARRY((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[54]~2_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\,
+	cout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\);
+
+-- Location: LCCOMB_X35_Y5_N14
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ = !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\);
+
+-- Location: LCCOMB_X35_Y5_N26
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\) # ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110010101100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~0_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	datac => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[48]~1_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\);
+
+-- Location: LCCOMB_X35_Y5_N16
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\) # ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111111100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~9_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	datac => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\);
+
+-- Location: LCCOMB_X33_Y5_N2
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\);
+
+-- Location: LCCOMB_X33_Y5_N28
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\ = (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\);
+
+-- Location: LCCOMB_X33_Y5_N14
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ = (\SW~combout\(12) & \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010000010100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(12),
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\);
+
+-- Location: LCCOMB_X33_Y5_N22
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(11))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4843,14 +7019,15 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	datad => \SW~combout\(12),
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\);
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \SW~combout\(11),
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\);
 
--- Location: LCCOMB_X34_Y4_N4
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N4
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\ = CARRY((\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\) # (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ = CARRY((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\) # 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4858,16 +7035,16 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~61_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[30]~60_combout\,
 	datad => VCC,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\);
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\);
 
--- Location: LCCOMB_X34_Y4_N6
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N6
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\ = CARRY((!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ & (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4875,53 +7052,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~59_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[31]~58_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\);
 
--- Location: LCCOMB_X34_Y4_N8
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N8
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\ = CARRY((\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\) # ((\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\) # 
--- (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000011101111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\);
-
--- Location: LCCOMB_X34_Y4_N10
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ = CARRY(((!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ & !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\)) 
--- # (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000000000011111",
-	sum_lutc_input => "cin")
--- pragma translate_on
-PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\,
-	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\);
-
--- Location: LCCOMB_X34_Y4_N12
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9\ : cycloneii_lcell_comb
--- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\ = CARRY((!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ & 
--- ((\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\) # (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\))))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ & 
+-- ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4929,17 +7070,17 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~67_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[32]~57_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\);
 
--- Location: LCCOMB_X34_Y4_N14
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N10
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\ = CARRY((!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ & (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ & 
--- !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\)))
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\ & !\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4947,16 +7088,16 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\,
-	datab => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\,
+	dataa => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~63_combout\,
+	datab => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|StageOut[33]~56_combout\,
 	datad => VCC,
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\,
-	cout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\,
+	cout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
 
--- Location: LCCOMB_X34_Y4_N16
-\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X33_Y5_N12
+\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8\ : cycloneii_lcell_comb
 -- Equation(s):
--- \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\ = \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\
+-- \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ = \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4964,13 +7105,323 @@ GENERIC MAP (
 	sum_lutc_input => "cin")
 -- pragma translate_on
 PORT MAP (
-	cin => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\,
-	combout => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\);
+	cin => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\);
 
--- Location: LCCOMB_X34_Y4_N18
-\hex2_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Location: LCCOMB_X35_Y5_N30
+\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex2_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & !\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\)
+-- \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\) # ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110010111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~7_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datac => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[50]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\);
+
+-- Location: LCCOMB_X64_Y5_N4
+\hex1_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ $ (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ $ (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000011001000001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux6~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N6
+\hex1_decoder|Mux5~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux5~0_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & ((\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\)) # (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\))))) # (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ $ 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100101010000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux5~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N16
+\hex1_decoder|Mux4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & 
+-- ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\) # (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100100000100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux4~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N26
+\hex1_decoder|Mux3~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux3~0_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)) # (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ $ 
+-- ((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010100101001001",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux3~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N12
+\hex1_decoder|Mux2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux2~0_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & (((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ 
+-- & ((!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\))) # (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000101001111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux2~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N14
+\hex1_decoder|Mux1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux1~0_combout\ = (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\ & 
+-- ((!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\) # (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ & (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (!\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010000101011",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux1~0_combout\);
+
+-- Location: LCCOMB_X64_Y5_N0
+\hex1_decoder|Mux0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex1_decoder|Mux0~0_combout\ = (\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # 
+-- (!\bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & ((\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\) # 
+-- (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\ $ (\bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011111111100110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datab => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_data|Mod1|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	combout => \hex1_decoder|Mux0~0_combout\);
+
+-- Location: LCCOMB_X36_Y7_N22
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ = (\SW~combout\(14) & (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\ & VCC)) # (!\SW~combout\(14) & 
+-- (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\))
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\ = CARRY((!\SW~combout\(14) & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100000101",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(14),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[2]~1\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~3\);
+
+-- Location: LCCOMB_X36_Y7_N26
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\ = (\SW~combout\(16) & (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\)) # (!\SW~combout\(16) & 
+-- ((\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\) # (GND)))
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ = CARRY((!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\) # (!\SW~combout\(16)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101101001011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(16),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[4]~5\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\);
+
+-- Location: LCCOMB_X36_Y7_N28
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\ = (\SW~combout\(17) & (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ $ (GND))) # (!\SW~combout\(17) & 
+-- (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\ & VCC))
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\ = CARRY((\SW~combout\(17) & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1010010100001010",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(17),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~7\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\);
+
+-- Location: LCCOMB_X36_Y7_N30
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ = !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~9\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\);
+
+-- Location: LCCOMB_X37_Y7_N0
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ = (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & 
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[6]~8_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\);
+
+-- Location: LCCOMB_X37_Y7_N22
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\ = (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & 
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[5]~6_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\);
+
+-- Location: LCCOMB_X36_Y7_N16
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\ = (\SW~combout\(15) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(15),
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\);
+
+-- Location: LCCOMB_X36_Y7_N18
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\ = (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\ & 
+-- !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[3]~2_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\);
+
+-- Location: LCCOMB_X36_Y7_N4
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ = (\SW~combout\(13) & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \SW~combout\(13),
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\);
+
+-- Location: LCCOMB_X37_Y7_N2
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\ = (\SW~combout\(12) & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4978,39 +7429,1128 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
+	dataa => \SW~combout\(12),
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\);
+
+-- Location: LCCOMB_X37_Y7_N8
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\ = CARRY((\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\) # 
+-- (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[49]~11_combout\,
+	datad => VCC,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\);
+
+-- Location: LCCOMB_X37_Y7_N10
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\ = CARRY((!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\ & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~9_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[50]~8_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[2]~1_cout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\);
+
+-- Location: LCCOMB_X37_Y7_N12
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\ = CARRY((\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\) # 
+-- ((\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\) # (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011101111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~6_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[51]~7_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[3]~3_cout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\);
+
+-- Location: LCCOMB_X37_Y7_N14
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ = CARRY(((!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\ & 
+-- !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\)) # (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000011111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~5_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[52]~4_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[4]~5_cout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\);
+
+-- Location: LCCOMB_X37_Y7_N16
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\ = CARRY((!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\ & 
+-- ((\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\) # (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~2_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[53]~3_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[5]~7_cout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\);
+
+-- Location: LCCOMB_X37_Y7_N18
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\ = CARRY((!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\ & 
+-- (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\ & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~0_combout\,
+	datab => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|StageOut[54]~1_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[6]~9_cout\,
+	cout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\);
+
+-- Location: LCCOMB_X37_Y7_N20
+\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\ = \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[7]~11_cout\,
+	combout => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\);
+
+-- Location: LCCOMB_X64_Y7_N8
+\hex2_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex2_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & !\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
 	combout => \hex2_decoder|Mux6~0_combout\);
 
--- Location: LCCOMB_X34_Y4_N28
+-- Location: LCCOMB_X64_Y7_N18
 \hex2_decoder|Mux4~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex2_decoder|Mux4~0_combout\ = (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\)
+-- \hex2_decoder|Mux4~0_combout\ = (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\ & \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101000001010000",
+	lut_mask => "0000111100000000",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
 	combout => \hex2_decoder|Mux4~0_combout\);
 
--- Location: LCCOMB_X34_Y4_N22
+-- Location: LCCOMB_X64_Y7_N0
 \hex2_decoder|Mux1~0\ : cycloneii_lcell_comb
 -- Equation(s):
--- \hex2_decoder|Mux1~0_combout\ = (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\) # (!\bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
+-- \hex2_decoder|Mux1~0_combout\ = (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\) # (!\bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0101111101011111",
+	lut_mask => "0000111111111111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
-	datac => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
+	datac => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datad => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_7_result_int[8]~12_combout\,
 	combout => \hex2_decoder|Mux1~0_combout\);
+
+-- Location: LCCOMB_X1_Y16_N6
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = \SW~combout\(2) $ (VCC)
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY(\SW~combout\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(2),
+	datad => VCC,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+
+-- Location: LCCOMB_X1_Y16_N8
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\ = (\SW~combout\(3) & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ & VCC)) # (!\SW~combout\(3) & 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ = CARRY((!\SW~combout\(3) & !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(3),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\);
+
+-- Location: LCCOMB_X1_Y16_N14
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ $ (GND)
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\ = CARRY(!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\);
+
+-- Location: LCCOMB_X1_Y16_N16
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ = !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\ = CARRY(!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~9\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\);
+
+-- Location: LCCOMB_X1_Y16_N18
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ = \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~11\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\);
+
+-- Location: LCCOMB_X2_Y16_N2
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\);
+
+-- Location: LCCOMB_X1_Y16_N4
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[6]~10_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2_combout\);
+
+-- Location: LCCOMB_X1_Y16_N26
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3_combout\);
+
+-- Location: LCCOMB_X1_Y16_N28
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000010101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[4]~6_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4_combout\);
+
+-- Location: LCCOMB_X1_Y16_N24
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(4))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100000011000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datac => \SW~combout\(4),
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5_combout\);
+
+-- Location: LCCOMB_X2_Y16_N28
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\ = (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & 
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[2]~2_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\);
+
+-- Location: LCCOMB_X2_Y16_N30
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\ = (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \SW~combout\(1),
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\);
+
+-- Location: LCCOMB_X2_Y16_N4
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\ = (((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\) # 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\)))
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ = CARRY((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\) # 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001000111101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~0_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[48]~1_combout\,
+	datad => VCC,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\);
+
+-- Location: LCCOMB_X2_Y16_N8
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- (((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\) # (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\)))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & ((((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\) # 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\)))))
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ = CARRY((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ & 
+-- ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\) # (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110000100001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\);
+
+-- Location: LCCOMB_X2_Y16_N10
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6_combout\ & 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5_combout\ & !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~6_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[51]~5_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X2_Y16_N12
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\ = CARRY((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4_combout\) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[52]~4_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\);
+
+-- Location: LCCOMB_X2_Y16_N14
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\ = CARRY((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3_combout\ & 
+-- !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000011",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[53]~3_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[5]~9_cout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\);
+
+-- Location: LCCOMB_X2_Y16_N16
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\ = CARRY((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2_combout\) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[54]~2_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[6]~11_cout\,
+	cout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\);
+
+-- Location: LCCOMB_X2_Y16_N18
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ = !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[7]~13_cout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\);
+
+-- Location: LCCOMB_X1_Y16_N2
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\ & \SW~combout\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_6_result_int[7]~12_combout\,
+	datad => \SW~combout\(2),
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\);
+
+-- Location: LCCOMB_X2_Y16_N22
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- (((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\) # (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\)))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111101011001010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[2]~2_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~10_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[49]~9_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\);
+
+-- Location: LCCOMB_X2_Y16_N0
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & ((\SW~combout\(1)))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110000110000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[1]~0_combout\,
+	datad => \SW~combout\(1),
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\);
+
+-- Location: LCCOMB_X2_Y16_N24
+\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & 
+-- ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\) # ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\)))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\ & (((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111110010111000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~7_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[8]~14_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|add_sub_7_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[50]~8_combout\,
+	combout => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\);
+
+-- Location: LCCOMB_X1_Y17_N20
+\hex4_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux6~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ $ (!\SW~combout\(0))))) # (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\SW~combout\(0) & 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ $ (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0110000100000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux6~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N22
+\hex4_decoder|Mux5~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux5~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & ((\SW~combout\(0) & ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\))) # (!\SW~combout\(0) & 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\)))) # (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ 
+-- & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ $ (\SW~combout\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001010101000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux5~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N16
+\hex4_decoder|Mux4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ & 
+-- ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\) # (!\SW~combout\(0))))) # (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ & !\SW~combout\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000000010100100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux4~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N26
+\hex4_decoder|Mux3~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux3~0_combout\ = (\SW~combout\(0) & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ $ ((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\)))) # (!\SW~combout\(0) & 
+-- ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & !\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\)) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1001100101000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux3~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N8
+\hex4_decoder|Mux2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux2~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & (((!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ & \SW~combout\(0))))) # 
+-- (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ & ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\)) 
+-- # (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & ((\SW~combout\(0))))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001111100000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux2~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N18
+\hex4_decoder|Mux1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux1~0_combout\ = (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (\SW~combout\(0) & (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\ $ 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\)))) # (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ & (!\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\ 
+-- & ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\) # (\SW~combout\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0010110100000100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux1~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N0
+\hex4_decoder|Mux0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex4_decoder|Mux0~0_combout\ = (\SW~combout\(0) & ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\) # (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ $ 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\)))) # (!\SW~combout\(0) & ((\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\) # 
+-- (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\ $ (\bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111011011011110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[58]~12_combout\,
+	datab => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[57]~11_combout\,
+	datac => \bit8_to_3xBCD_addr|Mod0|auto_generated|divider|divider|StageOut[59]~13_combout\,
+	datad => \SW~combout\(0),
+	combout => \hex4_decoder|Mux0~0_combout\);
+
+-- Location: LCCOMB_X2_Y17_N18
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ = \SW~combout\(2) $ (VCC)
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\ = CARRY(\SW~combout\(2))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0101010110101010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(2),
+	datad => VCC,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~1\);
+
+-- Location: LCCOMB_X2_Y17_N22
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ = (\SW~combout\(4) & (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ $ (GND))) # (!\SW~combout\(4) & 
+-- (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\ & VCC))
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\ = CARRY((\SW~combout\(4) & !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100001100001100",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datab => \SW~combout\(4),
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[2]~3\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\);
+
+-- Location: LCCOMB_X2_Y17_N24
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\ = CARRY(!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001111",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~5\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X2_Y17_N26
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ = \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X2_Y17_N14
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\ & 
+-- !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[3]~4_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1_combout\);
+
+-- Location: LCCOMB_X2_Y17_N30
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(3))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1100110000000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \SW~combout\(3),
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2_combout\);
+
+-- Location: LCCOMB_X2_Y17_N2
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\ & 
+-- !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[1]~0_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5_combout\);
+
+-- Location: LCCOMB_X1_Y17_N24
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7_combout\ = (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\ & \SW~combout\(1))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000111100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datac => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	datad => \SW~combout\(1),
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7_combout\);
+
+-- Location: LCCOMB_X2_Y17_N4
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\ = CARRY((\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6_combout\) # 
+-- (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7_combout\))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011101110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~6_combout\,
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[30]~7_combout\,
+	datad => VCC,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\);
+
+-- Location: LCCOMB_X2_Y17_N6
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ = CARRY((!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4_combout\ & 
+-- (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5_combout\ & !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~4_combout\,
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[31]~5_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[1]~1_cout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\);
+
+-- Location: LCCOMB_X2_Y17_N8
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\ = CARRY((!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\ & 
+-- ((\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3_combout\) # (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2_combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000001110",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~3_combout\,
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[32]~2_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[2]~3_cout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\);
+
+-- Location: LCCOMB_X2_Y17_N10
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\ = CARRY((!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0_combout\ & 
+-- (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1_combout\ & !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000000000001",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	dataa => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~0_combout\,
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|StageOut[33]~1_combout\,
+	datad => VCC,
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[3]~5_cout\,
+	cout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\);
+
+-- Location: LCCOMB_X2_Y17_N12
+\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ = \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111000011110000",
+	sum_lutc_input => "cin")
+-- pragma translate_on
+PORT MAP (
+	cin => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[4]~7_cout\,
+	combout => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\);
+
+-- Location: LCCOMB_X1_Y15_N0
+\hex5_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex5_decoder|Mux6~0_combout\ = (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001100000000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \hex5_decoder|Mux6~0_combout\);
+
+-- Location: LCCOMB_X1_Y15_N14
+\hex5_decoder|Mux4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex5_decoder|Mux4~0_combout\ = (\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\ & !\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000000011001100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \hex5_decoder|Mux4~0_combout\);
+
+-- Location: LCCOMB_X1_Y16_N20
+\hex5_decoder|Mux1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex5_decoder|Mux1~0_combout\ = (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\) # (!\bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0011001111111111",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	datab => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_7_result_int[5]~8_combout\,
+	datad => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
+	combout => \hex5_decoder|Mux1~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N30
+\hex6_decoder|Mux6~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux6~0_combout\ = (\SW~combout\(2) & (!\SW~combout\(1) & (\SW~combout\(0) $ (!\SW~combout\(3))))) # (!\SW~combout\(2) & (\SW~combout\(0) & (\SW~combout\(1) $ (!\SW~combout\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100100000010100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux6~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N28
+\hex6_decoder|Mux5~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux5~0_combout\ = (\SW~combout\(1) & ((\SW~combout\(0) & ((\SW~combout\(3)))) # (!\SW~combout\(0) & (\SW~combout\(2))))) # (!\SW~combout\(1) & (\SW~combout\(2) & (\SW~combout\(0) $ (\SW~combout\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011100001100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux5~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N2
+\hex6_decoder|Mux4~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux4~0_combout\ = (\SW~combout\(2) & (\SW~combout\(3) & ((\SW~combout\(1)) # (!\SW~combout\(0))))) # (!\SW~combout\(2) & (\SW~combout\(1) & (!\SW~combout\(0) & !\SW~combout\(3))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011000000000010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux4~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N4
+\hex6_decoder|Mux3~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux3~0_combout\ = (\SW~combout\(0) & (\SW~combout\(1) $ ((!\SW~combout\(2))))) # (!\SW~combout\(0) & ((\SW~combout\(1) & (!\SW~combout\(2) & \SW~combout\(3))) # (!\SW~combout\(1) & (\SW~combout\(2) & !\SW~combout\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1000011010010100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux3~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N10
+\hex6_decoder|Mux2~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux2~0_combout\ = (\SW~combout\(1) & (\SW~combout\(0) & ((!\SW~combout\(3))))) # (!\SW~combout\(1) & ((\SW~combout\(2) & ((!\SW~combout\(3)))) # (!\SW~combout\(2) & (\SW~combout\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0000010011011100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux2~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N12
+\hex6_decoder|Mux1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux1~0_combout\ = (\SW~combout\(1) & (!\SW~combout\(3) & ((\SW~combout\(0)) # (!\SW~combout\(2))))) # (!\SW~combout\(1) & (\SW~combout\(0) & (\SW~combout\(2) $ (!\SW~combout\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100000010001110",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux1~0_combout\);
+
+-- Location: LCCOMB_X1_Y17_N6
+\hex6_decoder|Mux0~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \hex6_decoder|Mux0~0_combout\ = (\SW~combout\(0) & ((\SW~combout\(3)) # (\SW~combout\(1) $ (\SW~combout\(2))))) # (!\SW~combout\(0) & ((\SW~combout\(1)) # (\SW~combout\(2) $ (\SW~combout\(3)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1110111101111010",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \SW~combout\(1),
+	datab => \SW~combout\(0),
+	datac => \SW~combout\(2),
+	datad => \SW~combout\(3),
+	combout => \hex6_decoder|Mux0~0_combout\);
+
+-- Location: LCCOMB_X2_Y27_N16
+\lcd_display_0|LCD_E~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|LCD_E~0_combout\ = (\lcd_display_0|state.HOLD~regout\ & (((\lcd_display_0|LCD_E~regout\)))) # (!\lcd_display_0|state.HOLD~regout\ & ((\lcd_display_0|CLK_400HZ_Enable~regout\ & ((!\lcd_display_0|state.DROP_LCD_E~regout\))) # 
+-- (!\lcd_display_0|CLK_400HZ_Enable~regout\ & (\lcd_display_0|LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1011000011110100",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.HOLD~regout\,
+	datab => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	datac => \lcd_display_0|LCD_E~regout\,
+	datad => \lcd_display_0|state.DROP_LCD_E~regout\,
+	combout => \lcd_display_0|LCD_E~0_combout\);
+
+-- Location: LCFF_X2_Y27_N17
+\lcd_display_0|LCD_E\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|LCD_E~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|LCD_E~regout\);
+
+-- Location: LCCOMB_X2_Y27_N2
+\lcd_display_0|Selector1~0\ : cycloneii_lcell_comb
+-- Equation(s):
+-- \lcd_display_0|Selector1~0_combout\ = (\lcd_display_0|state.Print_String~regout\) # ((\lcd_display_0|LCD_RS~regout\ & ((\lcd_display_0|state.HOLD~regout\) # (\lcd_display_0|state.DROP_LCD_E~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "1111111111100000",
+	sum_lutc_input => "datac")
+-- pragma translate_on
+PORT MAP (
+	dataa => \lcd_display_0|state.HOLD~regout\,
+	datab => \lcd_display_0|state.DROP_LCD_E~regout\,
+	datac => \lcd_display_0|LCD_RS~regout\,
+	datad => \lcd_display_0|state.Print_String~regout\,
+	combout => \lcd_display_0|Selector1~0_combout\);
+
+-- Location: LCFF_X2_Y27_N3
+\lcd_display_0|LCD_RS\ : cycloneii_lcell_ff
+PORT MAP (
+	clk => \CLOCK_50~clkctrl_outclk\,
+	datain => \lcd_display_0|Selector1~0_combout\,
+	ena => \lcd_display_0|CLK_400HZ_Enable~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \lcd_display_0|LCD_RS~regout\);
 
 -- Location: PIN_V6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \DRAM_DQ[0]~I\ : cycloneii_io
@@ -5456,7 +8996,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5464,11 +9003,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(0),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(0));
 
 -- Location: PIN_J2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5483,7 +9022,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5491,11 +9029,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(1),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(1));
 
 -- Location: PIN_H1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5510,7 +9048,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5518,11 +9055,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(2),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(2));
 
 -- Location: PIN_H2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5537,7 +9074,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5545,11 +9081,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(3),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(3));
 
 -- Location: PIN_J4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5564,7 +9100,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5572,11 +9107,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(4),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(4));
 
 -- Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5591,7 +9126,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5599,11 +9133,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(5),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(5));
 
 -- Location: PIN_H4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5618,7 +9152,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5626,11 +9159,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(6),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(6));
 
 -- Location: PIN_H3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -5645,7 +9178,6 @@ GENERIC MAP (
 	oe_power_up => "low",
 	oe_register_mode => "none",
 	oe_sync_reset => "none",
-	open_drain_output => "true",
 	operation_mode => "bidir",
 	output_async_reset => "none",
 	output_power_up => "low",
@@ -5653,11 +9185,11 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|DATA_BUS_VALUE\(7),
+	oe => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
-	oe => VCC,
 	padio => LCD_DATA(7));
 
 -- Location: PIN_D25,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
@@ -9276,31 +12808,6 @@ PORT MAP (
 	oe => GND,
 	padio => ww_CLOCK_27);
 
--- Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\CLOCK_50~I\ : cycloneii_io
--- pragma translate_off
-GENERIC MAP (
-	input_async_reset => "none",
-	input_power_up => "low",
-	input_register_mode => "none",
-	input_sync_reset => "none",
-	oe_async_reset => "none",
-	oe_power_up => "low",
-	oe_register_mode => "none",
-	oe_sync_reset => "none",
-	operation_mode => "input",
-	output_async_reset => "none",
-	output_power_up => "low",
-	output_register_mode => "none",
-	output_sync_reset => "none")
--- pragma translate_on
-PORT MAP (
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	devoe => ww_devoe,
-	oe => GND,
-	padio => ww_CLOCK_50);
-
 -- Location: PIN_P26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \EXT_CLOCK~I\ : cycloneii_io
 -- pragma translate_off
@@ -10615,7 +14122,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\,
+	datain => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[8]~12_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10667,7 +14174,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => \bit8_to_3xBCD_0|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
+	datain => \bit8_to_3xBCD_data|Div1|auto_generated|divider|divider|add_sub_6_result_int[7]~10_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10875,7 +14382,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux6~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10901,7 +14408,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux5~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10927,7 +14434,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux4~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10953,7 +14460,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux3~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -10979,7 +14486,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux2~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11005,7 +14512,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|Mux1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11031,7 +14538,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex4_decoder|ALT_INV_Mux0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11057,7 +14564,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex5_decoder|Mux6~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11083,7 +14590,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11109,7 +14616,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex5_decoder|Mux4~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11135,7 +14642,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex5_decoder|Mux6~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11161,7 +14668,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|ALT_INV_add_sub_7_result_int[5]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11187,7 +14694,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex5_decoder|Mux1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11213,7 +14720,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \bit8_to_3xBCD_addr|Div0|auto_generated|divider|divider|add_sub_6_result_int[5]~8_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11239,7 +14746,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux6~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11265,7 +14772,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux5~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11291,7 +14798,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux4~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11317,7 +14824,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux3~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11343,7 +14850,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux2~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11369,7 +14876,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|Mux1~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11395,7 +14902,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \hex6_decoder|ALT_INV_Mux0~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11421,7 +14928,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \SW~combout\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11447,7 +14954,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11473,7 +14980,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11499,7 +15006,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \SW~combout\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11525,7 +15032,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \SW~combout\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11551,7 +15058,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \SW~combout\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11603,7 +15110,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => GND,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11629,7 +15136,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \lcd_display_0|LCD_E~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -11655,7 +15162,7 @@ GENERIC MAP (
 	output_sync_reset => "none")
 -- pragma translate_on
 PORT MAP (
-	datain => VCC,
+	datain => \lcd_display_0|LCD_RS~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	devoe => ww_devoe,
@@ -12753,7 +16260,7 @@ PORT MAP (
 	oe => GND,
 	padio => ww_AUD_ADCDAT);
 
--- Location: PIN_G14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
+-- Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 24mA
 \AUD_ADCLRCL~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
@@ -13313,7 +16820,7 @@ PORT MAP (
 	oe => GND,
 	padio => ww_TD_VS);
 
--- Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_E23,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \TD_CLK27~I\ : cycloneii_io
 -- pragma translate_off
 GENERIC MAP (
