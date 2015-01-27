@@ -294,6 +294,16 @@ architecture behavioral of DE2_Board_top_level is
 			q				: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 		);
 	end component;
+	
+	component bit8_to_3xBCD 
+		PORT
+		(
+			INPUT_CODE		: in  STD_LOGIC_VECTOR(7 downto 0);
+			OUTPUT0			: out STD_LOGIC_VECTOR(3 downto 0);
+			OUTPUT1			: out STD_LOGIC_VECTOR(3 downto 0);
+			OUTPUT2			: out STD_LOGIC_VECTOR(3 downto 0)
+		);
+	end component;
 
 	
 	signal dram_ba 	: std_logic_vector(1 downto 0); 
@@ -301,6 +311,11 @@ architecture behavioral of DE2_Board_top_level is
 	
 	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
 	signal pb_debounced		: STD_LOGIC;
+	
+	
+	signal hex0_4bit 	: std_logic_vector(3 downto 0); 
+	signal hex1_4bit 	: std_logic_vector(3 downto 0); 
+	signal hex2_4bit	: std_logic_vector(3 downto 0); 
 
 begin
 
@@ -323,12 +338,35 @@ begin
 			clock_100Hz			=> clock_100Hz,
 			pb_debounced		=> pb_debounced
 		);
+		
+		
+	
+	bit8_to_3xBCD_0 : component bit8_to_3xBCD 
+		port map
+		(
+			INPUT_CODE		=> SW(17 downto 10),
+			OUTPUT0			=> hex0_4bit,
+			OUTPUT1			=> hex1_4bit,
+			OUTPUT2			=> hex2_4bit
+		);
 		  
---	hex0_decoder : component DE2_HEX_DECODER
---		port map (
---			INPUT_CODE		=> SW(17 downto 14),
---			OUTPUT_DISPLAY	=> HEX0
---		);
+	hex0_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> hex0_4bit,
+			OUTPUT_DISPLAY	=> HEX0
+		);
+		  
+	hex1_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> hex1_4bit,
+			OUTPUT_DISPLAY	=> HEX1
+		);
+		  
+	hex2_decoder : component DE2_HEX_DECODER
+		port map (
+			INPUT_CODE		=> hex2_4bit,
+			OUTPUT_DISPLAY	=> HEX2
+		);
 	
 
 
@@ -340,14 +378,14 @@ begin
    --       inout signals are set to 'Z'
    -----------------------------------------
 	-- LEDs
-	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
+	LEDR(17 downto 0) <= SW(17 downto 0);  -- 18 Red LEDs  '1' = ON,  '0' = OFF
 	--LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
-	HEX0 <= SW(6 downto 0);
-	--HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
-	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	--HEX0 <= SW(6 downto 0);
+--	--HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+--	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX3 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX4 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX5 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF

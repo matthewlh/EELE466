@@ -14,7 +14,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DE2_HEX_DECODER is 
 	port(
-		INPUT_CODE		: in STD_LOGIC_VECTOR(3 downto 0);
+		INPUT_CODE		: in  STD_LOGIC_VECTOR(3 downto 0);
 		OUTPUT_DISPLAY	: out STD_LOGIC_VECTOR(6 downto 0)
 	);
 	  
@@ -31,26 +31,26 @@ begin
 		begin
 	
 			case (INPUT_CODE) is
-				when x"0" => data <= x"FC";
-				when x"1" => data <= x"60";
-				when x"2" => data <= x"DA";
-				when x"3" => data <= x"F2";
-				when x"4" => data <= x"66";
-				when x"5" => data <= x"B6";
-				when x"6" => data <= x"BE";
-				when x"7" => data <= x"E0";
-				when x"8" => data <= x"FE";
-				when x"9" => data <= x"F6";
-				when x"A" => data <= x"EE";
-				when x"B" => data <= x"3E";
-				when x"C" => data <= x"1A";
-				when x"D" => data <= x"7A";
-				when x"E" => data <= x"9E";
-				when x"F" => data <= x"8E";
+				when x"0" => data <= x"40";
+				when x"1" => data <= x"79";
+				when x"2" => data <= x"24";
+				when x"3" => data <= x"30";
+				when x"4" => data <= x"19";
+				when x"5" => data <= x"12";
+				when x"6" => data <= x"02";
+				when x"7" => data <= x"78";
+				when x"8" => data <= x"00";
+				when x"9" => data <= x"18";
+				when x"A" => data <= x"08";
+				when x"B" => data <= x"03";
+				when x"C" => data <= x"46";
+				when x"D" => data <= x"21";
+				when x"E" => data <= x"06";
+				when x"F" => data <= x"0E";
 			end case;
 			
 	end process;
 	
-	OUTPUT_DISPLAY <= data(7 downto 1);
+	OUTPUT_DISPLAY <= data(6 downto 0);
 	
 end architecture;

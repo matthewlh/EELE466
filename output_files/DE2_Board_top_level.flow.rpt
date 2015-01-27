@@ -1,5 +1,5 @@
 Flow report for DE2_Board_top_level
-Tue Jan 20 13:55:53 2015
+Tue Jan 27 12:43:52 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan 20 13:55:53 2015            ;
+; Flow Status                        ; Successful - Tue Jan 27 12:43:52 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_Board_top_level                              ;
 ; Top-level Entity Name              ; DE2_Board_top_level                              ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 0 / 33,216 ( 0 % )                               ;
-;     Total combinational functions  ; 0 / 33,216 ( 0 % )                               ;
+; Total logic elements               ; 204 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 204 / 33,216 ( < 1 % )                           ;
 ;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                               ;
 ; Total registers                    ; 0                                                ;
 ; Total pins                         ; 422 / 475 ( 89 % )                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/20/2015 13:55:41 ;
+; Start date & time ; 01/27/2015 12:43:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_Board_top_level ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 203178705550136.142178734107128       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 203178705413854.142238781606292       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 490 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 1089 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 445 MB              ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 504 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 1081 MB             ; 00:00:06                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 433 MB              ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 437 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 385 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 395 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +108,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; bz-ece-cb60102   ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; bz-ece-cb60102   ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; bz-ece-cb60102   ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; bz-ece-cb60102   ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; bz-ece-cb60102   ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

@@ -338,7 +338,7 @@ GND                          : E11       : gnd    :                   :         
 VGA_G[8]                     : E12       : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : E13       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : E14       : power  :                   : 3.3V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 4         :                
+TD_CLK27                     : E15       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
 ENET_DATA[14]                : E18       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
@@ -389,7 +389,7 @@ VGA_R[2]                     : G10       : output : 3.3-V LVTTL       :         
 VGA_G[6]                     : G11       : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_B[3]                     : G12       : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 4         :                
+AUD_ADCLRCL                  : G14       : output : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 4         :                
@@ -444,7 +444,7 @@ VGA_B[0]                     : J13       : output : 3.3-V LVTTL       :         
 VGA_B[1]                     : J14       : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO4                       : J15       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J16       :        :                   :         : 4         :                
-TD_CLK27                     : J17       : input  : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J17       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : J18       :        :                   :         : 4         :                
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
 GPIO_0[7]                    : J20       : bidir  : 3.3-V LVTTL       :         : 5         : Y              
@@ -645,7 +645,7 @@ DRAM_ADDR[5]                 : U6        : output : 3.3-V LVTTL       :         
 DRAM_ADDR[6]                 : U7        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : U8        : gnd    :                   :         :           :                
 HEX4[0]                      : U9        : output : 3.3-V LVTTL       :         : 1         : Y              
-AUD_ADCLRCL                  : U10       : output : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 1         :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 8         :                
 VCCINT                       : U13       : power  :                   : 1.2V    :           :                
