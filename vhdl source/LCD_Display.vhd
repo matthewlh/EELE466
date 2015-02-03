@@ -55,7 +55,7 @@ ARCHITECTURE a OF LCD_Display IS
 
 	TYPE STATE_TYPE IS (HOLD, FUNC_SET, DISPLAY_ON, MODE_SET, Print_String,
 	LINE2, RETURN_HOME, DROP_LCD_E, RESET1, RESET2, 
-	RESET3, DISPLAY_OFF, DISPLAY_CLEAR);
+	RESET3, DISPLAY_OFF, DISPLAY_CLEAR, DROP_SRAM);
 	
 	SIGNAL state, next_command: STATE_TYPE;
 	SIGNAL LCD_display_string	: character_string;
@@ -69,27 +69,29 @@ ARCHITECTURE a OF LCD_Display IS
 	
 	BEGIN
 
-	LCD_display_string <= (
-	-- ASCII hex values for LCD Display
-	-- Enter Live Hex Data Values from hardware here
-	-- LCD DISPLAYS THE FOLLOWING:
-	------------------------------
-	--| Count=XX                  |
-	--| UP3                       |
-	------------------------------
-	-- Line 1
-	X"43",X"6F",X"75",X"6E",X"74",X"3D",
-	X"0" & X"0",X"0" & X"0",
-	X"20",X"20",X"20",X"20",X"20",X"20",X"20",X"20",
-	-- Line 2
-	X"55",X"50",X"33",X"20",X"20",X"20",X"20",X"20",
-	X"20",X"20",X"20",X"20",X"20",X"20",X"20",X"20");
+--	LCD_display_string <= (
+--	-- ASCII hex values for LCD Display
+--	-- Enter Live Hex Data Values from hardware here
+--	-- LCD DISPLAYS THE FOLLOWING:
+--	------------------------------
+--	--| Count=XX                  |
+--	--| UP3                       |
+--	------------------------------
+--	-- Line 1
+--	X"43",X"6F",X"75",X"6E",X"74",X"3D",
+--	X"0" & X"0",X"0" & X"0",
+--	X"20",X"20",X"20",X"20",X"20",X"20",X"20",X"20",
+--	-- Line 2
+--	X"55",X"50",X"33",X"20",X"20",X"20",X"20",X"20",
+--	X"20",X"20",X"20",X"20",X"20",X"20",X"20",X"20");
 
 	-- BIDIRECTIONAL TRI STATE LCD DATA BUS
 		DATA_BUS <= DATA_BUS_VALUE WHEN LCD_RW_INT = '0' ELSE "ZZZZZZZZ";
 		
 	-- get next character in display string
-		Next_Char <= LCD_display_string(CONV_INTEGER(CHAR_COUNT));
+		--Next_Char <= LCD_display_string(CONV_INTEGER(CHAR_COUNT));
+		sram_rdaddress <= CHAR_COUNT;
+		Next_Char <= sram_q;
 		LCD_RW <= LCD_RW_INT;
 		
 	PROCESS
@@ -198,27 +200,27 @@ ARCHITECTURE a OF LCD_Display IS
 							
 	-- Write ASCII hex character in first LCD character location
 					WHEN Print_String =>
-							state <= DROP_LCD_E;
-							LCD_E <= '1';
+							LCD_E <= '0';
 							LCD_RS <= '1';
 							LCD_RW_INT <= '0';
+							sram_outclock <= '1';
 						
-	-- ASCII character to output
-							IF Next_Char(7 DOWNTO  4) /= X"0" THEN
-								DATA_BUS_VALUE <= Next_Char;
+--	-- ASCII character to output
+--							IF Next_Char(7 DOWNTO  4) /= X"0" THEN
+								--DATA_BUS_VALUE <= Next_Char;
+--							
+--							ELSE
+--	-- Convert 4-bit value to an ASCII hex digit
+--								IF Next_Char(3 DOWNTO 0) >9 THEN
+--	-- ASCII A...F
+--									DATA_BUS_VALUE <= X"4" & (Next_Char(3 DOWNTO 0)-9);
+--								ELSE
+--	-- ASCII 0...9
+--									DATA_BUS_VALUE <= X"3" & Next_Char(3 DOWNTO 0);
+--								END IF;
+--							END IF;
 							
-							ELSE
-	-- Convert 4-bit value to an ASCII hex digit
-								IF Next_Char(3 DOWNTO 0) >9 THEN
-	-- ASCII A...F
-									DATA_BUS_VALUE <= X"4" & (Next_Char(3 DOWNTO 0)-9);
-								ELSE
-	-- ASCII 0...9
-									DATA_BUS_VALUE <= X"3" & Next_Char(3 DOWNTO 0);
-								END IF;
-							END IF;
-							
-							state <= DROP_LCD_E;
+							state <= DROP_SRAM;
 							
 	-- Loop to send out 32 characters to LCD Display  (16 by 2 lines)
 							IF (CHAR_COUNT < 31) AND (Next_Char /= X"FE") THEN 
@@ -251,6 +253,14 @@ ARCHITECTURE a OF LCD_Display IS
 							DATA_BUS_VALUE <= X"80";
 							state <= DROP_LCD_E;
 							next_command <= Print_String;
+							
+	-- Extra state used for clocking the output SRAM data						
+					WHEN DROP_SRAM =>
+							LCD_E <= '1';
+							sram_outclock <= '0';
+							state <= DROP_LCD_E;
+							DATA_BUS_VALUE <= Next_Char;
+					
 							
 	-- The next three states occur at the end of each command or data transfer to the LCD
 	-- Drop LCD E line - falling edge loads inst/data to LCD controller

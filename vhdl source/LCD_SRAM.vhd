@@ -234,5 +234,5 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LCD_SRAM.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LCD_SRAM.cmp TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL LCD_SRAM.bsf FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL LCD_SRAM_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL LCD_SRAM_inst.vhd TRUE
 -- Retrieval info: LIB_FILE: altera_mf

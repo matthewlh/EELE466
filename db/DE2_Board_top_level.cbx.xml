@@ -1,14 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="DE2_Board_top_level">
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_data|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_1dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_addr|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_1dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_addr|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_data|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_4dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_data|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_data|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|LCD_SRAM:lcd_sram_0|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_tvr1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_addr|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_Board_top_level|bit8_to_3xBCD:bit8_to_3xBCD_data|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_85m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

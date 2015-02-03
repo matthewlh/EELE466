@@ -312,6 +312,13 @@ architecture behavioral of DE2_Board_top_level is
 			DATA_BUS					: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 	end component;
+	
+	component onepulse IS
+	
+	PORT(PB_debounced, clock	: IN	STD_LOGIC;
+		 PB_single_pulse		: OUT	STD_LOGIC);
+
+	END component;
 
 	----------------------------
 	---- Signal Declaration ----
@@ -458,11 +465,11 @@ begin
 	lcd_sram_0 : component lcd_sram
 		port map 
 		(
-			data				=> lcd_sram_data,
-			inclock			=> lcd_sram_inclock,
+			data				=> SW(17 downto 10),
+			inclock			=> clock_50,
 			outclock			=> lcd_sram_outclock,
 			rdaddress		=> lcd_sram_rdaddress,
-			wraddress		=> lcd_sram_wraddress,
+			wraddress		=> SW(4 downto 0),
 			wren				=> lcd_sram_wren,
 			q					=> lcd_sram_q
 		);
@@ -480,6 +487,14 @@ begin
 			LCD_RW				=> LCD_RW,
 			DATA_BUS				=> LCD_DATA
 	);
+	
+		onepulse_0 : component onepulse
+			PORT MAP
+			(
+				clock					=> clock_50,
+				PB_debounced 		=> pb_debounced, 
+				PB_single_pulse	=> lcd_sram_wren
+			);
 
 
 
@@ -513,7 +528,7 @@ begin
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 
 	-- Expansion Header
-	GPIO_0 <= (others => '0');  -- JP1
+	GPIO_0(0) <= lcd_sram_wren (others => '0');  -- JP1
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
