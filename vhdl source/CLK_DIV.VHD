@@ -8,6 +8,7 @@ ENTITY clk_div IS
 	PORT
 	(
 		clock_50Mhz				: IN	STD_LOGIC;
+		clock_25MHz				: OUT	STD_LOGIC;
 		clock_1MHz				: OUT	STD_LOGIC;
 		clock_100KHz			: OUT	STD_LOGIC;
 		clock_10KHz				: OUT	STD_LOGIC;
@@ -37,6 +38,9 @@ BEGIN
 			clock_100hz 	<= clock_100hz_reg;
 			clock_10hz 		<= clock_10hz_reg;
 			clock_1hz 		<= clock_1hz_reg;
+			
+-- Divide by 2
+	
 			
 -- Divide by 50
 		WAIT UNTIL clock_50Mhz'EVENT and clock_50Mhz = '1';

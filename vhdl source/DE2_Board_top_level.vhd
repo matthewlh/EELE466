@@ -249,254 +249,73 @@ architecture behavioral of DE2_Board_top_level is
 		);		
 	END component;
 	
-	Component debounce IS
-		PORT(	
-			pb							: IN	STD_LOGIC;
-			clock_100Hz 			: IN	STD_LOGIC;
-			pb_debounced			: OUT	STD_LOGIC
-		);
-	END component;
 	
-	component DE2_HEX_DECODER is 
-		port(
-			INPUT_CODE		: in  STD_LOGIC_VECTOR(3 downto 0);
-		OUTPUT_DISPLAY		: out STD_LOGIC_VECTOR(6 downto 0)
-		);		  
-	end component;
-	
-	component bit8_to_3xBCD 
-		PORT
+	Component vga_raster is
+		port
 		(
-			INPUT_CODE		: in  STD_LOGIC_VECTOR(7 downto 0);
-			OUTPUT0			: out STD_LOGIC_VECTOR(3 downto 0);
-			OUTPUT1			: out STD_LOGIC_VECTOR(3 downto 0);
-			OUTPUT2			: out STD_LOGIC_VECTOR(3 downto 0)
-		);
-	end component;	
-	
-	--Copyright (C) 1991-2013 Altera Corporation
-	--Your use of Altera Corporation's design tools, logic functions 
-	--and other software and tools, and its AMPP partner logic 
-	--functions, and any output files from any of the foregoing 
-	--(including device programming or simulation files), and any 
-	--associated documentation or information are expressly subject 
-	--to the terms and conditions of the Altera Program License 
-	--Subscription Agreement, Altera MegaCore Function License 
-	--Agreement, or other applicable license agreement, including, 
-	--without limitation, that your use is for the sole purpose of 
-	--programming logic devices manufactured by Altera and sold by 
-	--Altera or its authorized distributors.  Please refer to the 
-	--applicable agreement for further details.
-
-	component lcd_sram
-		PORT
-		(
-			data				: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			inclock			: IN STD_LOGIC;
-			outclock			: IN STD_LOGIC;
-			rdaddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wraddress		: IN STD_LOGIC_VECTOR (4 DOWNTO 0);
-			wren				: IN STD_LOGIC;
-			q					: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			reset 		: in std_logic;
+			clk 			: in std_logic; 		-- Should be 25.125 MHz
+			
+			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
+			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
+			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
+			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
+			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
+			
+			VGA_R			: out std_logic_vector(9 downto 0);
+			VGA_G			: out std_logic_vector(9 downto 0);
+			VGA_B 		: out std_logic_vector(9 downto 0)
 		);
 	end component;
-	
-	component LCD_DISPLAY
-		PORT(	
-			reset, clk_48Mhz		: IN		STD_LOGIC;
-			sram_q					: IN 		STD_LOGIC_VECTOR (7 DOWNTO 0);
-			sram_outclock			: OUT		STD_LOGIC;
-			sram_rdaddress			: OUT 	STD_LOGIC_VECTOR (4 DOWNTO 0);
-			LCD_RS, LCD_E			: OUT		STD_LOGIC;
-			LCD_RW					: OUT   	STD_LOGIC;
-			DATA_BUS					: INOUT	STD_LOGIC_VECTOR(7 DOWNTO 0)
-	);
-	end component;
-	
-	component onepulse IS
-	
-	PORT(PB_debounced, clock	: IN	STD_LOGIC;
-		 PB_single_pulse		: OUT	STD_LOGIC);
-
-	END component;
 
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
 	
-	signal dram_ba 	: std_logic_vector(1 downto 0); 
-	signal dram_dqm 	: std_logic_vector(1 downto 0); 
-	
 	-- clock --
-	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
-	signal pb_debounced		: STD_LOGIC;
-	
-	
-	-- data --
-	signal data_8bit	: std_logic_vector(7 downto 0); 	
-	
-	signal hex0_4bit 	: std_logic_vector(3 downto 0); 
-	signal hex1_4bit 	: std_logic_vector(3 downto 0); 
-	signal hex2_4bit	: std_logic_vector(3 downto 0); 
-	
-	-- address --
-	signal addr_8bit 	: std_logic_vector(7 downto 0); 
-	
-	signal hex4_4bit 	: std_logic_vector(3 downto 0); 
-	signal hex5_4bit	: std_logic_vector(3 downto 0); 
-	
-	-- lcd --
-	signal lcd_sram_data			: STD_LOGIC_VECTOR (7 DOWNTO 0);
-	signal lcd_sram_inclock		: STD_LOGIC;
-	signal lcd_sram_outclock	: STD_LOGIC;
-	signal lcd_sram_rdaddress	: STD_LOGIC_VECTOR (4 DOWNTO 0);
-	signal lcd_sram_wraddress	: STD_LOGIC_VECTOR (4 DOWNTO 0);
-	signal lcd_sram_wren			: STD_LOGIC;
-	signal lcd_sram_q				: STD_LOGIC_VECTOR (7 DOWNTO 0);
-	
+--	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
+	signal CLOCK_25MHz : STD_LOGIC;
 	
 begin
 	
 	----------------------
 	---- Clock intput ----
 	----------------------
-	clk_div_1 : component clk_div
-        port map (
-            clock_50Mhz		=> CLOCK_50,
-				clock_1MHz		=> clock_1MHz,
-				clock_100KHz	=> clock_100KHz,
-				clock_10KHz		=> clock_10KHz,
-				clock_1KHz		=> clock_1KHz, 
-				clock_100Hz		=> clock_100Hz,
-				clock_10Hz		=> clock_10Hz,
-				clock_1Hz		=> clock_1Hz
-        );		  
+--	clk_div_1 : component clk_div
+--        port map (
+--            clock_50Mhz		=> CLOCK_50,
+--				clock_1MHz		=> clock_1MHz,
+--				clock_100KHz	=> clock_100KHz,
+--				clock_10KHz		=> clock_10KHz,
+--				clock_1KHz		=> clock_1KHz, 
+--				clock_100Hz		=> clock_100Hz,
+--				clock_10Hz		=> clock_10Hz,
+--				clock_1Hz		=> clock_1Hz
+--        );
+
+	clk_div_2: process(CLOCK_50)
+	begin
+		if CLOCK_50'event and CLOCK_50 = '1' then
+			CLOCK_25MHz <= not CLOCK_25MHz;
+		end if;
+	end process;
 		  
-	debounce_1 : component debounce
-		port map (
-			pb						=> KEY(3),
-			clock_100Hz			=> clock_100Hz,
-			pb_debounced		=> pb_debounced
-		);
-		
-		
-		
-	---------------------------------
-	---- Data intput and Display ----
-	---------------------------------
-	
-	data_8bit <= SW(17 downto 10);
-	
-	bit8_to_3xBCD_data : component bit8_to_3xBCD 
+	vga_raster_1: component vga_raster
 		port map
 		(
-			INPUT_CODE		=> data_8bit,
-			OUTPUT0			=> hex0_4bit,
-			OUTPUT1			=> hex1_4bit,
-			OUTPUT2			=> hex2_4bit
+			reset 		=> '0',
+			clk 			=> CLOCK_25MHz,
+			
+			VGA_CLK 		=> VGA_CLK,
+			VGA_HS		=> VGA_HS, 
+			VGA_VS		=> VGA_VS,
+			VGA_BLANK	=> VGA_BLANK,
+			VGA_SYNC 	=> VGA_SYNC,
+			
+			VGA_R			=> VGA_R,
+			VGA_G			=> VGA_G,
+			VGA_B 		=> VGA_B
 		);
-		  
-	hex0_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> hex0_4bit,
-			OUTPUT_DISPLAY	=> HEX0
-		);
-		  
-	hex1_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> hex1_4bit,
-			OUTPUT_DISPLAY	=> HEX1
-		);
-		  
-	hex2_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> hex2_4bit,
-			OUTPUT_DISPLAY	=> HEX2
-		);
-		
-		
-		
-	------------------------------------
-	---- Address intput and Display ----
-	------------------------------------
-	
-	addr_8bit(7 downto 5) <= (others => '0');
-	addr_8bit(4 downto 0) <= SW(4 downto 0); 
-	
-	bit8_to_3xBCD_addr : component bit8_to_3xBCD 
-		port map
-		(
-			INPUT_CODE		=> addr_8bit,
-			OUTPUT0			=> hex4_4bit,
-			OUTPUT1			=> hex5_4bit,
-			OUTPUT2			=> open
-		);
-		  
-	hex4_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> hex4_4bit,
-			OUTPUT_DISPLAY	=> HEX4
-		);
-		  
-	hex5_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> hex5_4bit,
-			OUTPUT_DISPLAY	=> HEX5
-		);
-		  
-	hex6_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> addr_8bit(3 downto 0),
-			OUTPUT_DISPLAY	=> HEX6
-		);
-		  
-	hex7_decoder : component DE2_HEX_DECODER
-		port map (
-			INPUT_CODE		=> addr_8bit(7 downto 4),
-			OUTPUT_DISPLAY	=> HEX7
-		);
-		
-		
-		
-	-----------------------
-	---- LCD Interface ----
-	-----------------------
-	
-	lcd_sram_0 : component lcd_sram
-		port map 
-		(
-			data				=> SW(17 downto 10),
-			inclock			=> clock_50,
-			outclock			=> lcd_sram_outclock,
-			rdaddress		=> lcd_sram_rdaddress,
-			wraddress		=> SW(4 downto 0),
-			wren				=> lcd_sram_wren,
-			q					=> lcd_sram_q
-		);
-	
-	lcd_display_0 : component LCD_DISPLAY
-		PORT MAP
-		(	
-			reset 				=> '1',
-			clk_48Mhz			=> clock_50,
-			sram_q				=> lcd_sram_q,
-			sram_outclock		=> lcd_sram_outclock,
-			sram_rdaddress		=> lcd_sram_rdaddress,
-			LCD_RS				=> LCD_RS,
-			LCD_E					=> LCD_EN,
-			LCD_RW				=> LCD_RW,
-			DATA_BUS				=> LCD_DATA
-	);
-	
-		onepulse_0 : component onepulse
-			PORT MAP
-			(
-				clock					=> clock_50,
-				PB_debounced 		=> pb_debounced, 
-				PB_single_pulse	=> lcd_sram_wren
-			);
-
-
 
    -----------------------------------------
    -- Delete the signals below that you will
@@ -506,40 +325,40 @@ begin
    --       inout signals are set to 'Z'
    -----------------------------------------
 	-- LEDs
-	LEDR(17 downto 0) <= SW(17 downto 0);  -- 18 Red LEDs  '1' = ON,  '0' = OFF
-	--LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
+	LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
+	LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
---	HEX0 <= (others => '0');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX0 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX1 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX2 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	HEX3 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX4 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX5 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX6 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
---	HEX7 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX4 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX5 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX6 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
+	HEX7 <= (others => '1');  -- '0' turns segment ON, '1' turns segment OFF
 	
 	-- LCD Module
---	LCD_DATA <= (others => 'Z');
---	LCD_RW   <= '1';  -- '0' = Write, '1' = Read
---	LCD_EN   <= '0';  -- Enable
---	LCD_RS   <= '1';  -- Command/Data Select '0' = Command, '1' = Data
+	LCD_DATA <= (others => 'Z');
+	LCD_RW   <= '1';  -- '0' = Write, '1' = Read
+	LCD_EN   <= '0';  -- Enable
+	LCD_RS   <= '1';  -- Command/Data Select '0' = Command, '1' = Data
 	LCD_ON   <= '1';  -- LCD Power ON/OFF
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 
 	-- Expansion Header
-	GPIO_0(0) <= lcd_sram_wren (others => '0');  -- JP1
+	GPIO_0 <= (others => '0');  -- JP1
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
-	VGA_R     <= (others => '0');  -- red data
-	VGA_G     <= (others => '0');  -- green data
-	VGA_B     <= (others => '0');  -- blue data
-	VGA_CLK   <= '0';  -- VGA Clock
-	VGA_BLANK <= '0';  -- VGA Blank
-	VGA_HS    <= '0';  -- VGA H_Sync
-	VGA_VS    <= '0';  -- VGA V_Sync
-	VGA_SYNC  <= '0';  -- VGA Sync
+--	VGA_R     <= (others => '0');  -- red data
+--	VGA_G     <= (others => '0');  -- green data
+--	VGA_B     <= (others => '0');  -- blue data
+--	VGA_CLK   <= '0';  -- VGA Clock
+--	VGA_BLANK <= '0';  -- VGA Blank
+--	VGA_HS    <= '0';  -- VGA H_Sync
+--	VGA_VS    <= '0';  -- VGA V_Sync
+--	VGA_SYNC  <= '0';  -- VGA Sync
 	
 	-- Audio CODEC (WM8731)
 	------------------------------------------------------------
@@ -599,10 +418,10 @@ begin
 	-- DRAM (8-Mbyte SDRAM)
 --	DRAM_ADDR  <= (others => '0');  -- SDRAM Address
 --	DRAM_DQ    <= (others => 'Z');  -- SDRAM Data
-	DRAM_BA_0  <= dram_ba(0);                      -- SDRAM Bank Address 0
-	DRAM_BA_1  <= dram_ba(1);                      -- SDRAM Bank Address 1
-	DRAM_LDQM  <= dram_dqm(0);                      -- SDRAM Low-byte  Data Mask
-	DRAM_UDQM  <= dram_dqm(1);                      -- SDRAM High-byte Data Mask
+--	DRAM_BA_0  <= (others => '0');                      -- SDRAM Bank Address 0
+--	DRAM_BA_1  <= (others => '0');                      -- SDRAM Bank Address 1
+--	DRAM_LDQM  <= (others => '0');                      -- SDRAM Low-byte  Data Mask
+--	DRAM_UDQM  <= (others => '0');                      -- SDRAM High-byte Data Mask
 --	DRAM_RAS_N <= '0';                      -- SDRAM Row    Address Strobe
 --	DRAM_CAS_N <= '0';                      -- SDRAM Column Address Strobe
 --	DRAM_CKE   <= '0';                      -- SDRAM Clock Enable
