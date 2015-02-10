@@ -1,3 +1,8 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
 entity vga_sync_controller is
 	generic
 	(
@@ -17,7 +22,7 @@ entity vga_sync_controller is
 		-- horizontal_line_pixels = 2600, which requires Nlinebits = 12
 		--
 		--------------------------------------------------------------------------------------
-		Nlinebits : unsigned := 10;  -- 640x480@60Hz default
+		Nlinebits : integer
 	);
 	port
 	(
@@ -52,7 +57,7 @@ entity vga_sync_controller is
 	);
 end vga_sync_controller;
 
-architecture <arch_name> of vga_sync_controller is
+architecture vga_sync_controller_arch of vga_sync_controller is
 
 	-- Declarations (optional)
 
@@ -72,4 +77,4 @@ begin
 
 	-- Generate Statement (optional)
 
-end <arch_name>;
+end vga_sync_controller_arch;

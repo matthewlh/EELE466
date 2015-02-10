@@ -552,6 +552,7 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -t
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=42" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=1871" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=62959" -section_id auto_signaltap_0
+set_global_assignment -name VHDL_FILE "vhdl source/vga_sync_controller.vhd"
 set_global_assignment -name VHDL_FILE "vhdl source/bit8_to_3xBCD.vhd"
 set_global_assignment -name VHDL_FILE "vhdl source/ONEPULSE.VHD"
 set_global_assignment -name VHDL_FILE "vhdl source/LCD_Display.vhd"

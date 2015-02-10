@@ -103,7 +103,7 @@ VCCA_PLL1                    : AA8       : power  :                   : 1.2V    
 SRAM_DQ[3]                   : AA9       : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[4]                   : AA10      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_DQ[6]                   : AA11      : bidir  : 3.3-V LVTTL       :         : 8         : Y              
-AUD_ADCLRCL                  : AA12      : output : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA12      :        :                   :         : 8         :                
 LEDR[10]                     : AA13      : output : 3.3-V LVTTL       :         : 7         : Y              
 LEDR[8]                      : AA14      : output : 3.3-V LVTTL       :         : 7         : Y              
 FL_ADDR[19]                  : AA15      : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -362,7 +362,7 @@ TD_DATA[5]                   : F9        : input  : 3.3-V LVTTL       :         
 VGA_R[1]                     : F10       : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_R[8]                     : F11       : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_B[2]                     : F12       : output : 3.3-V LVTTL       :         : 3         : Y              
-TD_CLK27                     : F13       : input  : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F13       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 4         :                
@@ -389,7 +389,7 @@ VGA_R[2]                     : G10       : output : 3.3-V LVTTL       :         
 VGA_G[6]                     : G11       : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_B[3]                     : G12       : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G13       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : G14       :        :                   :         : 4         :                
+TD_CLK27                     : G14       : input  : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : G15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G16       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : G17       :        :                   :         : 4         :                
@@ -647,7 +647,7 @@ GND                          : U8        : gnd    :                   :         
 HEX4[0]                      : U9        : output : 3.3-V LVTTL       :         : 1         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 1         :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 8         :                
+AUD_ADCLRCL                  : U12       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCINT                       : U13       : power  :                   : 1.2V    :           :                
 VCCINT                       : U14       : power  :                   : 1.2V    :           :                
 VCCINT                       : U15       : power  :                   : 1.2V    :           :                

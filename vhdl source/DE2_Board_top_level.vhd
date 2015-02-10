@@ -249,24 +249,63 @@ architecture behavioral of DE2_Board_top_level is
 		);		
 	END component;
 	
-	
-	Component vga_raster is
+	component vga_sync_controller is
+		generic
+		(
+			Nlinebits : integer  -- 640x480@60Hz default
+		);
 		port
 		(
-			reset 		: in std_logic;
-			clk 			: in std_logic; 		-- Should be 25.125 MHz
+			-------------------------------------------------------------------------
+			-- Input Signals
+			-- 
+			-- Resolution parameter settings for the input signals can be found at
+			-- http://tinyvga.com/vga-timing
+			-------------------------------------------------------------------------
+			pixel_clock                   : in  std_logic;                                -- pixel clock which is the basis of the pixel and line synchronization timings
+			reset                         : in  std_logic; 										   -- reset is active high
+			horizontal_sync_pixels	      : in  std_logic_vector(Nlinebits-1 downto 0);   -- horizontal sync pulse width in pixels
+			horizontal_sync_polarity      : in  std_logic;                                -- horizontal sync pulse polarity : '1' = positive, '0' = negative
+			horizontal_back_porch_pixels  : in  std_logic_vector(Nlinebits-1 downto 0);   -- horizontal back porch width in pixels
+			horizontal_display_pixels     : in  std_logic_vector(Nlinebits-1 downto 0);   -- horizontal display width in pixels, the display window where DAC data gets written
+			horizontal_front_porch_pixels : in  std_logic_vector(Nlinebits-1 downto 0);   -- horizontal front porch width in pixels
+			vertical_sync_lines	      	: in  std_logic_vector(Nlinebits-1 downto 0);   -- vertical sync pulse width in lines
+			vertical_sync_polarity      	: in  std_logic;                                -- vertical sync pulse polarity : '1' = positive, '0' = negative
+			vertical_back_porch_lines  	: in  std_logic_vector(Nlinebits-1 downto 0);   -- vertical back porch width in lines
+			vertical_display_lines     	: in  std_logic_vector(Nlinebits-1 downto 0);   -- vertical display width in lines, the display window where DAC data gets written
+			vertical_front_porch_lines 	: in  std_logic_vector(Nlinebits-1 downto 0);   -- vertical front porch width in lines
 			
-			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
-			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
-			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
-			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
-			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
-			
-			VGA_R			: out std_logic_vector(9 downto 0);
-			VGA_G			: out std_logic_vector(9 downto 0);
-			VGA_B 		: out std_logic_vector(9 downto 0)
+			-------------------------------------------------------------------------
+			-- Output Signals
+			-------------------------------------------------------------------------
+			vga_monitor_horizontal_sync   : out std_logic;                                -- the horizontal sync pulse to be sent to a VGA monitor
+			vga_monitor_vertical_sync     : out std_logic;                                -- the vertical   sync pulse to be sent to a VGA monitor
+			vga_dac_clock                 : out std_logic;                                -- the pixel clock to be sent to the video DAC
+			vga_dac_blank                 : out std_logic;                                -- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
+			vga_dac_sync                  : out std_logic;                                -- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
+			pixel_row_address             : out std_logic_vector(Nlinebits-1 downto 0);   -- pixel row address for the vertical frame display region
+			pixel_column_address          : out std_logic_vector(Nlinebits-1 downto 0)    -- pixel column address for the horizontal line display region
 		);
 	end component;
+	
+	
+--	Component vga_raster is
+--		port
+--		(
+--			reset 		: in std_logic;
+--			clk 			: in std_logic; 		-- Should be 25.125 MHz
+--			
+--			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
+--			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
+--			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
+--			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
+--			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
+--			
+--			VGA_R			: out std_logic_vector(9 downto 0);
+--			VGA_G			: out std_logic_vector(9 downto 0);
+--			VGA_B 		: out std_logic_vector(9 downto 0)
+--		);
+--	end component;
 
 	----------------------------
 	---- Signal Declaration ----
@@ -299,23 +338,61 @@ begin
 			CLOCK_25MHz <= not CLOCK_25MHz;
 		end if;
 	end process;
-		  
-	vga_raster_1: component vga_raster
+	
+	vga_sync_controller_1: component vga_sync_controller
+		generic map
+		(
+			Nlinebits => 16
+		)
 		port map
 		(
-			reset 		=> '0',
-			clk 			=> CLOCK_25MHz,
+			-------------------------------------------------------------------------
+			-- Input Signals
+			-- 
+			-- Resolution parameter settings for the input signals can be found at
+			-- http://tinyvga.com/vga-timing
+			-------------------------------------------------------------------------
+			pixel_clock                   => CLOCK_25MHz,		-- pixel clock which is the basis of the pixel and line synchronization timings
+			reset                         => '0',					-- reset is active high
+			horizontal_sync_pixels	      => x"000A",   			-- horizontal sync pulse width in pixels
+			horizontal_sync_polarity      => '0',    				-- horizontal sync pulse polarity : '1' = positive, '0' = negative
+			horizontal_back_porch_pixels  => x"0030",   			-- horizontal back porch width in pixels
+			horizontal_display_pixels     => x"0280",   			-- horizontal display width in pixels, the display window where DAC data gets written
+			horizontal_front_porch_pixels => x"0010",   			-- horizontal front porch width in pixels
+			vertical_sync_lines	      	=> x"0002",   			-- vertical sync pulse width in lines
+			vertical_sync_polarity      	=> '0',           	-- vertical sync pulse polarity : '1' = positive, '0' = negative
+			vertical_back_porch_lines  	=> x"0021",   			-- vertical back porch width in lines
+			vertical_display_lines     	=> x"01E0",   			-- vertical display width in lines, the display window where DAC data gets written
+			vertical_front_porch_lines 	=> x"000A",   			-- vertical front porch width in lines
 			
-			VGA_CLK 		=> VGA_CLK,
-			VGA_HS		=> VGA_HS, 
-			VGA_VS		=> VGA_VS,
-			VGA_BLANK	=> VGA_BLANK,
-			VGA_SYNC 	=> VGA_SYNC,
-			
-			VGA_R			=> VGA_R,
-			VGA_G			=> VGA_G,
-			VGA_B 		=> VGA_B
+			-------------------------------------------------------------------------
+			-- Output Signals
+			-------------------------------------------------------------------------
+			vga_monitor_horizontal_sync   => VGA_HS,				-- the horizontal sync pulse to be sent to a VGA monitor
+			vga_monitor_vertical_sync     => VGA_VS,           -- the vertical   sync pulse to be sent to a VGA monitor
+			vga_dac_clock                 => VGA_CLK,          -- the pixel clock to be sent to the video DAC
+			vga_dac_blank                 => VGA_BLANK,       	-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
+			vga_dac_sync                  => VGA_SYNC,        	-- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
+			pixel_row_address             => open,					-- pixel row address for the vertical frame display region
+			pixel_column_address          => open    				-- pixel column address for the horizontal line display region
 		);
+		  
+--	vga_raster_1: component vga_raster
+--		port map
+--		(
+--			reset 		=> '0',
+--			clk 			=> CLOCK_25MHz,
+--			
+--			VGA_CLK 		=> VGA_CLK,
+--			VGA_HS		=> VGA_HS, 
+--			VGA_VS		=> VGA_VS,
+--			VGA_BLANK	=> VGA_BLANK,
+--			VGA_SYNC 	=> VGA_SYNC,
+--			
+--			VGA_R			=> VGA_R,
+--			VGA_G			=> VGA_G,
+--			VGA_B 		=> VGA_B
+--		);
 
    -----------------------------------------
    -- Delete the signals below that you will
