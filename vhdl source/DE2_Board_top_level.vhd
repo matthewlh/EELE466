@@ -357,7 +357,7 @@ begin
 			-------------------------------------------------------------------------
 			pixel_clock                   => CLOCK_25MHz,		-- pixel clock which is the basis of the pixel and line synchronization timings
 			reset                         => '0',					-- reset is active high
-			horizontal_sync_pixels	      => x"000A",   			-- horizontal sync pulse width in pixels
+			horizontal_sync_pixels	      => x"0060",   			-- horizontal sync pulse width in pixels
 			horizontal_sync_polarity      => '0',    				-- horizontal sync pulse polarity : '1' = positive, '0' = negative
 			horizontal_back_porch_pixels  => x"0030",   			-- horizontal back porch width in pixels
 			horizontal_display_pixels     => x"0280",   			-- horizontal display width in pixels, the display window where DAC data gets written

@@ -75,41 +75,55 @@ architecture vga_sync_controller_arch of vga_sync_controller is
 	signal 	rectangle_h, rectangle_v, rectangle : std_logic;  	-- rectangle area
 	
 	-- Video parameters	
-	signal HTOTAL 				: integer ;
-	signal HSYNC 				: integer ;
-	signal HBACK_PORCH 		: integer ;
-	signal HACTIVE 			: integer ;
-	signal HFRONT_PORCH 		: integer ;
-	signal VTOTAL 				: integer ;
-	signal VSYNC 				: integer ;
-	signal VBACK_PORCH 		: integer ;
-	signal VACTIVE 			: integer ;
-	signal VFRONT_PORCH 		: integer ;
-	signal RECTANGLE_HSTART : integer ;
-	signal RECTANGLE_HEND 	: integer ;
-	signal RECTANGLE_VSTART : integer ;
-	signal RECTANGLE_VEND 	: integer ;
+--	signal HTOTAL 				: integer ;
+--	signal HSYNC 				: integer ;
+--	signal HBACK_PORCH 		: integer ;
+--	signal HACTIVE 			: integer ;
+--	signal HFRONT_PORCH 		: integer ;
+--	signal VTOTAL 				: integer ;
+--	signal VSYNC 				: integer ;
+--	signal VBACK_PORCH 		: integer ;
+--	signal VACTIVE 			: integer ;
+--	signal VFRONT_PORCH 		: integer ;
+--	signal RECTANGLE_HSTART : integer ;
+--	signal RECTANGLE_HEND 	: integer ;
+--	signal RECTANGLE_VSTART : integer ;
+--	signal RECTANGLE_VEND 	: integer ;
 	
+	constant HTOTAL 				: integer := 800;
+	constant HSYNC 				: integer := 96;
+	constant HBACK_PORCH 		: integer := 48;
+	constant HACTIVE 				: integer := 640;
+	constant HFRONT_PORCH 		: integer := 16;
+	constant VTOTAL 				: integer := 525;
+	constant VSYNC 				: integer := 2;
+	constant VBACK_PORCH 		: integer := 33;
+	constant VACTIVE 				: integer := 480;
+	constant VFRONT_PORCH 		: integer := 10;
+	constant RECTANGLE_HSTART 	: integer := 100;
+	constant RECTANGLE_HEND 	: integer := 540;
+	constant RECTANGLE_VSTART 	: integer := 100;
+	constant RECTANGLE_VEND 	: integer := 380;
 
 	
 	
 
 begin
 
-	 HTOTAL 				<= HSYNC + HBACK_PORCH + HACTIVE + HFRONT_PORCH;
-	 HSYNC 				<= to_integer(unsigned(horizontal_sync_pixels));
-	 HBACK_PORCH 		<= to_integer(unsigned(horizontal_back_porch_pixels));
-	 HACTIVE 			<= to_integer(unsigned(horizontal_display_pixels));
-	 HFRONT_PORCH 		<= to_integer(unsigned(horizontal_front_porch_pixels));
-	 VTOTAL 				<= VSYNC + VBACK_PORCH + VACTIVE + VFRONT_PORCH;
-	 VSYNC 				<= to_integer(unsigned(vertical_sync_lines));
-	 VBACK_PORCH 		<= to_integer(unsigned(vertical_back_porch_lines));
-	 VACTIVE 			<= to_integer(unsigned(vertical_display_lines));
-	 VFRONT_PORCH 		<= to_integer(unsigned(vertical_front_porch_lines));
-	 RECTANGLE_HSTART <= 100;
-	 RECTANGLE_HEND 	<= 540;
-	 RECTANGLE_VSTART <= 100;
-	 RECTANGLE_VEND 	<= 380;
+--	 HTOTAL 				<= HSYNC + HBACK_PORCH + HACTIVE + HFRONT_PORCH;
+--	 HSYNC 				<= to_integer(unsigned(horizontal_sync_pixels));
+--	 HBACK_PORCH 		<= to_integer(unsigned(horizontal_back_porch_pixels));
+--	 HACTIVE 			<= to_integer(unsigned(horizontal_display_pixels));
+--	 HFRONT_PORCH 		<= to_integer(unsigned(horizontal_front_porch_pixels));
+--	 VTOTAL 				<= VSYNC + VBACK_PORCH + VACTIVE + VFRONT_PORCH;
+--	 VSYNC 				<= to_integer(unsigned(vertical_sync_lines));
+--	 VBACK_PORCH 		<= to_integer(unsigned(vertical_back_porch_lines));
+--	 VACTIVE 			<= to_integer(unsigned(vertical_display_lines));
+--	 VFRONT_PORCH 		<= to_integer(unsigned(vertical_front_porch_lines));
+--	 RECTANGLE_HSTART <= 100;
+--	 RECTANGLE_HEND 	<= 540;
+--	 RECTANGLE_VSTART <= 100;
+--	 RECTANGLE_VEND 	<= 380;
 
 	-- Process Statement (optional)
 			--------------
