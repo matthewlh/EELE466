@@ -311,6 +311,9 @@ architecture behavioral of DE2_Board_top_level is
 	---- Signal Declaration ----
 	----------------------------
 	
+	signal vga_blank_local : std_logic;
+	
+	
 	-- clock --
 --	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
 	signal CLOCK_25MHz : STD_LOGIC;
@@ -371,7 +374,7 @@ begin
 			vga_monitor_horizontal_sync   => VGA_HS,				-- the horizontal sync pulse to be sent to a VGA monitor
 			vga_monitor_vertical_sync     => VGA_VS,           -- the vertical   sync pulse to be sent to a VGA monitor
 			vga_dac_clock                 => VGA_CLK,          -- the pixel clock to be sent to the video DAC
-			vga_dac_blank                 => VGA_BLANK,       	-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
+			vga_dac_blank                 => vga_blank_local,       	-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
 			vga_dac_sync                  => VGA_SYNC,        	-- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
 			pixel_row_address             => open,					-- pixel row address for the vertical frame display region
 			pixel_column_address          => open    				-- pixel column address for the horizontal line display region
@@ -428,11 +431,14 @@ begin
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
---	VGA_R     <= (others => '0');  -- red data
---	VGA_G     <= (others => '0');  -- green data
---	VGA_B     <= (others => '0');  -- blue data
+	
+	
+	VGA_R     <= (others => '0');  -- red data
+	VGA_G     <= (others => '0');  -- green data
+	VGA_B     <= (others => '1') when (vga_blank_local = '1')
+					 else (others => '0');  -- blue data
 --	VGA_CLK   <= '0';  -- VGA Clock
---	VGA_BLANK <= '0';  -- VGA Blank
+	VGA_BLANK <= vga_blank_local;  -- VGA Blank
 --	VGA_HS    <= '0';  -- VGA H_Sync
 --	VGA_VS    <= '0';  -- VGA V_Sync
 --	VGA_SYNC  <= '0';  -- VGA Sync

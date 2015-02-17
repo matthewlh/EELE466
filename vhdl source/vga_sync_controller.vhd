@@ -1,7 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+--use ieee.std_logic_arith.all;
+--use ieee.std_logic_unsigned.all;
+use IEEE.numeric_std.all;
 
 entity vga_sync_controller is
 	generic
@@ -60,10 +61,249 @@ end vga_sync_controller;
 architecture vga_sync_controller_arch of vga_sync_controller is
 
 	-- Declarations (optional)
+	
+	-- Horizontal position (0-800)
+	signal 	Hcount : integer;
+
+	-- Vertical position (0-524)
+	signal 	Vcount : integer;
+	signal 	EndOfLine, EndOfField : std_logic;
+	
+	signal 	vga_hblank, vga_hsync,										-- Sync. signals
+				vga_vblank, vga_vsync : std_logic; 						
+				
+	signal 	rectangle_h, rectangle_v, rectangle : std_logic;  	-- rectangle area
+	
+	-- Video parameters	
+	signal HTOTAL 				: integer ;
+	signal HSYNC 				: integer ;
+	signal HBACK_PORCH 		: integer ;
+	signal HACTIVE 			: integer ;
+	signal HFRONT_PORCH 		: integer ;
+	signal VTOTAL 				: integer ;
+	signal VSYNC 				: integer ;
+	signal VBACK_PORCH 		: integer ;
+	signal VACTIVE 			: integer ;
+	signal VFRONT_PORCH 		: integer ;
+	signal RECTANGLE_HSTART : integer ;
+	signal RECTANGLE_HEND 	: integer ;
+	signal RECTANGLE_VSTART : integer ;
+	signal RECTANGLE_VEND 	: integer ;
+	
+
+	
+	
 
 begin
 
+	 HTOTAL 				<= HSYNC + HBACK_PORCH + HACTIVE + HFRONT_PORCH;
+	 HSYNC 				<= to_integer(unsigned(horizontal_sync_pixels));
+	 HBACK_PORCH 		<= to_integer(unsigned(horizontal_back_porch_pixels));
+	 HACTIVE 			<= to_integer(unsigned(horizontal_display_pixels));
+	 HFRONT_PORCH 		<= to_integer(unsigned(horizontal_front_porch_pixels));
+	 VTOTAL 				<= VSYNC + VBACK_PORCH + VACTIVE + VFRONT_PORCH;
+	 VSYNC 				<= to_integer(unsigned(vertical_sync_lines));
+	 VBACK_PORCH 		<= to_integer(unsigned(vertical_back_porch_lines));
+	 VACTIVE 			<= to_integer(unsigned(vertical_display_lines));
+	 VFRONT_PORCH 		<= to_integer(unsigned(vertical_front_porch_lines));
+	 RECTANGLE_HSTART <= 100;
+	 RECTANGLE_HEND 	<= 540;
+	 RECTANGLE_VSTART <= 100;
+	 RECTANGLE_VEND 	<= 380;
+
 	-- Process Statement (optional)
+			--------------
+		-- Counters --
+		--------------
+		
+		HCounter : process (pixel_clock, reset)
+		begin
+			if reset = '1' then
+				HCount <= 0;
+				
+			elsif pixel_clock'event and pixel_clock = '1' then
+			
+				if EndOfLine = '1' then
+					HCount <= 0;
+				else
+					HCount <= HCount + 1;
+				end if;
+				
+			end if;
+		end process HCounter;
+		
+		EndOfLine <= '1' when ( HCount = (HTOTAL -1) ) else '0';
+		
+		VCounter: process(pixel_clock, reset)
+		begin 
+			if reset = '1' then
+				VCount <= 0;
+			elsif pixel_clock'event and pixel_clock = '1' then
+			
+				if EndOfLine = '1' then
+					if EndOfField = '1' then
+						VCount <= 0;
+					else
+						VCount <= Vcount + 1;
+					end if;
+				end if;
+				
+			end if;
+		end process Vcounter;
+		
+		EndOfField <= '1' when ( VCount = (VTOTAL -1) ) else '0';
+		
+		
+		------------------------
+		-- Horizontal Signals --
+		------------------------
+		
+		HSyncGen: process (pixel_clock, reset)
+		begin
+			if reset = '1' then
+				vga_hsync <= '1';
+			elsif pixel_clock'event and pixel_clock = '1' then
+				
+				if EndOfLine = '1' then
+					vga_hsync <= '1';
+				elsif HCount = (HSYNC -1) then
+					vga_hsync <= '0';
+				end if;
+				
+			end if;
+		end process HSyncGen;
+		
+		HBLankGen: process (pixel_clock, reset)
+		begin
+			if reset = '1' then
+				vga_hblank <= '1';
+			elsif pixel_clock'event and pixel_clock = '1' then
+			
+				if HCount = (HSYNC + HBACK_PORCH) then
+					vga_hblank <= '0';
+				elsif HCount = (HSYNC + HBACK_PORCH + HACTIVE) then
+					vga_hblank <= '1';
+				end if;
+			
+			end if;
+		end process HBlankGen;
+		
+		
+		----------------------
+		-- Vertical Signals --
+		----------------------
+		
+		VSyncGen: process (pixel_clock, reset)
+		begin
+			if reset = '1' then
+				vga_vsync <= '1';
+			elsif pixel_clock'event and pixel_clock = '1' then
+			
+				if EndOfLine = '1' then
+					if EndOfField = '1' then
+						vga_vsync <= '1';
+					elsif Vcount = (VSYNC -1) then
+						vga_vsync <= '0';
+					end if;
+				end if;
+			
+			end if;
+		end process VSyncGen;
+		
+		VBlankGen: process (pixel_clock, reset)
+		begin
+			if reset = '1' then
+				vga_vblank <= '1';
+			elsif pixel_clock'event and pixel_clock = '1' then
+			
+				if EndOfLine = '1' then
+					if Vcount = (VSYNC + VBACK_PORCH -1) then
+						vga_vblank <= '0';
+					elsif VCount = (VSYNC + VBACK_PORCH + VACTIVE -1) then
+						vga_vblank <= '1';
+					end if;
+				end if;
+			
+			end if;
+		end process VBlankGen;
+		
+		
+--		-------------------
+--		-- The Rectangle --
+--		-------------------
+--		
+--		RectangleHGen: process(pixel_clock, reset)
+--		begin
+--			if reset = '1' then
+--				rectangle_h <= '1';
+--			elsif pixel_clock'event and pixel_clock = '1' then
+--			
+--				if Hcount = 	(HSYNC + HBACK_PORCH + RECTANGLE_HSTART) then
+--					rectangle_h <= '1';
+--				elsif Hcount = (HSYNC + HBACK_PORCH + RECTANGLE_HEND) then 
+--					rectangle_h <= '0';
+--				end if;
+--			
+--			end if;
+--		end process;
+--		
+--		RectangleVGen: process(pixel_clock, reset)
+--		begin
+--			if reset = '1' then
+--				rectangle_v <= '1';
+--			elsif pixel_clock'event and pixel_clock = '1' then
+--			
+--				if Vcount = 	(VSYNC + VBACK_PORCH -1 + RECTANGLE_VSTART) then
+--					rectangle_v <= '1';
+--				elsif Vcount = (VSYNC + VBACK_PORCH -1 + RECTANGLE_VEND) then 
+--					rectangle_v <= '0';
+--				end if;
+--			
+--			end if;
+--		end process;
+--		
+--		rectangle <= rectangle_h and rectangle_v;
+		
+		
+--		--------------------
+--		-- Output Signals --
+--		--------------------
+--		
+--		VideoOut: process (pixel_clock, reset)
+--		begin
+--			if reset = '1' then
+--				VGA_R <= "0000000000";
+--				VGA_G <= "0000000000";
+--				VGA_B <= "0000000000";
+--			elsif pixel_clock'event and pixel_clock = '1' then
+--			
+--				if rectangle = '1' then
+--					VGA_R <= "1111111111";
+--					VGA_G <= "1111111111";
+--					VGA_B <= "1111111111";
+--				
+--				elsif vga_hblank = '0' and vga_vblank = '0' then
+--					VGA_R <= "0000000000";
+--					VGA_G <= "0000000000";
+--					VGA_B <= "1111111111";
+--				
+--				else
+--					VGA_R <= "0000000000";
+--					VGA_G <= "0000000000";
+--					VGA_B <= "0000000000";
+--				
+--				end if;
+--				
+--			end if;		
+--		end process VideoOut;
+		
+		vga_dac_clock 						<= pixel_clock;
+		vga_monitor_horizontal_sync 	<= not vga_hsync;
+		vga_monitor_vertical_sync 		<= not vga_vsync;
+		vga_dac_sync						<= '0';
+		vga_dac_blank						<= not (vga_hsync or vga_vsync);
+		pixel_row_address					<= std_logic_vector(to_unsigned(Vcount, Nlinebits));
+		pixel_column_address				<= std_logic_vector(to_unsigned(Hcount, Nlinebits));
 
 	-- Concurrent Procedure Call (optional)
 
