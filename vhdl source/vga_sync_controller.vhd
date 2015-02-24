@@ -48,6 +48,11 @@ entity vga_sync_controller is
 		-------------------------------------------------------------------------
 		-- Output Signals
 		-------------------------------------------------------------------------
+		
+		
+      EndOfLine_out   					: out std_logic;                              
+      EndOfField_out   					: out std_logic;                            
+		
       vga_monitor_horizontal_sync   : out std_logic;                                -- the horizontal sync pulse to be sent to a VGA monitor
       vga_monitor_vertical_sync     : out std_logic;                                -- the vertical   sync pulse to be sent to a VGA monitor
 		vga_dac_clock                 : out std_logic;                                -- the pixel clock to be sent to the video DAC
@@ -63,10 +68,10 @@ architecture vga_sync_controller_arch of vga_sync_controller is
 	-- Declarations (optional)
 	
 	-- Horizontal position (0-800)
-	signal 	Hcount : integer;
+	signal 	Hcount : integer range 0 to 65535;
 
 	-- Vertical position (0-524)
-	signal 	Vcount : integer;
+	signal 	Vcount : integer range 0 to 65535;
 	signal 	EndOfLine, EndOfField : std_logic;
 	
 	signal 	vga_hblank, vga_hsync,										-- Sync. signals
@@ -75,97 +80,97 @@ architecture vga_sync_controller_arch of vga_sync_controller is
 	signal 	rectangle_h, rectangle_v, rectangle : std_logic;  	-- rectangle area
 	
 	-- Video parameters	
---	signal HTOTAL 				: integer ;
---	signal HSYNC 				: integer ;
---	signal HBACK_PORCH 		: integer ;
---	signal HACTIVE 			: integer ;
---	signal HFRONT_PORCH 		: integer ;
---	signal VTOTAL 				: integer ;
---	signal VSYNC 				: integer ;
---	signal VBACK_PORCH 		: integer ;
---	signal VACTIVE 			: integer ;
---	signal VFRONT_PORCH 		: integer ;
---	signal RECTANGLE_HSTART : integer ;
---	signal RECTANGLE_HEND 	: integer ;
---	signal RECTANGLE_VSTART : integer ;
---	signal RECTANGLE_VEND 	: integer ;
+	signal HTOTAL 				: integer ;
+	signal HSYNC 				: integer ;
+	signal HBACK_PORCH 		: integer ;
+	signal HACTIVE 			: integer ;
+	signal HFRONT_PORCH 		: integer ;
+	signal VTOTAL 				: integer ;
+	signal VSYNC 				: integer ;
+	signal VBACK_PORCH 		: integer ;
+	signal VACTIVE 			: integer ;
+	signal VFRONT_PORCH 		: integer ;
+	signal RECTANGLE_HSTART : integer ;
+	signal RECTANGLE_HEND 	: integer ;
+	signal RECTANGLE_VSTART : integer ;
+	signal RECTANGLE_VEND 	: integer ;
 	
-	constant HTOTAL 				: integer := 800;
-	constant HSYNC 				: integer := 96;
-	constant HBACK_PORCH 		: integer := 48;
-	constant HACTIVE 				: integer := 640;
-	constant HFRONT_PORCH 		: integer := 16;
-	constant VTOTAL 				: integer := 525;
-	constant VSYNC 				: integer := 2;
-	constant VBACK_PORCH 		: integer := 33;
-	constant VACTIVE 				: integer := 480;
-	constant VFRONT_PORCH 		: integer := 10;
-	constant RECTANGLE_HSTART 	: integer := 100;
-	constant RECTANGLE_HEND 	: integer := 540;
-	constant RECTANGLE_VSTART 	: integer := 100;
-	constant RECTANGLE_VEND 	: integer := 380;
+--	constant HTOTAL 				: integer := 800;
+--	constant HSYNC 				: integer := 96;
+--	constant HBACK_PORCH 		: integer := 48;
+--	constant HACTIVE 				: integer := 640;
+--	constant HFRONT_PORCH 		: integer := 16;
+--	constant VTOTAL 				: integer := 525;
+--	constant VSYNC 				: integer := 2;
+--	constant VBACK_PORCH 		: integer := 33;
+--	constant VACTIVE 				: integer := 480;
+--	constant VFRONT_PORCH 		: integer := 10;
+--	constant RECTANGLE_HSTART 	: integer := 100;
+--	constant RECTANGLE_HEND 	: integer := 540;
+--	constant RECTANGLE_VSTART 	: integer := 100;
+--	constant RECTANGLE_VEND 	: integer := 380;
 
 	
 	
 
 begin
 
---	 HTOTAL 				<= HSYNC + HBACK_PORCH + HACTIVE + HFRONT_PORCH;
---	 HSYNC 				<= to_integer(unsigned(horizontal_sync_pixels));
---	 HBACK_PORCH 		<= to_integer(unsigned(horizontal_back_porch_pixels));
---	 HACTIVE 			<= to_integer(unsigned(horizontal_display_pixels));
---	 HFRONT_PORCH 		<= to_integer(unsigned(horizontal_front_porch_pixels));
---	 VTOTAL 				<= VSYNC + VBACK_PORCH + VACTIVE + VFRONT_PORCH;
---	 VSYNC 				<= to_integer(unsigned(vertical_sync_lines));
---	 VBACK_PORCH 		<= to_integer(unsigned(vertical_back_porch_lines));
---	 VACTIVE 			<= to_integer(unsigned(vertical_display_lines));
---	 VFRONT_PORCH 		<= to_integer(unsigned(vertical_front_porch_lines));
---	 RECTANGLE_HSTART <= 100;
---	 RECTANGLE_HEND 	<= 540;
---	 RECTANGLE_VSTART <= 100;
---	 RECTANGLE_VEND 	<= 380;
+	 HTOTAL 				<= HSYNC + HBACK_PORCH + HACTIVE + HFRONT_PORCH;
+	 HSYNC 				<= to_integer(unsigned(horizontal_sync_pixels));
+	 HBACK_PORCH 		<= to_integer(unsigned(horizontal_back_porch_pixels));
+	 HACTIVE 			<= to_integer(unsigned(horizontal_display_pixels));
+	 HFRONT_PORCH 		<= to_integer(unsigned(horizontal_front_porch_pixels));
+	 VTOTAL 				<= VSYNC + VBACK_PORCH + VACTIVE + VFRONT_PORCH;
+	 VSYNC 				<= to_integer(unsigned(vertical_sync_lines));
+	 VBACK_PORCH 		<= to_integer(unsigned(vertical_back_porch_lines));
+	 VACTIVE 			<= to_integer(unsigned(vertical_display_lines));
+	 VFRONT_PORCH 		<= to_integer(unsigned(vertical_front_porch_lines));
+	 RECTANGLE_HSTART <= 100;
+	 RECTANGLE_HEND 	<= 540;
+	 RECTANGLE_VSTART <= 100;
+	 RECTANGLE_VEND 	<= 380;
 
-	-- Process Statement (optional)
-			--------------
+	
+		--------------
 		-- Counters --
 		--------------
 		
-		HCounter : process (pixel_clock, reset)
+		Hcounter : process (pixel_clock, reset)
 		begin
 			if reset = '1' then
-				HCount <= 0;
+				Hcount <= 0;
 				
 			elsif pixel_clock'event and pixel_clock = '1' then
 			
 				if EndOfLine = '1' then
-					HCount <= 0;
+					Hcount <= 0;
 				else
-					HCount <= HCount + 1;
+					Hcount <= Hcount + 1;
 				end if;
 				
 			end if;
-		end process HCounter;
+		end process Hcounter;
 		
-		EndOfLine <= '1' when ( HCount = (HTOTAL -1) ) else '0';
+		EndOfLine <= '1' when ( Hcount = (HTOTAL -1) ) else '0';
 		
-		VCounter: process(pixel_clock, reset)
+		Vcounter: process(pixel_clock, reset)
 		begin 
 			if reset = '1' then
-				VCount <= 0;
+				Vcount <= 0;
 			elsif pixel_clock'event and pixel_clock = '1' then
 			
 				if EndOfLine = '1' then
 					if EndOfField = '1' then
-						VCount <= 0;
+						Vcount <= 0;
 					else
-						VCount <= Vcount + 1;
+						Vcount <= Vcount + 1;
 					end if;
 				end if;
 				
 			end if;
 		end process Vcounter;
 		
-		EndOfField <= '1' when ( VCount = (VTOTAL -1) ) else '0';
+		EndOfField <= '1' when ( Vcount = (VTOTAL -1) ) else '0';
 		
 		
 		------------------------
@@ -180,7 +185,7 @@ begin
 				
 				if EndOfLine = '1' then
 					vga_hsync <= '1';
-				elsif HCount = (HSYNC -1) then
+				elsif Hcount = (HSYNC -1) then
 					vga_hsync <= '0';
 				end if;
 				
@@ -193,9 +198,9 @@ begin
 				vga_hblank <= '1';
 			elsif pixel_clock'event and pixel_clock = '1' then
 			
-				if HCount = (HSYNC + HBACK_PORCH) then
+				if Hcount = (HSYNC + HBACK_PORCH) then
 					vga_hblank <= '0';
-				elsif HCount = (HSYNC + HBACK_PORCH + HACTIVE) then
+				elsif Hcount = (HSYNC + HBACK_PORCH + HACTIVE) then
 					vga_hblank <= '1';
 				end if;
 			
@@ -233,7 +238,7 @@ begin
 				if EndOfLine = '1' then
 					if Vcount = (VSYNC + VBACK_PORCH -1) then
 						vga_vblank <= '0';
-					elsif VCount = (VSYNC + VBACK_PORCH + VACTIVE -1) then
+					elsif Vcount = (VSYNC + VBACK_PORCH + VACTIVE -1) then
 						vga_vblank <= '1';
 					end if;
 				end if;
@@ -310,6 +315,9 @@ begin
 --				
 --			end if;		
 --		end process VideoOut;
+	
+		EndOfLine_out <= EndOfLine;
+		EndOfField_out <= EndOfField;
 		
 		vga_dac_clock 						<= pixel_clock;
 		vga_monitor_horizontal_sync 	<= not vga_hsync;
@@ -318,17 +326,5 @@ begin
 		vga_dac_blank						<= not (vga_hsync or vga_vsync);
 		pixel_row_address					<= std_logic_vector(to_unsigned(Vcount, Nlinebits));
 		pixel_column_address				<= std_logic_vector(to_unsigned(Hcount, Nlinebits));
-
-	-- Concurrent Procedure Call (optional)
-
-	-- Concurrent Signal Assignment (optional)
-
-	-- Conditional Signal Assignment (optional)
-
-	-- Selected Signal Assignment (optional)
-
-	-- Component Instantiation Statement (optional)
-
-	-- Generate Statement (optional)
 
 end vga_sync_controller_arch;

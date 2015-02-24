@@ -278,6 +278,10 @@ architecture behavioral of DE2_Board_top_level is
 			-------------------------------------------------------------------------
 			-- Output Signals
 			-------------------------------------------------------------------------
+			
+			EndOfLine_out   					: out std_logic;                              
+			EndOfField_out   					: out std_logic;   
+			
 			vga_monitor_horizontal_sync   : out std_logic;                                -- the horizontal sync pulse to be sent to a VGA monitor
 			vga_monitor_vertical_sync     : out std_logic;                                -- the vertical   sync pulse to be sent to a VGA monitor
 			vga_dac_clock                 : out std_logic;                                -- the pixel clock to be sent to the video DAC
@@ -289,29 +293,32 @@ architecture behavioral of DE2_Board_top_level is
 	end component;
 	
 	
---	Component vga_raster is
---		port
---		(
---			reset 		: in std_logic;
---			clk 			: in std_logic; 		-- Should be 25.125 MHz
---			
---			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
---			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
---			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
---			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
---			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
---			
---			VGA_R			: out std_logic_vector(9 downto 0);
---			VGA_G			: out std_logic_vector(9 downto 0);
---			VGA_B 		: out std_logic_vector(9 downto 0)
---		);
---	end component;
+	Component vga_raster is
+		port
+		(
+			reset 		: in std_logic;
+			clk 			: in std_logic; 		-- Should be 25.125 MHz
+			
+			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
+			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
+			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
+			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
+			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
+			
+			VGA_R			: out std_logic_vector(9 downto 0);
+			VGA_G			: out std_logic_vector(9 downto 0);
+			VGA_B 		: out std_logic_vector(9 downto 0)
+		);
+	end component;
 
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
 	
-	signal vga_blank_local : std_logic;
+	signal vga_blank_local  : std_logic;
+	signal vga_dac_clock		: std_logic;
+	signal vga_monitor_horizontal_sync : std_logic;
+	signal vga_monitor_vertical_sync : std_logic;
 	
 	
 	-- clock --
@@ -371,9 +378,13 @@ begin
 			-------------------------------------------------------------------------
 			-- Output Signals
 			-------------------------------------------------------------------------
-			vga_monitor_horizontal_sync   => VGA_HS,				-- the horizontal sync pulse to be sent to a VGA monitor
-			vga_monitor_vertical_sync     => VGA_VS,           -- the vertical   sync pulse to be sent to a VGA monitor
-			vga_dac_clock                 => VGA_CLK,          -- the pixel clock to be sent to the video DAC
+			EndOfLine_out						=> GPIO_0(6),
+			EndOfField_out						=> GPIO_0(8),
+			
+			
+			vga_monitor_horizontal_sync   => vga_monitor_horizontal_sync,				-- the horizontal sync pulse to be sent to a VGA monitor
+			vga_monitor_vertical_sync     => vga_monitor_vertical_sync,           -- the vertical   sync pulse to be sent to a VGA monitor
+			vga_dac_clock                 => vga_dac_clock,          -- the pixel clock to be sent to the video DAC
 			vga_dac_blank                 => vga_blank_local,       	-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
 			vga_dac_sync                  => VGA_SYNC,        	-- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
 			pixel_row_address             => open,					-- pixel row address for the vertical frame display region
@@ -427,20 +438,24 @@ begin
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 
 	-- Expansion Header
-	GPIO_0 <= (others => '0');  -- JP1
+	GPIO_0(0) <= vga_dac_clock;
+	GPIO_0(2) <= vga_monitor_horizontal_sync;
+	GPIO_0(4) <= vga_monitor_vertical_sync;
+	
+--	GPIO_0 <= (others => '0');  -- JP1
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
 	
 	
-	VGA_R     <= (others => '0');  -- red data
-	VGA_G     <= (others => '0');  -- green data
-	VGA_B     <= (others => '1') when (vga_blank_local = '1')
-					 else (others => '0');  -- blue data
---	VGA_CLK   <= '0';  -- VGA Clock
+	VGA_R     <= (others => '1');  -- red data
+	VGA_G     <= (others => '1');  -- green data
+	VGA_B     <= (others => '1');  -- blue data
+	
+	VGA_CLK   <= vga_dac_clock;  -- VGA Clock
 	VGA_BLANK <= vga_blank_local;  -- VGA Blank
---	VGA_HS    <= '0';  -- VGA H_Sync
---	VGA_VS    <= '0';  -- VGA V_Sync
+	VGA_HS    <= vga_monitor_horizontal_sync;  -- VGA H_Sync
+	VGA_VS    <= vga_monitor_vertical_sync;  -- VGA V_Sync
 --	VGA_SYNC  <= '0';  -- VGA Sync
 	
 	-- Audio CODEC (WM8731)
