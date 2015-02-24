@@ -318,7 +318,7 @@ ENET_DATA[0]                 : D17       : bidir  : 3.3-V LVTTL       :         
 ENET_DATA[15]                : D18       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 ENET_DATA[11]                : D19       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 4         :                
+TD_CLK27                     : D21       : input  : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D23       :        :                   :         : 5         :                
 GND                          : D24       : gnd    :                   :         :           :                
@@ -619,7 +619,7 @@ DRAM_ADDR[0]                 : T6        : output : 3.3-V LVTTL       :         
 SW[13]                       : T7        : input  : 3.3-V LVTTL       :         : 1         : Y              
 DRAM_DQ[6]                   : T8        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
 HEX5[3]                      : T9        : output : 3.3-V LVTTL       :         : 1         : Y              
-TD_CLK27                     : T10       : input  : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 1         :                
 VCCINT                       : T11       : power  :                   : 1.2V    :           :                
 GND                          : T12       : gnd    :                   :         :           :                
 GND                          : T13       : gnd    :                   :         :           :                
@@ -645,7 +645,7 @@ DRAM_ADDR[5]                 : U6        : output : 3.3-V LVTTL       :         
 DRAM_ADDR[6]                 : U7        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : U8        : gnd    :                   :         :           :                
 HEX4[0]                      : U9        : output : 3.3-V LVTTL       :         : 1         : Y              
-AUD_ADCLRCL                  : U10       : output : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 1         :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 8         :                
 VCCINT                       : U13       : power  :                   : 1.2V    :           :                
@@ -672,7 +672,7 @@ DRAM_DQ[7]                   : V7        : bidir  : 3.3-V LVTTL       :         
 VCCIO1                       : V8        : power  :                   : 3.3V    : 1         :                
 SRAM_ADDR[11]                : V9        : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_ADDR[10]                : V10       : output : 3.3-V LVTTL       :         : 8         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 8         :                
+AUD_ADCLRCL                  : V11       : output : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : V12       : power  :                   : 3.3V    : 8         :                
 HEX0[6]                      : V13       : output : 3.3-V LVTTL       :         : 8         : Y              
 HEX0[5]                      : V14       : output : 3.3-V LVTTL       :         : 8         : Y              

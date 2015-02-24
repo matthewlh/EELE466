@@ -278,10 +278,6 @@ architecture behavioral of DE2_Board_top_level is
 			-------------------------------------------------------------------------
 			-- Output Signals
 			-------------------------------------------------------------------------
-			
-			EndOfLine_out   					: out std_logic;                              
-			EndOfField_out   					: out std_logic;   
-			
 			vga_monitor_horizontal_sync   : out std_logic;                                -- the horizontal sync pulse to be sent to a VGA monitor
 			vga_monitor_vertical_sync     : out std_logic;                                -- the vertical   sync pulse to be sent to a VGA monitor
 			vga_dac_clock                 : out std_logic;                                -- the pixel clock to be sent to the video DAC
@@ -292,24 +288,34 @@ architecture behavioral of DE2_Board_top_level is
 		);
 	end component;
 	
-	
-	Component vga_raster is
-		port
+	component rom_ross_r IS
+		PORT
 		(
-			reset 		: in std_logic;
-			clk 			: in std_logic; 		-- Should be 25.125 MHz
-			
-			VGA_CLK 		: out std_logic;		-- Dot clock to DAC
-			VGA_HS		: out std_logic;		-- Active-Low Horizontal Sync
-			VGA_VS		: out std_logic;		-- Active-Low Vertical Sync
-			VGA_BLANK	: out std_logic;		-- Active-Low DAC blanking control
-			VGA_SYNC 	: out std_logic; 		-- Active-Low DAC Sync on Green
-			
-			VGA_R			: out std_logic_vector(9 downto 0);
-			VGA_G			: out std_logic_vector(9 downto 0);
-			VGA_B 		: out std_logic_vector(9 downto 0)
+			address		: IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 		);
-	end component;
+	END component;
+	
+	component rom_ross_g IS
+		PORT
+		(
+			address		: IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		);
+	END component;
+	
+	component rom_ross_b IS
+		PORT
+		(
+			address		: IN STD_LOGIC_VECTOR (13 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		);
+	END component;
+	
+
 
 	----------------------------
 	---- Signal Declaration ----
@@ -317,8 +323,18 @@ architecture behavioral of DE2_Board_top_level is
 	
 	signal vga_blank_local  : std_logic;
 	signal vga_dac_clock		: std_logic;
-	signal vga_monitor_horizontal_sync : std_logic;
-	signal vga_monitor_vertical_sync : std_logic;
+	
+	signal pixel_row_address : std_logic_vector(15 downto 0);
+	signal pixel_col_address : std_logic_vector(15 downto 0);
+	
+	signal rom_ross_r_q : std_logic_vector(7 downto 0);
+	signal rom_ross_g_q : std_logic_vector(7 downto 0);
+	signal rom_ross_b_q : std_logic_vector(7 downto 0);
+	
+	signal pixel_number : std_logic_vector(13 downto 0);
+	
+	
+	signal 	rectangle_h, rectangle_v, rectangle : std_logic;  	-- rectangle area
 	
 	
 	-- clock --
@@ -327,20 +343,7 @@ architecture behavioral of DE2_Board_top_level is
 	
 begin
 	
-	----------------------
-	---- Clock intput ----
-	----------------------
---	clk_div_1 : component clk_div
---        port map (
---            clock_50Mhz		=> CLOCK_50,
---				clock_1MHz		=> clock_1MHz,
---				clock_100KHz	=> clock_100KHz,
---				clock_10KHz		=> clock_10KHz,
---				clock_1KHz		=> clock_1KHz, 
---				clock_100Hz		=> clock_100Hz,
---				clock_10Hz		=> clock_10Hz,
---				clock_1Hz		=> clock_1Hz
---        );
+
 
 	clk_div_2: process(CLOCK_50)
 	begin
@@ -377,36 +380,101 @@ begin
 			
 			-------------------------------------------------------------------------
 			-- Output Signals
-			-------------------------------------------------------------------------
-			EndOfLine_out						=> GPIO_0(6),
-			EndOfField_out						=> GPIO_0(8),
-			
-			
-			vga_monitor_horizontal_sync   => vga_monitor_horizontal_sync,				-- the horizontal sync pulse to be sent to a VGA monitor
-			vga_monitor_vertical_sync     => vga_monitor_vertical_sync,           -- the vertical   sync pulse to be sent to a VGA monitor
-			vga_dac_clock                 => vga_dac_clock,          -- the pixel clock to be sent to the video DAC
-			vga_dac_blank                 => vga_blank_local,       	-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
-			vga_dac_sync                  => VGA_SYNC,        	-- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
-			pixel_row_address             => open,					-- pixel row address for the vertical frame display region
-			pixel_column_address          => open    				-- pixel column address for the horizontal line display region
+			-------------------------------------------------------------------------		
+			vga_monitor_horizontal_sync   => VGA_HS,						-- the horizontal sync pulse to be sent to a VGA monitor
+			vga_monitor_vertical_sync     => VGA_VS,           		-- the vertical   sync pulse to be sent to a VGA monitor
+			vga_dac_clock                 => vga_dac_clock,    		-- the pixel clock to be sent to the video DAC
+			vga_dac_blank                 => vga_blank_local,  		-- DAC blank signal to turn of video DAC outside of the horizontal and vertical display regions
+			vga_dac_sync                  => VGA_SYNC,        			-- DAC sync  signal for the ADV7123 for composite sync control input, If sync information is not required on the green channel, the SYNC_n input should be tied to logical zero.
+			pixel_row_address             => pixel_row_address,		-- pixel row address for the vertical frame display region
+			pixel_column_address          => pixel_col_address    	-- pixel column address for the horizontal line display region
 		);
 		  
---	vga_raster_1: component vga_raster
---		port map
---		(
---			reset 		=> '0',
---			clk 			=> CLOCK_25MHz,
---			
---			VGA_CLK 		=> VGA_CLK,
---			VGA_HS		=> VGA_HS, 
---			VGA_VS		=> VGA_VS,
---			VGA_BLANK	=> VGA_BLANK,
---			VGA_SYNC 	=> VGA_SYNC,
---			
---			VGA_R			=> VGA_R,
---			VGA_G			=> VGA_G,
---			VGA_B 		=> VGA_B
---		);
+	rom_ross_r_inst : rom_ross_r PORT MAP (
+			address	 	=> pixel_number,
+			clock	 		=> CLOCK_25MHz,
+			q	 			=> rom_ross_r_q
+		);
+		  
+	rom_ross_g_inst : rom_ross_g PORT MAP (
+			address	 	=> pixel_number,
+			clock	 		=> CLOCK_25MHz,
+			q	 			=> rom_ross_g_q
+		);
+		  
+	rom_ross_b_inst : rom_ross_b PORT MAP (
+			address	 	=> pixel_number,
+			clock	 		=> CLOCK_25MHz,
+			q	 			=> rom_ross_b_q
+		);
+		
+		
+		-------------------------
+		-- The Image Rectanlge --
+		-------------------------
+		
+		RectangleHGen: process(CLOCK_25MHz)
+		begin
+			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			
+				if pixel_col_address = 244 then
+					rectangle_h <= '1';
+				elsif pixel_col_address = 344 then 
+					rectangle_h <= '0';
+				end if;
+				
+			end if;
+		end process;
+		
+		RectangleVGen: process(CLOCK_25MHz)
+		begin
+			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			
+				if pixel_row_address = 135 then
+					rectangle_v <= '1';
+				elsif pixel_row_address = 260 then 
+					rectangle_v <= '0';
+				end if;
+			
+			end if;
+		end process;
+		
+		rectangle <= rectangle_h and rectangle_v;
+		
+		VideoOut: process (CLOCK_25MHz)
+		begin
+			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			
+				if rectangle = '1' then
+					VGA_R(9 downto 2) <= rom_ross_r_q;
+					VGA_G(9 downto 2) <= rom_ross_g_q;
+					VGA_B(9 downto 2) <= rom_ross_b_q;
+					
+					pixel_number <= pixel_number +1;
+					
+--					VGA_R <= "1111111111";
+--					VGA_G <= "1111111111";
+--					VGA_B <= "1111111111";
+				
+				elsif vga_blank_local = '1' then
+					VGA_R <= "0011111111";
+					VGA_G <= "0011111111";
+					VGA_B <= "0011111111";
+				
+				else
+					VGA_R <= "0000000000";
+					VGA_G <= "0000000000";
+					VGA_B <= "0000000000";
+				
+				end if;
+				
+				if((pixel_col_address = 0) and (pixel_row_address = 0)) then
+					pixel_number <= "00000000000000";
+				end if;
+				
+			end if;		
+		end process VideoOut;
+		
 
    -----------------------------------------
    -- Delete the signals below that you will
@@ -438,24 +506,20 @@ begin
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 
 	-- Expansion Header
-	GPIO_0(0) <= vga_dac_clock;
-	GPIO_0(2) <= vga_monitor_horizontal_sync;
-	GPIO_0(4) <= vga_monitor_vertical_sync;
-	
---	GPIO_0 <= (others => '0');  -- JP1
+	GPIO_0 <= (others => '0');  -- JP1
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
 	
 	
-	VGA_R     <= (others => '1');  -- red data
-	VGA_G     <= (others => '1');  -- green data
-	VGA_B     <= (others => '1');  -- blue data
+--	VGA_R     <= (others => '1');  -- red data
+--	VGA_G     <= (others => '1');  -- green data
+--	VGA_B     <= (others => '1');  -- blue data
 	
 	VGA_CLK   <= vga_dac_clock;  -- VGA Clock
 	VGA_BLANK <= vga_blank_local;  -- VGA Blank
-	VGA_HS    <= vga_monitor_horizontal_sync;  -- VGA H_Sync
-	VGA_VS    <= vga_monitor_vertical_sync;  -- VGA V_Sync
+--	VGA_HS    <= vga_monitor_horizontal_sync;  -- VGA H_Sync
+--	VGA_VS    <= vga_monitor_vertical_sync;  -- VGA V_Sync
 --	VGA_SYNC  <= '0';  -- VGA Sync
 	
 	-- Audio CODEC (WM8731)

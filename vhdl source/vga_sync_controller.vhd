@@ -47,12 +47,7 @@ entity vga_sync_controller is
 		vertical_front_porch_lines 	: in  std_logic_vector(Nlinebits-1 downto 0);   -- vertical front porch width in lines
 		-------------------------------------------------------------------------
 		-- Output Signals
-		-------------------------------------------------------------------------
-		
-		
-      EndOfLine_out   					: out std_logic;                              
-      EndOfField_out   					: out std_logic;                            
-		
+		-------------------------------------------------------------------------       
       vga_monitor_horizontal_sync   : out std_logic;                                -- the horizontal sync pulse to be sent to a VGA monitor
       vga_monitor_vertical_sync     : out std_logic;                                -- the vertical   sync pulse to be sent to a VGA monitor
 		vga_dac_clock                 : out std_logic;                                -- the pixel clock to be sent to the video DAC
@@ -246,44 +241,6 @@ begin
 			end if;
 		end process VBlankGen;
 		
-		
---		-------------------
---		-- The Rectangle --
---		-------------------
---		
---		RectangleHGen: process(pixel_clock, reset)
---		begin
---			if reset = '1' then
---				rectangle_h <= '1';
---			elsif pixel_clock'event and pixel_clock = '1' then
---			
---				if Hcount = 	(HSYNC + HBACK_PORCH + RECTANGLE_HSTART) then
---					rectangle_h <= '1';
---				elsif Hcount = (HSYNC + HBACK_PORCH + RECTANGLE_HEND) then 
---					rectangle_h <= '0';
---				end if;
---			
---			end if;
---		end process;
---		
---		RectangleVGen: process(pixel_clock, reset)
---		begin
---			if reset = '1' then
---				rectangle_v <= '1';
---			elsif pixel_clock'event and pixel_clock = '1' then
---			
---				if Vcount = 	(VSYNC + VBACK_PORCH -1 + RECTANGLE_VSTART) then
---					rectangle_v <= '1';
---				elsif Vcount = (VSYNC + VBACK_PORCH -1 + RECTANGLE_VEND) then 
---					rectangle_v <= '0';
---				end if;
---			
---			end if;
---		end process;
---		
---		rectangle <= rectangle_h and rectangle_v;
-		
-		
 --		--------------------
 --		-- Output Signals --
 --		--------------------
@@ -315,9 +272,6 @@ begin
 --				
 --			end if;		
 --		end process VideoOut;
-	
-		EndOfLine_out <= EndOfLine;
-		EndOfField_out <= EndOfField;
 		
 		vga_dac_clock 						<= pixel_clock;
 		vga_monitor_horizontal_sync 	<= not vga_hsync;
