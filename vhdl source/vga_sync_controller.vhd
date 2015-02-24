@@ -274,8 +274,8 @@ begin
 --		end process VideoOut;
 		
 		vga_dac_clock 						<= pixel_clock;
-		vga_monitor_horizontal_sync 	<= not vga_hsync;
-		vga_monitor_vertical_sync 		<= not vga_vsync;
+		vga_monitor_horizontal_sync 	<= not vga_hsync when horizontal_sync_polarity = '0' else vga_hsync;
+		vga_monitor_vertical_sync 		<= not vga_vsync when vertical_sync_polarity = '0' else vga_vsync;
 		vga_dac_sync						<= '0';
 		vga_dac_blank						<= not (vga_hsync or vga_vsync);
 		pixel_row_address					<= std_logic_vector(to_unsigned(Vcount, Nlinebits));

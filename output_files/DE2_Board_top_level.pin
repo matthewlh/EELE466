@@ -311,14 +311,14 @@ VGA_G[3]                     : D10       : output : 3.3-V LVTTL       :         
 VGA_G[7]                     : D11       : output : 3.3-V LVTTL       :         : 3         : Y              
 VGA_G[9]                     : D12       : output : 3.3-V LVTTL       :         : 3         : Y              
 CLOCK_27                     : D13       : input  : 3.3-V LVTTL       :         : 3         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 4         :                
+AUD_ADCLRCL                  : D14       : output : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 4         :                
 ENET_DATA[0]                 : D17       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 ENET_DATA[15]                : D18       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 ENET_DATA[11]                : D19       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 4         :                
-TD_CLK27                     : D21       : input  : 3.3-V LVTTL       :         : 4         : N              
+TD_CLK27                     : D20       : input  : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 4         :                
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D23       :        :                   :         : 5         :                
 GND                          : D24       : gnd    :                   :         :           :                
@@ -672,7 +672,7 @@ DRAM_DQ[7]                   : V7        : bidir  : 3.3-V LVTTL       :         
 VCCIO1                       : V8        : power  :                   : 3.3V    : 1         :                
 SRAM_ADDR[11]                : V9        : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_ADDR[10]                : V10       : output : 3.3-V LVTTL       :         : 8         : Y              
-AUD_ADCLRCL                  : V11       : output : 3.3-V LVTTL       :         : 8         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V11       :        :                   :         : 8         :                
 VCCIO8                       : V12       : power  :                   : 3.3V    : 8         :                
 HEX0[6]                      : V13       : output : 3.3-V LVTTL       :         : 8         : Y              
 HEX0[5]                      : V14       : output : 3.3-V LVTTL       :         : 8         : Y              

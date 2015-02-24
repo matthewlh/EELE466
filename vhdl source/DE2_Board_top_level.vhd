@@ -67,7 +67,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.numeric_std.ALL;
 
 entity DE2_Board_top_level is
 
@@ -315,6 +316,33 @@ architecture behavioral of DE2_Board_top_level is
 		);
 	END component;
 	
+	Component debounce IS
+		PORT(	
+			pb							: IN	STD_LOGIC;
+			clock_100Hz 			: IN	STD_LOGIC;
+			pb_debounced			: OUT	STD_LOGIC
+		);
+	END component;
+	
+	component onepulse IS
+	
+	PORT(PB_debounced, clock	: IN	STD_LOGIC;
+		 PB_single_pulse		: OUT	STD_LOGIC);
+
+	END component;
+	
+--	ENTITY pll IS
+--	PORT
+--	(
+--		inclk0		: IN STD_LOGIC  := '0';
+--		c0		: OUT STD_LOGIC ;
+--		locked		: OUT STD_LOGIC 
+--	);
+--	END pll;
+	
+
+	
+	
 
 
 	----------------------------
@@ -338,12 +366,114 @@ architecture behavioral of DE2_Board_top_level is
 	
 	
 	-- clock --
---	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
+	signal clock_1MHz, clock_100KHz, clock_10KHz, clock_1KHz, clock_100Hz, clock_10Hz, clock_1Hz : STD_LOGIC;
 	signal CLOCK_25MHz : STD_LOGIC;
 	
-begin
+	signal pixel_clock                   :  std_logic								:= CLOCK_25MHz;
+	signal horizontal_sync_pixels	       :  std_logic_vector(15 downto 0)	:= x"0060";
+	signal horizontal_sync_polarity      :  std_logic 							 	:=	'0';
+	signal horizontal_back_porch_pixels  :  std_logic_vector(15 downto 0)	:=	x"0030";
+	signal horizontal_display_pixels     :  std_logic_vector(15 downto 0)	:= x"0280";
+	signal horizontal_front_porch_pixels :  std_logic_vector(15 downto 0)	:= x"0010";
+	signal vertical_sync_lines	      	 :  std_logic_vector(15 downto 0)	:= x"0002";
+	signal vertical_sync_polarity      	 :  std_logic								:= '0';
+	signal vertical_back_porch_lines  	 :  std_logic_vector(15 downto 0)	:= x"0021";
+	signal vertical_display_lines     	 :  std_logic_vector(15 downto 0)	:= x"01E0";
+	signal vertical_front_porch_lines 	 :  std_logic_vector(15 downto 0)	:= x"000A";
 	
+	signal pb_debounced_key1 				 : std_logic;
+	signal pb_debounced_key2 				 : std_logic;
+	signal pb_debounced_key3 				 : std_logic;
+	signal key1_onepulse 					 : std_logic;
+	signal key2_onepulse 					 : std_logic;
+	signal key3_onepulse						 : std_logic;
+	
+	signal clock_49_5                    : std_logic;
+	signal clock_49_5_count              : integer range 0 to 24750000 := 0;
+	
+	signal high_res							 : std_logic := '0';  --high res (800x600) is 1, low res is 0 
+	
+	signal move_sign							 : std_logic;
+	signal direction							 : std_logic;
+	signal step_size							 : std_logic_vector(7 downto 0);
+	
+	signal begin_rectangle_h             : integer range 0 to 800 := 244;
+	signal end_rectangle_h					 : integer range 0 to 800 := 344;
+	signal begin_rectangle_v				 : integer range 0 to 600 := 135;
+	signal end_rectangle_v					 : integer range 0 to 600 := 260; 
+	
+begin
 
+	move_sign <= SW(17);
+	direction <= SW(16);
+	step_size <= SW(7 downto 0);
+	
+	change_res: process(CLOCK_50, key2_onepulse, key3_onepulse)
+	begin
+		if(rising_edge(CLOCK_50)) then
+			if(key2_onepulse = '1') then
+			
+		-- when KEY2 is pressed, display 800x600 resolution
+			high_res 							<= '1';
+			--pixel_clock							<= CLOCK_50;
+			horizontal_sync_pixels	      <= x"0080";   			-- horizontal sync pulse width in pixels
+			horizontal_sync_polarity      <= '1';
+			horizontal_back_porch_pixels  <= x"0058";   			-- horizontal back porch width in pixels
+			horizontal_display_pixels     <= x"0320";   			-- horizontal display width in pixels, the display window where DAC data gets written
+			horizontal_front_porch_pixels <= x"0028";   			-- horizontal front porch width in pixels
+			vertical_sync_lines	      	<= x"0004";   			-- vertical sync pulse width in lines
+			vertical_sync_polarity        <= '1';
+			vertical_back_porch_lines  	<= x"0017";   			-- vertical back porch width in lines
+			vertical_display_lines     	<= x"0258";   			-- vertical display width in lines, the display window where DAC data gets written
+			vertical_front_porch_lines 	<= x"0001";   			-- vertical front porch width in lines
+
+			elsif(key3_onepulse = '1') then
+		--when KEY3 is pressed, display 640x480 resolution
+			high_res                      <= '0';
+			--pixel_clock							<= CLOCK_25MHz;
+			horizontal_sync_pixels	      <= x"0060";   			-- horizontal sync pulse width in pixels
+			horizontal_sync_polarity      <= '0';
+			horizontal_back_porch_pixels  <= x"0030";   			-- horizontal back porch width in pixels
+			horizontal_display_pixels     <= x"0280";   			-- horizontal display width in pixels, the display window where DAC data gets written
+			horizontal_front_porch_pixels <= x"0010";   			-- horizontal front porch width in pixels
+			vertical_sync_lines	      	<= x"0002";   			-- vertical sync pulse width in lines
+			vertical_sync_polarity        <= '0';
+			vertical_back_porch_lines  	<= x"0021";   			-- vertical back porch width in lines
+			vertical_display_lines     	<= x"01E0";   			-- vertical display width in lines, the display window where DAC data gets written
+			vertical_front_porch_lines 	<= x"000A";   			-- vertical front porch width in lines
+			end if;
+		end if;
+	end process;
+	
+	move_image: process(CLOCK_50, key1_onepulse)
+	begin
+		if(rising_edge(CLOCK_50)) then
+			if(key1_onepulse = '1') then
+				if((move_sign = '1') and (direction = '1')) then -- move up
+					
+					begin_rectangle_v <= begin_rectangle_v + to_integer(unsigned(step_size));
+					end_rectangle_v <= end_rectangle_v + to_integer(unsigned(step_size));
+				
+				elsif((move_sign = '1' and (direction = '0'))) then -- move right
+					
+					begin_rectangle_h <= begin_rectangle_h + to_integer(unsigned(step_size));
+					end_rectangle_h <= end_rectangle_h + to_integer(unsigned(step_size));
+				
+				elsif((move_sign = '0') and (direction = '1')) then --move down
+				
+					begin_rectangle_v <= begin_rectangle_v - to_integer(unsigned(step_size));
+					end_rectangle_v <= end_rectangle_v - to_integer(unsigned(step_size));
+
+				elsif((move_sign = '0') and (direction = '0')) then -- move left
+				
+					begin_rectangle_h <= begin_rectangle_h - to_integer(unsigned(step_size));
+					end_rectangle_h <= end_rectangle_h - to_integer(unsigned(step_size));
+				
+				end if;
+			end if;
+
+		end if;
+	end process;
 
 	clk_div_2: process(CLOCK_50)
 	begin
@@ -351,6 +481,16 @@ begin
 			CLOCK_25MHz <= not CLOCK_25MHz;
 		end if;
 	end process;
+	
+--	pixel_clock_select: process(CLOCK_50)
+--	begin
+--		if CLOCK_50'event and CLOCK_50 = '1' then
+--			if( high_res = '1') then
+--				pixel_clock <= CLOCK_50;
+--		end if;
+--	end process;
+
+pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
 	
 	vga_sync_controller_1: component vga_sync_controller
 		generic map
@@ -365,18 +505,18 @@ begin
 			-- Resolution parameter settings for the input signals can be found at
 			-- http://tinyvga.com/vga-timing
 			-------------------------------------------------------------------------
-			pixel_clock                   => CLOCK_25MHz,		-- pixel clock which is the basis of the pixel and line synchronization timings
+			pixel_clock                   => pixel_clock,		-- pixel clock which is the basis of the pixel and line synchronization timings
 			reset                         => '0',					-- reset is active high
-			horizontal_sync_pixels	      => x"0060",   			-- horizontal sync pulse width in pixels
-			horizontal_sync_polarity      => '0',    				-- horizontal sync pulse polarity : '1' = positive, '0' = negative
-			horizontal_back_porch_pixels  => x"0030",   			-- horizontal back porch width in pixels
-			horizontal_display_pixels     => x"0280",   			-- horizontal display width in pixels, the display window where DAC data gets written
-			horizontal_front_porch_pixels => x"0010",   			-- horizontal front porch width in pixels
-			vertical_sync_lines	      	=> x"0002",   			-- vertical sync pulse width in lines
-			vertical_sync_polarity      	=> '0',           	-- vertical sync pulse polarity : '1' = positive, '0' = negative
-			vertical_back_porch_lines  	=> x"0021",   			-- vertical back porch width in lines
-			vertical_display_lines     	=> x"01E0",   			-- vertical display width in lines, the display window where DAC data gets written
-			vertical_front_porch_lines 	=> x"000A",   			-- vertical front porch width in lines
+			horizontal_sync_pixels	      => horizontal_sync_pixels,   			-- horizontal sync pulse width in pixels
+			horizontal_sync_polarity      => horizontal_sync_polarity,    				-- horizontal sync pulse polarity : '1' = positive, '0' = negative
+			horizontal_back_porch_pixels  => horizontal_back_porch_pixels,   			-- horizontal back porch width in pixels
+			horizontal_display_pixels     => horizontal_display_pixels,   			-- horizontal display width in pixels, the display window where DAC data gets written
+			horizontal_front_porch_pixels => horizontal_front_porch_pixels,   			-- horizontal front porch width in pixels
+			vertical_sync_lines	      	=> vertical_sync_lines,   			-- vertical sync pulse width in lines
+			vertical_sync_polarity      	=> vertical_sync_polarity,           	-- vertical sync pulse polarity : '1' = positive, '0' = negative
+			vertical_back_porch_lines  	=> vertical_back_porch_lines,   			-- vertical back porch width in lines
+			vertical_display_lines     	=> vertical_display_lines,   			-- vertical display width in lines, the display window where DAC data gets written
+			vertical_front_porch_lines 	=> vertical_front_porch_lines,   			-- vertical front porch width in lines
 			
 			-------------------------------------------------------------------------
 			-- Output Signals
@@ -408,18 +548,74 @@ begin
 			q	 			=> rom_ross_b_q
 		);
 		
+		debounce_key2 : component debounce
+		port map (
+			pb						=> KEY(2),
+			clock_100Hz			=> clock_100Hz,
+			pb_debounced		=> pb_debounced_key2
+		);
+		
+		debounce_key3 : component debounce
+		port map (
+			pb						=> KEY(3),
+			clock_100Hz			=> clock_100Hz,
+			pb_debounced		=> pb_debounced_key3
+		);
+		
+		clk_div_1 : component clk_div
+	  port map (
+			clock_50Mhz		=> CLOCK_50,
+			clock_1MHz		=> clock_1MHz,
+			clock_100KHz	=> clock_100KHz,
+			clock_10KHz		=> clock_10KHz,
+			clock_1KHz		=> clock_1KHz, 
+			clock_100Hz		=> clock_100Hz,
+			clock_10Hz		=> clock_10Hz,
+			clock_1Hz		=> clock_1Hz
+	  );
+	  
+	  	onepulse_key1 : component onepulse
+		PORT MAP
+		(
+			clock					=> clock_50,
+			PB_debounced 		=> pb_debounced_key1, 
+			PB_single_pulse	=> key1_onepulse
+		);
+	  
+		onepulse_key2 : component onepulse
+		PORT MAP
+		(
+			clock					=> clock_50,
+			PB_debounced 		=> pb_debounced_key2, 
+			PB_single_pulse	=> key2_onepulse
+		);
+		
+		onepulse_key3 : component onepulse
+		PORT MAP
+		(
+			clock					=> clock_50,
+			PB_debounced 		=> pb_debounced_key3, 
+			PB_single_pulse	=> key3_onepulse
+		);
+		
+--		pll_inst : pll PORT MAP (
+--			inclk0	 => CLOCK_50,
+--			c0	 => c0_sig,
+--			locked	 => locked_sig
+--	);
+		
 		
 		-------------------------
-		-- The Image Rectanlge --
+		-- The Image Rectangle --
 		-------------------------
 		
 		RectangleHGen: process(CLOCK_25MHz)
 		begin
 			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
 			
-				if pixel_col_address = 244 then
+				if pixel_col_address = begin_rectangle_h then
 					rectangle_h <= '1';
-				elsif pixel_col_address = 344 then 
+				elsif pixel_col_address = end_rectangle_h then 
 					rectangle_h <= '0';
 				end if;
 				
@@ -430,9 +626,9 @@ begin
 		begin
 			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
 			
-				if pixel_row_address = 135 then
+				if pixel_row_address = begin_rectangle_v then
 					rectangle_v <= '1';
-				elsif pixel_row_address = 260 then 
+				elsif pixel_row_address = end_rectangle_v then 
 					rectangle_v <= '0';
 				end if;
 			
@@ -506,7 +702,7 @@ begin
 	LCD_BLON <= '1';  -- LCD Back Light ON/OFF
 	 
 	-- Expansion Header
-	GPIO_0 <= (others => '0');  -- JP1
+	GPIO_0(0) <= pixel_clock ;--(others => '0');  -- JP1
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
@@ -613,6 +809,8 @@ begin
 	SD_DAT3  <= '0';
 	SD_CMD   <= '0';
 	SD_CLK   <= '0';
+	
+	
 
 end behavioral;
 
