@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_Board_top_level
-Tue Mar 03 12:16:09 2015
+Tue Mar 03 14:25:03 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -149,8 +149,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 6.081 ;    ;    ; 6.081 ;
-; CLOCK_50   ; VGA_CLK     ; 6.431 ;    ;    ; 6.431 ;
+; CLOCK_50   ; GPIO_0[0]   ; 6.620 ;    ;    ; 6.620 ;
+; CLOCK_50   ; VGA_CLK     ; 5.805 ;    ;    ; 5.805 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -159,8 +159,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 6.081 ;    ;    ; 6.081 ;
-; CLOCK_50   ; VGA_CLK     ; 6.431 ;    ;    ; 6.431 ;
+; CLOCK_50   ; GPIO_0[0]   ; 6.620 ;    ;    ; 6.620 ;
+; CLOCK_50   ; VGA_CLK     ; 5.805 ;    ;    ; 5.805 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -211,8 +211,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 2.982 ;    ;    ; 2.982 ;
-; CLOCK_50   ; VGA_CLK     ; 3.190 ;    ;    ; 3.190 ;
+; CLOCK_50   ; GPIO_0[0]   ; 3.113 ;    ;    ; 3.113 ;
+; CLOCK_50   ; VGA_CLK     ; 2.796 ;    ;    ; 2.796 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -221,8 +221,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 2.982 ;    ;    ; 2.982 ;
-; CLOCK_50   ; VGA_CLK     ; 3.190 ;    ;    ; 3.190 ;
+; CLOCK_50   ; GPIO_0[0]   ; 3.113 ;    ;    ; 3.113 ;
+; CLOCK_50   ; VGA_CLK     ; 2.796 ;    ;    ; 2.796 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -243,8 +243,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 6.081 ;    ;    ; 6.081 ;
-; CLOCK_50   ; VGA_CLK     ; 6.431 ;    ;    ; 6.431 ;
+; CLOCK_50   ; GPIO_0[0]   ; 6.620 ;    ;    ; 6.620 ;
+; CLOCK_50   ; VGA_CLK     ; 5.805 ;    ;    ; 5.805 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -253,8 +253,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 2.982 ;    ;    ; 2.982 ;
-; CLOCK_50   ; VGA_CLK     ; 3.190 ;    ;    ; 3.190 ;
+; CLOCK_50   ; GPIO_0[0]   ; 3.113 ;    ;    ; 3.113 ;
+; CLOCK_50   ; VGA_CLK     ; 2.796 ;    ;    ; 2.796 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -284,9 +284,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 7     ; 7    ;
 ; Unconstrained Input Ports       ; 14    ; 14   ;
-; Unconstrained Input Port Paths  ; 287   ; 287  ;
+; Unconstrained Input Port Paths  ; 386   ; 386  ;
 ; Unconstrained Output Ports      ; 35    ; 35   ;
-; Unconstrained Output Port Paths ; 42    ; 42   ;
+; Unconstrained Output Port Paths ; 40    ; 40   ;
 +---------------------------------+-------+------+
 
 
@@ -296,7 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Mar 03 12:16:07 2015
+    Info: Processing started: Tue Mar 03 14:25:02 2015
 Info: Command: quartus_sta DE2_System -c DE2_Board_top_level
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -350,9 +350,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 462 megabytes
-    Info: Processing ended: Tue Mar 03 12:16:09 2015
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 460 megabytes
+    Info: Processing ended: Tue Mar 03 14:25:03 2015
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

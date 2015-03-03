@@ -371,12 +371,12 @@ architecture behavioral of DE2_Board_top_level is
 	
 	signal pixel_clock                   :  std_logic								:= CLOCK_25MHz;
 	signal horizontal_sync_pixels	       :  std_logic_vector(15 downto 0)	:= x"0060";
-	signal horizontal_sync_polarity      :  std_logic 							 	:=	'0';
+	signal horizontal_sync_polarity      :  std_logic 							 	:=	'1';
 	signal horizontal_back_porch_pixels  :  std_logic_vector(15 downto 0)	:=	x"0030";
 	signal horizontal_display_pixels     :  std_logic_vector(15 downto 0)	:= x"0280";
 	signal horizontal_front_porch_pixels :  std_logic_vector(15 downto 0)	:= x"0010";
 	signal vertical_sync_lines	      	 :  std_logic_vector(15 downto 0)	:= x"0002";
-	signal vertical_sync_polarity      	 :  std_logic								:= '0';
+	signal vertical_sync_polarity      	 :  std_logic								:= '1';
 	signal vertical_back_porch_lines  	 :  std_logic_vector(15 downto 0)	:= x"0021";
 	signal vertical_display_lines     	 :  std_logic_vector(15 downto 0)	:= x"01E0";
 	signal vertical_front_porch_lines 	 :  std_logic_vector(15 downto 0)	:= x"000A";
@@ -403,6 +403,9 @@ architecture behavioral of DE2_Board_top_level is
 	signal begin_rectangle_v				 : integer range 0 to 600 := 135;
 	signal end_rectangle_v					 : integer range 0 to 600 := 260; 
 	
+	constant rectangle_size_v				 : integer := 125;
+	constant rectangle_size_h				 : integer := 100;
+	
 	signal locked_sig							 : std_logic;
 	signal start 								 : std_logic := '1';
 	signal direction2							 : std_logic_vector(1 downto 0);
@@ -419,7 +422,6 @@ begin
 			
 		-- when KEY2 is pressed, display 800x600 resolution
 			high_res 							<= '1';
-			--pixel_clock							<= CLOCK_50;
 			horizontal_sync_pixels	      <= x"0080";   			-- horizontal sync pulse width in pixels
 			horizontal_sync_polarity      <= '1';
 			horizontal_back_porch_pixels  <= x"0058";   			-- horizontal back porch width in pixels
@@ -434,14 +436,13 @@ begin
 			elsif(key3_onepulse = '1') then
 		--when KEY3 is pressed, display 640x480 resolution
 			high_res                      <= '0';
-			--pixel_clock							<= CLOCK_25MHz;
 			horizontal_sync_pixels	      <= x"0060";   			-- horizontal sync pulse width in pixels
-			horizontal_sync_polarity      <= '0';
+			horizontal_sync_polarity      <= '1';
 			horizontal_back_porch_pixels  <= x"0030";   			-- horizontal back porch width in pixels
 			horizontal_display_pixels     <= x"0280";   			-- horizontal display width in pixels, the display window where DAC data gets written
 			horizontal_front_porch_pixels <= x"0010";   			-- horizontal front porch width in pixels
 			vertical_sync_lines	      	<= x"0002";   			-- vertical sync pulse width in lines
-			vertical_sync_polarity        <= '0';
+			vertical_sync_polarity        <= '1';
 			vertical_back_porch_lines  	<= x"0021";   			-- vertical back porch width in lines
 			vertical_display_lines     	<= x"01E0";   			-- vertical display width in lines, the display window where DAC data gets written
 			vertical_front_porch_lines 	<= x"000A";   			-- vertical front porch width in lines
@@ -455,24 +456,47 @@ begin
 			if(key1_onepulse = '1') then
 				if((move_sign = '0') and (direction = '1')) then -- move down
 					
-					begin_rectangle_v <= begin_rectangle_v + to_integer(unsigned(step_size));
-					end_rectangle_v <= end_rectangle_v + to_integer(unsigned(step_size));
+					if((begin_rectangle_v + to_integer(unsigned(step_size))) < (vertical_display_lines - rectangle_size_v)) then	
+						begin_rectangle_v <= begin_rectangle_v + to_integer(unsigned(step_size));
+						end_rectangle_v	<= end_rectangle_v   + to_integer(unsigned(step_size));
+					else
+						begin_rectangle_v <= (to_integer(unsigned(vertical_display_lines)) - rectangle_size_v);
+						end_rectangle_v	<=  to_integer(unsigned(vertical_display_lines));
+					end if;
 					
 				
 				elsif((move_sign = '1' and (direction = '0'))) then -- move right
 					
 					begin_rectangle_h <= begin_rectangle_h + to_integer(unsigned(step_size));
 					end_rectangle_h <= end_rectangle_h + to_integer(unsigned(step_size));
+					
+					if((begin_rectangle_h + to_integer(unsigned(step_size))) < (horizontal_display_pixels - rectangle_size_h)) then	
+						begin_rectangle_h <= begin_rectangle_h + to_integer(unsigned(step_size));
+						end_rectangle_h 	<= end_rectangle_h   + to_integer(unsigned(step_size));
+					else						
+						begin_rectangle_h <= to_integer(unsigned(horizontal_display_pixels)) - rectangle_size_h;
+						end_rectangle_h 	<= to_integer(unsigned(horizontal_display_pixels));
+					end if;
 				
 				elsif((move_sign = '1') and (direction = '1')) then --move up
 				
-					begin_rectangle_v <= begin_rectangle_v - to_integer(unsigned(step_size));
-					end_rectangle_v <= end_rectangle_v - to_integer(unsigned(step_size));
+					if((begin_rectangle_v - to_integer(unsigned(step_size))) > 0) then					
+						begin_rectangle_v <= begin_rectangle_v - to_integer(unsigned(step_size));
+						end_rectangle_v	<= begin_rectangle_v - to_integer(unsigned(step_size)) + rectangle_size_v;
+					else
+						begin_rectangle_v <= 0;
+						end_rectangle_v	<= rectangle_size_v;
+					end if;
 
 				elsif((move_sign = '0') and (direction = '0')) then -- move left
 				
-					begin_rectangle_h <= begin_rectangle_h - to_integer(unsigned(step_size));
-					end_rectangle_h <= end_rectangle_h - to_integer(unsigned(step_size));
+					if((begin_rectangle_h - to_integer(unsigned(step_size))) > 0) then	
+						begin_rectangle_h <= begin_rectangle_h - to_integer(unsigned(step_size));
+						end_rectangle_h 	<= end_rectangle_h   - to_integer(unsigned(step_size));
+					else						
+						begin_rectangle_h <= 0;
+						end_rectangle_h 	<= rectangle_size_h;
+					end if;
 				
 				end if;
 			end if;
@@ -485,78 +509,62 @@ begin
 	
 --		move_image2: process(clock_100Hz)
 --	begin
---		if(rising_edge(clock_100Hz)) then
---		
-----		   if(start = '1') then
-----					begin_rectangle_v <= begin_rectangle_v + 1;
-----					end_rectangle_v <= end_rectangle_v + 1;
-----			
-----					begin_rectangle_h <= begin_rectangle_h + 1;
-----					end_rectangle_h <= end_rectangle_h + 1;
-----					
-----					--start <= '0';
-----			end if;		
---			
---			
---			
---			
---			if(end_rectangle_v = 520)  then
---					direction2 <= "01";
---					start <= '0';
---			end if;
---			
---			if(begin_rectangle_v = 25)  then
---					direction2 <= "11";
---			end if;
---			
---			if(begin_rectangle_h = 200)  then
---					direction2 <= "00";
---			end if;
---			
---			if(end_rectangle_h = 800)  then
---					direction2 <= "10";
+--		if(rising_edge(clock_100Hz)) then	
+--						
+--			if(begin_rectangle_v = 0)  then
+--				if direction2 = "10" then -- up left
+--					direction2 <= "11";		-- down left
+--				else
+--					direction2 <= "00";		-- down right
+--				end if;
+--					
+--			elsif(begin_rectangle_v = (vertical_display_lines -rectangle_size_v))  then
+--				if direction2 = "11" then -- down left
+--					direction2 <= "10";		-- up left
+--				else
+--					direction2 <= "01";		-- up right
+--				end if;
+--			elsif(begin_rectangle_h = 0)  then
+--				if direction2 = "10" then -- up left
+--					direction2 <= "01";		-- up right
+--				else
+--					direction2 <= "00";		-- down right
+--				end if;
+--			elsif(begin_rectangle_h = (horizontal_display_pixels - rectangle_size_h))  then
+--				if direction2 = "00" then -- down right
+--					direction2 <= "11";		-- down left
+--				else
+--					direction2 <= "10";		-- up left
+--				end if;
 --			end if;
 --			
 --			
 --			
---			if(direction2 = "00") then
---								begin_rectangle_v <= begin_rectangle_v + 1;
---					end_rectangle_v <= end_rectangle_v + 1;
+--			if(direction2 = "00") then  -- down right
+--					begin_rectangle_v <= begin_rectangle_v + 1;
+--					end_rectangle_v   <= end_rectangle_v + 1;
 --			
 --					begin_rectangle_h <= begin_rectangle_h + 1;
 --					end_rectangle_h <= end_rectangle_h + 1;
---			end if;
---			
---			if(direction2 = "01") then
---			begin_rectangle_v <= begin_rectangle_v - 1;
+--			elsif(direction2 = "01") then  -- up right
+--					begin_rectangle_v <= begin_rectangle_v - 1;
 --					end_rectangle_v <= end_rectangle_v - 1;
 --			
 --					begin_rectangle_h <= begin_rectangle_h + 1;
 --					end_rectangle_h <= end_rectangle_h + 1;
---			end if;
---			
---			if(direction2 = "10") then
---			begin_rectangle_v <= begin_rectangle_v - 1;
+--			elsif(direction2 = "10") then  -- up left
+--					begin_rectangle_v <= begin_rectangle_v - 1;
 --					end_rectangle_v <= end_rectangle_v - 1;
 --			
 --					begin_rectangle_h <= begin_rectangle_h - 1;
 --					end_rectangle_h <= end_rectangle_h - 1;
---			end if;
---			
---			if(direction2 = "11") then
---			begin_rectangle_v <= begin_rectangle_v + 1;
+--			elsif(direction2 = "11") then -- down left
+--					begin_rectangle_v <= begin_rectangle_v + 1;
 --					end_rectangle_v <= end_rectangle_v + 1;
 --			
 --					begin_rectangle_h <= begin_rectangle_h - 1;
 --					end_rectangle_h <= end_rectangle_h - 1;
 --			end if;
---			--if(end_rectangle_v < 680) then
---			--		begin_rectangle_v <= begin_rectangle_v + 1;
---			--		end_rectangle_v <= end_rectangle_v + 1;
---			--
---			--		begin_rectangle_h <= begin_rectangle_h + 1;
---			--		end_rectangle_h <= end_rectangle_h + 1;
---			--end if;
 --			
 --		end if;
 --	end process;
@@ -567,16 +575,8 @@ begin
 			CLOCK_25MHz <= not CLOCK_25MHz;
 		end if;
 	end process;
-	
---	pixel_clock_select: process(CLOCK_50)
---	begin
---		if CLOCK_50'event and CLOCK_50 = '1' then
---			if( high_res = '1') then
---				pixel_clock <= CLOCK_50;
---		end if;
---	end process;
 
-pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
+	pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
 	
 	vga_sync_controller_1: component vga_sync_controller
 		generic map
@@ -706,9 +706,9 @@ pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
 		begin
 			if pixel_clock'event and pixel_clock = '1' then
 			
-				if pixel_col_address = begin_rectangle_h then
+				if pixel_col_address =    (horizontal_sync_pixels + horizontal_back_porch_pixels + begin_rectangle_h) then
 					rectangle_h <= '1';
-				elsif pixel_col_address = end_rectangle_h then 
+				elsif pixel_col_address = (horizontal_sync_pixels + horizontal_back_porch_pixels + end_rectangle_h) then 
 					rectangle_h <= '0';
 				end if;
 				
@@ -719,9 +719,9 @@ pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
 		begin
 			if pixel_clock'event and pixel_clock = '1' then
 			
-				if pixel_row_address = begin_rectangle_v then
+				if pixel_row_address = 		(vertical_sync_lines + vertical_back_porch_lines + begin_rectangle_v) then
 					rectangle_v <= '1';
-				elsif pixel_row_address = end_rectangle_v then 
+				elsif pixel_row_address = 	(vertical_sync_lines + vertical_back_porch_lines + end_rectangle_v) then 
 					rectangle_v <= '0';
 				end if;
 			
@@ -740,10 +740,6 @@ pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
 					VGA_B(9 downto 2) <= rom_ross_b_q;
 					
 					pixel_number <= pixel_number +1;
-					
---					VGA_R <= "1111111111";
---					VGA_G <= "1111111111";
---					VGA_B <= "1111111111";
 				
 				elsif vga_blank_local = '1' then
 					VGA_R <= "0011111111";
