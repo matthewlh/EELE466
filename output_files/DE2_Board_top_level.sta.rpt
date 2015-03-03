@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_Board_top_level
-Tue Feb 24 14:41:14 2015
+Mon Mar 02 17:20:08 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -149,8 +149,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 8.707 ;    ;    ; 8.707 ;
-; CLOCK_50   ; VGA_CLK     ; 8.464 ;    ;    ; 8.464 ;
+; CLOCK_50   ; GPIO_0[0]   ; 5.088 ;    ;    ; 5.088 ;
+; CLOCK_50   ; VGA_CLK     ; 5.016 ;    ;    ; 5.016 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -159,8 +159,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 8.707 ;    ;    ; 8.707 ;
-; CLOCK_50   ; VGA_CLK     ; 8.464 ;    ;    ; 8.464 ;
+; CLOCK_50   ; GPIO_0[0]   ; 5.088 ;    ;    ; 5.088 ;
+; CLOCK_50   ; VGA_CLK     ; 5.016 ;    ;    ; 5.016 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -211,8 +211,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 4.368 ;    ;    ; 4.368 ;
-; CLOCK_50   ; VGA_CLK     ; 4.326 ;    ;    ; 4.326 ;
+; CLOCK_50   ; GPIO_0[0]   ; 2.468 ;    ;    ; 2.468 ;
+; CLOCK_50   ; VGA_CLK     ; 2.411 ;    ;    ; 2.411 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -221,8 +221,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 4.368 ;    ;    ; 4.368 ;
-; CLOCK_50   ; VGA_CLK     ; 4.326 ;    ;    ; 4.326 ;
+; CLOCK_50   ; GPIO_0[0]   ; 2.468 ;    ;    ; 2.468 ;
+; CLOCK_50   ; VGA_CLK     ; 2.411 ;    ;    ; 2.411 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -243,8 +243,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 8.707 ;    ;    ; 8.707 ;
-; CLOCK_50   ; VGA_CLK     ; 8.464 ;    ;    ; 8.464 ;
+; CLOCK_50   ; GPIO_0[0]   ; 5.088 ;    ;    ; 5.088 ;
+; CLOCK_50   ; VGA_CLK     ; 5.016 ;    ;    ; 5.016 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -253,8 +253,8 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; CLOCK_50   ; GPIO_0[0]   ; 4.368 ;    ;    ; 4.368 ;
-; CLOCK_50   ; VGA_CLK     ; 4.326 ;    ;    ; 4.326 ;
+; CLOCK_50   ; GPIO_0[0]   ; 2.468 ;    ;    ; 2.468 ;
+; CLOCK_50   ; VGA_CLK     ; 2.411 ;    ;    ; 2.411 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -283,8 +283,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 7     ; 7    ;
-; Unconstrained Input Ports       ; 3     ; 3    ;
-; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 6     ; 6    ;
 ; Unconstrained Output Ports      ; 35    ; 35   ;
 ; Unconstrained Output Port Paths ; 42    ; 42   ;
 +---------------------------------+-------+------+
@@ -296,7 +296,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Feb 24 14:41:12 2015
+    Info: Processing started: Mon Mar 02 17:20:07 2015
 Info: Command: quartus_sta DE2_System -c DE2_Board_top_level
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -307,13 +307,15 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'DE2_Board_top_level.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Warning (332060): Node: CLOCK_25MHz was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_100Hz was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_1Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_10Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_100Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_1Mhz_reg was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_25MHz was determined to be a clock but was found without an associated clock assignment.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: pll_inst|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Info (332140): No fmax paths to report
@@ -327,13 +329,15 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
     Info (332119):    97.778         0.000 altera_reserved_tck 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Warning (332060): Node: CLOCK_25MHz was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_100Hz was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_1Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_10Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_100Khz_reg was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: clk_div:clk_div_1|clock_1Mhz_reg was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: CLOCK_25MHz was determined to be a clock but was found without an associated clock assignment.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: pll_inst|altpll_component|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
 Info (332140): No Setup paths to report
 Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
@@ -345,10 +349,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 460 megabytes
-    Info: Processing ended: Tue Feb 24 14:41:14 2015
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 462 megabytes
+    Info: Processing ended: Mon Mar 02 17:20:08 2015
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

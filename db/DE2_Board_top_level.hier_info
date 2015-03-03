@@ -1,6 +1,5 @@
 |DE2_Board_top_level
 CLOCK_27 => ~NO_FANOUT~
-CLOCK_50 => pixel_clock.DATAB
 CLOCK_50 => clk_div:clk_div_1.clock_50Mhz
 CLOCK_50 => CLOCK_25MHz.CLK
 CLOCK_50 => vertical_front_porch_lines[0].CLK
@@ -134,11 +133,13 @@ CLOCK_50 => horizontal_sync_pixels[13].CLK
 CLOCK_50 => horizontal_sync_pixels[14].CLK
 CLOCK_50 => horizontal_sync_pixels[15].CLK
 CLOCK_50 => high_res.CLK
+CLOCK_50 => onepulse:onepulse_key1.clock
 CLOCK_50 => onepulse:onepulse_key2.clock
 CLOCK_50 => onepulse:onepulse_key3.clock
+CLOCK_50 => pll:pll_inst.inclk0
 EXT_CLOCK => ~NO_FANOUT~
 KEY[0] => ~NO_FANOUT~
-KEY[1] => ~NO_FANOUT~
+KEY[1] => debounce:debounce_key1.pb
 KEY[2] => debounce:debounce_key2.pb
 KEY[3] => debounce:debounce_key3.pb
 SW[0] => ~NO_FANOUT~
@@ -2755,6 +2756,16 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 
 
+|DE2_Board_top_level|debounce:debounce_key1
+pb => SHIFT_PB[3].DATAIN
+clock_100Hz => pb_debounced~reg0.CLK
+clock_100Hz => SHIFT_PB[0].CLK
+clock_100Hz => SHIFT_PB[1].CLK
+clock_100Hz => SHIFT_PB[2].CLK
+clock_100Hz => SHIFT_PB[3].CLK
+pb_debounced <= pb_debounced~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |DE2_Board_top_level|debounce:debounce_key2
 pb => SHIFT_PB[3].DATAIN
 clock_100Hz => pb_debounced~reg0.CLK
@@ -2808,6 +2819,15 @@ clock_10Hz <= clock_10Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clock_1Hz <= clock_1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+|DE2_Board_top_level|onepulse:onepulse_key1
+PB_debounced => process_0.IN1
+PB_debounced => PB_debounced_delay.DATAA
+clock => Power_on.CLK
+clock => PB_debounced_delay.CLK
+clock => PB_single_pulse~reg0.CLK
+PB_single_pulse <= PB_single_pulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |DE2_Board_top_level|onepulse:onepulse_key2
 PB_debounced => process_0.IN1
 PB_debounced => PB_debounced_delay.DATAA
@@ -2824,5 +2844,72 @@ clock => Power_on.CLK
 clock => PB_debounced_delay.CLK
 clock => PB_single_pulse~reg0.CLK
 PB_single_pulse <= PB_single_pulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_Board_top_level|pll:pll_inst
+inclk0 => altpll:altpll_component.inclk[0]
+c0 <= altpll:altpll_component.clk[0]
+locked <= altpll:altpll_component.locked
+
+
+|DE2_Board_top_level|pll:pll_inst|altpll:altpll_component
+inclk[0] => pll.CLK
+inclk[1] => ~NO_FANOUT~
+fbin => ~NO_FANOUT~
+pllena => ~NO_FANOUT~
+clkswitch => ~NO_FANOUT~
+areset => ~NO_FANOUT~
+pfdena => ~NO_FANOUT~
+clkena[0] => ~NO_FANOUT~
+clkena[1] => ~NO_FANOUT~
+clkena[2] => ~NO_FANOUT~
+clkena[3] => ~NO_FANOUT~
+clkena[4] => ~NO_FANOUT~
+clkena[5] => ~NO_FANOUT~
+extclkena[0] => ~NO_FANOUT~
+extclkena[1] => ~NO_FANOUT~
+extclkena[2] => ~NO_FANOUT~
+extclkena[3] => ~NO_FANOUT~
+scanclk => ~NO_FANOUT~
+scanclkena => ~NO_FANOUT~
+scanaclr => ~NO_FANOUT~
+scanread => ~NO_FANOUT~
+scanwrite => ~NO_FANOUT~
+scandata => ~NO_FANOUT~
+phasecounterselect[0] => ~NO_FANOUT~
+phasecounterselect[1] => ~NO_FANOUT~
+phasecounterselect[2] => ~NO_FANOUT~
+phasecounterselect[3] => ~NO_FANOUT~
+phaseupdown => ~NO_FANOUT~
+phasestep => ~NO_FANOUT~
+configupdate => ~NO_FANOUT~
+fbmimicbidir <> <GND>
+clk[0] <= clk[0].DB_MAX_OUTPUT_PORT_TYPE
+clk[1] <= <GND>
+clk[2] <= <GND>
+clk[3] <= <GND>
+clk[4] <= <GND>
+clk[5] <= <GND>
+extclk[0] <= <GND>
+extclk[1] <= <GND>
+extclk[2] <= <GND>
+extclk[3] <= <GND>
+clkbad[0] <= <GND>
+clkbad[1] <= <GND>
+enable1 <= <GND>
+enable0 <= <GND>
+activeclock <= <GND>
+clkloss <= <GND>
+locked <= pll.LOCKED
+scandataout <= <GND>
+scandone <= <GND>
+sclkout0 <= <GND>
+sclkout1 <= sclkout1.DB_MAX_OUTPUT_PORT_TYPE
+phasedone <= <GND>
+vcooverrange <= <GND>
+vcounderrange <= <GND>
+fbout <= <GND>
+fref <= <GND>
+icdrclk <= <GND>
 
 

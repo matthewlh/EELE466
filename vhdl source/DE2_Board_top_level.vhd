@@ -66,8 +66,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
---use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.numeric_std.ALL;
 
 entity DE2_Board_top_level is
@@ -331,14 +331,14 @@ architecture behavioral of DE2_Board_top_level is
 
 	END component;
 	
---	ENTITY pll IS
---	PORT
---	(
---		inclk0		: IN STD_LOGIC  := '0';
---		c0		: OUT STD_LOGIC ;
---		locked		: OUT STD_LOGIC 
---	);
---	END pll;
+	Component pll IS
+	PORT
+	(
+		inclk0		: IN STD_LOGIC  := '0';
+		c0		: OUT STD_LOGIC ;
+		locked		: OUT STD_LOGIC 
+	);
+	END component;
 	
 
 	
@@ -388,6 +388,7 @@ architecture behavioral of DE2_Board_top_level is
 	signal key2_onepulse 					 : std_logic;
 	signal key3_onepulse						 : std_logic;
 	
+	signal c0_sig									 : std_logic; -- clock coming out of pll
 	signal clock_49_5                    : std_logic;
 	signal clock_49_5_count              : integer range 0 to 24750000 := 0;
 	
@@ -402,6 +403,9 @@ architecture behavioral of DE2_Board_top_level is
 	signal begin_rectangle_v				 : integer range 0 to 600 := 135;
 	signal end_rectangle_v					 : integer range 0 to 600 := 260; 
 	
+	signal locked_sig							 : std_logic;
+	signal start 								 : std_logic := '1';
+	signal direction2							 : std_logic_vector(1 downto 0);
 begin
 
 	move_sign <= SW(17);
@@ -445,33 +449,115 @@ begin
 		end if;
 	end process;
 	
-	move_image: process(CLOCK_50, key1_onepulse)
+--	move_image: process(CLOCK_50, key1_onepulse)
+--	begin
+--		if(rising_edge(CLOCK_50)) then
+--			if(key1_onepulse = '1') then
+--				if((move_sign = '1') and (direction = '1')) then -- move up
+--					
+--					begin_rectangle_v <= begin_rectangle_v + to_integer(unsigned(step_size));
+--					end_rectangle_v <= end_rectangle_v + to_integer(unsigned(step_size));
+--					
+--				
+--				elsif((move_sign = '1' and (direction = '0'))) then -- move right
+--					
+--					begin_rectangle_h <= begin_rectangle_h + to_integer(unsigned(step_size));
+--					end_rectangle_h <= end_rectangle_h + to_integer(unsigned(step_size));
+--				
+--				elsif((move_sign = '0') and (direction = '1')) then --move down
+--				
+--					begin_rectangle_v <= begin_rectangle_v - to_integer(unsigned(step_size));
+--					end_rectangle_v <= end_rectangle_v - to_integer(unsigned(step_size));
+--
+--				elsif((move_sign = '0') and (direction = '0')) then -- move left
+--				
+--					begin_rectangle_h <= begin_rectangle_h - to_integer(unsigned(step_size));
+--					end_rectangle_h <= end_rectangle_h - to_integer(unsigned(step_size));
+--				
+--				end if;
+--			end if;
+--
+--		end if;
+--	end process;
+	
+	--move_sign  left or right
+	--direction  up or down
+	
+		move_image2: process(clock_100Hz)
 	begin
-		if(rising_edge(CLOCK_50)) then
-			if(key1_onepulse = '1') then
-				if((move_sign = '1') and (direction = '1')) then -- move up
-					
-					begin_rectangle_v <= begin_rectangle_v + to_integer(unsigned(step_size));
-					end_rectangle_v <= end_rectangle_v + to_integer(unsigned(step_size));
-				
-				elsif((move_sign = '1' and (direction = '0'))) then -- move right
-					
-					begin_rectangle_h <= begin_rectangle_h + to_integer(unsigned(step_size));
-					end_rectangle_h <= end_rectangle_h + to_integer(unsigned(step_size));
-				
-				elsif((move_sign = '0') and (direction = '1')) then --move down
-				
-					begin_rectangle_v <= begin_rectangle_v - to_integer(unsigned(step_size));
-					end_rectangle_v <= end_rectangle_v - to_integer(unsigned(step_size));
-
-				elsif((move_sign = '0') and (direction = '0')) then -- move left
-				
-					begin_rectangle_h <= begin_rectangle_h - to_integer(unsigned(step_size));
-					end_rectangle_h <= end_rectangle_h - to_integer(unsigned(step_size));
-				
-				end if;
+		if(rising_edge(clock_100Hz)) then
+		
+--		   if(start = '1') then
+--					begin_rectangle_v <= begin_rectangle_v + 1;
+--					end_rectangle_v <= end_rectangle_v + 1;
+--			
+--					begin_rectangle_h <= begin_rectangle_h + 1;
+--					end_rectangle_h <= end_rectangle_h + 1;
+--					
+--					--start <= '0';
+--			end if;		
+			
+			
+			
+			
+			if(end_rectangle_v = 520)  then
+					direction2 <= "01";
+					start <= '0';
 			end if;
-
+			
+			if(begin_rectangle_v = 25)  then
+					direction2 <= "11";
+			end if;
+			
+			if(begin_rectangle_h = 200)  then
+					direction2 <= "00";
+			end if;
+			
+			if(end_rectangle_h = 800)  then
+					direction2 <= "10";
+			end if;
+			
+			
+			
+			if(direction2 = "00") then
+								begin_rectangle_v <= begin_rectangle_v + 1;
+					end_rectangle_v <= end_rectangle_v + 1;
+			
+					begin_rectangle_h <= begin_rectangle_h + 1;
+					end_rectangle_h <= end_rectangle_h + 1;
+			end if;
+			
+			if(direction2 = "01") then
+			begin_rectangle_v <= begin_rectangle_v - 1;
+					end_rectangle_v <= end_rectangle_v - 1;
+			
+					begin_rectangle_h <= begin_rectangle_h + 1;
+					end_rectangle_h <= end_rectangle_h + 1;
+			end if;
+			
+			if(direction2 = "10") then
+			begin_rectangle_v <= begin_rectangle_v - 1;
+					end_rectangle_v <= end_rectangle_v - 1;
+			
+					begin_rectangle_h <= begin_rectangle_h - 1;
+					end_rectangle_h <= end_rectangle_h - 1;
+			end if;
+			
+			if(direction2 = "11") then
+			begin_rectangle_v <= begin_rectangle_v + 1;
+					end_rectangle_v <= end_rectangle_v + 1;
+			
+					begin_rectangle_h <= begin_rectangle_h - 1;
+					end_rectangle_h <= end_rectangle_h - 1;
+			end if;
+			--if(end_rectangle_v < 680) then
+			--		begin_rectangle_v <= begin_rectangle_v + 1;
+			--		end_rectangle_v <= end_rectangle_v + 1;
+			--
+			--		begin_rectangle_h <= begin_rectangle_h + 1;
+			--		end_rectangle_h <= end_rectangle_h + 1;
+			--end if;
+			
 		end if;
 	end process;
 
@@ -490,7 +576,7 @@ begin
 --		end if;
 --	end process;
 
-pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
+pixel_clock <= c0_sig when high_res = '1' else CLOCK_25MHz;
 	
 	vga_sync_controller_1: component vga_sync_controller
 		generic map
@@ -532,20 +618,27 @@ pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
 		  
 	rom_ross_r_inst : rom_ross_r PORT MAP (
 			address	 	=> pixel_number,
-			clock	 		=> CLOCK_25MHz,
+			clock	 		=> pixel_clock,
 			q	 			=> rom_ross_r_q
 		);
 		  
 	rom_ross_g_inst : rom_ross_g PORT MAP (
 			address	 	=> pixel_number,
-			clock	 		=> CLOCK_25MHz,
+			clock	 		=> pixel_clock,
 			q	 			=> rom_ross_g_q
 		);
 		  
 	rom_ross_b_inst : rom_ross_b PORT MAP (
 			address	 	=> pixel_number,
-			clock	 		=> CLOCK_25MHz,
+			clock	 		=> pixel_clock,
 			q	 			=> rom_ross_b_q
+		);
+		
+		debounce_key1 : component debounce
+		port map (
+			pb						=> KEY(1),
+			clock_100Hz			=> clock_100Hz,
+			pb_debounced		=> pb_debounced_key1
 		);
 		
 		debounce_key2 : component debounce
@@ -598,20 +691,20 @@ pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
 			PB_single_pulse	=> key3_onepulse
 		);
 		
---		pll_inst : pll PORT MAP (
---			inclk0	 => CLOCK_50,
---			c0	 => c0_sig,
---			locked	 => locked_sig
---	);
+		pll_inst : pll PORT MAP (
+			inclk0	 => CLOCK_50,
+			c0	 => c0_sig,
+			locked	 => locked_sig
+	);
 		
 		
 		-------------------------
 		-- The Image Rectangle --
 		-------------------------
 		
-		RectangleHGen: process(CLOCK_25MHz)
+		RectangleHGen: process(pixel_clock)
 		begin
-			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			if pixel_clock'event and pixel_clock = '1' then
 			
 				if pixel_col_address = begin_rectangle_h then
 					rectangle_h <= '1';
@@ -622,9 +715,9 @@ pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
 			end if;
 		end process;
 		
-		RectangleVGen: process(CLOCK_25MHz)
+		RectangleVGen: process(pixel_clock)
 		begin
-			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			if pixel_clock'event and pixel_clock = '1' then
 			
 				if pixel_row_address = begin_rectangle_v then
 					rectangle_v <= '1';
@@ -637,9 +730,9 @@ pixel_clock <= CLOCK_50 when high_res = '1' else CLOCK_25MHz;
 		
 		rectangle <= rectangle_h and rectangle_v;
 		
-		VideoOut: process (CLOCK_25MHz)
+		VideoOut: process (pixel_clock)
 		begin
-			if CLOCK_25MHz'event and CLOCK_25MHz = '1' then
+			if pixel_clock'event and pixel_clock = '1' then
 			
 				if rectangle = '1' then
 					VGA_R(9 downto 2) <= rom_ross_r_q;
