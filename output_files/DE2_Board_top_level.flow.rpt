@@ -1,5 +1,5 @@
 Flow report for DE2_Board_top_level
-Mon Mar 02 17:20:10 2015
+Tue Mar 03 12:16:11 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 02 17:20:10 2015            ;
+; Flow Status                        ; Successful - Tue Mar 03 12:16:11 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_Board_top_level                              ;
 ; Top-level Entity Name              ; DE2_Board_top_level                              ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 1,128 / 33,216 ( 3 % )                           ;
-;     Total combinational functions  ; 763 / 33,216 ( 2 % )                             ;
-;     Dedicated logic registers      ; 810 / 33,216 ( 2 % )                             ;
-; Total registers                    ; 810                                              ;
+; Total logic elements               ; 1,112 / 33,216 ( 3 % )                           ;
+;     Total combinational functions  ; 742 / 33,216 ( 2 % )                             ;
+;     Dedicated logic registers      ; 809 / 33,216 ( 2 % )                             ;
+; Total registers                    ; 809                                              ;
 ; Total pins                         ; 422 / 475 ( 89 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 386,016 / 483,840 ( 80 % )                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/02/2015 17:19:46 ;
+; Start date & time ; 03/03/2015 12:15:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_Board_top_level ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                         ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 203178705545436.142534198604628                                               ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 203178705550136.142541014705436                                               ; --            ; --          ; --               ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                          ; --            ; --          ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                        ; <None>        ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                            ; --            ; --          ; --               ;
@@ -106,7 +106,7 @@ applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                           ; --            ; --          ; --               ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                         ; --            ; --          ; --               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                  ; --            ; --          ; --               ;
-; SLD_FILE                            ; C:/Users/w92p177/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp ; --            ; --          ; --               ;
+; SLD_FILE                            ; C:/Users/z68j959/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp ; --            ; --          ; --               ;
 ; SLD_NODE_CREATOR_ID                 ; 110                                                                           ; --            ; --          ; auto_signaltap_0 ;
 ; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                 ; --            ; --          ; auto_signaltap_0 ;
 ; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                       ; --            ; --          ; auto_signaltap_0 ;
@@ -140,11 +140,11 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 558 MB              ; 00:00:07                           ;
-; Fitter                    ; 00:00:07     ; 1.5                     ; 1105 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 445 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 462 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 419 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:20                           ;
+; Fitter                    ; 00:00:08     ; 1.9                     ; 1100 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 445 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 462 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 419 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:22     ; --                      ; --                  ; 00:00:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -153,11 +153,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; bz-ece-cb60103   ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; bz-ece-cb60103   ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; bz-ece-cb60103   ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; bz-ece-cb60103   ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; bz-ece-cb60103   ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
