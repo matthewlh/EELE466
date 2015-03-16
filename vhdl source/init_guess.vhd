@@ -10,8 +10,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.numeric_std.ALL;
 
 entity INIT_GUESS is 
 	port(
@@ -24,6 +24,60 @@ end entity;
 
 architecture INIT_GUESS_arch of INIT_GUESS is
 
+	------------------------------
+	---- Constant Declaration ----
+	------------------------------
+	
+	constant W	: integer := 32;
+	constant F	: integer := 16;
+
+	----------------------------
+	---- Signal Declaration ----
+	----------------------------
+
+	signal Z_std 	: STD_LOGIC_VECTOR( 4 downto 0);		-- Z = number of leading zeros
+	signal Z 		: integer range 0 to 32;
+	
+	signal Beta 	: integer; 									-- Beta = number of bits to shift
+	signal odd		:STD_LOGIC;									-- '1' when Beta is odd, '0' when Beta is even
+	
+	signal Alpha 	: integer; 									-- Beta = number of bits to shift
+	
+
+	-------------------------------
+	---- Component Declaration ----
+	-------------------------------
+
+	component lzc is
+		 port (
+			  clk        : in  std_logic;
+			  lzc_vector : in  std_logic_vector (31 downto 0);
+			  lzc_count  : out std_logic_vector ( 4 downto 0)
+		 );
+	end component;
+
 	begin
+	
+		--------------------------------
+		---- Component Instatiation ----
+		--------------------------------
+		lzc_0 : component lzc
+		port map (
+			clk			=> CLK,
+			lzc_vector	=> INPUT_X,
+			lzc_count	=> Z_std
+		);
+		
+		
+		--------------------------
+		---- Signal Assigment ----
+		--------------------------
+		Z 		<= to_integer(unsigned(Z_std));
+		
+		Beta 	<= W -F -Z -1;
+		
+		odd	<= '0' when (Beta mod 2 = 0) else '1';
+		
+		Alpha <= (-2*Beta + Beta/2) when (odd = '0') else (-2*Beta + Beta/2 + 0.5);
 	
 end architecture;
