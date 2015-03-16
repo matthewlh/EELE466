@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------
+--
+-- Author(s):        David Keltgen
+-- 					 	Matthew Handley
+--
+-- Create Date:      09/10/2010
+-- Modified Date:		01/20/2015
+----------------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity RSR is 
+	port(
+		INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
+		OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
+	);
+	  
+end entity;
+
+architecture RSR_arch  of RSR

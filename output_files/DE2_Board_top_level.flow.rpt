@@ -1,5 +1,5 @@
 Flow report for DE2_Board_top_level
-Tue Mar 03 14:25:06 2015
+Mon Mar 16 14:37:20 2015
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 03 14:25:06 2015            ;
+; Flow Status                        ; Successful - Mon Mar 16 14:37:20 2015            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_Board_top_level                              ;
 ; Top-level Entity Name              ; DE2_Board_top_level                              ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 1,271 / 33,216 ( 4 % )                           ;
-;     Total combinational functions  ; 900 / 33,216 ( 3 % )                             ;
-;     Dedicated logic registers      ; 811 / 33,216 ( 2 % )                             ;
-; Total registers                    ; 811                                              ;
+; Total logic elements               ; 772 / 33,216 ( 2 % )                             ;
+;     Total combinational functions  ; 422 / 33,216 ( 1 % )                             ;
+;     Dedicated logic registers      ; 633 / 33,216 ( 2 % )                             ;
+; Total registers                    ; 633                                              ;
 ; Total pins                         ; 422 / 475 ( 89 % )                               ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 386,016 / 483,840 ( 80 % )                       ;
+; Total memory bits                  ; 86,016 / 483,840 ( 18 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                   ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                                   ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                    ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/03/2015 14:24:40 ;
+; Start date & time ; 03/16/2015 14:36:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_Board_top_level ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                     ; Value                                                                         ; Default Value ; Entity Name ; Section Id       ;
 +-------------------------------------+-------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 203178705550136.142541788003448                                               ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID               ; 203178705575094.142653821007492                                               ; --            ; --          ; --               ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                          ; --            ; --          ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                        ; <None>        ; --          ; --               ;
 ; ENABLE_SIGNALTAP                    ; On                                                                            ; --            ; --          ; --               ;
@@ -139,12 +139,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 558 MB              ; 00:00:08                           ;
-; Fitter                    ; 00:00:07     ; 1.0                     ; 1106 MB             ; 00:00:10                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 438 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 460 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 425 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:22                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 537 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:10     ; 1.4                     ; 1106 MB             ; 00:00:08                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 451 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 447 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 413 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:26     ; --                      ; --                  ; 00:00:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -153,11 +153,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
-; EDA Netlist Writer        ; bz-ece-cb60104   ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; bz-ece-cb60107   ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; bz-ece-cb60107   ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; bz-ece-cb60107   ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; bz-ece-cb60107   ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; bz-ece-cb60107   ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
