@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 CHIP  "DE2_Board_top_level"  ASSIGNED TO AN: EP2C35F672C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -292,7 +292,7 @@ ENET_DATA[1]                 : C17       : bidir  : 3.3-V LVTTL       :         
 GND                          : C18       : gnd    :                   :         :           :                
 ENET_DATA[10]                : C19       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C21       :        :                   :         : 4         :                
+TD_CLK27                     : C21       : input  : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C22       :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C23       :        :                   :         : 4         :                
 PS2_DAT                      : C24       : bidir  : 3.3-V LVTTL       :         : 5         : Y              
@@ -338,7 +338,7 @@ GND                          : E11       : gnd    :                   :         
 VGA_G[8]                     : E12       : output : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : E13       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : E14       : power  :                   : 3.3V    : 4         :                
-TD_CLK27                     : E15       : input  : 3.3-V LVTTL       :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 4         :                
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
 ENET_DATA[14]                : E18       : bidir  : 3.3-V LVTTL       :         : 4         : Y              
@@ -417,7 +417,7 @@ VGA_R[7]                     : H12       : output : 3.3-V LVTTL       :         
 GND                          : H13       : gnd    :                   :         :           :                
 GND                          : H14       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H15       :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 4         :                
+AUD_ADCLRCL                  : H16       : output : 3.3-V LVTTL       :         : 4         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 4         :                
 VCCIO4                       : H18       : power  :                   : 3.3V    : 4         :                
 GPIO_0[22]                   : H19       : bidir  : 3.3-V LVTTL       :         : 5         : Y              
@@ -645,7 +645,7 @@ DRAM_ADDR[5]                 : U6        : output : 3.3-V LVTTL       :         
 DRAM_ADDR[6]                 : U7        : output : 3.3-V LVTTL       :         : 1         : Y              
 GND                          : U8        : gnd    :                   :         :           :                
 HEX4[0]                      : U9        : output : 3.3-V LVTTL       :         : 1         : Y              
-AUD_ADCLRCL                  : U10       : output : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 1         :                
 VCCINT                       : U11       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U12       :        :                   :         : 8         :                
 VCCINT                       : U13       : power  :                   : 1.2V    :           :                

@@ -10,7 +10,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use IEEE.STD_LOGIC_UNSIGNED.ALL;
+--use ieee.std_logic_arith.all;
 use IEEE.numeric_std.ALL;
 
 entity INIT_GUESS is 
@@ -39,9 +40,14 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 	signal Z 		: integer range 0 to 32;
 	
 	signal Beta 	: integer; 									-- Beta = number of bits to shift
-	signal odd		:STD_LOGIC;									-- '1' when Beta is odd, '0' when Beta is even
+	signal odd		: STD_LOGIC;									-- '1' when Beta is odd, '0' when Beta is even
 	
 	signal Alpha 	: integer; 									-- Beta = number of bits to shift
+	
+	signal x_a     	: STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by alpha bits
+	signal x_a_uns    : unsigned(31 downto 0);    -- x shifted by alpha bits
+	signal x_b		   : STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by beta bits
+	signal x_b_uns		: unsigned(31 downto 0);    -- x shifted by beta bits
 	
 
 	-------------------------------
@@ -78,6 +84,25 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 		
 		odd	<= '0' when (Beta mod 2 = 0) else '1';
 		
-		Alpha <= (-2*Beta + Beta/2) when (odd = '0') else (-2*Beta + Beta/2 + 0.5);
+		x_a_uns 	<= shift_left(unsigned(INPUT_X), Alpha);-- to_unsigned(Alpha, 5);
+		x_b_uns 	<= shift_right(unsigned(INPUT_X), Beta);-- to_unsigned(Alpha, 5);
+		
+		
+		
+		--------------------
+		----  Processes ----
+		--------------------
+		
+		calc_alpha : process (CLK, Beta)
+			
+			begin
+				if(rising_edge(CLK)) then
+					if(odd = '0') then
+						Alpha <= ((-2*Beta) + (Beta/2)); 
+					else 
+						Alpha <= (-2*Beta) + (Beta/2) + (1/2);
+					end if;
+				end if;
+			end process calc_alpha;
 	
 end architecture;
