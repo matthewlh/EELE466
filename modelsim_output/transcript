@@ -1,0 +1,101 @@
+# do temp_simlib_comp.tmp 
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package cycloneii_atom_pack
+# -- Compiling package body cycloneii_atom_pack
+# -- Loading package cycloneii_atom_pack
+# -- Compiling package cycloneii_pllpack
+# -- Compiling package body cycloneii_pllpack
+# -- Loading package cycloneii_pllpack
+# -- Loading package cycloneii_atom_pack
+# -- Compiling entity cycloneii_dffe
+# -- Compiling architecture behave of cycloneii_dffe
+# -- Compiling entity cycloneii_mux21
+# -- Compiling architecture AltVITAL of cycloneii_mux21
+# -- Compiling entity cycloneii_mux41
+# -- Compiling architecture AltVITAL of cycloneii_mux41
+# -- Compiling entity cycloneii_and1
+# -- Compiling architecture AltVITAL of cycloneii_and1
+# -- Compiling entity cycloneii_ram_register
+# -- Compiling architecture reg_arch of cycloneii_ram_register
+# -- Compiling entity cycloneii_ram_pulse_generator
+# -- Compiling architecture pgen_arch of cycloneii_ram_pulse_generator
+# -- Loading entity cycloneii_ram_register
+# -- Loading entity cycloneii_ram_pulse_generator
+# -- Compiling entity cycloneii_ram_block
+# -- Compiling architecture block_arch of cycloneii_ram_block
+# -- Compiling entity cycloneii_jtag
+# -- Compiling architecture architecture_jtag of cycloneii_jtag
+# -- Compiling entity cycloneii_crcblock
+# -- Compiling architecture architecture_crcblock of cycloneii_crcblock
+# -- Compiling entity cycloneii_asmiblock
+# -- Compiling architecture architecture_asmiblock of cycloneii_asmiblock
+# -- Compiling entity cycloneii_m_cntr
+# -- Compiling architecture behave of cycloneii_m_cntr
+# -- Compiling entity cycloneii_n_cntr
+# -- Compiling architecture behave of cycloneii_n_cntr
+# -- Compiling entity cycloneii_scale_cntr
+# -- Compiling architecture behave of cycloneii_scale_cntr
+# -- Compiling entity cycloneii_pll_reg
+# -- Compiling architecture behave of cycloneii_pll_reg
+# -- Loading package cycloneii_pllpack
+# -- Loading entity cycloneii_m_cntr
+# -- Loading entity cycloneii_n_cntr
+# -- Loading entity cycloneii_scale_cntr
+# -- Loading entity cycloneii_dffe
+# -- Loading entity cycloneii_pll_reg
+# -- Compiling entity cycloneii_pll
+# -- Compiling architecture vital_pll of cycloneii_pll
+# -- Compiling entity cycloneii_routing_wire
+# ** Warning: [6] c:/altera/13.0sp1/quartus/eda/sim_lib/cycloneii_atoms.vhd(5700): (vcom-1288) VITAL timing generic "tpd_datainglitch_dataout" port specification "datainglitch" does not denote a port.
+# 
+# (1076.4 section 4.3.2.1.3)
+# 
+# -- Compiling architecture behave of cycloneii_routing_wire
+# -- Loading entity cycloneii_and1
+# -- Compiling entity cycloneii_lcell_ff
+# -- Compiling architecture vital_lcell_ff of cycloneii_lcell_ff
+# -- Compiling entity cycloneii_lcell_comb
+# -- Compiling architecture vital_lcell_comb of cycloneii_lcell_comb
+# -- Loading package std_logic_arith
+# -- Compiling entity cycloneii_asynch_io
+# -- Compiling architecture behave of cycloneii_asynch_io
+# -- Loading entity cycloneii_asynch_io
+# -- Loading entity cycloneii_mux21
+# -- Compiling entity cycloneii_io
+# -- Compiling architecture structure of cycloneii_io
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cycloneii_clk_delay_ctrl
+# -- Compiling architecture vital_clk_delay_ctrl of cycloneii_clk_delay_ctrl
+# -- Compiling entity cycloneii_clk_delay_cal_ctrl
+# -- Compiling architecture vital_clk_delay_cal_ctrl of cycloneii_clk_delay_cal_ctrl
+# -- Compiling entity cycloneii_mac_data_reg
+# -- Compiling architecture vital_cycloneii_mac_data_reg of cycloneii_mac_data_reg
+# -- Compiling entity cycloneii_mac_sign_reg
+# -- Compiling architecture cycloneii_mac_sign_reg of cycloneii_mac_sign_reg
+# -- Compiling entity cycloneii_mac_mult_internal
+# -- Compiling architecture vital_cycloneii_mac_mult_internal of cycloneii_mac_mult_internal
+# -- Loading entity cycloneii_mac_data_reg
+# -- Loading entity cycloneii_mac_sign_reg
+# -- Loading entity cycloneii_mac_mult_internal
+# -- Compiling entity cycloneii_mac_mult
+# -- Compiling architecture vital_cycloneii_mac_mult of cycloneii_mac_mult
+# -- Compiling entity cycloneii_mac_out
+# -- Compiling architecture vital_cycloneii_mac_out of cycloneii_mac_out
+# -- Compiling entity cycloneii_ena_reg
+# -- Compiling architecture behave of cycloneii_ena_reg
+# -- Loading entity cycloneii_ena_reg
+# -- Compiling entity cycloneii_clkctrl
+# -- Compiling architecture vital_clkctrl of cycloneii_clkctrl
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneii_atom_pack
+# -- Compiling package cycloneii_components
