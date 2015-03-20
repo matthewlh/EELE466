@@ -61,6 +61,14 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 			  lzc_count  : out std_logic_vector ( 4 downto 0)
 		 );
 	end component;
+	
+	component lookup is 
+	port(
+		CLK				: in  STD_LOGIC;
+		ADDRESS			: in  STD_LOGIC_VECTOR(15 downto 0);
+		RESULT			: out STD_LOGIC_VECTOR(15 downto 0)
+	); 
+	end component;
 
 	begin
 	
@@ -73,6 +81,13 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 			lzc_vector	=> INPUT_X,
 			lzc_count	=> Z_std
 		);
+		
+--		lookup_0 : component lookup
+--		port map (
+--			clk			=> CLK,
+--			ADDRESS		=> INPUT_X,
+--			RESULT		=> Z_std
+--		);
 		
 		
 		--------------------------
