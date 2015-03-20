@@ -20,8 +20,7 @@ entity lookup is
 		CLK				: in  STD_LOGIC;
 		ADDRESS			: in  STD_LOGIC_VECTOR(15 downto 0);
 		RESULT			: out STD_LOGIC_VECTOR(31 downto 0)
-	);
-	  
+	);	  
 end entity;
 
 architecture lookup_arch of lookup is
