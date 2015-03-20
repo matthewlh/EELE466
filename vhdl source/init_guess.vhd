@@ -49,6 +49,8 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 	signal x_b		   : STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by beta bits
 	signal x_b_uns		: unsigned(31 downto 0);    -- x shifted by beta bits
 	
+	signal x_b_cube_root		   : STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by beta bits
+	
 
 	-------------------------------
 	---- Component Declaration ----
@@ -82,12 +84,12 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 			lzc_count	=> Z_std
 		);
 		
---		lookup_0 : component lookup
---		port map (
---			clk			=> CLK,
---			ADDRESS		=> INPUT_X,
---			RESULT		=> Z_std
---		);
+		lookup_0 : component lookup
+		port map (
+			clk			=> CLK,
+			ADDRESS		=> x_b(15 downto 0),
+			RESULT		=> Z_std
+		);
 		
 		
 		--------------------------
