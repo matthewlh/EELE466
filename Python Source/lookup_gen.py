@@ -18,7 +18,7 @@ entity lookup is
 	port(
 		CLK				: in  STD_LOGIC;
 		ADDRESS			: in  STD_LOGIC_VECTOR(15 downto 0);
-		RESULT			: out STD_LOGIC_VECTOR(15 downto 0)
+		RESULT			: out STD_LOGIC_VECTOR(31 downto 0)
 	);
 	  
 end entity;
@@ -44,14 +44,14 @@ with open('lookup.vhd', 'w') as f:
     f.write(header)
 
     print "Writing select statement"
-    for i in range(2, 0x10000):
+    for i in range(0x10000, 0x20000):
         y = (i) ** (-3/2)
         y = int(round(y * (2**16)))
 
-        if (i != 0xFFFF):
-            s = """\t\t\tx"{0:04X}" when x"{1:04X}",\n""".format(y, i)
+        if (i != 0x1FFFF):
+            s = """\t\t\tx"{0:08X}" when x"{1:04X}",\n""".format(y, (i&0xFFFF))
         else:
-            s = """\t\t\tx"{0:04X}" when x"{1:04X}";\n""".format(y, i)
+            s = """\t\t\tx"{0:08X}" when x"{1:04X}";\n""".format(y, (i&0xFFFF))
 
         f.write(s)
     
