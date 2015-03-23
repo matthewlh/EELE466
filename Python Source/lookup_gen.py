@@ -55,7 +55,7 @@ with open('..\\vhdl source\\lookup.vhd', 'w') as f:
         y = (i_flt) ** (-3/2)
         y = int(round(y * (2**16)))
 
-        s = 6*"\t" + """when x"{0:04X}" => (RESULT <= x"{1:08X}");\n""".format((i&0xFFFF), y)
+        s = 6*"\t" + """when x"{0:04X}" => RESULT <= x"{1:08X}";\n""".format((i&0xFFFF), y)
 
         f.write(s)
     
