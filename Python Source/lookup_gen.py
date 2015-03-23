@@ -28,13 +28,19 @@ end entity;
 architecture lookup_arch of lookup is
 
 	begin
-		--------------------------
-		---- Signal Assigment ----
-		--------------------------
-		with ADDRESS select RESULT <=
+		-------------------
+		---- Processes ----
+		-------------------
+		lookup_proc : process (CLK, ADDRESS)
+			begin
+				if(rising_edge(CLK)) then
+					case ADDRESS is
 """
 
 footer = """
+					end case;
+				end if;
+		end process;
 end architecture;
 """
 
@@ -49,10 +55,7 @@ with open('..\\vhdl source\\lookup.vhd', 'w') as f:
         y = (i_flt) ** (-3/2)
         y = int(round(y * (2**16)))
 
-        if (i != 0x1FFFF):
-            s = """\t\t\tx"{0:08X}" when x"{1:04X}",\n""".format(y, (i&0xFFFF))
-        else:
-            s = """\t\t\tx"{0:08X}" when x"{1:04X}";\n""".format(y, (i&0xFFFF))
+        s = 6*"\t" + """when x"{0:04X}" => (RESULT <= x"{1:08X}");\n""".format((i&0xFFFF), y)
 
         f.write(s)
     
