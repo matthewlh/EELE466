@@ -65570,6 +65570,7 @@ architecture lookup_arch of lookup is
 						when x"FFFD" => RESULT <= x"00004001";
 						when x"FFFE" => RESULT <= x"00004001";
 						when x"FFFF" => RESULT <= x"00004000";
+						when others  => RESULT <= x"00000000";
 
 					end case;
 				end if;

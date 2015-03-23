@@ -26,5 +26,6 @@ architecture INTERATE_arch of INTERATE is
 
 	begin
 
+		OUTPUT_Y <= INPUT_Y0;
 	
 end architecture;

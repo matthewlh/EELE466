@@ -9,7 +9,7 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # do compile_and_launch.tcl 
-# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 51276 } -t 1ns -novopt rsr 
+# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 58159 } -t 1ns -novopt rsr 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -19,16 +19,10 @@
 # Loading ieee.numeric_std(body)
 # Loading work.init_guess(init_guess_arch)
 # Loading work.lzc(behavioral)
+# Loading work.lookup(lookup_arch)
 # Loading work.interate(interate_arch)
-# ** Warning: (vsim-8683) Uninitialized out port /rsr/INIT_GUESS_0/OUTPUT_Y0(31 downto 0) has no driver.
-# 
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# 
-# ** Warning: (vsim-8683) Uninitialized out port /rsr/INTERATE_0/OUTPUT_Y(31 downto 0) has no driver.
-# 
-# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
-# 
 # Loading C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll
-run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rsr/INIT_GUESS_0
+# done
+# Simulation halt requested by foreign interface.

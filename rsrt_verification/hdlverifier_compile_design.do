@@ -4,10 +4,11 @@ vlib work
 project new . compile_project
 project open compile_project
 # Add source files to project
-project addfile "C:/Users/w92p177/Documents/GitHub/EELE466/rsrt_verification/rsr.vhd"
-project addfile "C:/Users/w92p177/Documents/GitHub/EELE466/rsrt_verification/init_guess.vhd"
-project addfile "C:/Users/w92p177/Documents/GitHub/EELE466/rsrt_verification/interate.vhd"
-project addfile "C:/Users/w92p177/Documents/GitHub/EELE466/rsrt_verification/lzc.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/vhdl source/init_guess.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/vhdl source/interate.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/vhdl source/lookup.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/vhdl source/lzc.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/vhdl source/rsr.vhd"
 # Calculate compilation order
 project calculateorder
 set compcmd [project compileall -n]

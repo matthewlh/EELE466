@@ -38,6 +38,7 @@ architecture lookup_arch of lookup is
 """
 
 footer = """
+						when others  => RESULT <= x"00000000";
 					end case;
 				end if;
 		end process;
