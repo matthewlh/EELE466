@@ -43,9 +43,10 @@ architecture RSR_arch of RSR is
 		);		  
 	end Component;
 
-	Component INTERATE is 
+	Component ITERATE is 
 		port(
 			CLK				: in 	STD_LOGIC;
+			INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
 			INPUT_Y0			: in  STD_LOGIC_VECTOR(31 downto 0);
 			OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
 		);
@@ -64,10 +65,11 @@ architecture RSR_arch of RSR is
 			OUTPUT_Y0	=> Y0
 		);
 		
-		INTERATE_0 : component INTERATE
+		ITERATE_0 : component ITERATE
 		port map (
 			CLK			=> CLK,
 			INPUT_Y0		=> Y0,
+			INPUT_X		=> INPUT_X,
 			OUTPUT_Y		=> OUTPUT_Y
 		);
 	

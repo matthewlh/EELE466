@@ -44,9 +44,7 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 	
 	signal Alpha 	: integer; 									-- Beta = number of bits to shift
 	
-	signal x_a     	: STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by alpha bits
 	signal x_a_uns    : unsigned(31 downto 0);    -- x shifted by alpha bits
-	signal x_b		   : STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x shifted by beta bits
 	signal x_b_uns		: unsigned(31 downto 0);    -- x shifted by beta bits
 	
 	signal x_b_power	: STD_LOGIC_VECTOR(31 DOWNTO 0);    -- x_b raised to the -3/2 power
@@ -87,7 +85,7 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 		lookup_0 : component lookup
 		port map (
 			clk			=> CLK,
-			ADDRESS		=> x_b(15 downto 0),
+			ADDRESS		=> STD_LOGIC_VECTOR(x_b_uns(15 downto 0)),
 			RESULT		=> x_b_power
 		);
 		
@@ -122,15 +120,15 @@ architecture INIT_GUESS_arch of INIT_GUESS is
 				end if;
 			end process;
 			
-		calc_y_0 : process (CLK, x_a, x_b_power)
+		calc_y_0 : process (CLK, x_a_uns, x_b_power)
 			variable result : STD_LOGIC_VECTOR(127 downto 0);
 			begin
 				if(rising_edge(CLK)) then
 					if(odd = '0') then
-						result := x"0000000000000000" & STD_LOGIC_VECTOR(unsigned(x_a) * unsigned(x_b_power));
+						result := x"0000000000000000" & STD_LOGIC_VECTOR(x_a_uns * unsigned(x_b_power));
 						OUTPUT_Y0 <= result(47 downto 16);
 					else 
-						result := STD_LOGIC_VECTOR(unsigned(x_a) * unsigned(x_b_power) * 46341);		-- 46341 = 2^-0.5 = 1/root(2)
+						result := STD_LOGIC_VECTOR(x_a_uns * unsigned(x_b_power) * 46341);		-- 46341 = 2^-0.5 = 1/root(2)
 						OUTPUT_Y0 <= result(63 downto 32);
 					end if;
 					
