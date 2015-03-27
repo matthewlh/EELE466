@@ -26,19 +26,13 @@
 # 
 #           File in use by: z68j959  Hostname: BZ-ECE-CB60112  ProcessID: 5240
 # 
-#           Attempting to use alternate WLF file "./wlft1yj9xi".
+#           Attempting to use alternate WLF file "./wlftbrcehi".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft1yj9xi
+#           Using alternate file: ./wlftbrcehi
 # 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /rsr/INIT_GUESS_0
-# done
-# Simulation halt requested by foreign interface.
-# done
-# Simulation halt requested by foreign interface.
-# done
-# Simulation halt requested by foreign interface.
 # done
 # Simulation halt requested by foreign interface.
 # done
