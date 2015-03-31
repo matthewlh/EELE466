@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.matlabhdlcoder" plugin-version="R2013a">
-  <configuration file="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_qDot\Madgwick_qDot.prj" location="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_qDot" name="Madgwick_qDot" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
+  <configuration file="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_qDot\Madgwick_qDot.prj" location="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_qDot" name="Madgwick_qDot" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
     <param.AutoInferDefaultFile />
     <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
     <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
@@ -13,10 +13,10 @@
     <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
     <param.hdl.BuildSpecifiedDirectory />
     <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_qDot\fixpt\Madgwick_qDot_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
-    <param.fixptconv.InstrumentedBuildChecksum>2551774632</param.fixptconv.InstrumentedBuildChecksum>
+    <param.fixptconv.InstrumentedBuildChecksum>1002115421</param.fixptconv.InstrumentedBuildChecksum>
     <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
-    <param.fixptconv.FixedPointValidationChecksum>3600339952</param.fixptconv.FixedPointValidationChecksum>
-    <param.fixptconv.FixedPointSourceCodeChecksum>4187125009</param.fixptconv.FixedPointSourceCodeChecksum>
+    <param.fixptconv.FixedPointValidationChecksum>755277648</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointSourceCodeChecksum>1684540592</param.fixptconv.FixedPointSourceCodeChecksum>
     <param.fixptconv.FixedPointStaticAnalysisChecksum />
     <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_qDot_tb.m</param.fixptconv.DefaultTestFile>
     <param.fixptconv.ExcludedFixedPointVerificationFiles />
@@ -49,8 +49,8 @@
         <Function file="$(PROJECTDIR)\Madgwick_qDot.m" name="Madgwick_qDot">
           <Variable name="gx">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.90162877999745" />
-            <Column property="SimMax" type="Double" value="34.88406647896695" />
+            <Column property="SimMin" type="Double" value="-34.88571005140946" />
+            <Column property="SimMax" type="Double" value="34.886166531467545" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -62,8 +62,8 @@
           </Variable>
           <Variable name="gy">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.90142350249712" />
-            <Column property="SimMax" type="Double" value="34.837676482497876" />
+            <Column property="SimMin" type="Double" value="-34.895244836671765" />
+            <Column property="SimMax" type="Double" value="34.790449069590174" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -75,8 +75,8 @@
           </Variable>
           <Variable name="gz">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.88837391350014" />
-            <Column property="SimMax" type="Double" value="34.87627231267749" />
+            <Column property="SimMin" type="Double" value="-34.61265969277818" />
+            <Column property="SimMax" type="Double" value="34.87484064315968" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -88,8 +88,8 @@
           </Variable>
           <Variable name="q0">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="1.5224957556447816E-4" />
-            <Column property="SimMax" type="Double" value="0.9994489713903782" />
+            <Column property="SimMin" type="Double" value="9.745385593650235E-4" />
+            <Column property="SimMax" type="Double" value="0.9989959674664779" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -101,8 +101,8 @@
           </Variable>
           <Variable name="q1">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="1.3254354544556257E-4" />
-            <Column property="SimMax" type="Double" value="0.997735979773324" />
+            <Column property="SimMin" type="Double" value="0.0014570030641807286" />
+            <Column property="SimMax" type="Double" value="0.9996039381336888" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -114,8 +114,8 @@
           </Variable>
           <Variable name="q2">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="7.026065096382705E-5" />
-            <Column property="SimMax" type="Double" value="0.9991247584365847" />
+            <Column property="SimMin" type="Double" value="6.397169418344006E-4" />
+            <Column property="SimMax" type="Double" value="0.9988701908889299" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -127,8 +127,8 @@
           </Variable>
           <Variable name="q3">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="4.8344557509572006E-5" />
-            <Column property="SimMax" type="Double" value="0.9998392859913364" />
+            <Column property="SimMin" type="Double" value="1.9765002340754734E-4" />
+            <Column property="SimMax" type="Double" value="0.9981236820768592" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -140,8 +140,8 @@
           </Variable>
           <Variable name="qDot1">
             <Column property="Kind" type="String" value="output" />
-            <Column property="SimMin" type="Double" value="-35.29847763847627" />
-            <Column property="SimMax" type="Double" value="31.69750934592967" />
+            <Column property="SimMin" type="Double" value="-38.61269459707179" />
+            <Column property="SimMax" type="Double" value="31.178177696678283" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -153,8 +153,8 @@
           </Variable>
           <Variable name="qDot2">
             <Column property="Kind" type="String" value="output" />
-            <Column property="SimMin" type="Double" value="-33.24283279855322" />
-            <Column property="SimMax" type="Double" value="32.04222867682043" />
+            <Column property="SimMin" type="Double" value="-31.411025551576767" />
+            <Column property="SimMax" type="Double" value="40.70759819476329" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -166,8 +166,8 @@
           </Variable>
           <Variable name="qDot3">
             <Column property="Kind" type="String" value="output" />
-            <Column property="SimMin" type="Double" value="-32.57265231738366" />
-            <Column property="SimMax" type="Double" value="34.06935050492531" />
+            <Column property="SimMin" type="Double" value="-32.408208371944816" />
+            <Column property="SimMax" type="Double" value="31.823207614402833" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -179,8 +179,8 @@
           </Variable>
           <Variable name="qDot4">
             <Column property="Kind" type="String" value="output" />
-            <Column property="SimMin" type="Double" value="-39.334907052451555" />
-            <Column property="SimMax" type="Double" value="33.63619097905909" />
+            <Column property="SimMin" type="Double" value="-31.55434245430242" />
+            <Column property="SimMax" type="Double" value="35.3167022315674" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -274,7 +274,7 @@
     <param.hdl.InputPipeline>0</param.hdl.InputPipeline>
     <param.hdl.OutputPipeline>0</param.hdl.OutputPipeline>
     <param.hdl.PipelineVariables />
-    <param.hdl.ResourceSharing>0</param.hdl.ResourceSharing>
+    <param.hdl.ResourceSharing>4</param.hdl.ResourceSharing>
     <param.hdl.ConstantMultiplierOptimization>option.hdl.NONE</param.hdl.ConstantMultiplierOptimization>
     <param.hdl.LoopOptimization>option.hdl.LoopNone</param.hdl.LoopOptimization>
     <param.hdl.InitializeBlockRAM>true</param.hdl.InitializeBlockRAM>
@@ -441,7 +441,6 @@
       <param.hdl.InputPipeline />
       <param.hdl.OutputPipeline />
       <param.hdl.PipelineVariables />
-      <param.hdl.ResourceSharing />
       <param.hdl.ConstantMultiplierOptimization />
       <param.hdl.LoopOptimization />
       <param.hdl.InitializeBlockRAM />
@@ -520,7 +519,7 @@
       <param.hdl.BitstreamBuildMode />
     </unset>
     <fileset.entrypoints>
-      <file custom-data-expanded="true" value="${PROJECT_ROOT}\Madgwick_qDot.m">
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\Madgwick_qDot.m">
         <Inputs fileName="Madgwick_qDot.m" functionName="Madgwick_qDot">
           <Input Name="q0">
             <Class>double</Class>
