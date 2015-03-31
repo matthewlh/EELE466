@@ -9,14 +9,14 @@ function [ax,ay,az,aw] = Madgwick_normalize_fixpt(ax_1,ay_1,az_1,aw_1)
 fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128);
 
 aw = fi(aw_1, 0, 1, 0, fm);
-ax = fi(ax_1, 1, 14, 8, fm);
+ax = fi(ax_1, 1, 14, 9, fm);
 ay = fi(ay_1, 1, 14, 9, fm);
 az = fi(az_1, 1, 14, 9, fm);
 
 dotproduct = fi(ax*ax + ay*ay + az*az + aw*aw, 0, 14, 4, fm);
 if dotproduct~=fi(0, 0, 1, 0, fm)
     recipNorm = fi(fi_div(fi(1, 0, 1, 0, fm), sqrt( dotproduct )), 0, 14, 14, fm);
-    ax = fi(ax*recipNorm, 1, 14, 8, fm);
+    ax = fi(ax*recipNorm, 1, 14, 9, fm);
     ay = fi(ay*recipNorm, 1, 14, 9, fm);
     az = fi(az*recipNorm, 1, 14, 9, fm);
     aw = fi(aw*recipNorm, 0, 1, 0, fm);

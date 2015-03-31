@@ -236,31 +236,49 @@ architecture behavioral of DE2_Board_top_level is
 	---- Component Declaration ----
 	-------------------------------
 	
-	component RSR is 
-		port(
-			CLK				: in 	STD_LOGIC;
-			INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
-			OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
-		);		  
+	component Madgwick_seqments is 
+		PORT(
+			-- Clock stuff
+			clk                               :   IN    	std_logic;
+			reset                             :   IN    	std_logic;
+			clkenable                         :   IN    	std_logic;
+			
+			-- inputs
+			q0                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q1                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q2                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q3                                :   IN   	std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
+			
+			gx                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			gy                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			gz                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			
+			ax                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			ay                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			az                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			
+			mx                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			my                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			mz                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			  
+			-- outputs
+			q0_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q1_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q2_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+			q3_out                            :   OUT   	std_logic_vector(13 DOWNTO 0)   -- ufix14_En14
+		  );
 	end component;	
 
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
-	signal X : STD_LOGIC_VECTOR(31 downto 0);
-	signal Y : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
 		--------------------------------
 		---- Component Instatiation ----
 		--------------------------------
 	
-		RSR_0 : component RSR
-		port map (
-			CLK			=> CLOCK_50,
-			INPUT_X		=> X,
-			OUTPUT_Y		=> Y
-		);
+		Madgwick_seqments_0 : component Madgwick_seqments;
 	
 		
 

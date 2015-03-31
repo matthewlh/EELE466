@@ -1,0 +1,1898 @@
+<deployment-project plugin="plugin.matlabhdlcoder" plugin-version="R2013a">
+  <configuration file="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_seqments\Madgwick_seqments.prj" location="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_seqments" name="Madgwick_seqments" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
+    <param.AutoInferDefaultFile />
+    <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
+    <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
+    <param.AutoInferVariableSizeThreshold>1024</param.AutoInferVariableSizeThreshold>
+    <param.AutoInferUnboundedSizeThreshold>2048</param.AutoInferUnboundedSizeThreshold>
+    <param.DefaultTestFile />
+    <param.UsePreconditions>false</param.UsePreconditions>
+    <param.fixptconv.enum.needfixedpoint>option.fixptconv.enum.needfixedpoint.yes</param.fixptconv.enum.needfixedpoint>
+    <param.hdl.WorkingDirectory>option.hdl.ProjectDirectory</param.hdl.WorkingDirectory>
+    <param.hdl.WorkingSpecifiedDirectory />
+    <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
+    <param.hdl.BuildSpecifiedDirectory />
+    <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_segments\fixpt\Madgwick_segments_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
+    <param.fixptconv.InstrumentedBuildChecksum>3604839272</param.fixptconv.InstrumentedBuildChecksum>
+    <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
+    <param.fixptconv.FixedPointValidationChecksum>3674678213</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointSourceCodeChecksum>2897909864</param.fixptconv.FixedPointSourceCodeChecksum>
+    <param.fixptconv.FixedPointStaticAnalysisChecksum />
+    <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_segments_tb.m</param.fixptconv.DefaultTestFile>
+    <param.fixptconv.ExcludedFixedPointVerificationFiles />
+    <param.fixptconv.ExcludedFixedPointSimulationFiles />
+    <param.fixptconv.FixptProposalKind>option.fixptconv.ProposeFracLenBasedOnWordLen</param.fixptconv.FixptProposalKind>
+    <param.fixptconv.DefaultFixptWordLength>14</param.fixptconv.DefaultFixptWordLength>
+    <param.fixptconv.DefaultFixptFractionLength>4</param.fixptconv.DefaultFixptFractionLength>
+    <param.fixptconv.ContainerTypes>false</param.fixptconv.ContainerTypes>
+    <param.fixptconv.SafetyMargin>0</param.fixptconv.SafetyMargin>
+    <param.fixptconv.ProposeUsingDesignMinMaxAnd>option.fixptconv.ProposeUsingDesignMinMaxAnd.SimAndDerivedMinMax</param.fixptconv.ProposeUsingDesignMinMaxAnd>
+    <param.transformedVariables>
+      <UserEntities>
+        <Function file="$(PROJECTDIR)\Madgwick_segments.m" name="Madgwick_segments">
+          <Variable name="ax" />
+          <Variable name="ay" />
+          <Variable name="az" />
+          <Variable name="beta" />
+          <Variable name="betaDef" />
+          <Variable name="gx" />
+          <Variable name="gy" />
+          <Variable name="gz" />
+          <Variable name="mx" />
+          <Variable name="my" />
+          <Variable name="mz" />
+          <Variable name="q0" />
+          <Variable name="q1" />
+          <Variable name="q2" />
+          <Variable name="q3" />
+          <Variable name="qDot1" />
+          <Variable name="qDot2" />
+          <Variable name="qDot3" />
+          <Variable name="qDot4" />
+          <Variable name="s0" />
+          <Variable name="s1" />
+          <Variable name="s2" />
+          <Variable name="s3" />
+          <Variable name="sampleFreq" />
+          <Variable name="sampleTime" />
+          <Variable name="unused1" />
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_qDot.m" name="Madgwick_qDot" specialization="f10_Madgwick_qDot">
+          <Variable name="gx" />
+          <Variable name="gy" />
+          <Variable name="gz" />
+          <Variable name="q0" />
+          <Variable name="q1" />
+          <Variable name="q2" />
+          <Variable name="q3" />
+          <Variable name="qDot1" />
+          <Variable name="qDot2" />
+          <Variable name="qDot3" />
+          <Variable name="qDot4" />
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_normalize.m" name="Madgwick_normalize" specialization="f14_Madgwick_normalize">
+          <Variable name="aw" />
+          <Variable name="ax" />
+          <Variable name="ay" />
+          <Variable name="az" />
+          <Variable name="dotproduct" />
+          <Variable name="recipNorm" />
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_correction.m" name="Madgwick_correction" specialization="f15_Madgwick_correction">
+          <Variable name="ax" />
+          <Variable name="ay" />
+          <Variable name="az" />
+          <Variable name="hx" />
+          <Variable name="hy" />
+          <Variable name="mx" />
+          <Variable name="my" />
+          <Variable name="mz" />
+          <Variable name="q0" />
+          <Variable name="q0q0" />
+          <Variable name="q0q1" />
+          <Variable name="q0q2" />
+          <Variable name="q0q3" />
+          <Variable name="q1" />
+          <Variable name="q1q1" />
+          <Variable name="q1q2" />
+          <Variable name="q1q3" />
+          <Variable name="q2" />
+          <Variable name="q2q2" />
+          <Variable name="q2q3" />
+          <Variable name="q3" />
+          <Variable name="q3q3" />
+          <Variable name="s0" />
+          <Variable name="s1" />
+          <Variable name="s2" />
+          <Variable name="s3" />
+          <Variable name="v2bx" />
+          <Variable name="v2bz" />
+          <Variable name="v2q0" />
+          <Variable name="v2q0mx" />
+          <Variable name="v2q0my" />
+          <Variable name="v2q0mz" />
+          <Variable name="v2q0q2" />
+          <Variable name="v2q1" />
+          <Variable name="v2q1mx" />
+          <Variable name="v2q2" />
+          <Variable name="v2q2q3" />
+          <Variable name="v2q3" />
+          <Variable name="v4bx" />
+          <Variable name="v4bz" />
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_update.m" name="Madgwick_update" specialization="f16_Madgwick_update">
+          <Variable name="beta" />
+          <Variable name="q0" />
+          <Variable name="q1" />
+          <Variable name="q2" />
+          <Variable name="q3" />
+          <Variable name="qDot1" />
+          <Variable name="qDot2" />
+          <Variable name="qDot3" />
+          <Variable name="qDot4" />
+          <Variable name="s0" />
+          <Variable name="s1" />
+          <Variable name="s2" />
+          <Variable name="s3" />
+          <Variable name="sampleTime" />
+        </Function>
+      </UserEntities>
+    </param.transformedVariables>
+    <param.computedVariables>
+      <ComputedEntities>
+        <Function file="$(PROJECTDIR)\Madgwick_segments.m" name="Madgwick_segments">
+          <Variable name="ax">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-15.930223205637478" />
+            <Column property="SimMax" type="Double" value="15.92015466849072" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="ay">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-15.988719336432194" />
+            <Column property="SimMax" type="Double" value="15.981090091070083" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="az">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-15.978963677862815" />
+            <Column property="SimMax" type="Double" value="15.997090219978812" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="beta">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.1" />
+            <Column property="SimMax" type="Double" value="0.1" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En17" />
+          </Variable>
+          <Variable name="betaDef">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.1" />
+            <Column property="SimMax" type="Double" value="0.1" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En17" />
+          </Variable>
+          <Variable name="gx">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.89093230934851" />
+            <Column property="SimMax" type="Double" value="34.88463736727426" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="gy">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.89238020790928" />
+            <Column property="SimMax" type="Double" value="34.89039244441003" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="gz">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.90581658247979" />
+            <Column property="SimMax" type="Double" value="34.902708641133664" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="mx">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-11.981136107386167" />
+            <Column property="SimMax" type="Double" value="11.960005107658468" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="my">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-11.988926442142205" />
+            <Column property="SimMax" type="Double" value="11.88126102811976" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="mz">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-11.956095730908572" />
+            <Column property="SimMax" type="Double" value="11.993797012004762" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
+          </Variable>
+          <Variable name="q0">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.034461162048487086" />
+            <Column property="SimMax" type="Double" value="1.0175963587372265" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q1">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.028057666530931773" />
+            <Column property="SimMax" type="Double" value="1.0378652576194074" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q2">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.02485214680136169" />
+            <Column property="SimMax" type="Double" value="1.0439260887709232" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q3">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.05398131865612005" />
+            <Column property="SimMax" type="Double" value="1.0240252049493213" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="qDot1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-36.262151319212165" />
+            <Column property="SimMax" type="Double" value="30.533220939623206" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-36.23703735984605" />
+            <Column property="SimMax" type="Double" value="34.232345050696914" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-36.45279641267326" />
+            <Column property="SimMax" type="Double" value="43.76203877703274" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot4">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-33.5564094109599" />
+            <Column property="SimMax" type="Double" value="28.476242189891487" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s0">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-2.741107488235123" />
+            <Column property="SimMax" type="Double" value="27.63198743857504" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En8" />
+          </Variable>
+          <Variable name="s1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-3.2052149169483704" />
+            <Column property="SimMax" type="Double" value="58.617427040337226" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-3.007573135870269" />
+            <Column property="SimMax" type="Double" value="61.66798401806834" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-4.508291789139944" />
+            <Column property="SimMax" type="Double" value="45.38566305784437" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="sampleFreq">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="512.0" />
+            <Column property="SimMax" type="Double" value="512.0" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="true" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix10" />
+          </Variable>
+          <Variable name="sampleTime">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.001953125" />
+            <Column property="SimMax" type="Double" value="0.001953125" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En22" />
+          </Variable>
+          <Variable name="unused1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.0" />
+            <Column property="SimMax" type="Double" value="0.0" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="true" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix1" />
+          </Variable>
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_qDot.m" name="Madgwick_qDot" specialization="f10_Madgwick_qDot">
+          <Variable name="gx">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.89093230934851" />
+            <Column property="SimMax" type="Double" value="34.88463736727426" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="gy">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.89238020790928" />
+            <Column property="SimMax" type="Double" value="34.89039244441003" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="gz">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-34.90581658247979" />
+            <Column property="SimMax" type="Double" value="34.902708641133664" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="q0">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="2.1216179609218067E-4" />
+            <Column property="SimMax" type="Double" value="0.9999727717937026" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="q1">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="6.689602945421091E-4" />
+            <Column property="SimMax" type="Double" value="0.9991574575200822" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q2">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="1.2306428385822077E-4" />
+            <Column property="SimMax" type="Double" value="0.9992636685806754" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q3">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="1.3954819078532132E-4" />
+            <Column property="SimMax" type="Double" value="0.9992279156849038" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="qDot1">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-36.262151319212165" />
+            <Column property="SimMax" type="Double" value="30.533220939623206" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot2">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-36.23703735984605" />
+            <Column property="SimMax" type="Double" value="34.232345050696914" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot3">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-36.45279641267326" />
+            <Column property="SimMax" type="Double" value="43.76203877703274" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot4">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-33.5564094109599" />
+            <Column property="SimMax" type="Double" value="28.476242189891487" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_normalize.m" name="Madgwick_normalize" specialization="f14_Madgwick_normalize">
+          <Variable name="aw">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-4.508291789139944" />
+            <Column property="SimMax" type="Double" value="45.38566305784437" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="ax">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-15.930223205637478" />
+            <Column property="SimMax" type="Double" value="27.63198743857504" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En8" />
+          </Variable>
+          <Variable name="ay">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-15.988719336432194" />
+            <Column property="SimMax" type="Double" value="58.617427040337226" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="az">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-15.978963677862815" />
+            <Column property="SimMax" type="Double" value="61.66798401806834" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="dotproduct">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.07582332816051937" />
+            <Column property="SimMax" type="Double" value="9481.319398203266" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14" />
+          </Variable>
+          <Variable name="recipNorm">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.01026988573401139" />
+            <Column property="SimMax" type="Double" value="3.6316047742451794" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En12" />
+          </Variable>
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_correction.m" name="Madgwick_correction" specialization="f15_Madgwick_correction">
+          <Variable name="ax">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9989222023794567" />
+            <Column property="SimMax" type="Double" value="0.996459288889313" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="ay">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9979792595949188" />
+            <Column property="SimMax" type="Double" value="0.9979929520224593" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="az">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9980024579615384" />
+            <Column property="SimMax" type="Double" value="0.9984121558244529" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="hx">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-3.1834210153917692" />
+            <Column property="SimMax" type="Double" value="2.4231409415189438" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En11" />
+          </Variable>
+          <Variable name="hy">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-2.8621768377429495" />
+            <Column property="SimMax" type="Double" value="2.2478305398413143" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En11" />
+          </Variable>
+          <Variable name="mx">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9969507761528532" />
+            <Column property="SimMax" type="Double" value="0.9977215247158965" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="my">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9911053377082985" />
+            <Column property="SimMax" type="Double" value="0.9991338939649222" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="mz">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9987552476842941" />
+            <Column property="SimMax" type="Double" value="0.9974029476086326" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="q0">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="2.1216179609218067E-4" />
+            <Column property="SimMax" type="Double" value="0.9999727717937026" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="q0q0">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="4.501262772106005E-8" />
+            <Column property="SimMax" type="Double" value="0.9999455443287804" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q0q1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.7727557405299558E-5" />
+            <Column property="SimMax" type="Double" value="0.986233126187758" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q0q2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="8.495805390955618E-5" />
+            <Column property="SimMax" type="Double" value="0.9849708862430144" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q0q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="3.597246291080617E-5" />
+            <Column property="SimMax" type="Double" value="0.9495867992558105" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q1">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="6.689602945421091E-4" />
+            <Column property="SimMax" type="Double" value="0.9991574575200822" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q1q1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="4.475078756738654E-7" />
+            <Column property="SimMax" type="Double" value="0.998315624917995" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q1q2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.2008660167247599E-4" />
+            <Column property="SimMax" type="Double" value="0.9735515331245941" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q1q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="3.7845053915022526E-5" />
+            <Column property="SimMax" type="Double" value="0.9451100356138342" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q2">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="1.2306428385822077E-4" />
+            <Column property="SimMax" type="Double" value="0.9992636685806754" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q2q2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.5144817961536736E-8" />
+            <Column property="SimMax" type="Double" value="0.9985278793453098" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q2q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="5.8133880425640684E-5" />
+            <Column property="SimMax" type="Double" value="0.9614542276017474" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q3">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="1.3954819078532132E-4" />
+            <Column property="SimMax" type="Double" value="0.9992279156849038" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="q3q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.9473697551456438E-8" />
+            <Column property="SimMax" type="Double" value="0.9984564274839971" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En14" />
+          </Variable>
+          <Variable name="s0">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-2.741107488235123" />
+            <Column property="SimMax" type="Double" value="27.63198743857504" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En8" />
+          </Variable>
+          <Variable name="s1">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-3.2052149169483704" />
+            <Column property="SimMax" type="Double" value="58.617427040337226" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s2">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-3.007573135870269" />
+            <Column property="SimMax" type="Double" value="61.66798401806834" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s3">
+            <Column property="Kind" type="String" value="output" />
+            <Column property="SimMin" type="Double" value="-4.508291789139944" />
+            <Column property="SimMax" type="Double" value="45.38566305784437" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="v2bx">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.06474029862182124" />
+            <Column property="SimMax" type="Double" value="3.183656650577184" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En12" />
+          </Variable>
+          <Variable name="v2bz">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-2.514074674829315" />
+            <Column property="SimMax" type="Double" value="2.347260670895888" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En11" />
+          </Variable>
+          <Variable name="v2q0">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="4.2432359218436133E-4" />
+            <Column property="SimMax" type="Double" value="1.9999455435874052" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En12" />
+          </Variable>
+          <Variable name="v2q0mx">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-1.776049508021357" />
+            <Column property="SimMax" type="Double" value="1.888890433262715" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="v2q0my">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-1.774456037262885" />
+            <Column property="SimMax" type="Double" value="1.8630043117920447" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="v2q0mz">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-1.845886022476567" />
+            <Column property="SimMax" type="Double" value="1.8119619357150785" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="v2q0q2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.6991610781911235E-4" />
+            <Column property="SimMax" type="Double" value="1.9699417724860289" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="v2q1">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.0013379205890842183" />
+            <Column property="SimMax" type="Double" value="1.9983149150401645" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="v2q1mx">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-1.705083866682593" />
+            <Column property="SimMax" type="Double" value="1.9721029582416718" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="v2q2">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="2.4612856771644154E-4" />
+            <Column property="SimMax" type="Double" value="1.9985273371613508" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="v2q2q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="1.1626776085128137E-4" />
+            <Column property="SimMax" type="Double" value="1.9229084552034947" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="v2q3">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="2.7909638157064265E-4" />
+            <Column property="SimMax" type="Double" value="1.9984558313698075" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En13" />
+          </Variable>
+          <Variable name="v4bx">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.12948059724364247" />
+            <Column property="SimMax" type="Double" value="6.367313301154368" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En11" />
+          </Variable>
+          <Variable name="v4bz">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="-5.02814934965863" />
+            <Column property="SimMax" type="Double" value="4.694521341791776" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En10" />
+          </Variable>
+        </Function>
+        <Function file="$(PROJECTDIR)\Madgwick_update.m" name="Madgwick_update" specialization="f16_Madgwick_update">
+          <Variable name="beta">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="0.1" />
+            <Column property="SimMax" type="Double" value="0.1" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En17" />
+          </Variable>
+          <Variable name="q0">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.026125760146648094" />
+            <Column property="SimMax" type="Double" value="1.0175963587372265" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q1">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.028057666530931773" />
+            <Column property="SimMax" type="Double" value="1.0378652576194074" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q2">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.023139412651274435" />
+            <Column property="SimMax" type="Double" value="1.0439260887709232" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="q3">
+            <Column property="Kind" type="String" value="input_output" />
+            <Column property="SimMin" type="Double" value="-0.05398131865612005" />
+            <Column property="SimMax" type="Double" value="1.0240252049493213" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En12" />
+          </Variable>
+          <Variable name="qDot1">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-36.26624105828217" />
+            <Column property="SimMax" type="Double" value="30.533220939623206" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot2">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-36.261530321216576" />
+            <Column property="SimMax" type="Double" value="34.232345050696914" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot3">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-36.497357518063446" />
+            <Column property="SimMax" type="Double" value="43.76203877703274" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="qDot4">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-33.5564094109599" />
+            <Column property="SimMax" type="Double" value="28.476242189891487" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En7" />
+          </Variable>
+          <Variable name="s0">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9032093774707344" />
+            <Column property="SimMax" type="Double" value="0.9692374930977924" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="s1">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9883854626815438" />
+            <Column property="SimMax" type="Double" value="0.9785145643658648" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="s2">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9928520367825849" />
+            <Column property="SimMax" type="Double" value="0.991761394690846" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="s3">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="-0.9256106072806997" />
+            <Column property="SimMax" type="Double" value="0.9954822871280643" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="sfix14_En13" />
+          </Variable>
+          <Variable name="sampleTime">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="0.001953125" />
+            <Column property="SimMax" type="Double" value="0.001953125" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix14_En22" />
+          </Variable>
+        </Function>
+      </ComputedEntities>
+    </param.computedVariables>
+    <param.fixptconv.FiMathString>fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128)</param.fixptconv.FiMathString>
+    <param.fixptconv.DefaultRoundMode>option.fixptconv.proposetypes.floor</param.fixptconv.DefaultRoundMode>
+    <param.fixptconv.DefaultOverflowMode>option.fixptconv.proposetypes.wrap</param.fixptconv.DefaultOverflowMode>
+    <param.fixptconv.LogAllIOValues>false</param.fixptconv.LogAllIOValues>
+    <param.fixptconv.DetectOverflows>false</param.fixptconv.DetectOverflows>
+    <param.fixptconv.LogHistogram>false</param.fixptconv.LogHistogram>
+    <param.fixptconv.FixPtFileNameSuffix>_fixpt</param.fixptconv.FixPtFileNameSuffix>
+    <param.fixptconv.AutoScaleLoopIndexVariables>false</param.fixptconv.AutoScaleLoopIndexVariables>
+    <param.fixptconv.ConvertConstantsToFi>true</param.fixptconv.ConvertConstantsToFi>
+    <param.fixptconv.FICastFiVariables>false</param.fixptconv.FICastFiVariables>
+    <param.fixptconv.SuppressErrorMessages>true</param.fixptconv.SuppressErrorMessages>
+    <param.fixptconv.generatefixptcode.function_replacements>
+      <FunctionReplacements />
+    </param.fixptconv.generatefixptcode.function_replacements>
+    <param.fixptconv.OptimizeWholeNumbers>true</param.fixptconv.OptimizeWholeNumbers>
+    <param.fixptconv.DefaultFixedPointSignedness>option.fixptconv.DefaultFixedPointSignedness.Automatic</param.fixptconv.DefaultFixedPointSignedness>
+    <param.fixptconv.StaticAnalysisTimeout />
+    <param.fixptconv.StaticAnalysisGlobalRangesOnly>false</param.fixptconv.StaticAnalysisGlobalRangesOnly>
+    <param.hdl.Workflow>option.workflow.GenericAsicFpga</param.hdl.Workflow>
+    <param.hdl.TargetPlatform />
+    <param.hdl.SynthesisTool>No synthesis tool available on system path</param.hdl.SynthesisTool>
+    <param.hdl.InputFrequency>100</param.hdl.InputFrequency>
+    <param.hdl.TargetFrequency>100</param.hdl.TargetFrequency>
+    <param.hdl.IPCoreName>madgwick_segments_fixpt_pcore</param.hdl.IPCoreName>
+    <param.hdl.IPCoreVersion>v1.00.a</param.hdl.IPCoreVersion>
+    <param.hdl.ExecutionMode>option.hdl.FreeRunning</param.hdl.ExecutionMode>
+    <param.hdl.SynthesisToolChipFamily />
+    <param.hdl.SynthesisToolDeviceName />
+    <param.hdl.SynthesisToolPackageName />
+    <param.hdl.SynthesisToolSpeedValue />
+    <param.hdl.TargetInterface>
+      <param.hdl.TargetInterface />
+    </param.hdl.TargetInterface>
+    <param.hdl.TargetLanguage>option.hdl.VHDL</param.hdl.TargetLanguage>
+    <param.hdl.CheckConformance>false</param.hdl.CheckConformance>
+    <param.hdl.LaunchConformanceReport>false</param.hdl.LaunchConformanceReport>
+    <param.hdl.GenerateHDLCode>true</param.hdl.GenerateHDLCode>
+    <param.hdl.GenerateEDAScripts>true</param.hdl.GenerateEDAScripts>
+    <param.hdl.GenerateComments>true</param.hdl.GenerateComments>
+    <param.hdl.MATLABSourceComments>true</param.hdl.MATLABSourceComments>
+    <param.hdl.GenerateReport>false</param.hdl.GenerateReport>
+    <param.hdl.HDLCodingStandard>option.hdl.Industry</param.hdl.HDLCodingStandard>
+    <param.hdl.VHDLFileExt>.vhd</param.hdl.VHDLFileExt>
+    <param.hdl.VerilogFileExt>.v</param.hdl.VerilogFileExt>
+    <param.hdl.DateComment>true</param.hdl.DateComment>
+    <param.hdl.UserComment />
+    <param.hdl.ModulePrefix />
+    <param.hdl.PackagePostfix>_pkg</param.hdl.PackagePostfix>
+    <param.hdl.EntityConflictPostfix>_block</param.hdl.EntityConflictPostfix>
+    <param.hdl.ReservedWordPostfix>_rsvd</param.hdl.ReservedWordPostfix>
+    <param.hdl.ClockProcessPostfix>_process</param.hdl.ClockProcessPostfix>
+    <param.hdl.ComplexRealPostfix>_re</param.hdl.ComplexRealPostfix>
+    <param.hdl.ComplexImagPostfix>_im</param.hdl.ComplexImagPostfix>
+    <param.hdl.PipelinePostfix>_pipe</param.hdl.PipelinePostfix>
+    <param.hdl.EnablePrefix>enb</param.hdl.EnablePrefix>
+    <param.hdl.InlineConfigurations>true</param.hdl.InlineConfigurations>
+    <param.hdl.UseRisingEdge>false</param.hdl.UseRisingEdge>
+    <param.hdl.UseMatrixTypesInHDL>false</param.hdl.UseMatrixTypesInHDL>
+    <param.hdl.ResetType>option.hdl.Asynchronous</param.hdl.ResetType>
+    <param.hdl.ResetAssertedLevel>option.hdl.ActiveHigh</param.hdl.ResetAssertedLevel>
+    <param.hdl.ResetInputPort>reset</param.hdl.ResetInputPort>
+    <param.hdl.ClockInputPort>clk</param.hdl.ClockInputPort>
+    <param.hdl.ClockEdge>option.hdl.Rising</param.hdl.ClockEdge>
+    <param.hdl.ClockEnableInputPort>clk_enable</param.hdl.ClockEnableInputPort>
+    <param.hdl.Oversampling>1</param.hdl.Oversampling>
+    <param.hdl.EnableRate>option.hdl.InputDataRate</param.hdl.EnableRate>
+    <param.hdl.InputType>option.hdl.StdLogicVector</param.hdl.InputType>
+    <param.hdl.OutputType>option.hdl.SameAsInputType</param.hdl.OutputType>
+    <param.hdl.ClockEnableOutputPort>ce_out</param.hdl.ClockEnableOutputPort>
+    <param.hdl.ScalarizePorts>false</param.hdl.ScalarizePorts>
+    <param.hdl.MapPersistentVarsToRAM>true</param.hdl.MapPersistentVarsToRAM>
+    <param.hdl.RAMThreshold>256</param.hdl.RAMThreshold>
+    <param.hdl.RAMVariableNames />
+    <param.hdl.RegisterInputs>true</param.hdl.RegisterInputs>
+    <param.hdl.RegisterOutputs>false</param.hdl.RegisterOutputs>
+    <param.hdl.DistributedPipelining>false</param.hdl.DistributedPipelining>
+    <param.hdl.DistributedPipeliningPriority>option.hdl.NumericalIntegrity</param.hdl.DistributedPipeliningPriority>
+    <param.hdl.PreserveDesignDelays>false</param.hdl.PreserveDesignDelays>
+    <param.hdl.InputPipeline>0</param.hdl.InputPipeline>
+    <param.hdl.OutputPipeline>0</param.hdl.OutputPipeline>
+    <param.hdl.PipelineVariables />
+    <param.hdl.ResourceSharing>1</param.hdl.ResourceSharing>
+    <param.hdl.ConstantMultiplierOptimization>option.hdl.NONE</param.hdl.ConstantMultiplierOptimization>
+    <param.hdl.LoopOptimization>option.hdl.LoopNone</param.hdl.LoopOptimization>
+    <param.hdl.InitializeBlockRAM>true</param.hdl.InitializeBlockRAM>
+    <param.hdl.RAMArchitecture>option.hdl.EnabledRAM</param.hdl.RAMArchitecture>
+    <param.hdl.PartitionFunctions>false</param.hdl.PartitionFunctions>
+    <param.hdl.GenerateMLFcnBlock>false</param.hdl.GenerateMLFcnBlock>
+    <param.hdl.GenerateXSGBlock>false</param.hdl.GenerateXSGBlock>
+    <param.hdl.SearchPath />
+    <param.hdl.BackAnnotationGraph>false</param.hdl.BackAnnotationGraph>
+    <param.hdl.HDLCompileFilePostfix>_compile.do</param.hdl.HDLCompileFilePostfix>
+    <param.hdl.HDLCompileInit>vlib %s\n</param.hdl.HDLCompileInit>
+    <param.hdl.HDLCompileVHDLCmd>vcom %s %s\n</param.hdl.HDLCompileVHDLCmd>
+    <param.hdl.HDLCompileVerilogCmd>vlog %s %s\n</param.hdl.HDLCompileVerilogCmd>
+    <param.hdl.HDLCompileTerm />
+    <param.hdl.HDLSimFilePostfix>_sim.do</param.hdl.HDLSimFilePostfix>
+    <param.hdl.HDLSimInit>onbreak resume\nonerror resume\n</param.hdl.HDLSimInit>
+    <param.hdl.HDLSimCmd>vsim -novopt work.%s\n</param.hdl.HDLSimCmd>
+    <param.hdl.HDLSimViewWaveCmd>add wave sim:%s\n</param.hdl.HDLSimViewWaveCmd>
+    <param.hdl.HDLSimTerm>run -all\n</param.hdl.HDLSimTerm>
+    <param.hdl.HDLSynthTool>option.hdl.None</param.hdl.HDLSynthTool>
+    <var.toolSpecificEDAScript>hdlgetedascript(''</var.toolSpecificEDAScript>
+    <param.hdl.HDLSynthFilePostfix />
+    <param.hdl.HDLSynthInit />
+    <param.hdl.HDLSynthCmd />
+    <param.hdl.HDLSynthTerm />
+    <param.hdl.HDLLintTool>option.hdl.None</param.hdl.HDLLintTool>
+    <param.hdl.HDLLintInit />
+    <param.hdl.HDLLintCmd />
+    <param.hdl.HDLLintTerm />
+    <param.isHDLVerifierInstalled>true</param.isHDLVerifierInstalled>
+    <param.hdl.GenerateHDLTestBench>false</param.hdl.GenerateHDLTestBench>
+    <param.hdl.SimulateGeneratedCode>false</param.hdl.SimulateGeneratedCode>
+    <param.hdl.SimulationTool>No simulation tool available on system path</param.hdl.SimulationTool>
+    <param.hdl.TestBenchPostfix>_tb</param.hdl.TestBenchPostfix>
+    <param.hdl.ForceClock>true</param.hdl.ForceClock>
+    <param.hdl.ClockHighTime>5</param.hdl.ClockHighTime>
+    <param.hdl.ClockLowTime>5</param.hdl.ClockLowTime>
+    <param.hdl.HoldTime>2</param.hdl.HoldTime>
+    <param.hdl.ForceClockEnable>true</param.hdl.ForceClockEnable>
+    <param.hdl.TestBenchClockEnableDelay>0</param.hdl.TestBenchClockEnableDelay>
+    <param.hdl.ForceReset>true</param.hdl.ForceReset>
+    <param.hdl.ResetLength>2</param.hdl.ResetLength>
+    <param.hdl.HoldInputDataBetweenSamples>true</param.hdl.HoldInputDataBetweenSamples>
+    <param.hdl.InputDataInterval>0</param.hdl.InputDataInterval>
+    <param.hdl.InitializeTestBenchInputs>false</param.hdl.InitializeTestBenchInputs>
+    <param.hdl.MultifileTestBench>false</param.hdl.MultifileTestBench>
+    <param.hdl.TestBenchDataPostfix>_data</param.hdl.TestBenchDataPostfix>
+    <param.hdl.TestReferencePostfix>_ref</param.hdl.TestReferencePostfix>
+    <param.hdl.UseFileIOInTestBench>false</param.hdl.UseFileIOInTestBench>
+    <param.hdl.IgnoreDataChecking>0</param.hdl.IgnoreDataChecking>
+    <param.hdl.SimulationIterationLimit>0</param.hdl.SimulationIterationLimit>
+    <param.hdl.UseFiAccelForTestBench>true</param.hdl.UseFiAccelForTestBench>
+    <param.hdl.GenerateCosimTestBench>false</param.hdl.GenerateCosimTestBench>
+    <param.hdl.CosimLogOutputs>false</param.hdl.CosimLogOutputs>
+    <param.hdl.CosimTool>option.hdl.ModelSim</param.hdl.CosimTool>
+    <param.hdl.CosimRunMode>option.hdl.Batch</param.hdl.CosimRunMode>
+    <param.hdl.SimulateCosimTestBench>false</param.hdl.SimulateCosimTestBench>
+    <param.hdl.CosimClockHighTime>5</param.hdl.CosimClockHighTime>
+    <param.hdl.CosimClockLowTime>5</param.hdl.CosimClockLowTime>
+    <param.hdl.CosimHoldTime>2</param.hdl.CosimHoldTime>
+    <param.hdl.CosimClockEnableDelay>0</param.hdl.CosimClockEnableDelay>
+    <param.hdl.CosimResetLength>2</param.hdl.CosimResetLength>
+    <param.hdl.GenerateFILTestBench>false</param.hdl.GenerateFILTestBench>
+    <param.hdl.FILLogOutputs>false</param.hdl.FILLogOutputs>
+    <param.hdl.FILBoardName>Choose a board</param.hdl.FILBoardName>
+    <param.hdl.FILConnection />
+    <param.hdl.FILBoardIPAddress>192.168.0.2</param.hdl.FILBoardIPAddress>
+    <param.hdl.FILBoardMACAddress>00-0A-35-02-21-8A</param.hdl.FILBoardMACAddress>
+    <param.hdl.FILAdditionalFiles />
+    <param.hdl.SimulateFILTestBench>false</param.hdl.SimulateFILTestBench>
+    <param.hdl.AdditionalSynthesisProjectFiles />
+    <param.hdl.CriticalPathSource>option.hdl.Preroute</param.hdl.CriticalPathSource>
+    <param.hdl.EmbeddedSystemTool>Xilinx PlanAhead with Embedded Design</param.hdl.EmbeddedSystemTool>
+    <param.hdl.ReferenceDesign />
+    <param.hdl.ReferenceDesignPath />
+    <param.hdl.EmbeddedSystemProjectFolder>codegen/pa_prj</param.hdl.EmbeddedSystemProjectFolder>
+    <param.hdl.BitstreamBuildMode>false</param.hdl.BitstreamBuildMode>
+    <unset>
+      <param.AutoInferDefaultFile />
+      <param.AutoInferUseVariableSize />
+      <param.AutoInferUseUnboundedSize />
+      <param.AutoInferVariableSizeThreshold />
+      <param.AutoInferUnboundedSizeThreshold />
+      <param.DefaultTestFile />
+      <param.UsePreconditions />
+      <param.fixptconv.enum.needfixedpoint />
+      <param.hdl.WorkingDirectory />
+      <param.hdl.WorkingSpecifiedDirectory />
+      <param.hdl.BuildDirectory />
+      <param.hdl.BuildSpecifiedDirectory />
+      <param.fixptconv.ShowCoverage />
+      <param.fixptconv.ExcludedFixedPointVerificationFiles />
+      <param.fixptconv.ExcludedFixedPointSimulationFiles />
+      <param.fixptconv.FixptProposalKind />
+      <param.fixptconv.DefaultFixptWordLength />
+      <param.fixptconv.DefaultFixptFractionLength />
+      <param.fixptconv.ContainerTypes />
+      <param.fixptconv.SafetyMargin />
+      <param.fixptconv.ProposeUsingDesignMinMaxAnd />
+      <param.fixptconv.FiMathString />
+      <param.fixptconv.DefaultRoundMode />
+      <param.fixptconv.DefaultOverflowMode />
+      <param.fixptconv.LogAllIOValues />
+      <param.fixptconv.DetectOverflows />
+      <param.fixptconv.LogHistogram />
+      <param.fixptconv.FixPtFileNameSuffix />
+      <param.fixptconv.AutoScaleLoopIndexVariables />
+      <param.fixptconv.ConvertConstantsToFi />
+      <param.fixptconv.FICastFiVariables />
+      <param.fixptconv.SuppressErrorMessages />
+      <param.fixptconv.OptimizeWholeNumbers />
+      <param.fixptconv.DefaultFixedPointSignedness />
+      <param.fixptconv.StaticAnalysisTimeout />
+      <param.fixptconv.StaticAnalysisGlobalRangesOnly />
+      <param.hdl.Workflow />
+      <param.hdl.InputFrequency />
+      <param.hdl.TargetFrequency />
+      <param.hdl.IPCoreName />
+      <param.hdl.IPCoreVersion />
+      <param.hdl.ExecutionMode />
+      <param.hdl.TargetInterface />
+      <param.hdl.TargetLanguage />
+      <param.hdl.CheckConformance />
+      <param.hdl.LaunchConformanceReport />
+      <param.hdl.GenerateHDLCode />
+      <param.hdl.GenerateEDAScripts />
+      <param.hdl.GenerateComments />
+      <param.hdl.GenerateReport />
+      <param.hdl.VHDLFileExt />
+      <param.hdl.VerilogFileExt />
+      <param.hdl.DateComment />
+      <param.hdl.ModulePrefix />
+      <param.hdl.PackagePostfix />
+      <param.hdl.EntityConflictPostfix />
+      <param.hdl.ReservedWordPostfix />
+      <param.hdl.ClockProcessPostfix />
+      <param.hdl.ComplexRealPostfix />
+      <param.hdl.ComplexImagPostfix />
+      <param.hdl.PipelinePostfix />
+      <param.hdl.EnablePrefix />
+      <param.hdl.InlineConfigurations />
+      <param.hdl.UseRisingEdge />
+      <param.hdl.UseMatrixTypesInHDL />
+      <param.hdl.ResetType />
+      <param.hdl.ResetAssertedLevel />
+      <param.hdl.ResetInputPort />
+      <param.hdl.ClockInputPort />
+      <param.hdl.ClockEdge />
+      <param.hdl.ClockEnableInputPort />
+      <param.hdl.Oversampling />
+      <param.hdl.EnableRate />
+      <param.hdl.InputType />
+      <param.hdl.OutputType />
+      <param.hdl.ClockEnableOutputPort />
+      <param.hdl.ScalarizePorts />
+      <param.hdl.MapPersistentVarsToRAM />
+      <param.hdl.RAMThreshold />
+      <param.hdl.RAMVariableNames />
+      <param.hdl.RegisterOutputs />
+      <param.hdl.DistributedPipelining />
+      <param.hdl.DistributedPipeliningPriority />
+      <param.hdl.PreserveDesignDelays />
+      <param.hdl.InputPipeline />
+      <param.hdl.OutputPipeline />
+      <param.hdl.PipelineVariables />
+      <param.hdl.ConstantMultiplierOptimization />
+      <param.hdl.LoopOptimization />
+      <param.hdl.InitializeBlockRAM />
+      <param.hdl.RAMArchitecture />
+      <param.hdl.PartitionFunctions />
+      <param.hdl.GenerateMLFcnBlock />
+      <param.hdl.GenerateXSGBlock />
+      <param.hdl.SearchPath />
+      <param.hdl.BackAnnotationGraph />
+      <param.hdl.HDLCompileFilePostfix />
+      <param.hdl.HDLCompileInit />
+      <param.hdl.HDLCompileVHDLCmd />
+      <param.hdl.HDLCompileVerilogCmd />
+      <param.hdl.HDLSimFilePostfix />
+      <param.hdl.HDLSimInit />
+      <param.hdl.HDLSimCmd />
+      <param.hdl.HDLSimViewWaveCmd />
+      <param.hdl.HDLSimTerm />
+      <param.hdl.HDLSynthTool />
+      <var.toolSpecificEDAScript />
+      <param.hdl.HDLSynthFilePostfix />
+      <param.hdl.HDLSynthInit />
+      <param.hdl.HDLSynthCmd />
+      <param.hdl.HDLSynthTerm />
+      <param.hdl.HDLLintTool />
+      <param.hdl.HDLLintInit />
+      <param.hdl.HDLLintCmd />
+      <param.hdl.HDLLintTerm />
+      <param.isHDLVerifierInstalled />
+      <param.hdl.GenerateHDLTestBench />
+      <param.hdl.SimulateGeneratedCode />
+      <param.hdl.SimulationTool />
+      <param.hdl.TestBenchPostfix />
+      <param.hdl.ForceClock />
+      <param.hdl.ClockHighTime />
+      <param.hdl.ClockLowTime />
+      <param.hdl.HoldTime />
+      <param.hdl.ForceClockEnable />
+      <param.hdl.TestBenchClockEnableDelay />
+      <param.hdl.ForceReset />
+      <param.hdl.ResetLength />
+      <param.hdl.HoldInputDataBetweenSamples />
+      <param.hdl.InputDataInterval />
+      <param.hdl.InitializeTestBenchInputs />
+      <param.hdl.MultifileTestBench />
+      <param.hdl.TestBenchDataPostfix />
+      <param.hdl.TestReferencePostfix />
+      <param.hdl.UseFileIOInTestBench />
+      <param.hdl.IgnoreDataChecking />
+      <param.hdl.SimulationIterationLimit />
+      <param.hdl.UseFiAccelForTestBench />
+      <param.hdl.GenerateCosimTestBench />
+      <param.hdl.CosimLogOutputs />
+      <param.hdl.CosimTool />
+      <param.hdl.CosimRunMode />
+      <param.hdl.SimulateCosimTestBench />
+      <param.hdl.CosimClockHighTime />
+      <param.hdl.CosimClockLowTime />
+      <param.hdl.CosimHoldTime />
+      <param.hdl.CosimClockEnableDelay />
+      <param.hdl.CosimResetLength />
+      <param.hdl.GenerateFILTestBench />
+      <param.hdl.FILLogOutputs />
+      <param.hdl.FILBoardName />
+      <param.hdl.FILConnection />
+      <param.hdl.FILBoardIPAddress />
+      <param.hdl.FILBoardMACAddress />
+      <param.hdl.FILAdditionalFiles />
+      <param.hdl.SimulateFILTestBench />
+      <param.hdl.AdditionalSynthesisProjectFiles />
+      <param.hdl.CriticalPathSource />
+      <param.hdl.EmbeddedSystemTool />
+      <param.hdl.ReferenceDesign />
+      <param.hdl.ReferenceDesignPath />
+      <param.hdl.EmbeddedSystemProjectFolder />
+      <param.hdl.BitstreamBuildMode />
+    </unset>
+    <fileset.entrypoints>
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\Madgwick_segments.m">
+        <Inputs fileName="Madgwick_segments.m" functionName="Madgwick_segments">
+          <Input Name="q0">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="q1">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="q2">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="q3">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="gx">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="gy">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="gz">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="ax">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="ay">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="az">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="mx">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="my">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="mz">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+        </Inputs>
+      </file>
+    </fileset.entrypoints>
+    <fileset.scriptfile>
+      <file>${PROJECT_ROOT}\Madgwick_segments_tb.m</file>
+    </fileset.scriptfile>
+    <fileset.package />
+    <build-deliverables />
+    <workflow>
+      <step key="category.workflow.top" skipped="false" />
+      <step key="category.inputtypes" skipped="false" />
+      <step key="category.float2fixedconversion" skipped="false" />
+      <step key="category.workflow.selecttarget" skipped="false" />
+      <step key="category.workflow.targetinterface" skipped="false" />
+      <step key="category.workflow.generate" skipped="false" />
+      <step key="category.workflow.verification" skipped="false" />
+      <step key="category.workflow.hdltb" skipped="true" />
+      <step key="category.workflow.cosim" skipped="true" />
+      <step key="category.workflow.FIL" skipped="true" />
+      <step key="category.workflow.synthesis" skipped="true" />
+      <step key="category.workflow.createsynthesisproject" skipped="false" />
+      <step key="category.workflow.logicsynthesis" skipped="false" />
+      <step key="category.workflow.par" skipped="false" />
+      <step key="category.workflow.reportcriticalpath" skipped="false" />
+      <step key="category.workflow.embeddedsystemintegration" skipped="true" />
+      <step key="category.workflow.createembeddedsystemproject" skipped="false" />
+      <step key="category.workflow.buildembeddedsystem" skipped="false" />
+      <step key="category.workflow.ipcoreprogramtargetdevice" skipped="false" />
+      <step key="category.workflow.fpgaturnkeyintegration" skipped="true" />
+      <step key="category.workflow.buildbitstream" skipped="false" />
+      <step key="category.workflow.fpgaturnkeyprogramtargetdevice" skipped="false" />
+    </workflow>
+    <matlab>
+      <root>C:\MATLAB\R2014a</root>
+      <toolboxes>
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="matlabcoder" />
+      </toolboxes>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

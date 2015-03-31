@@ -15,7 +15,7 @@
     <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_normalize\fixpt\Madgwick_normalize_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
     <param.fixptconv.InstrumentedBuildChecksum>4211705897</param.fixptconv.InstrumentedBuildChecksum>
     <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
-    <param.fixptconv.FixedPointValidationChecksum>4092893272</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointValidationChecksum>1125859666</param.fixptconv.FixedPointValidationChecksum>
     <param.fixptconv.FixedPointSourceCodeChecksum>3494393863</param.fixptconv.FixedPointSourceCodeChecksum>
     <param.fixptconv.FixedPointStaticAnalysisChecksum />
     <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_normalize_tb.m</param.fixptconv.DefaultTestFile>
@@ -57,8 +57,8 @@
           </Variable>
           <Variable name="ax">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-15.99402934033629" />
-            <Column property="SimMax" type="Double" value="15.999239222181355" />
+            <Column property="SimMin" type="Double" value="-15.965317552996677" />
+            <Column property="SimMax" type="Double" value="15.935181455412302" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -66,12 +66,12 @@
             <Column property="IsInteger" type="Boolean" value="false" />
             <Column property="RoundMode" type="String" value="Floor" />
             <Column property="OverflowMode" type="String" value="Wrap" />
-            <Column property="ProposedType" type="String" value="sfix14_En8" />
+            <Column property="ProposedType" type="String" value="sfix14_En9" />
           </Variable>
           <Variable name="ay">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-15.968226461312714" />
-            <Column property="SimMax" type="Double" value="15.99648889976817" />
+            <Column property="SimMin" type="Double" value="-15.975716856099702" />
+            <Column property="SimMax" type="Double" value="15.962347341930204" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -83,8 +83,8 @@
           </Variable>
           <Variable name="az">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-15.993120371357765" />
-            <Column property="SimMax" type="Double" value="15.979571809568359" />
+            <Column property="SimMin" type="Double" value="-15.963547681874438" />
+            <Column property="SimMax" type="Double" value="15.99346812679849" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -96,8 +96,8 @@
           </Variable>
           <Variable name="dotproduct">
             <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="2.1831529147078608" />
-            <Column property="SimMax" type="Double" value="715.5717948987204" />
+            <Column property="SimMin" type="Double" value="1.5629465615854885" />
+            <Column property="SimMax" type="Double" value="647.3732062640797" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -109,8 +109,8 @@
           </Variable>
           <Variable name="recipNorm">
             <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="0.03738293477546389" />
-            <Column property="SimMax" type="Double" value="0.676796216123488" />
+            <Column property="SimMin" type="Double" value="0.039302722921276234" />
+            <Column property="SimMax" type="Double" value="0.799885704732672" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -204,7 +204,7 @@
     <param.hdl.InputPipeline>0</param.hdl.InputPipeline>
     <param.hdl.OutputPipeline>0</param.hdl.OutputPipeline>
     <param.hdl.PipelineVariables />
-    <param.hdl.ResourceSharing>4</param.hdl.ResourceSharing>
+    <param.hdl.ResourceSharing>0</param.hdl.ResourceSharing>
     <param.hdl.ConstantMultiplierOptimization>option.hdl.NONE</param.hdl.ConstantMultiplierOptimization>
     <param.hdl.LoopOptimization>option.hdl.LoopNone</param.hdl.LoopOptimization>
     <param.hdl.InitializeBlockRAM>true</param.hdl.InitializeBlockRAM>
@@ -371,6 +371,7 @@
       <param.hdl.InputPipeline />
       <param.hdl.OutputPipeline />
       <param.hdl.PipelineVariables />
+      <param.hdl.ResourceSharing />
       <param.hdl.ConstantMultiplierOptimization />
       <param.hdl.LoopOptimization />
       <param.hdl.InitializeBlockRAM />

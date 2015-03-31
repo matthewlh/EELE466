@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [ax,ay,az,aw] = Madgwick_normalize_wrapper_fixpt(ax,ay,az,aw)
     fm = fimath( 'RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128 );
-    ax_in = fi( ax, 1, 14, 8, fm );
+    ax_in = fi( ax, 1, 14, 9, fm );
     ay_in = fi( ay, 1, 14, 9, fm );
     az_in = fi( az, 1, 14, 9, fm );
     aw_in = fi( aw, 0, 1, 0, fm );

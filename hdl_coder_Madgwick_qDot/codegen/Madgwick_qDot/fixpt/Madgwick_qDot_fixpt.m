@@ -10,7 +10,7 @@ fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 
 % Rate of change of quaternion from gyroscope
 qDot1 = fi(fi(0.5, 0, 14, 14, fm)*(fi_signed(fi_signed(fi_uminus(q1)*gx) - q2*gy) - q3*gz), 1, 14, 7, fm);
 qDot2 = fi(fi(0.5, 0, 14, 14, fm)*(fi_signed(q0*gx + q2*gz) - q3*gy), 1, 14, 7, fm);
-qDot3 = fi(fi(0.5, 0, 14, 14, fm)*(fi_signed(q0*gy) - q1*gz + q3*gx), 1, 14, 7, fm);
+qDot3 = fi(fi(0.5, 0, 14, 14, fm)*(fi_signed(q0*gy) - q1*gz + q3*gx), 1, 14, 8, fm);
 qDot4 = fi(fi(0.5, 0, 14, 14, fm)*(fi_signed(q0*gz + q1*gy) - q2*gx), 1, 14, 7, fm);
 end
 
