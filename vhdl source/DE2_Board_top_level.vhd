@@ -272,13 +272,66 @@ architecture behavioral of DE2_Board_top_level is
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
+	
+	signal q0 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q1 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q2 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q3 		: std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
+	
+	signal gx 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal gy 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal gz 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	
+	signal ax 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal ay 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal az 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	
+	signal mx 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal my 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal mz 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	  
+	-- outputs
+	signal q0_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q1_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q2_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
+	signal q3_out 	: std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
 
 begin
 		--------------------------------
 		---- Component Instatiation ----
 		--------------------------------
 	
-		Madgwick_seqments_0 : component Madgwick_seqments;
+		Madgwick_seqments_0 : component Madgwick_seqments
+		PORT map(
+			-- Clock stuff
+			clk                               => CLOCK_50,
+			reset                             => '0',
+			clkenable                         => '1',
+			
+			-- inputs
+			q0                                => q0,
+			q1                                => q1,
+			q2                                => q2,
+			q3                                => q3,
+			
+			gx                                => gx,
+			gy                                => gy,
+			gz                                => gz,
+			
+			ax                                => ax,
+			ay                                => ay,
+			az                                => az,
+			
+			mx                                => mx,
+			my                                => my,
+			mz                                => mz,
+			  
+			-- outputs
+			q0_out                            => q0_out,
+			q1_out                            => q1_out,
+			q2_out                            => q2_out,
+			q3_out                            => q3_out 
+	  );
 	
 		
 

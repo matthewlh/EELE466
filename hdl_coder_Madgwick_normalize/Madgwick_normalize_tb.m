@@ -1,7 +1,7 @@
 % set the uniform distribution range [a b] over which the a's will be drawn
 % Note, the LSM9DS0 can have a setting with full scale ±16g
-a1 = -16;
-b1 = 16;
+a1 = -35;
+b1 = 35;
 
 N=1000;
 for i=1:N
