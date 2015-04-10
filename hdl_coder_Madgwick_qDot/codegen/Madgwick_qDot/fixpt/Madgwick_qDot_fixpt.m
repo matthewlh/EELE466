@@ -8,10 +8,10 @@ function [qDot1,qDot2,qDot3,qDot4] = Madgwick_qDot_fixpt(q0,q1,q2,q3,gx,gy,gz)
 
 fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'SumMode', 'FullPrecision');
 % Rate of change of quaternion from gyroscope
-qDot1 = fi(fi(0.5, 0, 32, 32, fm)*(fi_signed(fi_signed(fi_uminus(q1)*gx) - q2*gy) - q3*gz), 1, 32, 16, fm);
-qDot2 = fi(fi(0.5, 0, 32, 32, fm)*(fi_signed(q0*gx + q2*gz) - q3*gy), 1, 32, 16, fm);
-qDot3 = fi(fi(0.5, 0, 32, 32, fm)*(fi_signed(q0*gy) - q1*gz + q3*gx), 1, 32, 16, fm);
-qDot4 = fi(fi(0.5, 0, 32, 32, fm)*(fi_signed(q0*gz + q1*gy) - q2*gx), 1, 32, 16, fm);
+qDot1 = fi(fi(0.5, 0, 24, 24, fm)*(fi_signed(fi_signed(fi_uminus(q1)*gx) - q2*gy) - q3*gz), 1, 24, 12, fm);
+qDot2 = fi(fi(0.5, 0, 24, 24, fm)*(fi_signed(q0*gx + q2*gz) - q3*gy), 1, 24, 12, fm);
+qDot3 = fi(fi(0.5, 0, 24, 24, fm)*(fi_signed(q0*gy) - q1*gz + q3*gx), 1, 24, 12, fm);
+qDot4 = fi(fi(0.5, 0, 24, 24, fm)*(fi_signed(q0*gz + q1*gy) - q2*gx), 1, 24, 12, fm);
 end
 
 

@@ -6,40 +6,40 @@
 %#codegen
 function [s0,s1,s2,s3] = Madgwick_correction_fixpt(q0,q1,q2,q3,ax,ay,az,mx,my,mz)
 
-fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128);
+fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'SumMode', 'FullPrecision');
 % Auxiliary variables to avoid repeated arithmetic
-v2q0mx = fi(fi(2.0, 0, 2, 0, fm)*q0*mx, 0, 14, 13, fm);
-v2q0my = fi(fi(2.0, 0, 2, 0, fm)*q0*my, 0, 14, 13, fm);
-v2q0mz = fi(fi(2.0, 0, 2, 0, fm)*q0*mz, 0, 14, 13, fm);
-v2q1mx = fi(fi(2.0, 0, 2, 0, fm)*q1*mx, 0, 14, 13, fm);
-v2q0 = fi(fi(2.0, 0, 2, 0, fm)*q0, 0, 14, 13, fm);
-v2q1 = fi(fi(2.0, 0, 2, 0, fm)*q1, 0, 14, 13, fm);
-v2q2 = fi(fi(2.0, 0, 2, 0, fm)*q2, 0, 14, 13, fm);
-v2q3 = fi(fi(2.0, 0, 2, 0, fm)*q3, 0, 14, 13, fm);
-v2q0q2 = fi(fi(2.0, 0, 2, 0, fm)*q0*q2, 0, 14, 13, fm);
-v2q2q3 = fi(fi(2.0, 0, 2, 0, fm)*q2*q3, 0, 14, 13, fm);
-q0q0 = fi(q0*q0, 0, 14, 14, fm);
-q0q1 = fi(q0*q1, 0, 14, 14, fm);
-q0q2 = fi(q0*q2, 0, 14, 14, fm);
-q0q3 = fi(q0*q3, 0, 14, 14, fm);
-q1q1 = fi(q1*q1, 0, 14, 14, fm);
-q1q2 = fi(q1*q2, 0, 14, 14, fm);
-q1q3 = fi(q1*q3, 0, 14, 14, fm);
-q2q2 = fi(q2*q2, 0, 14, 14, fm);
-q2q3 = fi(q2*q3, 0, 14, 14, fm);
-q3q3 = fi(q3*q3, 0, 14, 14, fm);
+v2q0mx = fi(fi(2.0, 0, 2, 0, fm)*q0*mx, 0, 24, 23, fm);
+v2q0my = fi(fi(2.0, 0, 2, 0, fm)*q0*my, 0, 24, 23, fm);
+v2q0mz = fi(fi(2.0, 0, 2, 0, fm)*q0*mz, 0, 24, 23, fm);
+v2q1mx = fi(fi(2.0, 0, 2, 0, fm)*q1*mx, 0, 24, 23, fm);
+v2q0 = fi(fi(2.0, 0, 2, 0, fm)*q0, 0, 24, 23, fm);
+v2q1 = fi(fi(2.0, 0, 2, 0, fm)*q1, 0, 24, 23, fm);
+v2q2 = fi(fi(2.0, 0, 2, 0, fm)*q2, 0, 24, 23, fm);
+v2q3 = fi(fi(2.0, 0, 2, 0, fm)*q3, 0, 24, 23, fm);
+v2q0q2 = fi(fi(2.0, 0, 2, 0, fm)*q0*q2, 0, 24, 23, fm);
+v2q2q3 = fi(fi(2.0, 0, 2, 0, fm)*q2*q3, 0, 24, 23, fm);
+q0q0 = fi(q0*q0, 0, 24, 24, fm);
+q0q1 = fi(q0*q1, 0, 24, 24, fm);
+q0q2 = fi(q0*q2, 0, 24, 24, fm);
+q0q3 = fi(q0*q3, 0, 24, 24, fm);
+q1q1 = fi(q1*q1, 0, 24, 24, fm);
+q1q2 = fi(q1*q2, 0, 24, 24, fm);
+q1q3 = fi(q1*q3, 0, 24, 24, fm);
+q2q2 = fi(q2*q2, 0, 24, 24, fm);
+q2q3 = fi(q2*q3, 0, 24, 24, fm);
+q3q3 = fi(q3*q3, 0, 24, 24, fm);
 % Reference direction of Earth's magnetic field
-hx = fi(fi_signed(fi_signed(fi_signed(mx*q0q0) - v2q0my*q3 + v2q0mz*q2 + mx*q1q1 + v2q1*my*q2 + v2q1*mz*q3) - mx*q2q2) - mx*q3q3, 1, 14, 11, fm);
-hy = fi(fi_signed(fi_signed(fi_signed(v2q0mx*q3 + my*q0q0) - v2q0mz*q1 + v2q1mx*q2) - my*q1q1 + my*q2q2 + v2q2*mz*q3) - my*q3q3, 1, 14, 11, fm);
-v2bx = fi(sqrt( hx*hx + hy*hy ), 0, 14, 12, fm);
-v2bz = fi(fi_signed(fi_signed(fi_uminus(v2q0mx)*q2 + v2q0my*q1 + mz*q0q0 + v2q1mx*q3) - mz*q1q1 + v2q2*my*q3) - mz*q2q2 + mz*q3q3, 1, 14, 11, fm);
-v4bx = fi(fi(2.0, 0, 2, 0, fm)*v2bx, 0, 14, 11, fm);
-v4bz = fi(fi(2.0, 0, 2, 0, fm)*v2bz, 1, 14, 10, fm);
+hx = fi(fi_signed(fi_signed(fi_signed(mx*q0q0) - v2q0my*q3 + v2q0mz*q2 + mx*q1q1 + v2q1*my*q2 + v2q1*mz*q3) - mx*q2q2) - mx*q3q3, 1, 24, 21, fm);
+hy = fi(fi_signed(fi_signed(fi_signed(v2q0mx*q3 + my*q0q0) - v2q0mz*q1 + v2q1mx*q2) - my*q1q1 + my*q2q2 + v2q2*mz*q3) - my*q3q3, 1, 24, 21, fm);
+v2bx = fi(sqrt( hx*hx + hy*hy ), 0, 24, 21, fm);
+v2bz = fi(fi_signed(fi_signed(fi_uminus(v2q0mx)*q2 + v2q0my*q1 + mz*q0q0 + v2q1mx*q3) - mz*q1q1 + v2q2*my*q3) - mz*q2q2 + mz*q3q3, 1, 24, 21, fm);
+v4bx = fi(fi(2.0, 0, 2, 0, fm)*v2bx, 0, 24, 20, fm);
+v4bz = fi(fi(2.0, 0, 2, 0, fm)*v2bz, 1, 24, 20, fm);
 % Gradient decent algorithm corrective step
-s0 = fi(fi_signed(fi_uminus(v2q2)*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q1*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - v2bz*q2*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (fi_uminus(v2bx)*q3 + v2bz*q1)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + v2bx*q2*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q1q1) - q2q2)) - mz), 1, 14, 8, fm);
-s1 = fi(fi_signed(v2q3*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q0*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - fi(4.0, 0, 3, 0, fm)*q1*(fi_signed(fi_signed(fi_signed(fi(1, 0, 1, 0, fm)) - fi(2.0, 0, 2, 0, fm)*q1q1) - fi(2.0, 0, 2, 0, fm)*q2q2) - az) + v2bz*q3*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (v2bx*q2 + v2bz*q0)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + (fi_signed(v2bx*q3) - v4bz*q1)*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q1q1) - q2q2)) - mz), 1, 14, 8, fm);
-s2 = fi(fi_signed(fi_uminus(v2q0)*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q3*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - fi(4.0, 0, 3, 0, fm)*q2*(fi_signed(fi_signed(fi_signed(fi(1, 0, 1, 0, fm)) - fi(2.0, 0, 2, 0, fm)*q1q1) - fi(2.0, 0, 2, 0, fm)*q2q2) - az) + (fi_signed(fi_uminus(v4bx)*q2) - v2bz*q0)*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (v2bx*q1 + v2bz*q3)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + (fi_signed(v2bx*q0) - v4bz*q2)*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q1q1) - q2q2)) - mz), 1, 14, 6, fm);
-s3 = fi(v2q1*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q2*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay) + (fi_uminus(v4bx)*q3 + v2bz*q1)*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (fi_uminus(v2bx)*q0 + v2bz*q2)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + v2bx*q1*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 14, 14, fm)) - q1q1) - q2q2)) - mz), 1, 14, 7, fm);
+s0 = fi(fi_signed(fi_uminus(v2q2)*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q1*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - v2bz*q2*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (fi_uminus(v2bx)*q3 + v2bz*q1)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + v2bx*q2*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q1q1) - q2q2)) - mz), 1, 24, 12, fm);
+s1 = fi(fi_signed(v2q3*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q0*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - fi(4.0, 0, 3, 0, fm)*q1*(fi_signed(fi_signed(fi_signed(fi(1, 0, 1, 0, fm)) - fi(2.0, 0, 2, 0, fm)*q1q1) - fi(2.0, 0, 2, 0, fm)*q2q2) - az) + v2bz*q3*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (v2bx*q2 + v2bz*q0)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + (fi_signed(v2bx*q3) - v4bz*q1)*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q1q1) - q2q2)) - mz), 1, 24, 12, fm);
+s2 = fi(fi_signed(fi_uminus(v2q0)*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q3*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay)) - fi(4.0, 0, 3, 0, fm)*q2*(fi_signed(fi_signed(fi_signed(fi(1, 0, 1, 0, fm)) - fi(2.0, 0, 2, 0, fm)*q1q1) - fi(2.0, 0, 2, 0, fm)*q2q2) - az) + (fi_signed(fi_uminus(v4bx)*q2) - v2bz*q0)*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (v2bx*q1 + v2bz*q3)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + (fi_signed(v2bx*q0) - v4bz*q2)*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q1q1) - q2q2)) - mz), 1, 24, 12, fm);
+s3 = fi(v2q1*(fi_signed(fi_signed(fi(2.0, 0, 2, 0, fm)*q1q3) - v2q0q2) - ax) + v2q2*(fi_signed(fi(2.0, 0, 2, 0, fm)*q0q1 + v2q2q3) - ay) + (fi_uminus(v4bx)*q3 + v2bz*q1)*(fi_signed(v2bx*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q2q2) - q3q3) + v2bz*(fi_signed(q1q3) - q0q2)) - mx) + (fi_uminus(v2bx)*q0 + v2bz*q2)*(fi_signed(v2bx*(fi_signed(q1q2) - q0q3) + v2bz*(q0q1 + q2q3)) - my) + v2bx*q1*(fi_signed(v2bx*(q0q2 + q1q3) + v2bz*(fi_signed(fi_signed(fi(0.5, 0, 24, 24, fm)) - q1q1) - q2q2)) - mz), 1, 24, 12, fm);
 end
 
 

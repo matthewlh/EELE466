@@ -5,13 +5,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [qDot1,qDot2,qDot3,qDot4] = Madgwick_qDot_wrapper_fixpt(q0,q1,q2,q3,gx,gy,gz)
     fm = fimath( 'RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'SumMode', 'FullPrecision' );
-    q0_in = fi( q0, 1, 32, 16, fm );
-    q1_in = fi( q1, 1, 32, 16, fm );
-    q2_in = fi( q2, 1, 32, 16, fm );
-    q3_in = fi( q3, 1, 32, 16, fm );
-    gx_in = fi( gx, 1, 32, 16, fm );
-    gy_in = fi( gy, 1, 32, 16, fm );
-    gz_in = fi( gz, 1, 32, 16, fm );
+    q0_in = fi( q0, 1, 24, 12, fm );
+    q1_in = fi( q1, 1, 24, 12, fm );
+    q2_in = fi( q2, 1, 24, 12, fm );
+    q3_in = fi( q3, 1, 24, 12, fm );
+    gx_in = fi( gx, 1, 24, 12, fm );
+    gy_in = fi( gy, 1, 24, 12, fm );
+    gz_in = fi( gz, 1, 24, 12, fm );
     [qDot1_out,qDot2_out,qDot3_out,qDot4_out] = Madgwick_qDot_fixpt( q0_in, q1_in, q2_in, q3_in, gx_in, gy_in, gz_in );
     qDot1 = double( qDot1_out );
     qDot2 = double( qDot2_out );

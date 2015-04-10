@@ -559,4 +559,4 @@ set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_normalize"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_correction"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE "C:/Users/z68j959/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
+set_global_assignment -name SLD_FILE "C:/Users/w92p177/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"

@@ -8,23 +8,23 @@ function [q0,q1,q2,q3] = Madgwick_update_fixpt(q0_1,q1_1,q2_1,q3_1,qDot1_1,qDot2
 
 fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128);
 
-q0 = fi(q0_1, 1, 14, 12, fm);
-q1 = fi(q1_1, 1, 14, 12, fm);
-q2 = fi(q2_1, 1, 14, 12, fm);
-q3 = fi(q3_1, 1, 14, 12, fm);
-qDot1 = fi(qDot1_1, 1, 14, 7, fm);
-qDot2 = fi(qDot2_1, 1, 14, 7, fm);
-qDot3 = fi(qDot3_1, 1, 14, 7, fm);
-qDot4 = fi(qDot4_1, 1, 14, 7, fm);
+q0 = fi(q0_1, 1, 24, 12, fm);
+q1 = fi(q1_1, 1, 24, 12, fm);
+q2 = fi(q2_1, 1, 24, 12, fm);
+q3 = fi(q3_1, 1, 24, 12, fm);
+qDot1 = fi(qDot1_1, 1, 24, 12, fm);
+qDot2 = fi(qDot2_1, 1, 24, 12, fm);
+qDot3 = fi(qDot3_1, 1, 24, 12, fm);
+qDot4 = fi(qDot4_1, 1, 24, 12, fm);
 
 % Apply feedback step
-qDot1 = fi(qDot1 - beta*s0, 1, 14, 7, fm);
-qDot2 = fi(qDot2 - beta*s1, 1, 14, 7, fm);
-qDot3 = fi(qDot3 - beta*s2, 1, 14, 7, fm);
-qDot4 = fi(qDot4 - beta*s3, 1, 14, 7, fm);
+qDot1 = fi(qDot1 - beta*s0, 1, 24, 12, fm);
+qDot2 = fi(qDot2 - beta*s1, 1, 24, 12, fm);
+qDot3 = fi(qDot3 - beta*s2, 1, 24, 12, fm);
+qDot4 = fi(qDot4 - beta*s3, 1, 24, 12, fm);
 % Integrate rate of change of quaternion to yield quaternion
-q0 = fi(q0 + qDot1*sampleTime, 1, 14, 12, fm);
-q1 = fi(q1 + qDot2*sampleTime, 1, 14, 12, fm);
-q2 = fi(q2 + qDot3*sampleTime, 1, 14, 12, fm);
-q3 = fi(q3 + qDot4*sampleTime, 1, 14, 12, fm);
+q0 = fi(q0 + qDot1*sampleTime, 1, 24, 12, fm);
+q1 = fi(q1 + qDot2*sampleTime, 1, 24, 12, fm);
+q2 = fi(q2 + qDot3*sampleTime, 1, 24, 12, fm);
+q3 = fi(q3 + qDot4*sampleTime, 1, 24, 12, fm);
 end
