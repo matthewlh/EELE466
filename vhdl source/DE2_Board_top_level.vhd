@@ -301,7 +301,7 @@ begin
 		---- Component Instatiation ----
 		--------------------------------
 	
-		Madgwick_seqments_0 : component Madgwick_seqments
+		Madgwick_seqments_0 : component Madgwick_seqments_f
 		PORT map(
 			-- Clock stuff
 			clk                               => CLOCK_50,

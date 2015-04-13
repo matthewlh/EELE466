@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.matlabhdlcoder" plugin-version="R2013a">
-  <configuration file="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_update\Madgwick_update.prj" location="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_update" name="Madgwick_update" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
+  <configuration file="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_update\Madgwick_update.prj" location="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_update" name="Madgwick_update" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
     <param.AutoInferDefaultFile />
     <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
     <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
@@ -13,10 +13,10 @@
     <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
     <param.hdl.BuildSpecifiedDirectory />
     <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_update\fixpt\Madgwick_update_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
-    <param.fixptconv.InstrumentedBuildChecksum>297969013</param.fixptconv.InstrumentedBuildChecksum>
+    <param.fixptconv.InstrumentedBuildChecksum>90168727</param.fixptconv.InstrumentedBuildChecksum>
     <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
-    <param.fixptconv.FixedPointValidationChecksum>2361343247</param.fixptconv.FixedPointValidationChecksum>
-    <param.fixptconv.FixedPointSourceCodeChecksum>3551406595</param.fixptconv.FixedPointSourceCodeChecksum>
+    <param.fixptconv.FixedPointValidationChecksum>1050770433</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointSourceCodeChecksum>2233072650</param.fixptconv.FixedPointSourceCodeChecksum>
     <param.fixptconv.FixedPointStaticAnalysisChecksum />
     <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_update_tb.m</param.fixptconv.DefaultTestFile>
     <param.fixptconv.ExcludedFixedPointVerificationFiles />
@@ -93,8 +93,8 @@
           </Variable>
           <Variable name="q0">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-0.06542277364076227" />
-            <Column property="SimMax" type="Double" value="1.065527108319062" />
+            <Column property="SimMin" type="Double" value="-0.04360536008383413" />
+            <Column property="SimMax" type="Double" value="1.0575651298817588" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -106,8 +106,8 @@
           </Variable>
           <Variable name="q1">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-0.06436352928607869" />
-            <Column property="SimMax" type="Double" value="1.064666827037987" />
+            <Column property="SimMin" type="Double" value="-0.05937771008100895" />
+            <Column property="SimMax" type="Double" value="1.0586012787663852" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -119,8 +119,8 @@
           </Variable>
           <Variable name="q2">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-0.04896890276739618" />
-            <Column property="SimMax" type="Double" value="1.0630787358627907" />
+            <Column property="SimMin" type="Double" value="-0.0489942633410539" />
+            <Column property="SimMax" type="Double" value="1.059985458196817" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -132,8 +132,8 @@
           </Variable>
           <Variable name="q3">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-0.054249040903962764" />
-            <Column property="SimMax" type="Double" value="1.0552882661338596" />
+            <Column property="SimMin" type="Double" value="-0.04421321699401829" />
+            <Column property="SimMax" type="Double" value="1.0481268455498012" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -145,8 +145,8 @@
           </Variable>
           <Variable name="qDot1">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.85565008211205" />
-            <Column property="SimMax" type="Double" value="34.90498057499489" />
+            <Column property="SimMin" type="Double" value="-34.92222959938936" />
+            <Column property="SimMax" type="Double" value="34.88406647896695" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -158,8 +158,8 @@
           </Variable>
           <Variable name="qDot2">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.88081607253895" />
-            <Column property="SimMax" type="Double" value="34.8769000103435" />
+            <Column property="SimMin" type="Double" value="-34.99663006395235" />
+            <Column property="SimMax" type="Double" value="34.865194763393724" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -171,8 +171,8 @@
           </Variable>
           <Variable name="qDot3">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.930341706081634" />
-            <Column property="SimMax" type="Double" value="34.904375726783165" />
+            <Column property="SimMin" type="Double" value="-34.95071867692949" />
+            <Column property="SimMax" type="Double" value="34.89536508546555" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -184,8 +184,8 @@
           </Variable>
           <Variable name="qDot4">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="-34.93280538532099" />
-            <Column property="SimMax" type="Double" value="34.66475638272011" />
+            <Column property="SimMin" type="Double" value="-34.95373345128002" />
+            <Column property="SimMax" type="Double" value="34.81975724439415" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -197,8 +197,8 @@
           </Variable>
           <Variable name="s0">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="2.3302012340442602E-4" />
-            <Column property="SimMax" type="Double" value="0.9996535131455311" />
+            <Column property="SimMin" type="Double" value="1.3254354544556257E-4" />
+            <Column property="SimMax" type="Double" value="0.9982726115078236" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -210,8 +210,8 @@
           </Variable>
           <Variable name="s1">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="2.4377145452236793E-4" />
-            <Column property="SimMax" type="Double" value="0.9999946801381739" />
+            <Column property="SimMin" type="Double" value="0.0012701626677208422" />
+            <Column property="SimMax" type="Double" value="0.9991247584365847" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -223,8 +223,8 @@
           </Variable>
           <Variable name="s2">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="3.3620499847131224E-4" />
-            <Column property="SimMax" type="Double" value="0.9998318222968786" />
+            <Column property="SimMin" type="Double" value="4.8344557509572006E-5" />
+            <Column property="SimMax" type="Double" value="0.9997433172683073" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -236,8 +236,8 @@
           </Variable>
           <Variable name="s3">
             <Column property="Kind" type="String" value="input" />
-            <Column property="SimMin" type="Double" value="1.0854234537061025E-5" />
-            <Column property="SimMax" type="Double" value="0.9997754582494254" />
+            <Column property="SimMin" type="Double" value="6.24222307658906E-4" />
+            <Column property="SimMax" type="Double" value="0.998138149057309" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
