@@ -13,9 +13,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 
 library Madgwick_correction;
+
 library Madgwick_normalize;
+
 library Madgwick_update;
+
 library Madgwick_qDot;
+use Madgwick_qDot.ALL;
 
 entity Madgwick_seqments is 
 	PORT(
@@ -46,7 +50,7 @@ entity Madgwick_seqments is
 		q0_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 		q1_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 		q2_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-		q3_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+		q3_out                            :   OUT   	std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 	  );
 	  
 end entity;
@@ -84,7 +88,7 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  q0                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  q1                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  q2                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  q3                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			  q3                                :   OUT   std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 			  );
 	END COMPONENT;
 	
@@ -103,7 +107,7 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  qdot1                             :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  qdot2                             :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  qdot3                             :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  qdot4                             :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			  qdot4                             :   OUT   std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 			  );
 	END COMPONENT;
 	
@@ -114,12 +118,12 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  ax1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  ay1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  az1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  aw1                               :   IN    std_logic;  -- ufix1
+			  aw1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  ceout                             :   OUT   std_logic;
 			  ax                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  ay                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  az                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  aw                                :   OUT   std_logic  -- ufix1
+			  aw                                :   OUT   std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 			  );
 	END COMPONENT;
 	
@@ -141,33 +145,58 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  s0                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  s1                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  s2                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  s3                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			  s3                                :   OUT   std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 			  );
 	END COMPONENT;
+	
+	------------------------------
+	---- Constant Declaration ----
+	------------------------------
+	constant beta			: std_logic_vector(23 DOWNTO 0) := x"000000";
+	constant sampleTime	: std_logic_vector(23 DOWNTO 0) := x"000000";
 
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
-	signal qdot1 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal qdot2 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal qdot3 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En8
-	signal qdot4 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal qdot1 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal qdot2 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal qdot3 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal qdot4 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	
-	signal ax_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
-	signal ay_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
-	signal az_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
+	signal ax_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal ay_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal az_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	
-	signal gx_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
-	signal gy_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
-	signal gz_norm		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En9
+	signal mx_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal my_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal mz_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	
+	signal s0			: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s1			: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s2			: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s3			: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	
+	signal s0_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s1_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s2_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal s3_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	
+	signal q0_updated	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q1_updated	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q2_updated	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q3_updated	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	
+	signal q0_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q1_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q2_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q3_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 
 begin
 		--------------------------------
 		---- Component Instatiation ----
-		--------------------------------
-		
+		--------------------------------		
 	
-		Madgwick_qDot_fixpt_0: component  Madgwick_qDot_fixpt 
+		qDot_0: component  Madgwick_qDot_fixpt 
 			PORT MAP( 
 				clk                               => clk,
 				reset                             => '0',
@@ -193,22 +222,150 @@ begin
 	
 		a_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
-				clk                               => ,
-				reset                             => ,
-				clkenable                         => ,
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
 				
 				ax1                               => ax,
 				ay1                               => ay,
 				az1                               => az,
-				aw1                               => "",
+				aw1                               => x"000000",
 				
-				ceout                             => ,
+				ceout                             => open,
 				
-				ax                                => ,
-				ay                                => ,
-				az                                => ,
-				aw                                => 
+				ax                                => ax_norm,
+				ay                                => ay_norm,
+				az                                => az_norm,
+				aw                                => open
 			  );
-	END COMPONENT;
+			  
+		m_norm: component  Madgwick_normalize_fixpt 
+			PORT MAP( 
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
+				
+				ax1                               => mx,
+				ay1                               => my,
+				az1                               => mz,
+				aw1                               => x"000000",
+				
+				ceout                             => open,
+				
+				ax                                => mx_norm,
+				ay                                => my_norm,
+				az                                => mz_norm,
+				aw                                => open
+			  );
+			  
+			  
+		correction_0: component  Madgwick_correction_fixpt 
+			PORT MAP( 
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
+				
+				q0                                => q0,
+				q1                                => q1,
+				q2                                => q2,
+				q3                                => q3,
+				
+				ax                                => ax_norm,
+				ay                                => ay_norm,
+				az                                => az_norm,
+				
+				mx                                => mx_norm,
+				my                                => my_norm,
+				mz                                => mz_norm,
+				
+				ceout                             => open,
+				
+				s0                                => s0,
+				s1                                => s1,
+				s2                                => s2,
+				s3                                => s3		
+			);
+			  
+		s_norm: component  Madgwick_normalize_fixpt 
+			PORT MAP( 
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
+				
+				ax1                               => s0,
+				ay1                               => s1,
+				az1                               => s2,
+				aw1                               => s3,
+				
+				ceout                             => open,
+				
+				ax                                => s0_norm,
+				ay                                => s1_norm,
+				az                                => s2_norm,
+				aw                                => s3_norm
+			  );
+			  
+			  
+		update: component  Madgwick_update_fixpt 
+			PORT MAP( 
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
+			
+				q01                               => q0,
+				q11                               => q1,
+				q21                               => q2,
+				q31                               => q3,
+				
+				qdot11                            => qdot1,
+				qdot21                            => qdot2,
+				qdot31                            => qdot3,
+				qdot41                            => qdot4,
+				
+				s0                                => s0_norm,
+				s1                                => s1_norm,
+				s2                                => s2_norm,
+				s3                                => s3_norm,
+				
+				beta                              => beta,
+				sampletime                        => sampleTime,
+				
+				ceout                             => open,
+				
+				q0                                => q0_updated,
+				q1                                => q1_updated,
+				q2                                => q2_updated,
+				q3                                => q3_updated
+				
+			);
+			  
+		q_norm: component  Madgwick_normalize_fixpt 
+			PORT MAP( 
+				clk                               => clk,
+				reset                             => '0',
+				clkenable                         => '1',
+				
+				ax1                               => q0_updated,
+				ay1                               => q1_updated,
+				az1                               => q2_updated,
+				aw1                               => q3_updated,
+				
+				ceout                             => open,
+				
+				ax                                => q0_norm,
+				ay                                => q1_norm,
+				az                                => q2_norm,
+				aw                                => q3_norm
+			  );
+			  
+		
+		---------------------------
+		---- Signal Assignment ----
+		---------------------------
+		
+		q0_out <= q0_norm;
+		q1_out <= q1_norm;
+		q2_out <= q2_norm;
+		q3_out <= q3_norm;
 		
 end architecture;

@@ -552,11 +552,85 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LE
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=42449" -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "onepulse:onepulse_key1|PB_single_pulse" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=35187" -section_id auto_signaltap_0
-set_global_assignment -name VHDL_FILE "vhdl source/DE2_Board_top_level.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_segments.vhd"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_update"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_qdot"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_normalize"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_correction"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE "C:/Users/w92p177/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block29.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block28.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block27.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block26.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block25.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block24.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block23.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block22.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block21.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block20.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block19.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block18.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block17.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block16.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block15.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block14.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block13.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block12.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block11.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block10.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block9.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block8.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block7.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block6.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block5.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block4.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block3.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block2.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block1.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_en.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block27.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block26.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block25.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block24.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block23.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block22.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block21.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block20.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block19.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block18.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block17.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block16.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block15.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block14.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block13.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block12.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block11.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block10.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block9.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block8.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block7.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block6.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block5.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block4.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block3.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block2.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block1.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer.vhd"
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block2.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block1.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/alpha0_deserializer_block.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/alpha0_deserializer.vhd" -library Madgwick_qDot
+set_global_assignment -name VHDL_FILE "vhdl source/DE2_Board_top_level.vhd" -library top
+set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_segments.vhd" -library top
+set_global_assignment -name SLD_FILE "C:/Users/z68j959/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
