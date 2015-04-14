@@ -43,6 +43,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 USE work.Madgwick_qDot_fixpt_pac.ALL;
 
+
 ENTITY Madgwick_qDot_fixpt IS
   PORT( clk                               :   IN    std_logic;
         reset                             :   IN    std_logic;

@@ -42,6 +42,7 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 USE work.Madgwick_correction_fixpt_pac.ALL;
+LIBRARY Madgwick_correction;
 
 ENTITY Madgwick_correction_fixpt IS
   PORT( clk                               :   IN    std_logic;

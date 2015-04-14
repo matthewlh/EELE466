@@ -244,64 +244,73 @@ architecture behavioral of DE2_Board_top_level is
 			clkenable                         :   IN    	std_logic;
 			
 			-- inputs
-			q0                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q1                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q2                                :   IN   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q3                                :   IN   	std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
+			q0                                :   IN   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q1                                :   IN   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q2                                :   IN   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q3                                :   IN   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			
-			gx                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			gy                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			gz                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			gx                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			gy                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			gz                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			
-			ax                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			ay                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			az                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			ax                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			ay                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			az                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			
-			mx                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			my                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-			mz                                :   IN    	std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+			mx                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			my                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			mz                                :   IN    	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  
 			-- outputs
-			q0_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q1_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q2_out                            :   OUT   	std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-			q3_out                            :   OUT   	std_logic_vector(13 DOWNTO 0)   -- ufix14_En14
+			q0_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q1_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q2_out                            :   OUT   	std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			q3_out                            :   OUT   	std_logic_vector(23 DOWNTO 0)   -- sfix24_En12
 		  );
 	end component;	
+	
+	Component clockPLL IS
+	PORT
+	(
+		inclk0		: IN STD_LOGIC  := '0';
+		c0		: OUT STD_LOGIC ;
+		c1		: OUT STD_LOGIC 
+	);
+END component;
 
 	----------------------------
 	---- Signal Declaration ----
 	----------------------------
 	
-	signal q0 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q1 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q2 		: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q3 		: std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
+	signal q0 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q1 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q2 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q3 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	
-	signal gx 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal gy 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal gz 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal gx 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal gy 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal gz 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	
-	signal ax 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal ay 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal az 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal ax 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal ay 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal az 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	
-	signal mx 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal my 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
-	signal mz 		: std_logic_vector(13 DOWNTO 0);  -- sfix14_En7
+	signal mx 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal my 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal mz 		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	  
 	-- outputs
-	signal q0_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q1_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q2_out 	: std_logic_vector(13 DOWNTO 0);  -- ufix14_En14
-	signal q3_out 	: std_logic_vector(13 DOWNTO 0);   -- ufix14_En14
+	signal q0_out 	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q1_out 	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q2_out 	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	signal q3_out 	: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 
 begin
 		--------------------------------
 		---- Component Instatiation ----
 		--------------------------------
 	
-		Madgwick_seqments_0 : component Madgwick_seqments_f
+		Madgwick_seqments_0 : component Madgwick_seqments
 		PORT map(
 			-- Clock stuff
 			clk                               => CLOCK_50,
@@ -332,6 +341,14 @@ begin
 			q2_out                            => q2_out,
 			q3_out                            => q3_out 
 	  );
+	  
+	clockPLL_0: component clockPLL
+	PORT map
+	(
+		inclk0		=> CLOCK_50,
+		c0				=> open,
+		c1				=> open 
+	);
 	
 		
 
