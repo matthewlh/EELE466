@@ -1,0 +1,2847 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\z68j959\Documents\GitHub\EELE466\Madgwick_verification
+Ealpha0_deserializer
+Z1 w1429301210
+Z2 DPx4 work 25 madgwick_update_fixpt_pac 0 22 `8n@Y`o[D9@0B1M9bfVMP1
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\z68j959\Documents\GitHub\EELE466\Madgwick_verification
+Z7 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd
+Z8 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd
+l0
+L25
+VU>``fhNmnXcP0TAh@8@:>1
+Z9 OL;C;10.1c;51
+32
+Z10 !s108 1429303637.703000
+Z11 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd|
+Z12 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd|
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1
+!s100 7DE1GQ]7I[WPBlNZgzzI83
+!i10b 1
+Artl
+R2
+R3
+R4
+R5
+Z15 DEx4 work 19 alpha0_deserializer 0 22 U>``fhNmnXcP0TAh@8@:>1
+l45
+L36
+VkSaRbo^zEjU9?HnbmgMg52
+R9
+32
+R10
+R11
+R12
+R13
+R14
+!s100 AJ;Lzi9>l_VH0Qn:FMWCH2
+!i10b 1
+Ealpha0_deserializer_block
+R1
+Z16 DPx4 work 23 madgwick_qdot_fixpt_pac 0 22 M;ibz^M46_V91bH<a_<k_0
+R3
+R4
+R5
+R6
+Z17 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd
+Z18 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd
+l0
+L25
+Vm5MAU[9F0VmF1eXHVg`;@0
+R9
+32
+Z19 !s108 1429303636.816000
+Z20 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd|
+Z21 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd|
+R13
+R14
+!s100 6RWb`:Ca0^d]];z9BLQfd0
+!i10b 1
+Artl
+R16
+R3
+R4
+R5
+DEx4 work 25 alpha0_deserializer_block 0 22 m5MAU[9F0VmF1eXHVg`;@0
+l46
+L36
+VY@C^lkJ4>:64LSB?=olJ42
+R9
+32
+R19
+R20
+R21
+R13
+R14
+!s100 z5MH65YMKi9@^[LXN9mci1
+!i10b 1
+Ealpha0_deserializer_block1
+R1
+Z22 DPx4 work 29 madgwick_correction_fixpt_pac 0 22 nWX8:8:5>WW:d3B:V=RiM1
+R3
+R4
+R5
+R6
+Z23 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd
+Z24 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd
+l0
+L25
+V^heXJeAieJA5WS^O]^oz<1
+R9
+32
+Z25 !s108 1429303627.661000
+Z26 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd|
+Z27 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd|
+R13
+R14
+!s100 H:V03j464@AJiNcGcR27]0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block1 0 22 ^heXJeAieJA5WS^O]^oz<1
+l45
+L36
+V[8OaX5cgKPGDmD;9HH=AY0
+R9
+32
+R25
+R26
+R27
+R13
+R14
+!s100 Fikh[Pf9<klob_1_9m`^<3
+!i10b 1
+Ealpha0_deserializer_block10
+R1
+R22
+R3
+R4
+R5
+R6
+Z28 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd
+Z29 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd
+l0
+L25
+V05V^SNUQQQO9mGMz6QDkj3
+R9
+32
+Z30 !s108 1429303628.829000
+Z31 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd|
+Z32 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd|
+R13
+R14
+!s100 j]e5WV@5Cg[[kR^GzY]LO1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block10 0 22 05V^SNUQQQO9mGMz6QDkj3
+l45
+L36
+VFLo^fCJT>dL37>1Q[?=BL0
+R9
+32
+R30
+R31
+R32
+R13
+R14
+!s100 =H7`FmGKP@aJ^c3oMHhdI1
+!i10b 1
+Ealpha0_deserializer_block11
+R1
+R22
+R3
+R4
+R5
+R6
+Z33 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd
+Z34 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd
+l0
+L25
+VgdzdjQh040?ENN]6XOA3l3
+R9
+32
+Z35 !s108 1429303628.976000
+Z36 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd|
+Z37 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd|
+R13
+R14
+!s100 VRKeSW:0^am]_DJ5gPV431
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block11 0 22 gdzdjQh040?ENN]6XOA3l3
+l45
+L36
+VPCTS=bN]H72RKj:mjzGj53
+R9
+32
+R35
+R36
+R37
+R13
+R14
+!s100 6^InUHDVeUL`0GSNP8Ldh1
+!i10b 1
+Ealpha0_deserializer_block12
+R1
+R22
+R3
+R4
+R5
+R6
+Z38 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd
+Z39 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd
+l0
+L25
+V4OHkk4`FJ9kaIZ57G4X@d3
+R9
+32
+Z40 !s108 1429303629.111000
+Z41 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd|
+Z42 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd|
+R13
+R14
+!s100 @6CPg_idjo^MfahQbg4gh3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block12 0 22 4OHkk4`FJ9kaIZ57G4X@d3
+l45
+L36
+V>8^QT>eiDfk^ZnU<MG_8=3
+R9
+32
+R40
+R41
+R42
+R13
+R14
+!s100 ^@z@]PGL;MY[XeBKR`cB52
+!i10b 1
+Ealpha0_deserializer_block13
+R1
+R22
+R3
+R4
+R5
+R6
+Z43 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd
+Z44 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd
+l0
+L25
+Vb?[iAE565oYoBe>ZFW=@c1
+R9
+32
+Z45 !s108 1429303629.248000
+Z46 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd|
+Z47 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd|
+R13
+R14
+!s100 eSJOB4QGZgI]X0GSM7>a81
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block13 0 22 b?[iAE565oYoBe>ZFW=@c1
+l45
+L36
+VilT<S[B:2fZ9MnDNIW=VV0
+R9
+32
+R45
+R46
+R47
+R13
+R14
+!s100 gQoNkCTO?;Jd;c:SYBA7k1
+!i10b 1
+Ealpha0_deserializer_block14
+R1
+R22
+R3
+R4
+R5
+R6
+Z48 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd
+Z49 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd
+l0
+L25
+VV71eTR>7@1gRMziN_>z]K3
+R9
+32
+Z50 !s108 1429303629.422000
+Z51 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd|
+Z52 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd|
+R13
+R14
+!s100 1S1o[@^zjDa2f60D_YMUj0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block14 0 22 V71eTR>7@1gRMziN_>z]K3
+l45
+L36
+VO1E`LEo_DDRX]]>QnB_l81
+R9
+32
+R50
+R51
+R52
+R13
+R14
+!s100 0[g3E@bNCR4;]04S2nmWi1
+!i10b 1
+Ealpha0_deserializer_block15
+R1
+R22
+R3
+R4
+R5
+R6
+Z53 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd
+Z54 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd
+l0
+L25
+VDZaHmzN;P4WgUG@kWX=]S3
+R9
+32
+Z55 !s108 1429303629.584000
+Z56 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd|
+Z57 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd|
+R13
+R14
+!s100 6?Z6kW8azN^Z>I]BX86l?0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block15 0 22 DZaHmzN;P4WgUG@kWX=]S3
+l45
+L36
+VQW3Xk^fg_]YzE47V^O_oF1
+R9
+32
+R55
+R56
+R57
+R13
+R14
+!s100 hZFJo:U>H3PQcdJ6@0@MN3
+!i10b 1
+Ealpha0_deserializer_block16
+R1
+R22
+R3
+R4
+R5
+R6
+Z58 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd
+Z59 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd
+l0
+L25
+V50QWG2>?DJ^zGSH;98zo03
+R9
+32
+Z60 !s108 1429303629.705000
+Z61 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd|
+Z62 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd|
+R13
+R14
+!s100 FCSMNUI2=^_4O;OEMFLiI0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block16 0 22 50QWG2>?DJ^zGSH;98zo03
+l45
+L36
+VAE9<F@L0TImgHeA[[dm0D3
+R9
+32
+R60
+R61
+R62
+R13
+R14
+!s100 0FPMAK[]b7V[kN=dBlXC=2
+!i10b 1
+Ealpha0_deserializer_block17
+R1
+R22
+R3
+R4
+R5
+R6
+Z63 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd
+Z64 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd
+l0
+L25
+V^LAgWcVCaEH`nZC1PB;Z@1
+R9
+32
+Z65 !s108 1429303629.855000
+Z66 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd|
+Z67 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd|
+R13
+R14
+!s100 003lfBjFeimQ`B>8jnDnd0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block17 0 22 ^LAgWcVCaEH`nZC1PB;Z@1
+l45
+L36
+VZLNh>?];Xo:WUK;AZjH@:3
+R9
+32
+R65
+R66
+R67
+R13
+R14
+!s100 `IzJ`YPbP@dV0jRSJc=mI1
+!i10b 1
+Ealpha0_deserializer_block18
+R1
+R22
+R3
+R4
+R5
+R6
+Z68 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd
+Z69 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd
+l0
+L25
+VkejCKN`VcBM2DP88P7:4F2
+R9
+32
+Z70 !s108 1429303630.053000
+Z71 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd|
+Z72 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd|
+R13
+R14
+!s100 TaBF<d4zkCU:2cziQ4Tjl2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block18 0 22 kejCKN`VcBM2DP88P7:4F2
+l45
+L36
+V[z7ih7kDo>bjg_JB]lN0S0
+R9
+32
+R70
+R71
+R72
+R13
+R14
+!s100 kM;KFUDT;Fil`LT5UK[zX2
+!i10b 1
+Ealpha0_deserializer_block19
+R1
+R22
+R3
+R4
+R5
+R6
+Z73 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd
+Z74 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd
+l0
+L25
+V88R=5iGA_@EEHASi[hWXT2
+R9
+32
+Z75 !s108 1429303630.203000
+Z76 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd|
+Z77 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd|
+R13
+R14
+!s100 z`dniWJ^XcE8jT;]0C?Ph0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block19 0 22 88R=5iGA_@EEHASi[hWXT2
+l45
+L36
+VIe^oZ4]66aSG14o2WML?=1
+R9
+32
+R75
+R76
+R77
+R13
+R14
+!s100 VaK@M;fdHaW5Co^EZ]5hM1
+!i10b 1
+Ealpha0_deserializer_block2
+R1
+R22
+R3
+R4
+R5
+R6
+Z78 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd
+Z79 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd
+l0
+L25
+VPODNobj0C=Db2Yj_FeOBa0
+R9
+32
+Z80 !s108 1429303627.777000
+Z81 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd|
+Z82 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd|
+R13
+R14
+!s100 Hkf1jJJA_46NHT96iAFlo3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block2 0 22 PODNobj0C=Db2Yj_FeOBa0
+l45
+L36
+V5EdOIAHe<CUkHM6=oMgPD1
+R9
+32
+R80
+R81
+R82
+R13
+R14
+!s100 CcoXo`[][Gb?0YJD5hO8I0
+!i10b 1
+Ealpha0_deserializer_block20
+R1
+R22
+R3
+R4
+R5
+R6
+Z83 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd
+Z84 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd
+l0
+L25
+VNjc=aZN]ZYBi9FERYBCdQ3
+R9
+32
+Z85 !s108 1429303630.320000
+Z86 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd|
+Z87 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd|
+R13
+R14
+!s100 ;D_3X>dG7kb=1WdS2^8HZ2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block20 0 22 Njc=aZN]ZYBi9FERYBCdQ3
+l45
+L36
+V;oX^O]V`a:jz;ThcJe>g=3
+R9
+32
+R85
+R86
+R87
+R13
+R14
+!s100 Tg23f<ckK^_QBUZhzU`<M1
+!i10b 1
+Ealpha0_deserializer_block21
+R1
+R22
+R3
+R4
+R5
+R6
+Z88 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd
+Z89 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd
+l0
+L25
+V^OQ`LG[1RBcS>1[@FZT>;1
+R9
+32
+Z90 !s108 1429303630.437000
+Z91 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd|
+Z92 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd|
+R13
+R14
+!s100 iH]A92^:XS6edAJ;SzLFX2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block21 0 22 ^OQ`LG[1RBcS>1[@FZT>;1
+l45
+L36
+VI6imd8YYXffSR]OecQMYO2
+R9
+32
+R90
+R91
+R92
+R13
+R14
+!s100 ljA]46O3zfdoZh[G>28Dk0
+!i10b 1
+Ealpha0_deserializer_block22
+R1
+R22
+R3
+R4
+R5
+R6
+Z93 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd
+Z94 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd
+l0
+L25
+VLQ7adUF`miVO94c@JA1iZ3
+R9
+32
+Z95 !s108 1429303630.562000
+Z96 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd|
+Z97 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd|
+R13
+R14
+!s100 gVlX`AThNaN>9nHFOLhSN1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block22 0 22 LQ7adUF`miVO94c@JA1iZ3
+l45
+L36
+VSYHWOz:4Hf=jh:6K1UYdf3
+R9
+32
+R95
+R96
+R97
+R13
+R14
+!s100 F7F854=V`8mniBF>Vin1^3
+!i10b 1
+Ealpha0_deserializer_block23
+R1
+R22
+R3
+R4
+R5
+R6
+Z98 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd
+Z99 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd
+l0
+L25
+VV8NIK=o@>oL`9@VemNf6G1
+R9
+32
+Z100 !s108 1429303630.679000
+Z101 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd|
+Z102 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd|
+R13
+R14
+!s100 1n[bRYK]HD^W`kdo5P6_f2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block23 0 22 V8NIK=o@>oL`9@VemNf6G1
+l45
+L36
+Vdd?4K7[Hzho_fmO>4WgdT2
+R9
+32
+R100
+R101
+R102
+R13
+R14
+!s100 S0zDR27<8iK[O6bc<[=Wj2
+!i10b 1
+Ealpha0_deserializer_block24
+R1
+R22
+R3
+R4
+R5
+R6
+Z103 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd
+Z104 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd
+l0
+L25
+Vm@>dgcdI@ei;3gaVTSIbj0
+R9
+32
+Z105 !s108 1429303630.795000
+Z106 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd|
+Z107 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd|
+R13
+R14
+!s100 m;1^I26I6AOXE`aHFznH81
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block24 0 22 m@>dgcdI@ei;3gaVTSIbj0
+l45
+L36
+VWCIF>90k@kleIg;8i@;9D3
+R9
+32
+R105
+R106
+R107
+R13
+R14
+!s100 oK7LznNUSX>VKWWS`^F602
+!i10b 1
+Ealpha0_deserializer_block25
+R1
+R22
+R3
+R4
+R5
+R6
+Z108 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd
+Z109 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd
+l0
+L25
+VO0FB>dZ[T`oamBKeE`4>o1
+R9
+32
+Z110 !s108 1429303630.911000
+Z111 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd|
+Z112 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd|
+R13
+R14
+!s100 >KA?>Ncz:Ek^?iJ_n3]382
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block25 0 22 O0FB>dZ[T`oamBKeE`4>o1
+l45
+L36
+Vbm06[Pl;_UPKkj3VMhLO[1
+R9
+32
+R110
+R111
+R112
+R13
+R14
+!s100 :e>SoIN:ZLb<^dk36II8N3
+!i10b 1
+Ealpha0_deserializer_block26
+R1
+R22
+R3
+R4
+R5
+R6
+Z113 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd
+Z114 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd
+l0
+L25
+VYdgblRYBKE<m2^`S`eMeJ1
+R9
+32
+Z115 !s108 1429303631.027000
+Z116 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd|
+Z117 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd|
+R13
+R14
+!s100 oo9OFF7`fJjW9bm>D9L8E3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block26 0 22 YdgblRYBKE<m2^`S`eMeJ1
+l45
+L36
+V?hgM0jR6]dnSYQV>D?MXk3
+R9
+32
+R115
+R116
+R117
+R13
+R14
+!s100 Pej^n=1K;f2ZMESCN0lVk0
+!i10b 1
+Ealpha0_deserializer_block27
+R1
+R22
+R3
+R4
+R5
+R6
+Z118 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd
+Z119 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd
+l0
+L25
+VIlzm=iemZ?AC^eZH4e36^2
+R9
+32
+Z120 !s108 1429303631.175000
+Z121 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd|
+Z122 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd|
+R13
+R14
+!s100 G[^GL5J@FnE]1MWSYC^Qe0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block27 0 22 Ilzm=iemZ?AC^eZH4e36^2
+l45
+L36
+VjEYD]hjkMW2C[Fe2M1;JK2
+R9
+32
+R120
+R121
+R122
+R13
+R14
+!s100 BgUiU:NoMU7_UTzC1G<@13
+!i10b 1
+Ealpha0_deserializer_block28
+R1
+R22
+R3
+R4
+R5
+R6
+Z123 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd
+Z124 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd
+l0
+L25
+V<oidbeiRYFgoo7F=e6nV?2
+R9
+32
+Z125 !s108 1429303631.308000
+Z126 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd|
+Z127 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd|
+R13
+R14
+!s100 iJQo9242jkz=LgT_YjLTi2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 27 alpha0_deserializer_block28 0 22 <oidbeiRYFgoo7F=e6nV?2
+l45
+L36
+VijJSJFjQhF8nAAOlHCZdm2
+R9
+32
+R125
+R126
+R127
+R13
+R14
+!s100 VDmLQnFUgDY^eQARdN;FA0
+!i10b 1
+Ealpha0_deserializer_block3
+R1
+R22
+R3
+R4
+R5
+R6
+Z128 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd
+Z129 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd
+l0
+L25
+V@ZFRFg`]niom_b^W?;Z5M0
+R9
+32
+Z130 !s108 1429303627.903000
+Z131 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd|
+Z132 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd|
+R13
+R14
+!s100 LkiL;LnCn7bhzJQ<g<mhC0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block3 0 22 @ZFRFg`]niom_b^W?;Z5M0
+l45
+L36
+V]ndfaiLB5TLMacKW^kcoh2
+R9
+32
+R130
+R131
+R132
+R13
+R14
+!s100 Uf6`8O=jfPogUa@mzil>N2
+!i10b 1
+Ealpha0_deserializer_block4
+R1
+R22
+R3
+R4
+R5
+R6
+Z133 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd
+Z134 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd
+l0
+L25
+V9lN7eS^23z1H;zXJhRgmU3
+R9
+32
+Z135 !s108 1429303628.054000
+Z136 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd|
+Z137 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd|
+R13
+R14
+!s100 hMDIFH[fQ82J9eH;m<ZJW3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block4 0 22 9lN7eS^23z1H;zXJhRgmU3
+l45
+L36
+Vo?0IRI3;?F77ch0b>?RRO0
+R9
+32
+R135
+R136
+R137
+R13
+R14
+!s100 IzBfmTLaFW7nA22:P[PP=0
+!i10b 1
+Ealpha0_deserializer_block5
+R1
+R22
+R3
+R4
+R5
+R6
+Z138 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd
+Z139 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd
+l0
+L25
+VKGQKMmk=e>2PK^lSRW3kk1
+R9
+32
+Z140 !s108 1429303628.192000
+Z141 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd|
+Z142 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd|
+R13
+R14
+!s100 WiZQ`UbDQAfODHdflXG1]2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block5 0 22 KGQKMmk=e>2PK^lSRW3kk1
+l45
+L36
+VdB<6bWZZN[HQ]Nn]4AXoU3
+R9
+32
+R140
+R141
+R142
+R13
+R14
+!s100 :_zeKNB45CzMLbAb^?WQO2
+!i10b 1
+Ealpha0_deserializer_block6
+R1
+R22
+R3
+R4
+R5
+R6
+Z143 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd
+Z144 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd
+l0
+L25
+VDS5a;5D6a0L70izf>8AgT2
+R9
+32
+Z145 !s108 1429303628.334000
+Z146 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd|
+Z147 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd|
+R13
+R14
+!s100 _YaS:c0>8A_4]o=4`HZLX1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block6 0 22 DS5a;5D6a0L70izf>8AgT2
+l46
+L36
+VKLnJko0QWH6Kgdji[8Vzz3
+R9
+32
+R145
+R146
+R147
+R13
+R14
+!s100 zf?@[k5YSOU?l7W=iX8F[0
+!i10b 1
+Ealpha0_deserializer_block7
+R1
+R22
+R3
+R4
+R5
+R6
+Z148 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd
+Z149 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd
+l0
+L25
+VYn[SN@Wb`6PL;JOnh?aEN1
+R9
+32
+Z150 !s108 1429303628.452000
+Z151 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd|
+Z152 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd|
+R13
+R14
+!s100 87o@AA]2Cc8cAj8f4PL0e3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block7 0 22 Yn[SN@Wb`6PL;JOnh?aEN1
+l45
+L36
+Vmm2zinB0l3R>I;`UeSA113
+R9
+32
+R150
+R151
+R152
+R13
+R14
+!s100 7=Y4nL131FMBj9FGjjjnz0
+!i10b 1
+Ealpha0_deserializer_block8
+R1
+R22
+R3
+R4
+R5
+R6
+Z153 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd
+Z154 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd
+l0
+L25
+V2j?5oze30k>JT_iIJ6;iB2
+R9
+32
+Z155 !s108 1429303628.569000
+Z156 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd|
+Z157 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd|
+R13
+R14
+!s100 0@MQN_XmPGFG6bW;9nB7:0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block8 0 22 2j?5oze30k>JT_iIJ6;iB2
+l45
+L36
+VzZin3TYHIn[d;9GhYg7P30
+R9
+32
+R155
+R156
+R157
+R13
+R14
+!s100 JRXd3TWcz`XaAE5Mz1hzj1
+!i10b 1
+Ealpha0_deserializer_block9
+R1
+R22
+R3
+R4
+R5
+R6
+Z158 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd
+Z159 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd
+l0
+L25
+VLoJo2VCD?i9=o]P6QdIk81
+R9
+32
+Z160 !s108 1429303628.683000
+Z161 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd|
+Z162 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd|
+R13
+R14
+!s100 eBQ2Gkolbo>L4GM:YVNc00
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 26 alpha0_deserializer_block9 0 22 LoJo2VCD?i9=o]P6QdIk81
+l45
+L36
+V=en09>0Nbhk>Un[i6XBdP3
+R9
+32
+R160
+R161
+R162
+R13
+R14
+!s100 RQ9HP_iZ7D;7TMIihna2W0
+!i10b 1
+Emadgwick_correction_fixpt
+w1429303367
+R22
+R3
+R4
+R5
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd
+l0
+L46
+VB8cRbdfV<A6EiVS;@Ao2E3
+!s100 3g@H[I?PaBFQg`MR^hE3k2
+R9
+32
+!i10b 1
+!s108 1429303638.540000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd|
+R13
+R14
+Emadgwick_correction_fixpt_en
+R1
+R3
+R4
+R5
+R6
+Z163 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd
+Z164 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd
+l0
+L24
+VGZ166[=m3ZGP3:NoRB:=43
+R9
+32
+Z165 !s108 1429303631.520000
+Z166 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd|
+Z167 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd|
+R13
+R14
+!s100 OJj`eB8C1LC;Ihz7OQU653
+!i10b 1
+Artl
+R3
+R4
+R5
+DEx4 work 28 madgwick_correction_fixpt_en 0 22 GZ166[=m3ZGP3:NoRB:=43
+l43
+L33
+Vk[cMnLfFiGMlBLUGDG]Oo3
+R9
+32
+R165
+R166
+R167
+R13
+R14
+!s100 ^OIYYnhoiid7cgmj>jze21
+!i10b 1
+Pmadgwick_correction_fixpt_pac
+R3
+R4
+R5
+R1
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd
+l0
+L17
+VnWX8:8:5>WW:d3B:V=RiM1
+R9
+32
+R13
+R14
+!s100 `Sj=5KNSHL`12[52UFmZ:1
+!i10b 1
+!s108 1429303631.635000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd|
+Emadgwick_correction_fixpt_tc
+R1
+R3
+R4
+R5
+R6
+Z168 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd
+Z169 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd
+l0
+L33
+V92iK_46JmCkTLR;ZVDa3f1
+R9
+32
+Z170 !s108 1429303631.761000
+Z171 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd|
+Z172 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd|
+R13
+R14
+!s100 g6=VjF6L=g1d089d5Rb@j1
+!i10b 1
+Artl
+R3
+R4
+R5
+DEx4 work 28 madgwick_correction_fixpt_tc 0 22 92iK_46JmCkTLR;ZVDa3f1
+l62
+L47
+VlC:T8TDkHGj^M8Aa5O^K^1
+R9
+32
+R170
+R171
+R172
+R13
+R14
+!s100 EG@]oeAT4Lhkl^6Pd>GT?3
+!i10b 1
+Emadgwick_normalize_fixpt
+R1
+Z173 DPx4 work 28 madgwick_normalize_fixpt_pac 0 22 kIeAQ>BDJYCY03j>kL19I1
+R3
+R4
+R5
+R6
+Z174 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd
+Z175 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd
+l0
+L46
+VTj5e]EgNl>RT1LB[EDjc[1
+R9
+32
+Z176 !s108 1429303636.283000
+Z177 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd|
+Z178 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd|
+R13
+R14
+!s100 <laRH<HSQcGN2]5>M<1nQ2
+!i10b 1
+Artl
+R173
+R3
+R4
+R5
+DEx4 work 24 madgwick_normalize_fixpt 0 22 Tj5e]EgNl>RT1LB[EDjc[1
+l84
+L63
+V<k^AjTll`LcMF[Fo>5mkf3
+R9
+32
+R176
+R177
+R178
+R13
+R14
+!s100 [eON^6NA9ZAD>6=RWSJ[D0
+!i10b 1
+Pmadgwick_normalize_fixpt_pac
+R3
+R4
+R5
+R1
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd
+l0
+L17
+VkIeAQ>BDJYCY03j>kL19I1
+R9
+32
+R13
+R14
+!s100 YR=6Q^G4B27MknA9F:kme1
+!i10b 1
+!s108 1429303636.476000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd|
+Emadgwick_qdot_fixpt
+R1
+R16
+R3
+R4
+R5
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd
+l0
+L47
+VFe?dDTeYcgz`MBoMY]KF02
+R9
+32
+R13
+R14
+!s100 F00`H[llkAgPXZi68bI3W0
+!i10b 1
+!s108 1429303627.004000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd|
+Emadgwick_qdot_fixpt_enb_bypa
+R1
+R3
+R4
+R5
+R6
+Z179 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd
+Z180 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd
+l0
+L24
+VOg09j>LZAi;WgTl`lz`2E0
+R9
+32
+Z181 !s108 1429303637.018000
+Z182 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd|
+Z183 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd|
+R13
+R14
+!s100 BR]P]Nlz46gUS:JX2;9^F2
+!i10b 1
+Artl
+R3
+R4
+R5
+DEx4 work 28 madgwick_qdot_fixpt_enb_bypa 0 22 Og09j>LZAi;WgTl`lz`2E0
+l43
+L33
+V;VSGh?RH9N9_0ac^N2Q?H1
+R9
+32
+R181
+R182
+R183
+R13
+R14
+!s100 _VO[Ojzd5b<<iaHHX5je?3
+!i10b 1
+Pmadgwick_qdot_fixpt_pac
+R3
+R4
+R5
+R1
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd
+l0
+L17
+VM;ibz^M46_V91bH<a_<k_0
+R9
+32
+R13
+R14
+!s100 PaOm^2=EnB;D<h^K8l27G3
+!i10b 1
+!s108 1429303637.223000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd|
+Emadgwick_qdot_fixpt_tc
+R1
+R3
+R4
+R5
+R6
+Z184 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd
+Z185 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd
+l0
+L31
+VagOf=4b4ZMhAdl@;SV8Q_2
+R9
+32
+Z186 !s108 1429303637.330000
+Z187 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd|
+Z188 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd|
+R13
+R14
+!s100 hOL:0O@]3j;9=U4XTgkHh1
+!i10b 1
+Artl
+R3
+R4
+R5
+DEx4 work 22 madgwick_qdot_fixpt_tc 0 22 agOf=4b4ZMhAdl@;SV8Q_2
+l53
+L43
+VFJeYi0QMVj9>^5>83?9GA3
+R9
+32
+R186
+R187
+R188
+R13
+R14
+!s100 U?>iOC^_d]F;Nn7:^JKN80
+!i10b 1
+Emadgwick_seqments
+Z189 w1429303518
+R3
+R4
+R5
+R6
+Z190 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+Z191 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+l0
+L15
+VkUDCWYfBAk;c`h6h;ldgE1
+R9
+32
+Z192 !s108 1429303627.243000
+Z193 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
+Z194 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
+R13
+R14
+!s100 PR?^QPdPcG_^;;Q>6A?j<0
+!i10b 1
+Amadgwick_seqments_arch
+R3
+R4
+R5
+DEx4 work 17 madgwick_seqments 0 22 kUDCWYfBAk;c`h6h;ldgE1
+l185
+L49
+VilfYXeViPYM;jeUEBR=GI2
+R9
+32
+R192
+R193
+R194
+R13
+R14
+!s100 <7S8=_?AHRZig`W]4kK1f2
+!i10b 1
+Emadgwick_update_fixpt
+R1
+R2
+R3
+R4
+R5
+R6
+Z195 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd
+Z196 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd
+l0
+L46
+VTQ9if=Qz5`D:LhzVS6=6c0
+R9
+32
+Z197 !s108 1429303638.350000
+Z198 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd|
+Z199 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd|
+R13
+R14
+!s100 hCQ5Pa4BZU5Gl1k`_;8ko2
+!i10b 1
+Artl
+R15
+Z200 DEx4 work 15 mux1_serializer 0 22 MzV96@[[VD:J<g[4aA`Qk0
+Z201 DEx4 work 24 madgwick_update_fixpt_tc 0 22 BPjO@V:?K0n@e1l7f@02<2
+Z202 DEx4 work 28 madgwick_update_fixpt_enb_by 0 22 DdB3<=i>F[?nZ@G3?M2AY1
+R2
+R3
+R4
+R5
+DEx4 work 21 madgwick_update_fixpt 0 22 TQ9if=Qz5`D:LhzVS6=6c0
+l283
+L73
+V?[`41d57XjMNnDdP_VjWL3
+!s100 Ail;N<PeLThCzfJg=KF<T3
+R9
+32
+R197
+R198
+R199
+R13
+R14
+!i10b 1
+Emadgwick_update_fixpt_enb_by
+R1
+R3
+R4
+R5
+R6
+Z203 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd
+Z204 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd
+l0
+L24
+VDdB3<=i>F[?nZ@G3?M2AY1
+R9
+32
+Z205 !s108 1429303637.845000
+Z206 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd|
+Z207 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd|
+R13
+R14
+!s100 Rbe:UQLe4EY`zX5BSYzM?0
+!i10b 1
+Artl
+R3
+R4
+R5
+R202
+l43
+L33
+V?O0adYam0?AbkKOaG>HF;1
+R9
+32
+R205
+R206
+R207
+R13
+R14
+!s100 TihVcDD9m1Ym>=;j73ZD>2
+!i10b 1
+Pmadgwick_update_fixpt_pac
+R3
+R4
+R5
+R1
+R6
+8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd
+FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd
+l0
+L17
+V`8n@Y`o[D9@0B1M9bfVMP1
+R9
+32
+R13
+R14
+!s100 oS@<G_gMz2;`k65<T2DV32
+!i10b 1
+!s108 1429303638.008000
+!s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd|
+!s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd|
+Emadgwick_update_fixpt_tc
+R1
+R3
+R4
+R5
+R6
+Z208 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd
+Z209 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd
+l0
+L31
+VBPjO@V:?K0n@e1l7f@02<2
+R9
+32
+Z210 !s108 1429303638.102000
+Z211 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd|
+Z212 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd|
+R13
+R14
+!s100 Q@N[Dm^6DEM=hhI`<:j2J1
+!i10b 1
+Artl
+R3
+R4
+R5
+R201
+l53
+L43
+V@PB2X6cTPSn4TYf2iE29?1
+R9
+32
+R210
+R211
+R212
+R13
+R14
+!s100 eXgTICO0E5K;]oZbj5j[61
+!i10b 1
+Emux1_serializer
+R1
+R2
+R3
+R4
+R5
+R6
+Z213 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd
+Z214 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd
+l0
+L25
+VMzV96@[[VD:J<g[4aA`Qk0
+R9
+32
+Z215 !s108 1429303638.215000
+Z216 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd|
+Z217 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd|
+R13
+R14
+!s100 R5=WQBC`8a?bjIW1^Un?G3
+!i10b 1
+Artl
+R2
+R3
+R4
+R5
+R200
+l48
+L37
+Vfmd6aX6K]m14bBEOjne5f1
+R9
+32
+R215
+R216
+R217
+R13
+R14
+!s100 f=7=6o;e]4b1E9h;LJieW3
+!i10b 1
+Emux1_serializer_block
+R1
+R16
+R3
+R4
+R5
+R6
+Z218 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd
+Z219 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd
+l0
+L25
+VdbA?S1oIkX:6FlHJL]T:N2
+R9
+32
+Z220 !s108 1429303637.587000
+Z221 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd|
+Z222 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd|
+R13
+R14
+!s100 ZUPOzaoEoaX5:m=De5H?C2
+!i10b 1
+Artl
+R16
+R3
+R4
+R5
+DEx4 work 21 mux1_serializer_block 0 22 dbA?S1oIkX:6FlHJL]T:N2
+l48
+L37
+Vn]hZT4AOZYT<hI2MUFBTY1
+R9
+32
+R220
+R221
+R222
+R13
+R14
+!s100 Y<DSF[bi`=j_B;^_3lTY^0
+!i10b 1
+Emux1_serializer_block1
+R1
+R22
+R3
+R4
+R5
+R6
+Z223 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd
+Z224 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd
+l0
+L25
+VXc4d=T4?O6[lnlGYnQ@Mf3
+R9
+32
+Z225 !s108 1429303632.191000
+Z226 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd|
+Z227 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd|
+R13
+R14
+!s100 EM[`ZUCVXDcf0^bO9BS?P2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block1 0 22 Xc4d=T4?O6[lnlGYnQ@Mf3
+l48
+L37
+VLnh<M@Gb7afVP2;FbC@7S2
+R9
+32
+R225
+R226
+R227
+R13
+R14
+!s100 M0d5Qc2EkY:lSk:O0@i6<1
+!i10b 1
+Emux1_serializer_block10
+R1
+R22
+R3
+R4
+R5
+R6
+Z228 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd
+Z229 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd
+l0
+L25
+VYzG<kTfW[B8bTY;7z>lkR0
+R9
+32
+Z230 !s108 1429303633.329000
+Z231 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd|
+Z232 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd|
+R13
+R14
+!s100 Z@XhX8z5WbQ]AZhRN30?L1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block10 0 22 YzG<kTfW[B8bTY;7z>lkR0
+l47
+L37
+VgTjmUSSUIKOBb8_m7I4R:0
+R9
+32
+R230
+R231
+R232
+R13
+R14
+!s100 dF6KhGZf@c>5X`f:GTeSd2
+!i10b 1
+Emux1_serializer_block11
+R1
+R22
+R3
+R4
+R5
+R6
+Z233 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd
+Z234 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd
+l0
+L25
+V;e<2I;<9>z:eZUm?FJW?h2
+R9
+32
+Z235 !s108 1429303633.531000
+Z236 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd|
+Z237 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd|
+R13
+R14
+!s100 L^jXM?jAX:jkcIPIn89^k1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block11 0 22 ;e<2I;<9>z:eZUm?FJW?h2
+l47
+L37
+VFCKID`@3jMfIm@8WiPNiB2
+R9
+32
+R235
+R236
+R237
+R13
+R14
+!s100 6b=eH8@e?k=ADNV;U=9I80
+!i10b 1
+Emux1_serializer_block12
+R1
+R22
+R3
+R4
+R5
+R6
+Z238 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd
+Z239 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd
+l0
+L25
+VUPMnV5o5d0YHDIJoBJPT_2
+R9
+32
+Z240 !s108 1429303633.702000
+Z241 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd|
+Z242 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd|
+R13
+R14
+!s100 GlVOJ;5KgWMiGj48]2F3>1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block12 0 22 UPMnV5o5d0YHDIJoBJPT_2
+l47
+L37
+VE5za1YMUHRFZ9]M[oG9383
+R9
+32
+R240
+R241
+R242
+R13
+R14
+!s100 NReP1IFekC`1:?m=`Z3?I3
+!i10b 1
+Emux1_serializer_block13
+R1
+R22
+R3
+R4
+R5
+R6
+Z243 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd
+Z244 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd
+l0
+L25
+V;XcPIR_aH8N_c83b?QXoE3
+R9
+32
+Z245 !s108 1429303633.847000
+Z246 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd|
+Z247 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd|
+R13
+R14
+!s100 gg@IL[izZfAS@OzFoPdSE0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block13 0 22 ;XcPIR_aH8N_c83b?QXoE3
+l47
+L37
+VGZ<jY7mmoX8[e4Ai4k9=Z2
+R9
+32
+R245
+R246
+R247
+R13
+R14
+!s100 z0=N]he^DIPlGU:LPA@Ii2
+!i10b 1
+Emux1_serializer_block14
+R1
+R22
+R3
+R4
+R5
+R6
+Z248 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd
+Z249 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd
+l0
+L25
+VfYLNB6E`fOKJB]3FmNc]U0
+R9
+32
+Z250 !s108 1429303633.963000
+Z251 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd|
+Z252 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd|
+R13
+R14
+!s100 lPA=`hDIFZTLZKCAG@j[R3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block14 0 22 fYLNB6E`fOKJB]3FmNc]U0
+l48
+L37
+VUjOZgj5@K5?g4TPBVml_10
+R9
+32
+R250
+R251
+R252
+R13
+R14
+!s100 60ZGLLN2cCVAFfIT?GdF00
+!i10b 1
+Emux1_serializer_block15
+R1
+R22
+R3
+R4
+R5
+R6
+Z253 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd
+Z254 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd
+l0
+L25
+V12]VehLMT^j?z5jUS1gLK2
+R9
+32
+Z255 !s108 1429303634.078000
+Z256 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd|
+Z257 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd|
+R13
+R14
+!s100 O2bK_`<bV>AjG1kEF2]eB2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block15 0 22 12]VehLMT^j?z5jUS1gLK2
+l48
+L37
+Vbh;55omn3JZ41DNYkC^Xz3
+R9
+32
+R255
+R256
+R257
+R13
+R14
+!s100 ^B5J^z?;:[e>h^[CG<zGV3
+!i10b 1
+Emux1_serializer_block16
+R1
+R22
+R3
+R4
+R5
+R6
+Z258 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd
+Z259 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd
+l0
+L25
+VSL^e4eib56i:AQ:1MdRId3
+R9
+32
+Z260 !s108 1429303634.251000
+Z261 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd|
+Z262 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd|
+R13
+R14
+!s100 k=Hne4nE180W4J[9Fo=UL2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block16 0 22 SL^e4eib56i:AQ:1MdRId3
+l48
+L37
+VPV9MbY4CJ`N6HJi9bDELV3
+R9
+32
+R260
+R261
+R262
+R13
+R14
+!s100 V;4G3m0d[^WjEUz=E5mf[0
+!i10b 1
+Emux1_serializer_block17
+R1
+R22
+R3
+R4
+R5
+R6
+Z263 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd
+Z264 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd
+l0
+L25
+V;amm>ChzAdofOnj5;LBjj3
+R9
+32
+Z265 !s108 1429303634.404000
+Z266 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd|
+Z267 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd|
+R13
+R14
+!s100 h3d6^j<m><Qa2EoRac5@o1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block17 0 22 ;amm>ChzAdofOnj5;LBjj3
+l48
+L37
+V=::]X7oXk<k3RIFQ4`;We2
+R9
+32
+R265
+R266
+R267
+R13
+R14
+!s100 <1jP0^ejHn^TMICD4Q[UZ1
+!i10b 1
+Emux1_serializer_block18
+R1
+R22
+R3
+R4
+R5
+R6
+Z268 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd
+Z269 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd
+l0
+L25
+VJ[Td>h7VWO^FnUm;KdFQ90
+R9
+32
+Z270 !s108 1429303634.606000
+Z271 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd|
+Z272 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd|
+R13
+R14
+!s100 `nUO?FPABGc?mkka[:goK2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block18 0 22 J[Td>h7VWO^FnUm;KdFQ90
+l47
+L37
+VS`gUJHB<Tb7ZE>IzN_co40
+R9
+32
+R270
+R271
+R272
+R13
+R14
+!s100 E9bP@4amiFaWdmWAH`ofT0
+!i10b 1
+Emux1_serializer_block19
+R1
+R22
+R3
+R4
+R5
+R6
+Z273 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd
+Z274 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd
+l0
+L25
+VBI2gaBWXZWLY>2l2LKPEA0
+R9
+32
+Z275 !s108 1429303634.752000
+Z276 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd|
+Z277 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd|
+R13
+R14
+!s100 gionmWZ<X[[KIZ]n=22II3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block19 0 22 BI2gaBWXZWLY>2l2LKPEA0
+l48
+L37
+VWdbR3nc51nh>`gXAP>g@Q0
+R9
+32
+R275
+R276
+R277
+R13
+R14
+!s100 RColf0G:@8hULe^N>BHUC1
+!i10b 1
+Emux1_serializer_block2
+R1
+R22
+R3
+R4
+R5
+R6
+Z278 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd
+Z279 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd
+l0
+L25
+Vz7j9TibgfPZXTSemBle`@1
+R9
+32
+Z280 !s108 1429303632.325000
+Z281 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd|
+Z282 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd|
+R13
+R14
+!s100 HoPnYeHgj_N?ofaAYROgo1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block2 0 22 z7j9TibgfPZXTSemBle`@1
+l48
+L37
+Vf7Zi<ECN]G70cAaodgnQT1
+R9
+32
+R280
+R281
+R282
+R13
+R14
+!s100 Z;;5:b3FBMdh:G9Og^I6T3
+!i10b 1
+Emux1_serializer_block20
+R1
+R22
+R3
+R4
+R5
+R6
+Z283 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd
+Z284 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd
+l0
+L25
+VS@g=f1?FU39:GFY30blTZ1
+R9
+32
+Z285 !s108 1429303634.863000
+Z286 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd|
+Z287 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd|
+R13
+R14
+!s100 oFR<_fiQ1DRQlMo?VjHdR0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block20 0 22 S@g=f1?FU39:GFY30blTZ1
+l47
+L37
+V7mbNokS84H:zGRaHSWA912
+R9
+32
+R285
+R286
+R287
+R13
+R14
+!s100 f;FW[nm^3oeI;fP;;E4hA1
+!i10b 1
+Emux1_serializer_block21
+R1
+R22
+R3
+R4
+R5
+R6
+Z288 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd
+Z289 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd
+l0
+L25
+Vakj=E;Vk?kA3g9FHmUVRP1
+R9
+32
+Z290 !s108 1429303634.978000
+Z291 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd|
+Z292 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd|
+R13
+R14
+!s100 Q8J>ZA8^SRdkWo:;z]f=l1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block21 0 22 akj=E;Vk?kA3g9FHmUVRP1
+l47
+L37
+V:WI^lnQ;`F>Db[>KOeCI]2
+R9
+32
+R290
+R291
+R292
+R13
+R14
+!s100 UcPBmWR[iOlRFho5nEECa1
+!i10b 1
+Emux1_serializer_block22
+R1
+R22
+R3
+R4
+R5
+R6
+Z293 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd
+Z294 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd
+l0
+L25
+VM2>d@JMI>:e_I8R;g8E<j1
+R9
+32
+Z295 !s108 1429303635.127000
+Z296 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd|
+Z297 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd|
+R13
+R14
+!s100 70b2mN]5H5JK]fFa5WLCb2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block22 0 22 M2>d@JMI>:e_I8R;g8E<j1
+l47
+L37
+VGClAE8TL15c;>3OU:ciI43
+R9
+32
+R295
+R296
+R297
+R13
+R14
+!s100 ^mdWR0RihUE^MNceADZLj1
+!i10b 1
+Emux1_serializer_block23
+R1
+R22
+R3
+R4
+R5
+R6
+Z298 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd
+Z299 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd
+l0
+L25
+Vb]MkAERRH>KcnV[RZfF@Z2
+R9
+32
+Z300 !s108 1429303635.244000
+Z301 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd|
+Z302 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd|
+R13
+R14
+!s100 Khg6`ES]dZK847JXb^>ML0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block23 0 22 b]MkAERRH>KcnV[RZfF@Z2
+l47
+L37
+VTVcNEk`R2dEViF]b0n5jF1
+R9
+32
+R300
+R301
+R302
+R13
+R14
+!s100 _=NgmmWV8USh_>z[Lagfz0
+!i10b 1
+Emux1_serializer_block24
+R1
+R22
+R3
+R4
+R5
+R6
+Z303 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd
+Z304 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd
+l0
+L25
+VEJ]0_Y`KW5iCP5H3;:lhe3
+R9
+32
+Z305 !s108 1429303635.426000
+Z306 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd|
+Z307 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd|
+R13
+R14
+!s100 z81PE6G:dZ:kW2:Y175io1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block24 0 22 EJ]0_Y`KW5iCP5H3;:lhe3
+l47
+L37
+VTV1]gVn:lD3;R2fE5GzdK0
+R9
+32
+R305
+R306
+R307
+R13
+R14
+!s100 =X]aNJhXMmeP65_6IX1IQ3
+!i10b 1
+Emux1_serializer_block25
+R1
+R22
+R3
+R4
+R5
+R6
+Z308 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd
+Z309 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd
+l0
+L25
+VckU8hCW[8APnNQ5o2f3771
+R9
+32
+Z310 !s108 1429303635.541000
+Z311 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd|
+Z312 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd|
+R13
+R14
+!s100 <k_INS=io`lP>HA0hF;Tl0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block25 0 22 ckU8hCW[8APnNQ5o2f3771
+l47
+L37
+Vi?aRVdWAnQz8k^15P1Q942
+R9
+32
+R310
+R311
+R312
+R13
+R14
+!s100 URcT:D;c>G10^E7d1g?YA0
+!i10b 1
+Emux1_serializer_block26
+R1
+R22
+R3
+R4
+R5
+R6
+Z313 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd
+Z314 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd
+l0
+L25
+V=6GUXn:TUQJ9F1;=J[EV<2
+R9
+32
+Z315 !s108 1429303635.657000
+Z316 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd|
+Z317 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd|
+R13
+R14
+!s100 ga1VjD3M^M99]cGm<Ml;g0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block26 0 22 =6GUXn:TUQJ9F1;=J[EV<2
+l48
+L37
+V>ZkBNneEH73j=ch=K;CXj0
+R9
+32
+R315
+R316
+R317
+R13
+R14
+!s100 V4BBQj[jNC6Af1Pn1g2A50
+!i10b 1
+Emux1_serializer_block27
+R1
+R22
+R3
+R4
+R5
+R6
+Z318 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd
+Z319 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd
+l0
+L25
+V==d2=T0S7az2b=CS28;RS2
+R9
+32
+Z320 !s108 1429303635.803000
+Z321 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd|
+Z322 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd|
+R13
+R14
+!s100 GO3YPli^5SZ<=QA0IRdf30
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block27 0 22 ==d2=T0S7az2b=CS28;RS2
+l48
+L37
+V:Q52bKg86m7aD`_b^TW8]0
+R9
+32
+R320
+R321
+R322
+R13
+R14
+!s100 hz>gHIi0h0gOA[i0c6_:K1
+!i10b 1
+Emux1_serializer_block28
+R1
+R22
+R3
+R4
+R5
+R6
+Z323 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd
+Z324 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd
+l0
+L25
+VPM>IXlQD6HQz^LfXLab3J0
+R9
+32
+Z325 !s108 1429303635.961000
+Z326 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd|
+Z327 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd|
+R13
+R14
+!s100 X973<_[Tlo;zb<m]d3NT03
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block28 0 22 PM>IXlQD6HQz^LfXLab3J0
+l47
+L37
+VTQU@DaI8iSDla;^kb2Td60
+R9
+32
+R325
+R326
+R327
+R13
+R14
+!s100 ]Do5?L5>;M41VIK[nLbG72
+!i10b 1
+Emux1_serializer_block29
+R1
+R22
+R3
+R4
+R5
+R6
+Z328 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd
+Z329 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd
+l0
+L25
+V5D9DFgaPNA6FHShAYfC`63
+R9
+32
+Z330 !s108 1429303636.159000
+Z331 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd|
+Z332 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd|
+R13
+R14
+!s100 j@TzJaHRX?_bbXXS`;^O80
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 23 mux1_serializer_block29 0 22 5D9DFgaPNA6FHShAYfC`63
+l47
+L37
+VLRXD7>?Xb?PM@LWTiX3UL2
+R9
+32
+R330
+R331
+R332
+R13
+R14
+!s100 YPM364g]JO@o]@]gHa^Bh0
+!i10b 1
+Emux1_serializer_block3
+R1
+R22
+R3
+R4
+R5
+R6
+Z333 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd
+Z334 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd
+l0
+L25
+VKGk^^SBO^gK>2HfDUW0kD0
+R9
+32
+Z335 !s108 1429303632.488000
+Z336 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd|
+Z337 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd|
+R13
+R14
+!s100 a:Y`Plc<`RVPcFU@S]]`H2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block3 0 22 KGk^^SBO^gK>2HfDUW0kD0
+l47
+L37
+V<^6CbFJ?KKVJOFW?hPN0c2
+R9
+32
+R335
+R336
+R337
+R13
+R14
+!s100 <nlWff>@P=@1S6;jBiJ3m3
+!i10b 1
+Emux1_serializer_block4
+R1
+R22
+R3
+R4
+R5
+R6
+Z338 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd
+Z339 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd
+l0
+L25
+VRZXD@K>lDZ[1KOM=FdU1o3
+R9
+32
+Z340 !s108 1429303632.608000
+Z341 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd|
+Z342 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd|
+R13
+R14
+!s100 m[klOc[4YMm]S;g>MmY;D3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block4 0 22 RZXD@K>lDZ[1KOM=FdU1o3
+l48
+L37
+VkbM[YASC9k:Y5h_T3cOVM2
+R9
+32
+R340
+R341
+R342
+R13
+R14
+!s100 S1_WiAkO1QG0<X8z>B6<_2
+!i10b 1
+Emux1_serializer_block5
+R1
+R22
+R3
+R4
+R5
+R6
+Z343 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd
+Z344 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd
+l0
+L25
+VURC3lP3>fgX15kWj6nzoT3
+R9
+32
+Z345 !s108 1429303632.749000
+Z346 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd|
+Z347 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd|
+R13
+R14
+!s100 @J5O<en;i:C@XNkfe9obC2
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block5 0 22 URC3lP3>fgX15kWj6nzoT3
+l48
+L37
+V02kb96:z3:0HAm5hAgP1i3
+R9
+32
+R345
+R346
+R347
+R13
+R14
+!s100 Nz>XiVCCaW70XQ^:Y>E]B3
+!i10b 1
+Emux1_serializer_block6
+R1
+R22
+R3
+R4
+R5
+R6
+Z348 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd
+Z349 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd
+l0
+L25
+VS3DB20zKJ;E@g;9GiV;Zf1
+R9
+32
+Z350 !s108 1429303632.862000
+Z351 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd|
+Z352 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd|
+R13
+R14
+!s100 ]KWcH4Ed6CzYG0z3T4In@0
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block6 0 22 S3DB20zKJ;E@g;9GiV;Zf1
+l48
+L37
+V^aJ8A?=XE_Cm9H6XM5l_92
+R9
+32
+R350
+R351
+R352
+R13
+R14
+!s100 U43lglH`^Q02;S]AW4d]D3
+!i10b 1
+Emux1_serializer_block7
+R1
+R22
+R3
+R4
+R5
+R6
+Z353 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd
+Z354 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd
+l0
+L25
+VZ:37V3Ug@UJmLPITzb@5P2
+R9
+32
+Z355 !s108 1429303632.979000
+Z356 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd|
+Z357 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd|
+R13
+R14
+!s100 5^W5QI^0gcmmk4U]0DY`C1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block7 0 22 Z:37V3Ug@UJmLPITzb@5P2
+l48
+L37
+VU3Z]FALnBFGz8ho4jBzF41
+R9
+32
+R355
+R356
+R357
+R13
+R14
+!s100 VBE5@H4Nc3=:]h_Xb]hP33
+!i10b 1
+Emux1_serializer_block8
+R1
+R22
+R3
+R4
+R5
+R6
+Z358 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd
+Z359 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd
+l0
+L25
+Vz[8644gkhJk4<9Z9Yj8U61
+R9
+32
+Z360 !s108 1429303633.098000
+Z361 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd|
+Z362 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd|
+R13
+R14
+!s100 0n0z16274Y:oBngkTf1ZP3
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block8 0 22 z[8644gkhJk4<9Z9Yj8U61
+l48
+L37
+VBH^7jmnKBg@4PC_nl^c6Z1
+R9
+32
+R360
+R361
+R362
+R13
+R14
+!s100 nZZ051zCc5VHFB_GI]gah3
+!i10b 1
+Emux1_serializer_block9
+R1
+R22
+R3
+R4
+R5
+R6
+Z363 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd
+Z364 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd
+l0
+L25
+V<8D9MHlEHk[:gW0KDQXk=3
+R9
+32
+Z365 !s108 1429303633.212000
+Z366 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd|
+Z367 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd|
+R13
+R14
+!s100 nzQ]ABgHE=C`IOzk]QLZL1
+!i10b 1
+Artl
+R22
+R3
+R4
+R5
+DEx4 work 22 mux1_serializer_block9 0 22 <8D9MHlEHk[:gW0KDQXk=3
+l47
+L37
+VMg?HJ@z3]dl<CTOPBBbfH1
+R9
+32
+R365
+R366
+R367
+R13
+R14
+!s100 FndhF3E`^Rd`ZF2NNg22S1
+!i10b 1

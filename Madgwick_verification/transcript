@@ -1,0 +1,2090 @@
+# Create design library
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Create and open project
+project new . compile_project
+# Loading project compile_project
+project open compile_project
+# Add source files to project
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd"
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd"
+# Calculate compilation order
+project calculateorder
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_seqments
+# -- Compiling architecture Madgwick_seqments_arch of Madgwick_seqments
+# Compile of Madgwick_segments.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Compile of alpha0_deserializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block
+# -- Compiling architecture rtl of alpha0_deserializer_block
+# Compile of alpha0_deserializer_block.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block1
+# -- Compiling architecture rtl of alpha0_deserializer_block1
+# Compile of alpha0_deserializer_block1.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block2
+# -- Compiling architecture rtl of alpha0_deserializer_block2
+# Compile of alpha0_deserializer_block2.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block3
+# -- Compiling architecture rtl of alpha0_deserializer_block3
+# Compile of alpha0_deserializer_block3.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block4
+# -- Compiling architecture rtl of alpha0_deserializer_block4
+# Compile of alpha0_deserializer_block4.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block5
+# -- Compiling architecture rtl of alpha0_deserializer_block5
+# Compile of alpha0_deserializer_block5.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block6
+# -- Compiling architecture rtl of alpha0_deserializer_block6
+# Compile of alpha0_deserializer_block6.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block7
+# -- Compiling architecture rtl of alpha0_deserializer_block7
+# Compile of alpha0_deserializer_block7.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block8
+# -- Compiling architecture rtl of alpha0_deserializer_block8
+# Compile of alpha0_deserializer_block8.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block9
+# -- Compiling architecture rtl of alpha0_deserializer_block9
+# Compile of alpha0_deserializer_block9.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block10
+# -- Compiling architecture rtl of alpha0_deserializer_block10
+# Compile of alpha0_deserializer_block10.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block11
+# -- Compiling architecture rtl of alpha0_deserializer_block11
+# Compile of alpha0_deserializer_block11.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block12
+# -- Compiling architecture rtl of alpha0_deserializer_block12
+# Compile of alpha0_deserializer_block12.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block13
+# -- Compiling architecture rtl of alpha0_deserializer_block13
+# Compile of alpha0_deserializer_block13.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block14
+# -- Compiling architecture rtl of alpha0_deserializer_block14
+# Compile of alpha0_deserializer_block14.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block15
+# -- Compiling architecture rtl of alpha0_deserializer_block15
+# Compile of alpha0_deserializer_block15.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block16
+# -- Compiling architecture rtl of alpha0_deserializer_block16
+# Compile of alpha0_deserializer_block16.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block17
+# -- Compiling architecture rtl of alpha0_deserializer_block17
+# Compile of alpha0_deserializer_block17.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block18
+# -- Compiling architecture rtl of alpha0_deserializer_block18
+# Compile of alpha0_deserializer_block18.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block19
+# -- Compiling architecture rtl of alpha0_deserializer_block19
+# Compile of alpha0_deserializer_block19.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block20
+# -- Compiling architecture rtl of alpha0_deserializer_block20
+# Compile of alpha0_deserializer_block20.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block21
+# -- Compiling architecture rtl of alpha0_deserializer_block21
+# Compile of alpha0_deserializer_block21.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block22
+# -- Compiling architecture rtl of alpha0_deserializer_block22
+# Compile of alpha0_deserializer_block22.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block23
+# -- Compiling architecture rtl of alpha0_deserializer_block23
+# Compile of alpha0_deserializer_block23.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block24
+# -- Compiling architecture rtl of alpha0_deserializer_block24
+# Compile of alpha0_deserializer_block24.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block25
+# -- Compiling architecture rtl of alpha0_deserializer_block25
+# Compile of alpha0_deserializer_block25.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block26
+# -- Compiling architecture rtl of alpha0_deserializer_block26
+# Compile of alpha0_deserializer_block26.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block27
+# -- Compiling architecture rtl of alpha0_deserializer_block27
+# Compile of alpha0_deserializer_block27.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block28
+# -- Compiling architecture rtl of alpha0_deserializer_block28
+# Compile of alpha0_deserializer_block28.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity Madgwick_correction_fixpt
+# -- Compiling architecture rtl of Madgwick_correction_fixpt
+# -- Loading entity Madgwick_correction_fixpt_en
+# -- Loading entity Madgwick_correction_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(742): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# -- Loading entity mux1_serializer_block1
+# -- Loading entity alpha0_deserializer_block1
+# -- Loading entity mux1_serializer_block9
+# -- Loading entity mux1_serializer_block10
+# -- Loading entity alpha0_deserializer_block8
+# -- Loading entity mux1_serializer_block12
+# -- Loading entity alpha0_deserializer_block10
+# -- Loading entity mux1_serializer_block3
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_0" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb_1_1_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block3
+# -- Loading entity mux1_serializer_block2
+# -- Loading entity alpha0_deserializer_block2
+# -- Loading entity mux1_serializer_block4
+# -- Loading entity alpha0_deserializer_block4
+# -- Loading entity mux1_serializer_block5
+# -- Loading entity alpha0_deserializer_block5
+# -- Loading entity alpha0_deserializer_block
+# -- Loading entity mux1_serializer_block14
+# -- Loading entity alpha0_deserializer_block14
+# -- Loading entity mux1_serializer_block6
+# -- Loading entity mux1_serializer_block7
+# -- Loading entity alpha0_deserializer_block6
+# -- Loading entity mux1_serializer_block13
+# -- Loading entity alpha0_deserializer_block11
+# -- Loading entity mux1_serializer_block19
+# -- Loading entity mux1_serializer_block15
+# -- Loading entity alpha0_deserializer_block20
+# -- Loading entity mux1_serializer_block17
+# -- Loading entity alpha0_deserializer_block15
+# -- Loading entity mux1_serializer_block29
+# -- Loading entity mux1_serializer_block24
+# -- Loading entity alpha0_deserializer_block28
+# -- Loading entity alpha0_deserializer_block18
+# -- Loading entity mux1_serializer_block20
+# -- Loading entity alpha0_deserializer_block21
+# -- Loading entity mux1_serializer_block21
+# -- Loading entity alpha0_deserializer_block22
+# -- Loading entity alpha0_deserializer_block19
+# -- Loading entity mux1_serializer_block16
+# -- Loading entity alpha0_deserializer_block13
+# -- Loading entity mux1_serializer_block26
+# -- Loading entity mux1_serializer_block27
+# -- Loading entity alpha0_deserializer_block26
+# -- Loading entity alpha0_deserializer_block17
+# -- Loading entity alpha0_deserializer_block12
+# -- Loading entity mux1_serializer_block23
+# -- Loading entity alpha0_deserializer_block24
+# -- Loading entity mux1_serializer_block8
+# -- Loading entity alpha0_deserializer_block7
+# -- Loading entity mux1_serializer_block11
+# -- Loading entity alpha0_deserializer_block9
+# -- Loading entity mux1_serializer_block18
+# -- Loading entity alpha0_deserializer_block16
+# -- Loading entity mux1_serializer_block25
+# -- Loading entity alpha0_deserializer_block25
+# -- Loading entity mux1_serializer_block22
+# -- Loading entity alpha0_deserializer_block23
+# -- Loading entity mux1_serializer_block28
+# -- Loading entity alpha0_deserializer_block27
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(7394): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_correction_fixpt_en
+# -- Compiling architecture rtl of Madgwick_correction_fixpt_en
+# Compile of Madgwick_correction_fixpt_en.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_correction_fixpt_pac
+# Compile of Madgwick_correction_fixpt_pac.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_correction_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_correction_fixpt_tc
+# Compile of Madgwick_correction_fixpt_tc.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Compile of mux1_serializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block
+# -- Compiling architecture rtl of mux1_serializer_block
+# Compile of mux1_serializer_block.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block1
+# -- Compiling architecture rtl of mux1_serializer_block1
+# Compile of mux1_serializer_block1.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block2
+# -- Compiling architecture rtl of mux1_serializer_block2
+# Compile of mux1_serializer_block2.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block3
+# -- Compiling architecture rtl of mux1_serializer_block3
+# Compile of mux1_serializer_block3.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block4
+# -- Compiling architecture rtl of mux1_serializer_block4
+# Compile of mux1_serializer_block4.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block5
+# -- Compiling architecture rtl of mux1_serializer_block5
+# Compile of mux1_serializer_block5.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block6
+# -- Compiling architecture rtl of mux1_serializer_block6
+# Compile of mux1_serializer_block6.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block7
+# -- Compiling architecture rtl of mux1_serializer_block7
+# Compile of mux1_serializer_block7.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block8
+# -- Compiling architecture rtl of mux1_serializer_block8
+# Compile of mux1_serializer_block8.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block9
+# -- Compiling architecture rtl of mux1_serializer_block9
+# Compile of mux1_serializer_block9.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block10
+# -- Compiling architecture rtl of mux1_serializer_block10
+# Compile of mux1_serializer_block10.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block11
+# -- Compiling architecture rtl of mux1_serializer_block11
+# Compile of mux1_serializer_block11.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block12
+# -- Compiling architecture rtl of mux1_serializer_block12
+# Compile of mux1_serializer_block12.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block13
+# -- Compiling architecture rtl of mux1_serializer_block13
+# Compile of mux1_serializer_block13.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block14
+# -- Compiling architecture rtl of mux1_serializer_block14
+# Compile of mux1_serializer_block14.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block15
+# -- Compiling architecture rtl of mux1_serializer_block15
+# Compile of mux1_serializer_block15.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block16
+# -- Compiling architecture rtl of mux1_serializer_block16
+# Compile of mux1_serializer_block16.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block17
+# -- Compiling architecture rtl of mux1_serializer_block17
+# Compile of mux1_serializer_block17.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block18
+# -- Compiling architecture rtl of mux1_serializer_block18
+# Compile of mux1_serializer_block18.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block19
+# -- Compiling architecture rtl of mux1_serializer_block19
+# Compile of mux1_serializer_block19.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block20
+# -- Compiling architecture rtl of mux1_serializer_block20
+# Compile of mux1_serializer_block20.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block21
+# -- Compiling architecture rtl of mux1_serializer_block21
+# Compile of mux1_serializer_block21.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block22
+# -- Compiling architecture rtl of mux1_serializer_block22
+# Compile of mux1_serializer_block22.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block23
+# -- Compiling architecture rtl of mux1_serializer_block23
+# Compile of mux1_serializer_block23.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block24
+# -- Compiling architecture rtl of mux1_serializer_block24
+# Compile of mux1_serializer_block24.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block25
+# -- Compiling architecture rtl of mux1_serializer_block25
+# Compile of mux1_serializer_block25.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block26
+# -- Compiling architecture rtl of mux1_serializer_block26
+# Compile of mux1_serializer_block26.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block27
+# -- Compiling architecture rtl of mux1_serializer_block27
+# Compile of mux1_serializer_block27.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block28
+# -- Compiling architecture rtl of mux1_serializer_block28
+# Compile of mux1_serializer_block28.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block29
+# -- Compiling architecture rtl of mux1_serializer_block29
+# Compile of mux1_serializer_block29.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_normalize_fixpt_pac
+# -- Compiling entity Madgwick_normalize_fixpt
+# -- Compiling architecture rtl of Madgwick_normalize_fixpt
+# Compile of Madgwick_normalize_fixpt.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_normalize_fixpt_pac
+# Compile of Madgwick_normalize_fixpt_pac.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Compile of alpha0_deserializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block
+# -- Compiling architecture rtl of alpha0_deserializer_block
+# Compile of alpha0_deserializer_block.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity Madgwick_qDot_fixpt
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt
+# -- Loading entity Madgwick_qDot_fixpt_enb_bypa
+# -- Loading entity Madgwick_qDot_fixpt_tc
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(139): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(145): (vcom-1131) Port "enb_1_1_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(145): (vcom-1131) Port "enb" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(145): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(145): (vcom-1130) Port "enb_1_2_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(145): (vcom-1130) Port "enb_1_2_0" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(989): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_qDot_fixpt_enb_bypa
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt_enb_bypa
+# Compile of Madgwick_qDot_fixpt_enb_bypa.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_qDot_fixpt_pac
+# Compile of Madgwick_qDot_fixpt_pac.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_qDot_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt_tc
+# Compile of Madgwick_qDot_fixpt_tc.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Compile of mux1_serializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity mux1_serializer_block
+# -- Compiling architecture rtl of mux1_serializer_block
+# Compile of mux1_serializer_block.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Compile of alpha0_deserializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity Madgwick_update_fixpt
+# -- Compiling architecture rtl of Madgwick_update_fixpt
+# -- Loading entity Madgwick_update_fixpt_enb_by
+# -- Loading entity Madgwick_update_fixpt_tc
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd(124): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd(1343): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_update_fixpt_enb_by
+# -- Compiling architecture rtl of Madgwick_update_fixpt_enb_by
+# Compile of Madgwick_update_fixpt_enb_by.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_update_fixpt_pac
+# Compile of Madgwick_update_fixpt_pac.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_update_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_update_fixpt_tc
+# Compile of Madgwick_update_fixpt_tc.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Compile of mux1_serializer.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity Madgwick_correction_fixpt
+# -- Compiling architecture rtl of Madgwick_correction_fixpt
+# -- Loading entity Madgwick_correction_fixpt_en
+# -- Loading entity Madgwick_correction_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(742): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(745): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block1
+# -- Loading entity alpha0_deserializer_block1
+# -- Loading entity mux1_serializer_block9
+# -- Loading entity mux1_serializer_block10
+# -- Loading entity alpha0_deserializer_block8
+# -- Loading entity mux1_serializer_block12
+# -- Loading entity alpha0_deserializer_block10
+# -- Loading entity mux1_serializer_block3
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_0" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb_1_1_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block3
+# -- Loading entity mux1_serializer_block2
+# -- Loading entity alpha0_deserializer_block2
+# -- Loading entity mux1_serializer_block4
+# -- Loading entity alpha0_deserializer_block4
+# -- Loading entity mux1_serializer_block5
+# -- Loading entity alpha0_deserializer_block5
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1131) Port "enb_1_2_0" is declared on component "alpha0_deserializer_block" but not on entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer_block" when binding to entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1130) Port "enb" of entity "alpha0_deserializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity mux1_serializer_block14
+# -- Loading entity alpha0_deserializer_block14
+# -- Loading entity mux1_serializer_block6
+# -- Loading entity mux1_serializer_block7
+# -- Loading entity alpha0_deserializer_block6
+# -- Loading entity mux1_serializer_block13
+# -- Loading entity alpha0_deserializer_block11
+# -- Loading entity mux1_serializer_block19
+# -- Loading entity mux1_serializer_block15
+# -- Loading entity alpha0_deserializer_block20
+# -- Loading entity mux1_serializer_block17
+# -- Loading entity alpha0_deserializer_block15
+# -- Loading entity mux1_serializer_block29
+# -- Loading entity mux1_serializer_block24
+# -- Loading entity alpha0_deserializer_block28
+# -- Loading entity alpha0_deserializer_block18
+# -- Loading entity mux1_serializer_block20
+# -- Loading entity alpha0_deserializer_block21
+# -- Loading entity mux1_serializer_block21
+# -- Loading entity alpha0_deserializer_block22
+# -- Loading entity alpha0_deserializer_block19
+# -- Loading entity mux1_serializer_block16
+# -- Loading entity alpha0_deserializer_block13
+# -- Loading entity mux1_serializer_block26
+# -- Loading entity mux1_serializer_block27
+# -- Loading entity alpha0_deserializer_block26
+# -- Loading entity alpha0_deserializer_block17
+# -- Loading entity alpha0_deserializer_block12
+# -- Loading entity mux1_serializer_block23
+# -- Loading entity alpha0_deserializer_block24
+# -- Loading entity mux1_serializer_block8
+# -- Loading entity alpha0_deserializer_block7
+# -- Loading entity mux1_serializer_block11
+# -- Loading entity alpha0_deserializer_block9
+# -- Loading entity mux1_serializer_block18
+# -- Loading entity alpha0_deserializer_block16
+# -- Loading entity mux1_serializer_block25
+# -- Loading entity alpha0_deserializer_block25
+# -- Loading entity mux1_serializer_block22
+# -- Loading entity alpha0_deserializer_block23
+# -- Loading entity mux1_serializer_block28
+# -- Loading entity alpha0_deserializer_block27
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(7394): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity Madgwick_qDot_fixpt
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt
+# -- Loading entity Madgwick_qDot_fixpt_enb_bypa
+# -- Loading entity Madgwick_qDot_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(139): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(142): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(989): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity Madgwick_update_fixpt
+# -- Compiling architecture rtl of Madgwick_update_fixpt
+# -- Loading entity Madgwick_update_fixpt_enb_by
+# -- Loading entity Madgwick_update_fixpt_tc
+# -- Loading entity mux1_serializer
+# -- Loading entity alpha0_deserializer
+# Compile of Madgwick_update_fixpt.vhd was successful.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity Madgwick_correction_fixpt
+# -- Compiling architecture rtl of Madgwick_correction_fixpt
+# -- Loading entity Madgwick_correction_fixpt_en
+# -- Loading entity Madgwick_correction_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(742): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(745): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block1
+# -- Loading entity alpha0_deserializer_block1
+# -- Loading entity mux1_serializer_block9
+# -- Loading entity mux1_serializer_block10
+# -- Loading entity alpha0_deserializer_block8
+# -- Loading entity mux1_serializer_block12
+# -- Loading entity alpha0_deserializer_block10
+# -- Loading entity mux1_serializer_block3
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_0" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb_1_1_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block3
+# -- Loading entity mux1_serializer_block2
+# -- Loading entity alpha0_deserializer_block2
+# -- Loading entity mux1_serializer_block4
+# -- Loading entity alpha0_deserializer_block4
+# -- Loading entity mux1_serializer_block5
+# -- Loading entity alpha0_deserializer_block5
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1131) Port "enb_1_2_0" is declared on component "alpha0_deserializer_block" but not on entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer_block" when binding to entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1130) Port "enb" of entity "alpha0_deserializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity mux1_serializer_block14
+# -- Loading entity alpha0_deserializer_block14
+# -- Loading entity mux1_serializer_block6
+# -- Loading entity mux1_serializer_block7
+# -- Loading entity alpha0_deserializer_block6
+# -- Loading entity mux1_serializer_block13
+# -- Loading entity alpha0_deserializer_block11
+# -- Loading entity mux1_serializer_block19
+# -- Loading entity mux1_serializer_block15
+# -- Loading entity alpha0_deserializer_block20
+# -- Loading entity mux1_serializer_block17
+# -- Loading entity alpha0_deserializer_block15
+# -- Loading entity mux1_serializer_block29
+# -- Loading entity mux1_serializer_block24
+# -- Loading entity alpha0_deserializer_block28
+# -- Loading entity alpha0_deserializer_block18
+# -- Loading entity mux1_serializer_block20
+# -- Loading entity alpha0_deserializer_block21
+# -- Loading entity mux1_serializer_block21
+# -- Loading entity alpha0_deserializer_block22
+# -- Loading entity alpha0_deserializer_block19
+# -- Loading entity mux1_serializer_block16
+# -- Loading entity alpha0_deserializer_block13
+# -- Loading entity mux1_serializer_block26
+# -- Loading entity mux1_serializer_block27
+# -- Loading entity alpha0_deserializer_block26
+# -- Loading entity alpha0_deserializer_block17
+# -- Loading entity alpha0_deserializer_block12
+# -- Loading entity mux1_serializer_block23
+# -- Loading entity alpha0_deserializer_block24
+# -- Loading entity mux1_serializer_block8
+# -- Loading entity alpha0_deserializer_block7
+# -- Loading entity mux1_serializer_block11
+# -- Loading entity alpha0_deserializer_block9
+# -- Loading entity mux1_serializer_block18
+# -- Loading entity alpha0_deserializer_block16
+# -- Loading entity mux1_serializer_block25
+# -- Loading entity alpha0_deserializer_block25
+# -- Loading entity mux1_serializer_block22
+# -- Loading entity alpha0_deserializer_block23
+# -- Loading entity mux1_serializer_block28
+# -- Loading entity alpha0_deserializer_block27
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(7394): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity Madgwick_qDot_fixpt
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt
+# -- Loading entity Madgwick_qDot_fixpt_enb_bypa
+# -- Loading entity Madgwick_qDot_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(139): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(142): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(989): VHDL Compiler exiting
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity Madgwick_correction_fixpt
+# -- Compiling architecture rtl of Madgwick_correction_fixpt
+# -- Loading entity Madgwick_correction_fixpt_en
+# -- Loading entity Madgwick_correction_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(742): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(745): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block1
+# -- Loading entity alpha0_deserializer_block1
+# -- Loading entity mux1_serializer_block9
+# -- Loading entity mux1_serializer_block10
+# -- Loading entity alpha0_deserializer_block8
+# -- Loading entity mux1_serializer_block12
+# -- Loading entity alpha0_deserializer_block10
+# -- Loading entity mux1_serializer_block3
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_0" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb_1_1_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block3
+# -- Loading entity mux1_serializer_block2
+# -- Loading entity alpha0_deserializer_block2
+# -- Loading entity mux1_serializer_block4
+# -- Loading entity alpha0_deserializer_block4
+# -- Loading entity mux1_serializer_block5
+# -- Loading entity alpha0_deserializer_block5
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1131) Port "enb_1_2_0" is declared on component "alpha0_deserializer_block" but not on entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer_block" when binding to entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1130) Port "enb" of entity "alpha0_deserializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity mux1_serializer_block14
+# -- Loading entity alpha0_deserializer_block14
+# -- Loading entity mux1_serializer_block6
+# -- Loading entity mux1_serializer_block7
+# -- Loading entity alpha0_deserializer_block6
+# -- Loading entity mux1_serializer_block13
+# -- Loading entity alpha0_deserializer_block11
+# -- Loading entity mux1_serializer_block19
+# -- Loading entity mux1_serializer_block15
+# -- Loading entity alpha0_deserializer_block20
+# -- Loading entity mux1_serializer_block17
+# -- Loading entity alpha0_deserializer_block15
+# -- Loading entity mux1_serializer_block29
+# -- Loading entity mux1_serializer_block24
+# -- Loading entity alpha0_deserializer_block28
+# -- Loading entity alpha0_deserializer_block18
+# -- Loading entity mux1_serializer_block20
+# -- Loading entity alpha0_deserializer_block21
+# -- Loading entity mux1_serializer_block21
+# -- Loading entity alpha0_deserializer_block22
+# -- Loading entity alpha0_deserializer_block19
+# -- Loading entity mux1_serializer_block16
+# -- Loading entity alpha0_deserializer_block13
+# -- Loading entity mux1_serializer_block26
+# -- Loading entity mux1_serializer_block27
+# -- Loading entity alpha0_deserializer_block26
+# -- Loading entity alpha0_deserializer_block17
+# -- Loading entity alpha0_deserializer_block12
+# -- Loading entity mux1_serializer_block23
+# -- Loading entity alpha0_deserializer_block24
+# -- Loading entity mux1_serializer_block8
+# -- Loading entity alpha0_deserializer_block7
+# -- Loading entity mux1_serializer_block11
+# -- Loading entity alpha0_deserializer_block9
+# -- Loading entity mux1_serializer_block18
+# -- Loading entity alpha0_deserializer_block16
+# -- Loading entity mux1_serializer_block25
+# -- Loading entity alpha0_deserializer_block25
+# -- Loading entity mux1_serializer_block22
+# -- Loading entity alpha0_deserializer_block23
+# -- Loading entity mux1_serializer_block28
+# -- Loading entity alpha0_deserializer_block27
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(7394): VHDL Compiler exiting
+# Compile of Madgwick_correction_fixpt.vhd failed.
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity Madgwick_qDot_fixpt
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt
+# -- Loading entity Madgwick_qDot_fixpt_enb_bypa
+# -- Loading entity Madgwick_qDot_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(139): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(142): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd(989): VHDL Compiler exiting
+# Compile of Madgwick_qDot_fixpt.vhd failed.
+# There were 2 file(s) that could not be compiled successfully
+set compcmd [project compileall -n]
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block1.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block2.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block3.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block4.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block5.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block6.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block7.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block8.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block9.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block10.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block11.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block12.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block13.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block14.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block15.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block16.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block17.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block18.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block19.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block20.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block21.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block22.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block23.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block24.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block25.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block26.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block27.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/alpha0_deserializer_block28.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_en.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block1.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block2.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block3.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block4.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block5.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block6.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block7.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block8.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block9.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block10.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block11.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block12.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block13.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block14.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block15.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block16.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block17.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block18.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block19.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block20.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block21.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block22.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block23.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block24.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block25.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block26.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block27.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block28.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/mux1_serializer_block29.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/alpha0_deserializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_pac.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt_tc.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/mux1_serializer.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update/Madgwick_update_fixpt.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd
+# Close project
+project close
+# reading modelsim.ini
+# Compile all files and report error
+if [catch {eval $compcmd}] {
+    exit -code 1
+}
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_seqments
+# -- Compiling architecture Madgwick_seqments_arch of Madgwick_seqments
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block
+# -- Compiling architecture rtl of alpha0_deserializer_block
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block1
+# -- Compiling architecture rtl of alpha0_deserializer_block1
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block2
+# -- Compiling architecture rtl of alpha0_deserializer_block2
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block3
+# -- Compiling architecture rtl of alpha0_deserializer_block3
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block4
+# -- Compiling architecture rtl of alpha0_deserializer_block4
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block5
+# -- Compiling architecture rtl of alpha0_deserializer_block5
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block6
+# -- Compiling architecture rtl of alpha0_deserializer_block6
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block7
+# -- Compiling architecture rtl of alpha0_deserializer_block7
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block8
+# -- Compiling architecture rtl of alpha0_deserializer_block8
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block9
+# -- Compiling architecture rtl of alpha0_deserializer_block9
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block10
+# -- Compiling architecture rtl of alpha0_deserializer_block10
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block11
+# -- Compiling architecture rtl of alpha0_deserializer_block11
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block12
+# -- Compiling architecture rtl of alpha0_deserializer_block12
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block13
+# -- Compiling architecture rtl of alpha0_deserializer_block13
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block14
+# -- Compiling architecture rtl of alpha0_deserializer_block14
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block15
+# -- Compiling architecture rtl of alpha0_deserializer_block15
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block16
+# -- Compiling architecture rtl of alpha0_deserializer_block16
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block17
+# -- Compiling architecture rtl of alpha0_deserializer_block17
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block18
+# -- Compiling architecture rtl of alpha0_deserializer_block18
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block19
+# -- Compiling architecture rtl of alpha0_deserializer_block19
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block20
+# -- Compiling architecture rtl of alpha0_deserializer_block20
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block21
+# -- Compiling architecture rtl of alpha0_deserializer_block21
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block22
+# -- Compiling architecture rtl of alpha0_deserializer_block22
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block23
+# -- Compiling architecture rtl of alpha0_deserializer_block23
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block24
+# -- Compiling architecture rtl of alpha0_deserializer_block24
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block25
+# -- Compiling architecture rtl of alpha0_deserializer_block25
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block26
+# -- Compiling architecture rtl of alpha0_deserializer_block26
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block27
+# -- Compiling architecture rtl of alpha0_deserializer_block27
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block28
+# -- Compiling architecture rtl of alpha0_deserializer_block28
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_correction_fixpt_en
+# -- Compiling architecture rtl of Madgwick_correction_fixpt_en
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_correction_fixpt_pac
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_correction_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_correction_fixpt_tc
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block
+# -- Compiling architecture rtl of mux1_serializer_block
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block1
+# -- Compiling architecture rtl of mux1_serializer_block1
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block2
+# -- Compiling architecture rtl of mux1_serializer_block2
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block3
+# -- Compiling architecture rtl of mux1_serializer_block3
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block4
+# -- Compiling architecture rtl of mux1_serializer_block4
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block5
+# -- Compiling architecture rtl of mux1_serializer_block5
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block6
+# -- Compiling architecture rtl of mux1_serializer_block6
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block7
+# -- Compiling architecture rtl of mux1_serializer_block7
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block8
+# -- Compiling architecture rtl of mux1_serializer_block8
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block9
+# -- Compiling architecture rtl of mux1_serializer_block9
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block10
+# -- Compiling architecture rtl of mux1_serializer_block10
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block11
+# -- Compiling architecture rtl of mux1_serializer_block11
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block12
+# -- Compiling architecture rtl of mux1_serializer_block12
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block13
+# -- Compiling architecture rtl of mux1_serializer_block13
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block14
+# -- Compiling architecture rtl of mux1_serializer_block14
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block15
+# -- Compiling architecture rtl of mux1_serializer_block15
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block16
+# -- Compiling architecture rtl of mux1_serializer_block16
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block17
+# -- Compiling architecture rtl of mux1_serializer_block17
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block18
+# -- Compiling architecture rtl of mux1_serializer_block18
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block19
+# -- Compiling architecture rtl of mux1_serializer_block19
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block20
+# -- Compiling architecture rtl of mux1_serializer_block20
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block21
+# -- Compiling architecture rtl of mux1_serializer_block21
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block22
+# -- Compiling architecture rtl of mux1_serializer_block22
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block23
+# -- Compiling architecture rtl of mux1_serializer_block23
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block24
+# -- Compiling architecture rtl of mux1_serializer_block24
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block25
+# -- Compiling architecture rtl of mux1_serializer_block25
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block26
+# -- Compiling architecture rtl of mux1_serializer_block26
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block27
+# -- Compiling architecture rtl of mux1_serializer_block27
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block28
+# -- Compiling architecture rtl of mux1_serializer_block28
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity mux1_serializer_block29
+# -- Compiling architecture rtl of mux1_serializer_block29
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_normalize_fixpt_pac
+# -- Compiling entity Madgwick_normalize_fixpt
+# -- Compiling architecture rtl of Madgwick_normalize_fixpt
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_normalize_fixpt_pac
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity alpha0_deserializer_block
+# -- Compiling architecture rtl of alpha0_deserializer_block
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_qDot_fixpt_enb_bypa
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt_enb_bypa
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_qDot_fixpt_pac
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_qDot_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_qDot_fixpt_tc
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Compiling entity mux1_serializer_block
+# -- Compiling architecture rtl of mux1_serializer_block
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity alpha0_deserializer
+# -- Compiling architecture rtl of alpha0_deserializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_update_fixpt_enb_by
+# -- Compiling architecture rtl of Madgwick_update_fixpt_enb_by
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package Madgwick_update_fixpt_pac
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_update_fixpt_tc
+# -- Compiling architecture rtl of Madgwick_update_fixpt_tc
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity mux1_serializer
+# -- Compiling architecture rtl of mux1_serializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Compiling entity Madgwick_update_fixpt
+# -- Compiling architecture rtl of Madgwick_update_fixpt
+# -- Loading entity Madgwick_update_fixpt_enb_by
+# -- Loading entity Madgwick_update_fixpt_tc
+# -- Loading entity mux1_serializer
+# -- Loading entity alpha0_deserializer
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package Madgwick_correction_fixpt_pac
+# -- Compiling entity Madgwick_correction_fixpt
+# -- Compiling architecture rtl of Madgwick_correction_fixpt
+# -- Loading entity Madgwick_correction_fixpt_en
+# -- Loading entity Madgwick_correction_fixpt_tc
+# -- Loading package Madgwick_update_fixpt_pac
+# -- Loading entity mux1_serializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(742): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer" when binding to entity "mux1_serializer".
+# 
+# -- Loading entity alpha0_deserializer
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(745): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer" when binding to entity "alpha0_deserializer".
+# 
+# -- Loading entity mux1_serializer_block1
+# -- Loading entity alpha0_deserializer_block1
+# -- Loading entity mux1_serializer_block9
+# -- Loading entity mux1_serializer_block10
+# -- Loading entity alpha0_deserializer_block8
+# -- Loading entity mux1_serializer_block12
+# -- Loading entity alpha0_deserializer_block10
+# -- Loading entity mux1_serializer_block3
+# -- Loading package Madgwick_qDot_fixpt_pac
+# -- Loading entity mux1_serializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_1" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1131) Port "enb_1_2_0" is declared on component "mux1_serializer_block" but not on entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1133) Type mismatch for port "in0" in component "mux1_serializer_block" when binding to entity "mux1_serializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb_1_1_1" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(772): (vcom-1130) Port "enb" of entity "mux1_serializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity alpha0_deserializer_block3
+# -- Loading entity mux1_serializer_block2
+# -- Loading entity alpha0_deserializer_block2
+# -- Loading entity mux1_serializer_block4
+# -- Loading entity alpha0_deserializer_block4
+# -- Loading entity mux1_serializer_block5
+# -- Loading entity alpha0_deserializer_block5
+# -- Loading entity alpha0_deserializer_block
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1131) Port "enb_1_2_0" is declared on component "alpha0_deserializer_block" but not on entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1133) Type mismatch for port "out0" in component "alpha0_deserializer_block" when binding to entity "alpha0_deserializer_block".
+# 
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(796): (vcom-1130) Port "enb" of entity "alpha0_deserializer_block" is not in the component being instantiated.
+# 
+# -- Loading entity mux1_serializer_block14
+# -- Loading entity alpha0_deserializer_block14
+# -- Loading entity mux1_serializer_block6
+# -- Loading entity mux1_serializer_block7
+# -- Loading entity alpha0_deserializer_block6
+# -- Loading entity mux1_serializer_block13
+# -- Loading entity alpha0_deserializer_block11
+# -- Loading entity mux1_serializer_block19
+# -- Loading entity mux1_serializer_block15
+# -- Loading entity alpha0_deserializer_block20
+# -- Loading entity mux1_serializer_block17
+# -- Loading entity alpha0_deserializer_block15
+# -- Loading entity mux1_serializer_block29
+# -- Loading entity mux1_serializer_block24
+# -- Loading entity alpha0_deserializer_block28
+# -- Loading entity alpha0_deserializer_block18
+# -- Loading entity mux1_serializer_block20
+# -- Loading entity alpha0_deserializer_block21
+# -- Loading entity mux1_serializer_block21
+# -- Loading entity alpha0_deserializer_block22
+# -- Loading entity alpha0_deserializer_block19
+# -- Loading entity mux1_serializer_block16
+# -- Loading entity alpha0_deserializer_block13
+# -- Loading entity mux1_serializer_block26
+# -- Loading entity mux1_serializer_block27
+# -- Loading entity alpha0_deserializer_block26
+# -- Loading entity alpha0_deserializer_block17
+# -- Loading entity alpha0_deserializer_block12
+# -- Loading entity mux1_serializer_block23
+# -- Loading entity alpha0_deserializer_block24
+# -- Loading entity mux1_serializer_block8
+# -- Loading entity alpha0_deserializer_block7
+# -- Loading entity mux1_serializer_block11
+# -- Loading entity alpha0_deserializer_block9
+# -- Loading entity mux1_serializer_block18
+# -- Loading entity alpha0_deserializer_block16
+# -- Loading entity mux1_serializer_block25
+# -- Loading entity alpha0_deserializer_block25
+# -- Loading entity mux1_serializer_block22
+# -- Loading entity alpha0_deserializer_block23
+# -- Loading entity mux1_serializer_block28
+# -- Loading entity alpha0_deserializer_block27
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction/Madgwick_correction_fixpt.vhd(7394): VHDL Compiler exiting
