@@ -1,4 +1,4 @@
-function rsr_tb
+function Madgwick_segments_verification_tb
 
     %------------------------
     % define constants
@@ -35,12 +35,12 @@ function rsr_tb
 
     % HdlCosimulation System Object creation (this Matlab function was created
     % by the cosimWizard).
-    Madgwick_hdl = hdlcosim_Madgwick_hdl;            
+    Madgwick_hdl = hdlcosim_madgwick_seqments;            
 
     % Simulate for Nclock rising edges (this will be the length of the
     % simulation)
-    num_tests = 100;
-    clocks_per_step = 20;
+    num_tests = 1;
+    clocks_per_step = 1000;
 
     for i=1:num_tests
         
@@ -80,7 +80,9 @@ function rsr_tb
 
         %-------------------------------------------------
         % convert inputs to fixed point
-        %-------------------------------------------------        
+        %-------------------------------------------------   
+        clkenable_fi = fi(1, 0, 1, 0);
+        
         q0_fi = fi(q0, fixed_point_signed, fixed_word_width, fixed_point_fraction);
         q1_fi = fi(q1, fixed_point_signed, fixed_word_width, fixed_point_fraction);
         q2_fi = fi(q2, fixed_point_signed, fixed_word_width, fixed_point_fraction);
@@ -108,7 +110,7 @@ function rsr_tb
         %-----------------------------------------------------------------
         for s = 1:clocks_per_step
             [q0_out_fi, q1_out_fi, q2_out_fi, q3_out_fi]            ...
-                            = step(Madgwick_hdl,                    ...
+                            = step(Madgwick_hdl, clkenable_fi,      ...
                                     q0_fi, q1_fi, q2_fi, q3_fi,     ...
                                     gx_fi, gy_fi, gz_fi,            ...
                                     ax_fi, ay_fi, az_fi,            ...
@@ -118,10 +120,10 @@ function rsr_tb
         %------------------------------------------------------
         % Convert fi to MATLab double
         %------------------------------------------------------
-        q0_out_fi = q0_out_fi / (2^fixed_point_fraction);
-        q1_out_fi = q1_out_fi / (2^fixed_point_fraction);
-        q2_out_fi = q2_out_fi / (2^fixed_point_fraction);
-        q3_out_fi = q3_out_fi / (2^fixed_point_fraction);
+        q0_out_fi = double(q0_out_fi);
+        q1_out_fi = double(q1_out_fi);
+        q2_out_fi = double(q2_out_fi);
+        q3_out_fi = double(q3_out_fi);
         
 
 

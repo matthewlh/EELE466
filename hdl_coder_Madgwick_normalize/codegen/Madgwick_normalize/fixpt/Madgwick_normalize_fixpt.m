@@ -13,9 +13,10 @@ ax = fi(ax_1, 1, 24, 12, fm);
 ay = fi(ay_1, 1, 24, 12, fm);
 az = fi(az_1, 1, 24, 12, fm);
 
-dotproduct = fi(ax*ax + ay*ay + az*az + aw*aw, 1, 24, 12, fm);
+dotproduct = fi(ax*ax + ay*ay + az*az + aw*aw, 0, 24, 12, fm);
 if dotproduct~=fi(0, 0, 1, 0, fm)
-    recipNorm = fi(fi_div(fi(1, 0, 1, 0, fm), sqrt( dotproduct )), 1, 24, 12, fm);
+    root = fi(sqrt( dotproduct ), 0, 24, 18, fm);
+    recipNorm = fi(fi_div(fi(1, 0, 1, 0, fm), root), 0, 24, 23, fm);
     ax = fi(ax*recipNorm, 1, 24, 12, fm);
     ay = fi(ay*recipNorm, 1, 24, 12, fm);
     az = fi(az*recipNorm, 1, 24, 12, fm);

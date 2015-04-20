@@ -41,7 +41,8 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-USE work.Madgwick_qDot_fixpt_pac.ALL;
+LIBRARY Madgwick_qDot;
+USE Madgwick_qDot.Madgwick_qDot_fixpt_pac.ALL;
 
 
 ENTITY Madgwick_qDot_fixpt IS

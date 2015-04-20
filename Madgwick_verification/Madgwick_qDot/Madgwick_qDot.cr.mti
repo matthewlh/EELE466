@@ -1,0 +1,83 @@
+C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer_block.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Madgwick_qDot_fixpt_pac
+-- Compiling entity mux1_serializer_block
+-- Compiling architecture rtl of mux1_serializer_block
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Madgwick_qDot_fixpt_tc
+-- Compiling architecture rtl of Madgwick_qDot_fixpt_tc
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer_block.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Madgwick_qDot_fixpt_pac
+-- Compiling entity alpha0_deserializer_block
+-- Compiling architecture rtl of alpha0_deserializer_block
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package Madgwick_qDot_fixpt_pac
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Madgwick_qDot_fixpt_enb_bypa
+-- Compiling architecture rtl of Madgwick_qDot_fixpt_enb_bypa
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/mux1_serializer.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Madgwick_qDot_fixpt_pac
+-- Compiling entity mux1_serializer
+-- Compiling architecture rtl of mux1_serializer
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/Madgwick_qDot_fixpt.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Madgwick_qDot_fixpt_pac
+-- Compiling entity Madgwick_qDot_fixpt
+-- Compiling architecture rtl of Madgwick_qDot_fixpt
+-- Loading entity Madgwick_qDot_fixpt_enb_bypa
+-- Loading entity Madgwick_qDot_fixpt_tc
+-- Loading entity mux1_serializer
+-- Loading entity alpha0_deserializer
+-- Loading entity mux1_serializer_block
+-- Loading entity alpha0_deserializer_block
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer.vhd {1 {vcom -work Madgwick_qDot -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot/alpha0_deserializer.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package Madgwick_qDot_fixpt_pac
+-- Compiling entity alpha0_deserializer
+-- Compiling architecture rtl of alpha0_deserializer
+
+} {} {}}

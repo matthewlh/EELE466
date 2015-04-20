@@ -20,7 +20,8 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-USE work.Madgwick_correction_fixpt_pac.ALL;
+LIBRARY Madgwick_correction;
+USE Madgwick_correction.Madgwick_correction_fixpt_pac.ALL;
 
 ENTITY alpha0_deserializer_block14 IS
   PORT( clk                               :   IN    std_logic;

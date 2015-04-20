@@ -1,0 +1,42 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize
+Emadgwick_seqments
+Z1 w1429565141
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize
+Z6 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+Z7 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+l0
+L20
+VZ2lU<a34@Al=bjLEj3MIe2
+!s100 oNbT5<LEBC7Y;SSF5Wi8j3
+Z8 OL;C;10.1c;51
+32
+!i10b 1
+Z9 !s108 1429566053.192000
+Z10 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
+Z11 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Amadgwick_seqments_arch
+R2
+R3
+R4
+Z14 DEx4 work 17 madgwick_seqments 0 22 Z2lU<a34@Al=bjLEj3MIe2
+l190
+L54
+Z15 V9;4`8G]SOa8A;HZ0C@fV@1
+Z16 !s100 EK]RW^UGEMckXh?[Q1bcg3
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13

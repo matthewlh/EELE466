@@ -13,10 +13,10 @@
     <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
     <param.hdl.BuildSpecifiedDirectory />
     <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_normalize\fixpt\Madgwick_normalize_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
-    <param.fixptconv.InstrumentedBuildChecksum>4211705897</param.fixptconv.InstrumentedBuildChecksum>
+    <param.fixptconv.InstrumentedBuildChecksum>3670511618</param.fixptconv.InstrumentedBuildChecksum>
     <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
-    <param.fixptconv.FixedPointValidationChecksum>3833405507</param.fixptconv.FixedPointValidationChecksum>
-    <param.fixptconv.FixedPointSourceCodeChecksum>3494393863</param.fixptconv.FixedPointSourceCodeChecksum>
+    <param.fixptconv.FixedPointValidationChecksum>566729668</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointSourceCodeChecksum>127577311</param.fixptconv.FixedPointSourceCodeChecksum>
     <param.fixptconv.FixedPointStaticAnalysisChecksum />
     <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_normalize_tb.m</param.fixptconv.DefaultTestFile>
     <param.fixptconv.ExcludedFixedPointVerificationFiles />
@@ -42,12 +42,9 @@
           <Variable name="az">
             <Column property="ProposedType" type="String" value="sfix24_En12" />
           </Variable>
-          <Variable name="dotproduct">
-            <Column property="ProposedType" type="String" value="sfix24_En12" />
-          </Variable>
-          <Variable name="recipNorm">
-            <Column property="ProposedType" type="String" value="sfix24_En12" />
-          </Variable>
+          <Variable name="dotproduct" />
+          <Variable name="recipNorm" />
+          <Variable name="root" />
         </Function>
       </UserEntities>
     </param.transformedVariables>
@@ -69,8 +66,8 @@
           </Variable>
           <Variable name="ax">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.99508175443253" />
-            <Column property="SimMax" type="Double" value="34.97685656254703" />
+            <Column property="SimMin" type="Double" value="-34.91611222119696" />
+            <Column property="SimMax" type="Double" value="34.98547951113261" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -82,8 +79,8 @@
           </Variable>
           <Variable name="ay">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.94339672558264" />
-            <Column property="SimMax" type="Double" value="34.80529900065547" />
+            <Column property="SimMin" type="Double" value="-34.95389326897214" />
+            <Column property="SimMax" type="Double" value="34.95306353180035" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -95,8 +92,8 @@
           </Variable>
           <Variable name="az">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.993768881159504" />
-            <Column property="SimMax" type="Double" value="34.74689136360557" />
+            <Column property="SimMin" type="Double" value="-34.976097644730274" />
+            <Column property="SimMax" type="Double" value="34.96441340683933" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -108,8 +105,8 @@
           </Variable>
           <Variable name="dotproduct">
             <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="5.84504871017081" />
-            <Column property="SimMax" type="Double" value="3322.690327829552" />
+            <Column property="SimMin" type="Double" value="0.8419689502294545" />
+            <Column property="SimMax" type="Double" value="3270.472934284752" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -121,8 +118,8 @@
           </Variable>
           <Variable name="recipNorm">
             <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="0.017348225807788876" />
-            <Column property="SimMax" type="Double" value="0.41362419279995943" />
+            <Column property="SimMin" type="Double" value="0.01748617096837871" />
+            <Column property="SimMax" type="Double" value="1.089812944338799" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -130,7 +127,20 @@
             <Column property="IsInteger" type="Boolean" value="false" />
             <Column property="RoundMode" type="String" value="Floor" />
             <Column property="OverflowMode" type="String" value="Wrap" />
-            <Column property="ProposedType" type="String" value="ufix24_En25" />
+            <Column property="ProposedType" type="String" value="ufix24_En23" />
+          </Variable>
+          <Variable name="root">
+            <Column property="Kind" type="String" value="local" />
+            <Column property="SimMin" type="Double" value="0.9175886606914094" />
+            <Column property="SimMax" type="Double" value="57.18804887635835" />
+            <MATLABType class="double" complex="false">
+              <size>1</size>
+              <size>1</size>
+            </MATLABType>
+            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="RoundMode" type="String" value="Floor" />
+            <Column property="OverflowMode" type="String" value="Wrap" />
+            <Column property="ProposedType" type="String" value="ufix24_En18" />
           </Variable>
         </Function>
       </ComputedEntities>
@@ -310,7 +320,6 @@
       <param.hdl.BuildDirectory />
       <param.hdl.BuildSpecifiedDirectory />
       <param.fixptconv.ShowCoverage />
-      <param.fixptconv.FixedPointStaticAnalysisChecksum />
       <param.fixptconv.ExcludedFixedPointVerificationFiles />
       <param.fixptconv.ExcludedFixedPointSimulationFiles />
       <param.fixptconv.FixptProposalKind />

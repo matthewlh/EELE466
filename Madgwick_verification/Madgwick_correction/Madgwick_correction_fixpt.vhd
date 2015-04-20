@@ -41,7 +41,8 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
-USE work.Madgwick_correction_fixpt_pac.ALL;
+LIBRARY Madgwick_correction;
+USE Madgwick_correction.Madgwick_correction_fixpt_pac.ALL;
 
 ENTITY Madgwick_correction_fixpt IS
   PORT( clk                               :   IN    std_logic;
@@ -733,193 +734,193 @@ ARCHITECTURE rtl OF Madgwick_correction_fixpt IS
 
   -- Component Configuration Statements
   FOR ALL : Madgwick_correction_fixpt_en
-    USE ENTITY work.Madgwick_correction_fixpt_en(rtl);
+    USE ENTITY Madgwick_correction.Madgwick_correction_fixpt_en(rtl);
 
   FOR ALL : Madgwick_correction_fixpt_tc
-    USE ENTITY work.Madgwick_correction_fixpt_tc(rtl);
+    USE ENTITY Madgwick_correction.Madgwick_correction_fixpt_tc(rtl);
 
   FOR ALL : mux1_serializer
-    USE ENTITY work.mux1_serializer(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer(rtl);
 
   FOR ALL : alpha0_deserializer
-    USE ENTITY work.alpha0_deserializer(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer(rtl);
 
   FOR ALL : mux1_serializer_block1
-    USE ENTITY work.mux1_serializer_block1(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block1(rtl);
 
   FOR ALL : alpha0_deserializer_block1
-    USE ENTITY work.alpha0_deserializer_block1(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block1(rtl);
 
   FOR ALL : mux1_serializer_block9
-    USE ENTITY work.mux1_serializer_block9(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block9(rtl);
 
   FOR ALL : mux1_serializer_block10
-    USE ENTITY work.mux1_serializer_block10(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block10(rtl);
 
   FOR ALL : alpha0_deserializer_block8
-    USE ENTITY work.alpha0_deserializer_block8(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block8(rtl);
 
   FOR ALL : mux1_serializer_block12
-    USE ENTITY work.mux1_serializer_block12(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block12(rtl);
 
   FOR ALL : alpha0_deserializer_block10
-    USE ENTITY work.alpha0_deserializer_block10(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block10(rtl);
 
   FOR ALL : mux1_serializer_block3
-    USE ENTITY work.mux1_serializer_block3(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block3(rtl);
 
   FOR ALL : mux1_serializer_block
-    USE ENTITY work.mux1_serializer_block(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block(rtl);
 
   FOR ALL : alpha0_deserializer_block3
-    USE ENTITY work.alpha0_deserializer_block3(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block3(rtl);
 
   FOR ALL : mux1_serializer_block2
-    USE ENTITY work.mux1_serializer_block2(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block2(rtl);
 
   FOR ALL : alpha0_deserializer_block2
-    USE ENTITY work.alpha0_deserializer_block2(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block2(rtl);
 
   FOR ALL : mux1_serializer_block4
-    USE ENTITY work.mux1_serializer_block4(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block4(rtl);
 
   FOR ALL : alpha0_deserializer_block4
-    USE ENTITY work.alpha0_deserializer_block4(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block4(rtl);
 
   FOR ALL : mux1_serializer_block5
-    USE ENTITY work.mux1_serializer_block5(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block5(rtl);
 
   FOR ALL : alpha0_deserializer_block5
-    USE ENTITY work.alpha0_deserializer_block5(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block5(rtl);
 
   FOR ALL : alpha0_deserializer_block
-    USE ENTITY work.alpha0_deserializer_block(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block(rtl);
 
   FOR ALL : mux1_serializer_block14
-    USE ENTITY work.mux1_serializer_block14(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block14(rtl);
 
   FOR ALL : alpha0_deserializer_block14
-    USE ENTITY work.alpha0_deserializer_block14(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block14(rtl);
 
   FOR ALL : mux1_serializer_block6
-    USE ENTITY work.mux1_serializer_block6(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block6(rtl);
 
   FOR ALL : mux1_serializer_block7
-    USE ENTITY work.mux1_serializer_block7(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block7(rtl);
 
   FOR ALL : alpha0_deserializer_block6
-    USE ENTITY work.alpha0_deserializer_block6(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block6(rtl);
 
   FOR ALL : mux1_serializer_block13
-    USE ENTITY work.mux1_serializer_block13(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block13(rtl);
 
   FOR ALL : alpha0_deserializer_block11
-    USE ENTITY work.alpha0_deserializer_block11(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block11(rtl);
 
   FOR ALL : mux1_serializer_block19
-    USE ENTITY work.mux1_serializer_block19(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block19(rtl);
 
   FOR ALL : mux1_serializer_block15
-    USE ENTITY work.mux1_serializer_block15(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block15(rtl);
 
   FOR ALL : alpha0_deserializer_block20
-    USE ENTITY work.alpha0_deserializer_block20(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block20(rtl);
 
   FOR ALL : mux1_serializer_block17
-    USE ENTITY work.mux1_serializer_block17(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block17(rtl);
 
   FOR ALL : alpha0_deserializer_block15
-    USE ENTITY work.alpha0_deserializer_block15(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block15(rtl);
 
   FOR ALL : mux1_serializer_block29
-    USE ENTITY work.mux1_serializer_block29(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block29(rtl);
 
   FOR ALL : mux1_serializer_block24
-    USE ENTITY work.mux1_serializer_block24(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block24(rtl);
 
   FOR ALL : alpha0_deserializer_block28
-    USE ENTITY work.alpha0_deserializer_block28(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block28(rtl);
 
   FOR ALL : alpha0_deserializer_block18
-    USE ENTITY work.alpha0_deserializer_block18(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block18(rtl);
 
   FOR ALL : mux1_serializer_block20
-    USE ENTITY work.mux1_serializer_block20(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block20(rtl);
 
   FOR ALL : alpha0_deserializer_block21
-    USE ENTITY work.alpha0_deserializer_block21(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block21(rtl);
 
   FOR ALL : mux1_serializer_block21
-    USE ENTITY work.mux1_serializer_block21(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block21(rtl);
 
   FOR ALL : alpha0_deserializer_block22
-    USE ENTITY work.alpha0_deserializer_block22(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block22(rtl);
 
   FOR ALL : alpha0_deserializer_block19
-    USE ENTITY work.alpha0_deserializer_block19(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block19(rtl);
 
   FOR ALL : mux1_serializer_block16
-    USE ENTITY work.mux1_serializer_block16(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block16(rtl);
 
   FOR ALL : alpha0_deserializer_block13
-    USE ENTITY work.alpha0_deserializer_block13(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block13(rtl);
 
   FOR ALL : mux1_serializer_block26
-    USE ENTITY work.mux1_serializer_block26(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block26(rtl);
 
   FOR ALL : mux1_serializer_block27
-    USE ENTITY work.mux1_serializer_block27(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block27(rtl);
 
   FOR ALL : alpha0_deserializer_block26
-    USE ENTITY work.alpha0_deserializer_block26(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block26(rtl);
 
   FOR ALL : alpha0_deserializer_block17
-    USE ENTITY work.alpha0_deserializer_block17(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block17(rtl);
 
   FOR ALL : alpha0_deserializer_block12
-    USE ENTITY work.alpha0_deserializer_block12(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block12(rtl);
 
   FOR ALL : mux1_serializer_block23
-    USE ENTITY work.mux1_serializer_block23(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block23(rtl);
 
   FOR ALL : alpha0_deserializer_block24
-    USE ENTITY work.alpha0_deserializer_block24(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block24(rtl);
 
   FOR ALL : mux1_serializer_block8
-    USE ENTITY work.mux1_serializer_block8(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block8(rtl);
 
   FOR ALL : alpha0_deserializer_block7
-    USE ENTITY work.alpha0_deserializer_block7(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block7(rtl);
 
   FOR ALL : mux1_serializer_block11
-    USE ENTITY work.mux1_serializer_block11(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block11(rtl);
 
   FOR ALL : alpha0_deserializer_block9
-    USE ENTITY work.alpha0_deserializer_block9(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block9(rtl);
 
   FOR ALL : mux1_serializer_block18
-    USE ENTITY work.mux1_serializer_block18(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block18(rtl);
 
   FOR ALL : alpha0_deserializer_block16
-    USE ENTITY work.alpha0_deserializer_block16(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block16(rtl);
 
   FOR ALL : mux1_serializer_block25
-    USE ENTITY work.mux1_serializer_block25(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block25(rtl);
 
   FOR ALL : alpha0_deserializer_block25
-    USE ENTITY work.alpha0_deserializer_block25(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block25(rtl);
 
   FOR ALL : mux1_serializer_block22
-    USE ENTITY work.mux1_serializer_block22(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block22(rtl);
 
   FOR ALL : alpha0_deserializer_block23
-    USE ENTITY work.alpha0_deserializer_block23(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block23(rtl);
 
   FOR ALL : mux1_serializer_block28
-    USE ENTITY work.mux1_serializer_block28(rtl);
+    USE ENTITY Madgwick_correction.mux1_serializer_block28(rtl);
 
   FOR ALL : alpha0_deserializer_block27
-    USE ENTITY work.alpha0_deserializer_block27(rtl);
+    USE ENTITY Madgwick_correction.alpha0_deserializer_block27(rtl);
 
   -- Signals
   SIGNAL enb_1_4_1                        : std_logic;

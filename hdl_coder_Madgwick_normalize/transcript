@@ -1,0 +1,48 @@
+# Create design library
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Create and open project
+project new . compile_project
+# Loading project compile_project
+project open compile_project
+# Add source files to project
+vmap Madgwick_correction C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_correction
+# Modifying C:/Users/z68j959/Documents/GitHub/EELE466/hdl_coder_Madgwick_normalize/compile_project.mpf
+vmap Madgwick_normalize C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize
+# Modifying C:/Users/z68j959/Documents/GitHub/EELE466/hdl_coder_Madgwick_normalize/compile_project.mpf
+vmap Madgwick_qDot C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_qDot
+# Modifying C:/Users/z68j959/Documents/GitHub/EELE466/hdl_coder_Madgwick_normalize/compile_project.mpf
+vmap Madgwick_update C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_update
+# Modifying C:/Users/z68j959/Documents/GitHub/EELE466/hdl_coder_Madgwick_normalize/compile_project.mpf
+project addfile "C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd"
+# Calculate compilation order
+project calculateorder
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Madgwick_seqments
+# -- Compiling architecture Madgwick_seqments_arch of Madgwick_seqments
+# Compile of Madgwick_segments.vhd was successful.
+# All compile dependencies have been resolved.
+set compcmd [project compileall -n]
+# vcom -work work -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
+# Close project
+project close
+# reading modelsim.ini
+# Compile all files and report error
+if [catch {eval $compcmd}] {
+    exit -code 1
+}
+# Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd(15): Library madgwick_correction not found.
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd(16): Library madgwick_normalize not found.
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd(17): Library madgwick_qdot not found.
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd(18): Library madgwick_update not found.
+# ** Error: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd(20): VHDL Compiler exiting

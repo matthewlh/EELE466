@@ -12,6 +12,11 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 
+library Madgwick_correction;
+library Madgwick_normalize;
+library Madgwick_qDot;
+library Madgwick_update;
+
 entity Madgwick_seqments is 
 	PORT(
 		-- Clock stuff
@@ -190,8 +195,8 @@ begin
 		qDot_0: component  Madgwick_qDot_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				q0                                => q0,
 				q1                                => q1,
@@ -214,8 +219,8 @@ begin
 		a_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => ax,
 				ay1                               => ay,
@@ -233,8 +238,8 @@ begin
 		m_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => mx,
 				ay1                               => my,
@@ -253,8 +258,8 @@ begin
 		correction_0: component  Madgwick_correction_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				q0                                => q0,
 				q1                                => q1,
@@ -280,8 +285,8 @@ begin
 		s_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => s0,
 				ay1                               => s1,
@@ -300,8 +305,8 @@ begin
 		update: component  Madgwick_update_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 			
 				q01                               => q0,
 				q11                               => q1,
@@ -333,8 +338,8 @@ begin
 		q_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => q0_updated,
 				ay1                               => q1_updated,
