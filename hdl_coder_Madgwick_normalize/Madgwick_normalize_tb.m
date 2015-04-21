@@ -16,7 +16,7 @@ for i=1:N
     %-------------------------------------------------
     % Drive the function with the random input values
     %-------------------------------------------------
-    [gx, gy, gz, gw] = Madgwick_normalize(gx, gy, gz, 0);
+    [gx, gy, gz, gw] = Madgwick_normalize(gx, gy, gz, 0 , 0);
     
 end
 

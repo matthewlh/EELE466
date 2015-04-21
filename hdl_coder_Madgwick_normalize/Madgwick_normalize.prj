@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.matlabhdlcoder" plugin-version="R2013a">
-  <configuration file="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize\Madgwick_normalize.prj" location="C:\Users\z68j959\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize" name="Madgwick_normalize" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
+  <configuration file="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize\Madgwick_normalize.prj" location="C:\Users\w92p177\Documents\GitHub\EELE466\hdl_coder_Madgwick_normalize" name="Madgwick_normalize" target="target.matlab.hdlcoder" target-name="HDL Code Generation">
     <param.AutoInferDefaultFile />
     <param.AutoInferUseVariableSize>false</param.AutoInferUseVariableSize>
     <param.AutoInferUseUnboundedSize>false</param.AutoInferUseUnboundedSize>
@@ -13,10 +13,10 @@
     <param.hdl.BuildDirectory>option.hdl.ProjectDirectory</param.hdl.BuildDirectory>
     <param.hdl.BuildSpecifiedDirectory />
     <param.fixptconv.InstrumentedMexFile>${PROJECT_ROOT}\codegen\Madgwick_normalize\fixpt\Madgwick_normalize_float_mex.mexw64</param.fixptconv.InstrumentedMexFile>
-    <param.fixptconv.InstrumentedBuildChecksum>3670511618</param.fixptconv.InstrumentedBuildChecksum>
+    <param.fixptconv.InstrumentedBuildChecksum>1982602297</param.fixptconv.InstrumentedBuildChecksum>
     <param.fixptconv.ShowCoverage>true</param.fixptconv.ShowCoverage>
-    <param.fixptconv.FixedPointValidationChecksum>566729668</param.fixptconv.FixedPointValidationChecksum>
-    <param.fixptconv.FixedPointSourceCodeChecksum>127577311</param.fixptconv.FixedPointSourceCodeChecksum>
+    <param.fixptconv.FixedPointValidationChecksum>433735805</param.fixptconv.FixedPointValidationChecksum>
+    <param.fixptconv.FixedPointSourceCodeChecksum>4174553965</param.fixptconv.FixedPointSourceCodeChecksum>
     <param.fixptconv.FixedPointStaticAnalysisChecksum />
     <param.fixptconv.DefaultTestFile>${PROJECT_ROOT}\Madgwick_normalize_tb.m</param.fixptconv.DefaultTestFile>
     <param.fixptconv.ExcludedFixedPointVerificationFiles />
@@ -42,9 +42,9 @@
           <Variable name="az">
             <Column property="ProposedType" type="String" value="sfix24_En12" />
           </Variable>
-          <Variable name="dotproduct" />
-          <Variable name="recipNorm" />
-          <Variable name="root" />
+          <Variable name="rsr_result">
+            <Column property="ProposedType" type="String" value="ufix24" />
+          </Variable>
         </Function>
       </UserEntities>
     </param.transformedVariables>
@@ -66,8 +66,8 @@
           </Variable>
           <Variable name="ax">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.91611222119696" />
-            <Column property="SimMax" type="Double" value="34.98547951113261" />
+            <Column property="SimMin" type="Double" value="-34.99508175443253" />
+            <Column property="SimMax" type="Double" value="34.96142799732648" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -79,8 +79,8 @@
           </Variable>
           <Variable name="ay">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.95389326897214" />
-            <Column property="SimMax" type="Double" value="34.95306353180035" />
+            <Column property="SimMin" type="Double" value="-34.981740138062854" />
+            <Column property="SimMax" type="Double" value="34.97685656254703" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -92,8 +92,8 @@
           </Variable>
           <Variable name="az">
             <Column property="Kind" type="String" value="input_output" />
-            <Column property="SimMin" type="Double" value="-34.976097644730274" />
-            <Column property="SimMax" type="Double" value="34.96441340683933" />
+            <Column property="SimMin" type="Double" value="-34.99482464960623" />
+            <Column property="SimMax" type="Double" value="34.984118588632924" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
@@ -103,44 +103,18 @@
             <Column property="OverflowMode" type="String" value="Wrap" />
             <Column property="ProposedType" type="String" value="sfix24_En17" />
           </Variable>
-          <Variable name="dotproduct">
-            <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="0.8419689502294545" />
-            <Column property="SimMax" type="Double" value="3270.472934284752" />
+          <Variable name="rsr_result">
+            <Column property="Kind" type="String" value="input" />
+            <Column property="SimMin" type="Double" value="0.0" />
+            <Column property="SimMax" type="Double" value="0.0" />
             <MATLABType class="double" complex="false">
               <size>1</size>
               <size>1</size>
             </MATLABType>
-            <Column property="IsInteger" type="Boolean" value="false" />
+            <Column property="IsInteger" type="Boolean" value="true" />
             <Column property="RoundMode" type="String" value="Floor" />
             <Column property="OverflowMode" type="String" value="Wrap" />
-            <Column property="ProposedType" type="String" value="ufix24_En12" />
-          </Variable>
-          <Variable name="recipNorm">
-            <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="0.01748617096837871" />
-            <Column property="SimMax" type="Double" value="1.089812944338799" />
-            <MATLABType class="double" complex="false">
-              <size>1</size>
-              <size>1</size>
-            </MATLABType>
-            <Column property="IsInteger" type="Boolean" value="false" />
-            <Column property="RoundMode" type="String" value="Floor" />
-            <Column property="OverflowMode" type="String" value="Wrap" />
-            <Column property="ProposedType" type="String" value="ufix24_En23" />
-          </Variable>
-          <Variable name="root">
-            <Column property="Kind" type="String" value="local" />
-            <Column property="SimMin" type="Double" value="0.9175886606914094" />
-            <Column property="SimMax" type="Double" value="57.18804887635835" />
-            <MATLABType class="double" complex="false">
-              <size>1</size>
-              <size>1</size>
-            </MATLABType>
-            <Column property="IsInteger" type="Boolean" value="false" />
-            <Column property="RoundMode" type="String" value="Floor" />
-            <Column property="OverflowMode" type="String" value="Wrap" />
-            <Column property="ProposedType" type="String" value="ufix24_En18" />
+            <Column property="ProposedType" type="String" value="ufix1" />
           </Variable>
         </Function>
       </ComputedEntities>
@@ -472,7 +446,7 @@
       <param.hdl.BitstreamBuildMode />
     </unset>
     <fileset.entrypoints>
-      <file custom-data-expanded="true" value="${PROJECT_ROOT}\Madgwick_normalize.m">
+      <file custom-data-expanded="false" value="${PROJECT_ROOT}\Madgwick_normalize.m">
         <Inputs fileName="Madgwick_normalize.m" functionName="Madgwick_normalize">
           <Input Name="ax">
             <Class>double</Class>
@@ -493,6 +467,12 @@
             <Complex>false</Complex>
           </Input>
           <Input Name="aw">
+            <Class>double</Class>
+            <UserDefined>false</UserDefined>
+            <Size>1 x 1</Size>
+            <Complex>false</Complex>
+          </Input>
+          <Input Name="rsr_result">
             <Class>double</Class>
             <UserDefined>false</UserDefined>
             <Size>1 x 1</Size>

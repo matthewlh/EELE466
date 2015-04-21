@@ -4,7 +4,7 @@
 %                                                                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %#codegen
-function [ax,ay,az,aw] = Madgwick_normalize_fixpt(ax_1,ay_1,az_1,aw_1)
+function [ax,ay,az,aw] = Madgwick_normalize_fixpt(ax_1,ay_1,az_1,aw_1,rsr_result)
 
 fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128);
 
@@ -13,34 +13,12 @@ ax = fi(ax_1, 1, 24, 12, fm);
 ay = fi(ay_1, 1, 24, 12, fm);
 az = fi(az_1, 1, 24, 12, fm);
 
-dotproduct = fi(ax*ax + ay*ay + az*az + aw*aw, 0, 24, 12, fm);
-if dotproduct~=fi(0, 0, 1, 0, fm)
-    root = fi(sqrt( dotproduct ), 0, 24, 18, fm);
-    recipNorm = fi(fi_div(fi(1, 0, 1, 0, fm), root), 0, 24, 23, fm);
-    ax = fi(ax*recipNorm, 1, 24, 12, fm);
-    ay = fi(ay*recipNorm, 1, 24, 12, fm);
-    az = fi(az*recipNorm, 1, 24, 12, fm);
-    aw = fi(aw*recipNorm, 1, 24, 12, fm);
-end
-end
-
-
-function c = fi_div(a,b)
-coder.inline( 'always' );
-if isfi( a ) && isfi( b )
-    a1 = fi( a, 'RoundMode', 'fix' );
-    b1 = fi( b, 'RoundMode', 'fix' );
-    c1 = divide( divideType( a1, b1 ), a1, b1 );
-    c = fi( c1, numerictype( c1 ), fimath( a ) );
-else
-    c = a/b;
-end
-end
-
-
-function ntype = divideType(a,b)
-coder.inline( 'always' );
-nt1 = numerictype( a );
-nt2 = numerictype( b );
-ntype = numerictype( nt1.Signed || nt2.Signed, nt1.WordLength + nt2.WordLength, (nt1.FractionLength - nt2.FractionLength + nt1.WordLength + nt2.WordLength - max( nt1.WordLength, nt2.WordLength )) );
+%dotproduct = ax * ax + ay * ay + az * az + aw * aw;
+%if dotproduct ~= 0
+%    root = sqrt(dotproduct);
+%    recipNorm = 1 / root;
+ax = fi(ax*rsr_result, 1, 24, 12, fm);
+ay = fi(ay*rsr_result, 1, 24, 12, fm);
+az = fi(az*rsr_result, 1, 24, 12, fm);
+aw = fi(aw*rsr_result, 1, 24, 12, fm);
 end

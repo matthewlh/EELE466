@@ -13,13 +13,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 
 library Madgwick_correction;
-
 library Madgwick_normalize;
-
-library Madgwick_update;
-
 library Madgwick_qDot;
-use Madgwick_qDot.ALL;
+library Madgwick_update;
 
 entity Madgwick_seqments is 
 	PORT(
@@ -119,6 +115,7 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  ay1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  az1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  aw1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+			  rsrresult                         :   IN    std_logic_vector(23 DOWNTO 0);  -- ufix24_En12
 			  ceout                             :   OUT   std_logic;
 			  ax                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  ay                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
@@ -149,11 +146,20 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  );
 	END COMPONENT;
 	
+	COMPONENT RSR is 
+	port(
+		CLK				: in 	STD_LOGIC;
+		INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
+		OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
+	);
+	  
+	end COMPONENT;
+	
 	------------------------------
 	---- Constant Declaration ----
 	------------------------------
-	constant beta			: std_logic_vector(23 DOWNTO 0) := x"000000";
-	constant sampleTime	: std_logic_vector(23 DOWNTO 0) := x"000000";
+	constant beta			: std_logic_vector(23 DOWNTO 0) := x"00019A";	-- 0x00019A = 0.10009765625 in sfix24_En12
+	constant sampleTime	    : std_logic_vector(23 DOWNTO 0) := x"000008";	-- 0x000008 = 1/512 in sfix24_En12
 
 	----------------------------
 	---- Signal Declaration ----
@@ -190,6 +196,11 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 	signal q1_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	signal q2_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	signal q3_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
+	
+	signal arsr_out	: STD_LOGIC_VECTOR(31 downto 0);
+	signal mrsr_out	: STD_LOGIC_VECTOR(31 downto 0);
+	signal srsr_out	: STD_LOGIC_VECTOR(31 downto 0);
+	signal qrsr_out	: STD_LOGIC_VECTOR(31 downto 0);
 
 begin
 		--------------------------------
@@ -199,8 +210,8 @@ begin
 		qDot_0: component  Madgwick_qDot_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				q0                                => q0,
 				q1                                => q1,
@@ -223,14 +234,14 @@ begin
 		a_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => ax,
 				ay1                               => ay,
 				az1                               => az,
 				aw1                               => x"000000",
-				
+				rsrresult						  => arsr_out,
 				ceout                             => open,
 				
 				ax                                => ax_norm,
@@ -242,14 +253,14 @@ begin
 		m_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => mx,
 				ay1                               => my,
 				az1                               => mz,
 				aw1                               => x"000000",
-				
+				rsrresult						  => mrsr_out,
 				ceout                             => open,
 				
 				ax                                => mx_norm,
@@ -262,8 +273,8 @@ begin
 		correction_0: component  Madgwick_correction_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				q0                                => q0,
 				q1                                => q1,
@@ -277,7 +288,6 @@ begin
 				mx                                => mx_norm,
 				my                                => my_norm,
 				mz                                => mz_norm,
-				
 				ceout                             => open,
 				
 				s0                                => s0,
@@ -289,14 +299,14 @@ begin
 		s_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => s0,
 				ay1                               => s1,
 				az1                               => s2,
 				aw1                               => s3,
-				
+				rsrresult						  => srsr_out,
 				ceout                             => open,
 				
 				ax                                => s0_norm,
@@ -309,8 +319,8 @@ begin
 		update: component  Madgwick_update_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 			
 				q01                               => q0,
 				q11                               => q1,
@@ -342,22 +352,49 @@ begin
 		q_norm: component  Madgwick_normalize_fixpt 
 			PORT MAP( 
 				clk                               => clk,
-				reset                             => '0',
-				clkenable                         => '1',
+				reset                             => reset,
+				clkenable                         => clkenable,
 				
 				ax1                               => q0_updated,
 				ay1                               => q1_updated,
 				az1                               => q2_updated,
 				aw1                               => q3_updated,
-				
+				rsrresult						  => qrsr_out,
 				ceout                             => open,
 				
 				ax                                => q0_norm,
 				ay                                => q1_norm,
 				az                                => q2_norm,
 				aw                                => q3_norm
-			  );
+			);
 			  
+		q_rsr: component RSR
+			PORT MAP (
+				CLK								  => clk,
+				INPUT_X							  => ((q0_updated * q0_updated) + (q1_updated * q1_updated) + (q2_updated * q2_updated) + (q3_updated * q3_updated)),
+				OUTPUT_Y		 				  => qrsr_out
+			);	
+		
+		s_rsr: component RSR
+		PORT MAP (
+			CLK								  => clk,
+			INPUT_X							  => ((s0 * s0) + (s1 * s1) + (s2 * s2) + (s3 * s3)),
+			OUTPUT_Y		 				  => srsr_out
+		);	
+		
+		m_rsr: component RSR
+		PORT MAP (
+			CLK								  => clk,
+			INPUT_X							  => ((mx * mx) + (my * my) + (mz * mz)),
+			OUTPUT_Y		 				  => mrsr_out
+		);	
+		
+		a_rsr: component RSR
+		PORT MAP (
+			CLK								  => clk,
+			INPUT_X							  => ((ax * ax) + (ay * ay) + (az * az)),
+			OUTPUT_Y		 				  => arsr_out
+		);	
 		
 		---------------------------
 		---- Signal Assignment ----
