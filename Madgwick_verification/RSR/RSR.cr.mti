@@ -1,0 +1,40 @@
+C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/interate.vhd {1 {vcom -work RSR -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/interate.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity INTERATE
+-- Compiling architecture INTERATE_arch of INTERATE
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/lzc.vhd {1 {vcom -work RSR -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/lzc.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity lzc
+-- Compiling architecture behavioral of lzc
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/init_guess.vhd {1 {vcom -work RSR -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/init_guess.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity INIT_GUESS
+-- Compiling architecture INIT_GUESS_arch of INIT_GUESS
+
+} {} {}} C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/rsr.vhd {1 {vcom -work RSR -2002 -explicit -vopt C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/RSR/rsr.vhd
+Model Technology ModelSim SE-64 vcom 10.1c Compiler 2012.07 Jul 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity RSR
+-- Compiling architecture RSR_arch of RSR
+
+} {} {}}

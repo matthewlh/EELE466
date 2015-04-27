@@ -10,12 +10,13 @@ VYb=GnamahMa>8nP=nO?Qf3
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OL;O;10.1c;51
+Z1 dC:\Users\z68j959\Documents\GitHub\EELE466\Madgwick_verification
 Emadgwick_seqments
-Z1 w1429565141
-Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dC:\Users\z68j959\Documents\GitHub\EELE466\Madgwick_verification
+Z2 w1430167956
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
 Z6 8C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
 Z7 FC:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd
 l0
@@ -23,7 +24,7 @@ L20
 VZ2lU<a34@Al=bjLEj3MIe2
 Z8 OL;C;10.1c;51
 32
-Z9 !s108 1429567828.721000
+Z9 !s108 1430171133.441000
 Z10 !s90 -work|work|-2002|-explicit|-vopt|C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
 Z11 !s107 C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_segments.vhd|
 Z12 o-work work -2002 -explicit
@@ -31,19 +32,19 @@ Z13 tExplicit 1
 !s100 oNbT5<LEBC7Y;SSF5Wi8j3
 !i10b 1
 Amadgwick_seqments_arch
-R2
 R3
 R4
+R5
 DEx4 work 17 madgwick_seqments 0 22 Z2lU<a34@Al=bjLEj3MIe2
 32
-l190
+l195
 L54
-V9;4`8G]SOa8A;HZ0C@fV@1
+V<1j^QohUkhMaMNoVM0;<k3
+!s100 RY^n1<_K[jL3Pkhbc??O03
 R8
 R9
 R10
 R11
 R12
 R13
-!s100 EK]RW^UGEMckXh?[Q1bcg3
 !i10b 1

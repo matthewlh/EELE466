@@ -1,0 +1,43 @@
+if { [catch {vsimulink madgwick_seqments -t 1ns -novopt  } errmsg] } {
+    echo "Loading simulation and HDL Verifier library failed."; 
+    echo $errmsg; 
+    quit -f; 
+}
+# vsim -foreign {simlinkserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -batch  ; -socket 60320 } -t 1ns -novopt madgwick_seqments 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading std.standard
+# Refreshing C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/work.madgwick_seqments(madgwick_seqments_arch)
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.madgwick_seqments(madgwick_seqments_arch)
+# Loading madgwick_qdot.madgwick_qdot_fixpt_pac
+# Loading madgwick_qdot.madgwick_qdot_fixpt(rtl)
+# Loading madgwick_qdot.madgwick_qdot_fixpt_enb_bypa(rtl)
+# Loading madgwick_qdot.madgwick_qdot_fixpt_tc(rtl)
+# Loading madgwick_qdot.mux1_serializer(rtl)
+# Loading madgwick_qdot.alpha0_deserializer(rtl)
+# Loading madgwick_qdot.mux1_serializer_block(rtl)
+# Loading madgwick_qdot.alpha0_deserializer_block(rtl)
+# Loading madgwick_normalize.madgwick_normalize_fixpt(rtl)
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "aw1".
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm File: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd Line: 52
+# ** Failure: (vsim-3807) Types do not match between component and entity for port "aw".
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm File: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd Line: 57
+# ** Warning: (vsim-3473) Component instance "rsr_0 : RSR" is not bound.
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm File: C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd
+# Fatal error in file C:/Users/z68j959/Documents/GitHub/EELE466/Madgwick_verification/Madgwick_normalize/Madgwick_normalize_fixpt.vhd
+#  while elaborating region: /madgwick_seqments/a_norm
+# Load interrupted
+# Error loading design
+# Error: Error loading design 
+#        Executing onElabError command(s): echo "Loading simulation and HDL Verifier library failed."; quit -f 
+# Loading simulation and HDL Verifier library failed. 

@@ -1,10 +1,10 @@
-function [ax, ay, az, aw] = Madgwick_normalize(ax, ay, az, aw, rsr_result)
+function [ax, ay, az, aw] = Madgwick_normalize(ax, ay, az, aw)
 
-%dotproduct = ax * ax + ay * ay + az * az + aw * aw;
+dotproduct = ax * ax + ay * ay + az * az + aw * aw;
 
-%if dotproduct ~= 0
-%    root = sqrt(dotproduct);
-%    recipNorm = 1 / root;
+if dotproduct ~= 0
+   
+   rsr_result = RSR(dotproduct);
 
     ax = ax * rsr_result;
     ay = ay * rsr_result;

@@ -1,15 +1,16 @@
 proc vsimulink {args} {
   lappend sllibarg -foreign \{simlinkserver \{C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll\}
+  set socket 60320
   if {[catch {lsearch -exact $args -socket} idx]==0  && $idx >= 0} {
     set socket [lindex $args [expr {$idx + 1}]]
     set args [lreplace $args $idx [expr {$idx + 1}]]
-    append socketarg " \; -socket " "$socket"
-    lappend sllibarg $socketarg
   }
-  set runmode "GUI"
+  set runmode "Batch"
   if { $runmode == "Batch" || $runmode == "Batch with Xterm"} {
     lappend sllibarg " \; -batch"
   }
+  append socketarg " \; -socket " "$socket"
+  lappend sllibarg $socketarg
   lappend sllibarg \}
   set args [linsert $args 0 vsim]
   lappend args [join $sllibarg]
@@ -36,7 +37,7 @@ proc vsimmatlabsysobj {args} {
     append socketarg " \; -socket " "$socket"
     lappend sllibarg $socketarg
   }
-  set runmode "GUI"
+  set runmode "Batch"
   if { $runmode == "Batch" || $runmode == "Batch with Xterm"} {
     lappend sllibarg " \; -batch"
   }
@@ -45,6 +46,11 @@ proc vsimmatlabsysobj {args} {
   lappend args [join $sllibarg]
   uplevel 1 [join $args]
 }
-vsimmatlabsysobj madgwick_seqments -t 1ns -novopt  -socket 50312;
-add wave madgwick_seqments/*;
+onElabError {echo "Loading simulation and HDL Verifier library failed."; quit -f}
+transcript file "tp8a376984_b6b6_4f81_a254_82f81138aaa7.log"
+if { [catch {vsimulink madgwick_seqments -t 1ns -novopt  } errmsg] } {
+    echo "Loading simulation and HDL Verifier library failed."; 
+    echo $errmsg; 
+    quit -f; 
+}
 

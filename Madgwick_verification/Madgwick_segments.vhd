@@ -115,7 +115,6 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  ay1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  az1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  aw1                               :   IN    std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-			  rsrresult                         :   IN    std_logic_vector(23 DOWNTO 0);  -- ufix24_En0
 			  ceout                             :   OUT   std_logic;
 			  ax                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 			  ay                                :   OUT   std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
@@ -145,15 +144,6 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 			  s3                                :   OUT   std_logic_vector(23 DOWNTO 0)  -- sfix24_En12
 			  );
 	END COMPONENT;
-	
-	COMPONENT RSR is 
-	port(
-		CLK				: in 	STD_LOGIC;
-		INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
-		OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
-	);
-	  
-	end COMPONENT;
 	
 	------------------------------
 	---- Constant Declaration ----
@@ -241,7 +231,6 @@ begin
 				ay1                               => ay,
 				az1                               => az,
 				aw1                               => x"000000",
-				rsrresult						  => arsr_out,
 				ceout                             => open,
 				
 				ax                                => ax_norm,
@@ -288,7 +277,6 @@ begin
 				mx                                => mx_norm,
 				my                                => my_norm,
 				mz                                => mz_norm,
-				rsrresult						  => mrsr_out,
 				ceout                             => open,
 				
 				s0                                => s0,
@@ -307,7 +295,6 @@ begin
 				ay1                               => s1,
 				az1                               => s2,
 				aw1                               => s3,
-				rsrresult						  => srsr_out,
 				ceout                             => open,
 				
 				ax                                => s0_norm,
@@ -360,7 +347,6 @@ begin
 				ay1                               => q1_updated,
 				az1                               => q2_updated,
 				aw1                               => q3_updated,
-				rsrresult						  => qrsr_out,
 				ceout                             => open,
 				
 				ax                                => q0_norm,
@@ -368,34 +354,7 @@ begin
 				az                                => q2_norm,
 				aw                                => q3_norm
 			);
-			  
-		q_rsr: component RSR
-			PORT MAP (
-				CLK								  => clk,
-				INPUT_X							  => ((q0_updated * q0_updated) + (q1_updated * q1_updated) + (q2_updated * q2_updated) + (q3_updated * q3_updated)),
-				OUTPUT_Y		 				  => qrsr_out,
-			);	
 		
-		s_rsr: component RSR
-		PORT MAP (
-			CLK								  => clk,
-			INPUT_X							  => ((s0 * s0) + (s1 * s1) + (s2 * s2) + (s3 * s3)),
-			OUTPUT_Y		 				  => srsr_out,
-		);	
-		
-		m_rsr: component RSR
-		PORT MAP (
-			CLK								  => clk,
-			INPUT_X							  => ((mx * mx) + (my * my) + (mz * mz)),
-			OUTPUT_Y		 				  => mrsr_out,
-		);	
-		
-		a_rsr: component RSR
-		PORT MAP (
-			CLK								  => clk,
-			INPUT_X							  => ((ax * ax) + (ay * ay) + (az * az),
-			OUTPUT_Y		 				  => arsr_out,
-		);	
 		
 		---------------------------
 		---- Signal Assignment ----

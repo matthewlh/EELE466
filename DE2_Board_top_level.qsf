@@ -563,7 +563,6 @@ set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_upda
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt_pac.vhd"
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd"
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_normalize/Madgwick_normalize_fixpt_pac.vhd"
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_normalize/Madgwick_normalize_fixpt.vhd"
 set_global_assignment -name VHDL_FILE hdl_coder_Madgwick_correction/codegen/Madgwick_correction/hdlsrc/alpha0_deserializer_block28.vhd
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block29.vhd" -library Madgwick_correction
@@ -644,4 +643,4 @@ set_global_assignment -name VHDL_FILE "vhdl source/DE2_Board_top_level.vhd" -lib
 set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_segments.vhd" -library top
 set_global_assignment -name SDC_FILE DE2_System.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE "C:/Users/w92p177/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
+set_global_assignment -name SLD_FILE "C:/Users/z68j959/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
