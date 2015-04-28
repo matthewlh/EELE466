@@ -12,10 +12,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.ALL;
 
-library Madgwick_correction;
-library Madgwick_normalize;
-library Madgwick_qDot;
-library Madgwick_update;
+-- library Madgwick_correction;
+-- library Madgwick_normalize;
+-- library Madgwick_qDot;
+-- library Madgwick_update;
 
 entity Madgwick_seqments is 
 	PORT(
@@ -186,11 +186,6 @@ architecture Madgwick_seqments_arch of Madgwick_seqments is
 	signal q1_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	signal q2_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
 	signal q3_norm		: std_logic_vector(23 DOWNTO 0);  -- sfix24_En12
-	
-	signal arsr_out	: STD_LOGIC_VECTOR(31 downto 0);
-	signal mrsr_out	: STD_LOGIC_VECTOR(31 downto 0);
-	signal srsr_out	: STD_LOGIC_VECTOR(31 downto 0);
-	signal qrsr_out	: STD_LOGIC_VECTOR(31 downto 0);
 
 begin
 		--------------------------------

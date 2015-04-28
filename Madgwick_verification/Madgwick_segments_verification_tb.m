@@ -40,7 +40,7 @@ function Madgwick_segments_verification_tb
     % Simulate for Nclock rising edges (this will be the length of the
     % simulation)
     num_tests = 1;
-    clocks_per_step = 1000;
+    clocks_per_step = 50;
 
     for i=1:num_tests
         

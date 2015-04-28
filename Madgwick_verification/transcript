@@ -1,52 +1,214 @@
-proc vsimulink {args} {
-  lappend sllibarg -foreign \{simlinkserver \{C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll\}
-  set socket 60320
-  if {[catch {lsearch -exact $args -socket} idx]==0  && $idx >= 0} {
-    set socket [lindex $args [expr {$idx + 1}]]
-    set args [lreplace $args $idx [expr {$idx + 1}]]
-  }
-  set runmode "Batch"
-  if { $runmode == "Batch" || $runmode == "Batch with Xterm"} {
-    lappend sllibarg " \; -batch"
-  }
-  append socketarg " \; -socket " "$socket"
-  lappend sllibarg $socketarg
-  lappend sllibarg \}
-  set args [linsert $args 0 vsim]
-  lappend args [join $sllibarg]
-  uplevel 1 [join $args]
-}
-proc vsimmatlab {args} {
-  lappend mllibarg -foreign \{matlabclient \{C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdlc_gcc450.dll\}
-  lappend mllibarg \}
-  lappend mlinput 
-  lappend mlinput [join $args]
-  lappend mlinput [join $mllibarg]
-   set mlinput [linsert $mlinput 0 vsim]
-  uplevel 1 [join $mlinput]
-}
-proc wrapverilog {args} {
-
-  error "wrapverilog has been removed. HDL Verifier now supports Verilog models directly, without requiring a VHDL wrapper."}
-
-
-proc vsimmatlabsysobj {args} {
-  lappend sllibarg -foreign \{matlabsysobjserver \{C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll\}
-  if {[catch {lsearch -exact $args -socket} idx]==0  && $idx >= 0} {
-    set socket [lindex $args [expr {$idx + 1}]]
-    set args [lreplace $args $idx [expr {$idx + 1}]]
-    append socketarg " \; -socket " "$socket"
-    lappend sllibarg $socketarg
-  }
-  set runmode "Batch"
-  if { $runmode == "Batch" || $runmode == "Batch with Xterm"} {
-    lappend sllibarg " \; -batch"
-  }
-  lappend sllibarg \}
-  set args [linsert $args 0 vsim]
-  lappend args [join $sllibarg]
-  uplevel 1 [join $args]
-}
-onElabError {echo "Loading simulation and HDL Verifier library failed."; quit -f}
-# echo "Loading simulation and HDL Verifier library failed."; quit -f
-transcript file "tp8a376984_b6b6_4f81_a254_82f81138aaa7.log"
+# Reading C:/modeltech64_10.1c/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do compile_and_launch.tcl 
+# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 50691 } -t 1ns -novopt madgwick_seqments 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.madgwick_seqments(madgwick_seqments_arch)
+# Loading work.madgwick_qdot_fixpt(rtl)
+# Loading work.madgwick_normalize_fixpt(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rsr(rsr_arch)
+# Loading work.init_guess(init_guess_arch)
+# Loading work.lzc(behavioral)
+# Loading work.lookup(lookup_arch)
+# Loading work.iterate(iterate_arch)
+# Loading work.madgwick_correction_fixpt_pac
+# Loading work.madgwick_correction_fixpt(rtl)
+# Loading work.madgwick_update_fixpt(rtl)
+# Loading C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/q_norm/rsr_0/INIT_GUESS_0
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/s_norm/rsr_0/INIT_GUESS_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/m_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/m_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/m_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/m_norm
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/m_norm/rsr_0/INIT_GUESS_0
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /madgwick_seqments/a_norm/rsr_0/INIT_GUESS_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+#    Time: 25 ns  Iteration: 1  Instance: /madgwick_seqments/correction_0
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 35 ns  Iteration: 1  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 35 ns  Iteration: 1  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 35 ns  Iteration: 1  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 35 ns  Iteration: 1  Instance: /madgwick_seqments/s_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 55 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 1  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.

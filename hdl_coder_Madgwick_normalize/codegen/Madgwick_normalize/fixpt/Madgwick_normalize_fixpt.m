@@ -26,7 +26,7 @@ function OUTPUT_Y = f13_RSR(INPUT_X)
 
 fm = fimath('RoundingMethod', 'Floor', 'OverflowAction', 'Wrap', 'ProductMode', 'FullPrecision', 'MaxProductWordLength', 128, 'SumMode', 'FullPrecision', 'MaxSumWordLength', 128);
 % recipricol square root
-OUTPUT_Y = fi(fi_div(fi(1, 0, 1, 0, fm), sqrt( INPUT_X )), 0, 24, 23, fm);
+OUTPUT_Y = fi(fi_div(fi(1, 0, 1, 0, fm), sqrt( INPUT_X )), 0, 24, 25, fm);
 end
 
 
