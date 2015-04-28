@@ -556,91 +556,19 @@ set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_qdot"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_normalize"
 set_global_assignment -name SEARCH_PATH "c:\\users\\z68j959\\documents\\github\\eele466\\vhdl source\\madgwick_correction"
+set_global_assignment -name VHDL_FILE Madgwick_verification/rsr.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_update_fixpt.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_segments.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_qDot_fixpt.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_normalize_fixpt.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_correction_fixpt_pac.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/Madgwick_correction_fixpt.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/lzc.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/lookup.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/interate.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/init_guess.vhd
+set_global_assignment -name VHDL_FILE Madgwick_verification/DE2_Board_top_level.vhd
 set_global_assignment -name QIP_FILE clockPLL.qip
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/alpha0_deserializer.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/mux1_serializer.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt_tc.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt_pac.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt_enb_by.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_update/Madgwick_update_fixpt.vhd"
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_normalize/Madgwick_normalize_fixpt.vhd"
-set_global_assignment -name VHDL_FILE hdl_coder_Madgwick_correction/codegen/Madgwick_correction/hdlsrc/alpha0_deserializer_block28.vhd
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block29.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block28.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block27.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block26.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block25.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block24.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block23.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block22.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block21.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block20.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block19.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block18.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block17.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block16.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block15.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block14.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block13.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block12.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block11.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block10.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block9.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block8.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block7.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block6.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block5.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block4.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block3.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block2.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block1.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer_block.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/mux1_serializer.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_tc.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_pac.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt_en.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/Madgwick_correction_fixpt.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block27.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block26.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block25.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block24.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block23.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block22.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block21.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block20.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block19.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block18.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block17.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block16.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block15.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block14.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block13.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block12.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block11.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block10.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block9.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block8.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block7.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block6.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block5.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block4.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block3.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block2.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block1.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer_block.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_correction/alpha0_deserializer.vhd" -library Madgwick_correction
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block2.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block1.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer_block.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/mux1_serializer.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_tc.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_pac.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt_enb_bypa.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/Madgwick_qDot_fixpt.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/alpha0_deserializer_block.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_qDot/alpha0_deserializer.vhd" -library Madgwick_qDot
-set_global_assignment -name VHDL_FILE "vhdl source/DE2_Board_top_level.vhd" -library top
-set_global_assignment -name VHDL_FILE "vhdl source/Madgwick_segments.vhd" -library top
 set_global_assignment -name SDC_FILE DE2_System.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE "C:/Users/z68j959/Documents/GitHub/EELE466/output_files/stp2_auto_stripped.stp"
