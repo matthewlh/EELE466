@@ -34,7 +34,7 @@ architecture lookup_arch of lookup is
 		lookup_proc : process (CLK, ADDRESS)
 			begin
 				if(rising_edge(CLK)) then
-					case ADDRESS is
+					case ADDRESS(15 downto 4) is
 """
 
 footer = """
@@ -45,18 +45,18 @@ footer = """
 end architecture;
 """
 
-with open('..\\vhdl source\\lookup.vhd', 'w') as f:
+with open('lookup.vhd', 'w') as f:
 
     print "Writing Header"
     f.write(header)
 
     print "Writing select statement"
-    for i in range(0x10000, 0x20000):
+    for i in range(0x10000, 0x20000, 0x10):
         i_flt = float(i) / (2**16)
         y = (i_flt) ** (-3/2)
         y = int(round(y * (2**16)))
 
-        s = 6*"\t" + """when x"{0:04X}" => RESULT <= x"{1:08X}";\n""".format((i&0xFFFF), y)
+        s = 6*"\t" + """when x"{0:03X}" => RESULT <= x"{1:08X}";\n""".format((i&0xFFFF) >> 4, y)
 
         f.write(s)
     
