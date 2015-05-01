@@ -45,6 +45,6 @@ proc vsimmatlabsysobj {args} {
   lappend args [join $sllibarg]
   uplevel 1 [join $args]
 }
-vsimmatlabsysobj madgwick_seqments -t 1ns -novopt  -socket 50691;
+vsimmatlabsysobj madgwick_seqments -t 1ns -novopt  -socket 65351;
 add wave madgwick_seqments/*;
 

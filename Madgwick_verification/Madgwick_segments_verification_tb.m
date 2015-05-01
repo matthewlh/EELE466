@@ -39,8 +39,13 @@ function Madgwick_segments_verification_tb
 
     % Simulate for Nclock rising edges (this will be the length of the
     % simulation)
-    num_tests = 1;
+    num_tests = 100;
     clocks_per_step = 50;
+    
+    q0_diff_max = 0;
+    q1_diff_max = 0;
+    q2_diff_max = 0;
+    q3_diff_max = 0;
 
     for i=1:num_tests
         
@@ -138,13 +143,53 @@ function Madgwick_segments_verification_tb
                                     mx, my, mz);
 
         
-        disp(sprintf('[q0_out_fi, q1_out_fi, q2_out_fi, q3_out_fi]'));
-        disp(sprintf('[%04.4f, %04.4f, %04.4f, %04.4f]', q0_out_fi, q1_out_fi, q2_out_fi, q3_out_fi));
+%         disp(sprintf('Inputs:'));
+%         disp(sprintf('q = [%04.4f, %04.4f, %04.4f, %04.4f]',        ...
+%                                     q0, q1, q2, q3));
+%         disp(sprintf('g = [%04.4f, %04.4f, %04.4f]',                ...
+%                                     gx, gy, gz));
+%         disp(sprintf('a = [%04.4f, %04.4f, %04.4f]',                ...
+%                                     ax, ay, az));
+%         disp(sprintf('m = [%04.4f, %04.4f, %04.4f]',                ...
+%                                     mx, my, mz));
+%         
+%                                 
+%         disp(sprintf(' '));
+%         disp(sprintf('Outputs:'));
+%         disp(sprintf('[q0_out_fi, q1_out_fi, q2_out_fi, q3_out_fi]'));
+%         disp(sprintf('[%04.4f, %04.4f, %04.4f, %04.4f]', q0_out_fi, q1_out_fi, q2_out_fi, q3_out_fi));
+%         
+%         disp(sprintf('[q0_out,    q1_out,    q2_out,    q3_out   ]'));
+%         disp(sprintf('[%04.4f, %04.4f, %04.4f, %04.4f]', q0_out, q1_out, q2_out, q3_out));
+%         disp(' ');
         
-        disp(sprintf('[q0_out,    q1_out,    q2_out,    q3_out   ]'));
-        disp(sprintf('[%04.4f, %04.4f, %04.4f, %04.4f]', q0_out, q1_out, q2_out, q3_out));
-        disp(' ');
+        
+        q0_diff = q0_out_fi - q0_out;
+        q1_diff = q1_out_fi - q1_out;
+        q2_diff = q2_out_fi - q2_out;
+        q3_diff = q3_out_fi - q3_out;
+        
+        if(q0_diff_max < q0_diff)
+            q0_diff_max = q0_diff;
+        end;
+        
+        if(q1_diff_max < q1_diff)
+            q1_diff_max = q1_diff;
+        end;
+        
+        if(q2_diff_max < q2_diff)
+            q2_diff_max = q2_diff;
+        end;
+        
+        if(q3_diff_max < q3_diff)
+            q3_diff_max = q3_diff;
+        end;
 
     end
+    
+    
+    disp(sprintf('[q0_diff_max, q1_diff_max, q2_diff_max, q3_diff_max]'));
+    disp(sprintf('[%04.4f, %04.4f, %04.4f, %04.4f]', q0_diff_max,    q1_diff_max,    q2_diff_max,    q3_diff_max));
+    disp(' ');
 
 end

@@ -9,7 +9,7 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # do compile_and_launch.tcl 
-# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 50691 } -t 1ns -novopt madgwick_seqments 
+# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 65351 } -t 1ns -novopt madgwick_seqments 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -208,6 +208,44 @@
 #    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
 # ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
 #    Time: 75 ns  Iteration: 2  Instance: /madgwick_seqments/q_norm
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
 # done
 # Simulation halt requested by foreign interface.
 # done
