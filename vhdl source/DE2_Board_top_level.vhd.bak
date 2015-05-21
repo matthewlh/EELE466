@@ -1,13 +1,15 @@
 ----------------------------------------------------------------------------------
 --
 -- Author:           Dr. Ross Snider
---           	     Electrical and Computer Engineering Department
---           	     Montana State University
+--           	     	Electrical and Computer Engineering Department
+--           	     	Montana State University
 --                   Bozeman, MT  59717
+--
 -- Modified by:      David Keltgen
--- 					 Matthew Handley
+-- 					 	Matthew Handley
 --
 -- Create Date:      09/10/2010
+-- Modified Date:		01/20/2015
 -- Design Name:      DE2_Board
 -- Module Name:      DE2_Board 
 -- Target Board:     Altera DE2 Evaluation Board
@@ -64,10 +66,12 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
+--use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.numeric_std.ALL;
 
 entity DE2_Board_top_level is
+
 	port
 	(		
 		-- Clocks
@@ -228,106 +232,47 @@ end DE2_Board_top_level;
 
 architecture behavioral of DE2_Board_top_level is
 
-    ---------------------------------------------------------------
-   -- ADD NIOS component below this comment block
-   -- This can done as follows (assumming nios_system is the SOPC name)
-   -- Open the file: nios_system.vhd
-   -- Search for the following string "entity nios_system is"
-   -- Cut and paste the entity below
-   -- change the word entity to to the word component, delete the word "is"
-   -- change end entity to end component
-   ---------------------------------------------------------------
+	-------------------------------
+	---- Component Declaration ----
+	-------------------------------
 	
-	component Nios_Qsys is
-        port (
-            clk_clk                             : in    std_logic                     := 'X';             -- clk
-            switches_external_connection_export : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
-            leds_external_connection_export     : out   std_logic_vector(17 downto 0);                    -- export
-            reset_reset_n                       : in    std_logic                     := 'X';             -- reset_n
-            sdram_addr                          : out   std_logic_vector(11 downto 0);                    -- addr
-            sdram_ba                            : out   std_logic_vector(1 downto 0);                     -- ba
-            sdram_cas_n                         : out   std_logic;                                        -- cas_n
-            sdram_cke                           : out   std_logic;                                        -- cke
-            sdram_cs_n                          : out   std_logic;                                        -- cs_n
-            sdram_dq                            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
-            sdram_dqm                           : out   std_logic_vector(1 downto 0);                     -- dqm
-            sdram_ras_n                         : out   std_logic;                                        -- ras_n
-            sdram_we_n                          : out   std_logic                                         -- we_n
-        );
-    end component Nios_Qsys;
-	
-	--Copyright (C) 1991-2013 Altera Corporation
-	--Your use of Altera Corporation's design tools, logic functions 
-	--and other software and tools, and its AMPP partner logic 
-	--functions, and any output files from any of the foregoing 
-	--(including device programming or simulation files), and any 
-	--associated documentation or information are expressly subject 
-	--to the terms and conditions of the Altera Program License 
-	--Subscription Agreement, Altera MegaCore Function License 
-	--Agreement, or other applicable license agreement, including, 
-	--without limitation, that your use is for the sole purpose of 
-	--programming logic devices manufactured by Altera and sold by 
-	--Altera or its authorized distributors.  Please refer to the 
-	--applicable agreement for further details.
-	component clockPLL
-		PORT
-		(
-			inclk0		: IN STD_LOGIC  := '0';
-			c0				: OUT STD_LOGIC ;
-			c1				: OUT STD_LOGIC 
-		);
-	end component;
+	component RSR is 
+		port(
+			CLK				: in 	STD_LOGIC;
+			INPUT_X			: in  STD_LOGIC_VECTOR(31 downto 0);
+			OUTPUT_Y			: out STD_LOGIC_VECTOR(31 downto 0)
+		);		  
+	end component;	
 
-	signal dram_ba : std_logic_vector(1 downto 0); 
-	signal dram_dqm : std_logic_vector(1 downto 0); 
-	signal clk_nios : std_logic;
+	----------------------------
+	---- Signal Declaration ----
+	----------------------------
+	signal X : STD_LOGIC_VECTOR(31 downto 0);
+	signal Y : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
-
-   ---------------------------------------------------------------
-   -- Instantiate the NIOS component below this comment block
-   -- This can be done using Edit->Insert Template
-   -- Expand Megafunctions
-   -- Expand Instances
-   -- click on nios_system_inst.vhd and click insert 
-   -- (it will insert where the cursor is located)
-   -- Add the appropriate signal names to the signal connections
-   ---------------------------------------------------------------
-
-    u0 : component Nios_Qsys
-        port map (
-            clk_clk                             => clk_nios,                           --                          clk.clk
-            switches_external_connection_export => SW, 											-- switches_external_connection.export
-            leds_external_connection_export     => LEDR,     									--     leds_external_connection.export
-            reset_reset_n                       => KEY(0),                       		--                        reset.reset_n
-            sdram_addr                          => DRAM_ADDR,                          --                        sdram.addr
-            sdram_ba                            => dram_ba,                            --                             .ba
-            sdram_cas_n                         => DRAM_CAS_N,                         --                             .cas_n
-            sdram_cke                           => DRAM_CKE,                           --                             .cke
-            sdram_cs_n                          => DRAM_CS_N,                          --                             .cs_n
-            sdram_dq                            => DRAM_DQ,                            --                             .dq
-            sdram_dqm                           => dram_dqm,                           --                             .dqm
-            sdram_ras_n                         => DRAM_RAS_N,                         --                             .ras_n
-            sdram_we_n                          => DRAM_WE_N                           --                             .we_n
-        );
-	  
-  clockPLL_inst : clockPLL PORT MAP (
-		inclk0	=> CLOCK_50,
-		c0	 		=> clk_nios,
-		c1	 		=> DRAM_CLK
-	);
-
-
+		--------------------------------
+		---- Component Instatiation ----
+		--------------------------------
+	
+		RSR_0 : component RSR
+		port map (
+			CLK			=> CLOCK_50,
+			INPUT_X		=> X,
+			OUTPUT_Y		=> Y
+		);
+	
+		
 
    -----------------------------------------
    -- Delete the signals below that you will
-   -- be connecting to your NIOS components
+   -- be connecting to other components
    -- Note: in    signals are ignored
    --       out   signals are set to '0'
    --       inout signals are set to 'Z'
    -----------------------------------------
 	-- LEDs
-	--LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
+	LEDR <= (others => '0');  -- 18 Red LEDs  '1' = ON,  '0' = OFF
 	LEDG <= (others => '0');  -- 9 Green LEDs '1' = ON,  '0' = OFF
 	
 	-- 7-segment Displays (dot in displays cannot be used)
@@ -353,9 +298,12 @@ begin
 	GPIO_1 <= (others => '0');  -- JP2
 	
 	-- VGA video DAC (ADV7123)
-	VGA_R     <= (others => '0');  -- red data
-	VGA_G     <= (others => '0');  -- green data
-	VGA_B     <= (others => '0');  -- blue data
+	
+	
+	VGA_R     <= (others => '1');  -- red data
+	VGA_G     <= (others => '1');  -- green data
+	VGA_B     <= (others => '1');  -- blue data
+	
 	VGA_CLK   <= '0';  -- VGA Clock
 	VGA_BLANK <= '0';  -- VGA Blank
 	VGA_HS    <= '0';  -- VGA H_Sync
@@ -420,10 +368,10 @@ begin
 	-- DRAM (8-Mbyte SDRAM)
 --	DRAM_ADDR  <= (others => '0');  -- SDRAM Address
 --	DRAM_DQ    <= (others => 'Z');  -- SDRAM Data
-	DRAM_BA_0  <= dram_ba(0);                      -- SDRAM Bank Address 0
-	DRAM_BA_1  <= dram_ba(1);                      -- SDRAM Bank Address 1
-	DRAM_LDQM  <= dram_dqm(0);                      -- SDRAM Low-byte  Data Mask
-	DRAM_UDQM  <= dram_dqm(1);                      -- SDRAM High-byte Data Mask
+--	DRAM_BA_0  <= (others => '0');                      -- SDRAM Bank Address 0
+--	DRAM_BA_1  <= (others => '0');                      -- SDRAM Bank Address 1
+--	DRAM_LDQM  <= (others => '0');                      -- SDRAM Low-byte  Data Mask
+--	DRAM_UDQM  <= (others => '0');                      -- SDRAM High-byte Data Mask
 --	DRAM_RAS_N <= '0';                      -- SDRAM Row    Address Strobe
 --	DRAM_CAS_N <= '0';                      -- SDRAM Column Address Strobe
 --	DRAM_CKE   <= '0';                      -- SDRAM Clock Enable
@@ -453,6 +401,8 @@ begin
 	SD_DAT3  <= '0';
 	SD_CMD   <= '0';
 	SD_CLK   <= '0';
+	
+	
 
 end behavioral;
 

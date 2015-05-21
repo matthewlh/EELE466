@@ -1,0 +1,59 @@
+# Reading C:/modeltech64_10.1c/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do compile_and_launch.tcl 
+# vsim -foreign {matlabsysobjserver {C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll}  ; -socket 52654 } -t 1ns -novopt rsr 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.rsr(rsr_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.init_guess(init_guess_arch)
+# Loading work.lzc(behavioral)
+# Loading work.lookup(lookup_arch)
+# Loading work.iterate(iterate_arch)
+# Loading C:/MATLAB/R2014a/toolbox/edalink/extensions/modelsim/windows64/liblfmhdls_gcc450.dll
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: z68j959  Hostname: BZ-ECE-CB60112  ProcessID: 5240
+# 
+#           Attempting to use alternate WLF file "./wlftbrcehi".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftbrcehi
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /rsr/INIT_GUESS_0
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
+# done
+# Simulation halt requested by foreign interface.
